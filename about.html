@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta name="description"
-    content="Discover the UK Academy of Epidemiology Sciences, established in 2026 as a pioneering research and education institution in epidemiological sciences.">
+    content="About the UK Academy of Epidemiology Sciences, established in 2026 as a pioneering research and education institution.">
 
   <meta name="theme-color" content="#85001D">
 
@@ -21,7 +21,7 @@
     /* ABOUT PAGE */
 
     .about-intro {
-      max-width: 790px;
+      max-width: 800px;
     }
 
     .about-intro p {
@@ -59,9 +59,24 @@
     }
 
     .about-editorial-image img {
+      display: block;
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+
+    /* IMAGE CREDIT */
+
+    .about-image-credit {
+      margin-top: 8px;
+      color: #999;
+      font-size: 10px;
+      line-height: 1.7;
+    }
+
+    .about-image-credit a {
+      color: #85001D;
+      text-decoration: none;
     }
 
     /* FOUNDATION */
@@ -86,7 +101,7 @@
       line-height: 1.9;
     }
 
-    /* RESEARCH AREAS */
+    /* SCIENTIFIC FOCUS */
 
     .about-research-grid {
       display: grid;
@@ -96,11 +111,13 @@
     }
 
     .about-research-card {
+      min-width: 0;
       background: #FFFFFF;
       border: 1px solid #E8E6E2;
     }
 
     .about-research-card img {
+      display: block;
       width: 100%;
       aspect-ratio: 5 / 4;
       object-fit: cover;
@@ -126,43 +143,26 @@
     /* MISSION */
 
     .about-mission {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
+      max-width: 850px;
     }
 
-    .about-mission-image {
-      width: 100%;
-      aspect-ratio: 5 / 4;
-      overflow: hidden;
-      background: #F0EFEC;
-    }
-
-    .about-mission-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .about-mission-content h2 {
+    .about-mission h2 {
       margin: 12px 0 20px;
       font-size: clamp(27px, 3vw, 38px);
     }
 
-    .about-mission-content p {
+    .about-mission p {
       color: #666;
       font-size: 14px;
-      line-height: 1.9;
-      margin-bottom: 15px;
+      line-height: 1.95;
+      margin-bottom: 16px;
     }
 
     /* RESPONSIVE */
 
     @media (max-width: 850px) {
 
-      .about-editorial,
-      .about-mission {
+      .about-editorial {
         grid-template-columns: 1fr;
         gap: 30px;
       }
@@ -199,7 +199,6 @@
 
       </a>
 
-
       <button
         class="ukaes-mobile-toggle"
         type="button"
@@ -209,7 +208,6 @@
         Menu
 
       </button>
-
 
       <nav class="ukaes-navigation" aria-label="Main navigation">
 
@@ -305,12 +303,29 @@
           </div>
 
 
-          <div class="about-editorial-image">
+          <!-- IMAGE 01: FIELD EPIDEMIOLOGY -->
 
-            <img
-              src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1400&q=85"
-              alt="Medical researchers examining clinical information"
-              loading="lazy">
+          <div>
+
+            <div class="about-editorial-image">
+
+              <img
+                src="https://wwwn.cdc.gov/phil/PHIL_Images/19903/19903_lores.jpg"
+                alt="Field epidemiology researcher examining laboratory specimens through a microscope"
+                loading="lazy">
+
+            </div>
+
+            <div class="about-image-credit">
+              Image: CDC Public Health Image Library,
+              PHIL ID 19903.
+              <a
+                href="https://wwwn.cdc.gov/phil/Details.aspx?pid=19903"
+                target="_blank"
+                rel="noopener noreferrer">
+                Original image and source
+              </a>
+            </div>
 
           </div>
 
@@ -357,7 +372,7 @@
 
 
 
-    <!-- EPIDEMIOLOGICAL RESEARCH -->
+    <!-- SCIENTIFIC FOCUS -->
 
     <section class="ukaes-section ukaes-section-soft">
 
@@ -386,13 +401,13 @@
         <div class="about-research-grid">
 
 
-          <!-- EPIDEMIOLOGY -->
+          <!-- IMAGE 02: BIOMEDICAL RESEARCH -->
 
           <article class="about-research-card">
 
             <img
-              src="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&w=1000&q=85"
-              alt="Scientific investigation of infectious disease and epidemiology"
+              src="https://wwwn.cdc.gov/phil/PHIL_Images/8191/8191_lores.jpg"
+              alt="Two CDC laboratory scientists examining specimens through a microscope"
               loading="lazy">
 
             <div class="about-research-content">
@@ -407,20 +422,94 @@
                 and epidemiological research methods.
               </p>
 
+              <div class="about-image-credit">
+                Image: CDC Public Health Image Library,
+                PHIL ID 8191.
+                <a
+                  href="https://wwwn.cdc.gov/PHIL/Details.aspx?pid=8191"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  Image source
+                </a>
+              </div>
+
             </div>
 
           </article>
 
 
 
-          <!-- POPULATION HEALTH -->
+          <!-- IMAGE 03: SCIENTIFIC ANALYSIS -->
 
           <article class="about-research-card">
 
             <img
-              src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=1000&q=85"
-              alt="Healthcare professionals working together on population health"
+              src="https://wwwn.cdc.gov/phil/PHIL_Images/1960/1960_lores.jpg"
+              alt="CDC scientist examining scientific microscopy images at a computer workstation"
               loading="lazy">
+
+            <div class="about-research-content">
+
+              <h3>
+                Biomedical Research
+              </h3>
+
+              <p>
+                Exploring biomedical mechanisms,
+                laboratory investigation and scientific
+                approaches to understanding human health.
+              </p>
+
+              <div class="about-image-credit">
+                Image: CDC / James D. Gathany,
+                PHIL ID 1960.
+                <a
+                  href="https://wwwn.cdc.gov/phil/Details.aspx?pid=1960"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  Image source
+                </a>
+              </div>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- TEXT-ONLY CARD -->
+
+          <article class="about-research-card">
+
+            <div
+              style="
+                min-height:220px;
+                background:#85001D;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                padding:25px;
+                color:#FFFFFF;
+                text-align:center;">
+
+              <div>
+
+                <div style="
+                  font-size:36px;
+                  font-weight:700;
+                  margin-bottom:12px;">
+                  UKAES
+                </div>
+
+                <div style="
+                  font-size:12px;
+                  letter-spacing:2px;">
+                  POPULATION HEALTH
+                </div>
+
+              </div>
+
+            </div>
 
             <div class="about-research-content">
 
@@ -439,33 +528,6 @@
           </article>
 
 
-
-          <!-- BIOMEDICAL RESEARCH -->
-
-          <article class="about-research-card">
-
-            <img
-              src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1000&q=85"
-              alt="Biomedical scientific research and medical laboratory investigation"
-              loading="lazy">
-
-            <div class="about-research-content">
-
-              <h3>
-                Biomedical and Clinical Research
-              </h3>
-
-              <p>
-                Exploring biomedical mechanisms,
-                clinical evidence and scientific
-                approaches to understanding human health.
-              </p>
-
-            </div>
-
-          </article>
-
-
         </div>
 
       </div>
@@ -474,7 +536,7 @@
 
 
 
-    <!-- RESEARCH AND EDUCATION MISSION -->
+    <!-- MISSION -->
 
     <section class="ukaes-section">
 
@@ -482,45 +544,30 @@
 
         <div class="about-mission">
 
+          <span class="ukaes-eyebrow">
+            Our Mission
+          </span>
 
-          <div class="about-mission-image">
+          <h2>
+            Research. Education. Discovery.
+          </h2>
 
-            <img
-              src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1400&q=85"
-              alt="Medical professionals discussing scientific and clinical research"
-              loading="lazy">
+          <p>
+            UKAES aims to promote scientific research
+            and academic education in epidemiological
+            sciences and related disciplines.
+          </p>
 
-          </div>
+          <p>
+            We encourage evidence-based thinking,
+            academic collaboration and the development
+            of knowledge that contributes to a better
+            understanding of population health.
+          </p>
 
-
-          <div class="about-mission-content">
-
-            <span class="ukaes-eyebrow">
-              Our Mission
-            </span>
-
-            <h2>
-              Research. Education. Discovery.
-            </h2>
-
-            <p>
-              UKAES aims to promote scientific research
-              and academic education in epidemiological
-              sciences and related disciplines.
-            </p>
-
-            <p>
-              We encourage evidence-based thinking,
-              academic collaboration and the development
-              of knowledge that contributes to a better
-              understanding of population health.
-            </p>
-
-            <a href="education.html" class="ukaes-text-link">
-              Explore Education →
-            </a>
-
-          </div>
+          <a href="education.html" class="ukaes-text-link">
+            Explore Education →
+          </a>
 
         </div>
 
@@ -552,7 +599,6 @@
 
         </div>
 
-
         <a
           href="contact.html"
           class="ukaes-button ukaes-button-white">
@@ -579,11 +625,8 @@
       <div class="ukaes-footer-grid">
 
         <div>
-
           <div class="ukaes-footer-brand"></div>
-
         </div>
-
 
         <div>
 
@@ -598,7 +641,6 @@
 
         </div>
 
-
         <div>
 
           <h3>Information</h3>
@@ -611,7 +653,6 @@
         </div>
 
       </div>
-
 
       <div class="ukaes-footer-bottom">
 
