@@ -3,12 +3,11 @@
 <html lang="en">
 
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta name="description"
-    content="Explore Diploma programmes, academic courses and professional development at the UK Academy of Epidemiology Sciences.">
+    content="Explore six proposed Advanced Diploma programmes at the UK Academy of Epidemiology Sciences.">
 
   <meta name="theme-color" content="#B20D2E">
 
@@ -17,40 +16,34 @@
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/site.js" defer></script>
 
-
-  <!-- EDUCATION PAGE STYLES -->
-
   <style>
 
-    /* INTRODUCTION */
+    /* =====================================
+       EDUCATION PAGE
+    ===================================== */
 
-    .education-intro {
+    .edu-intro {
       display: grid;
       grid-template-columns: 1fr 1fr;
       align-items: center;
-      gap: 65px;
+      gap: 60px;
     }
 
-    .education-intro-content {
-      max-width: 580px;
-    }
-
-    .education-intro-content h2 {
+    .edu-intro h2 {
       margin: 13px 0 20px;
     }
 
-    .education-intro-content p {
+    .edu-intro p {
       font-size: 15px;
       line-height: 1.9;
     }
 
-    .education-image {
-      width: 100%;
+    .edu-image {
       overflow: hidden;
       background: #F0EFEC;
     }
 
-    .education-image img {
+    .edu-image img {
       display: block;
       width: 100%;
       aspect-ratio: 5 / 4;
@@ -58,36 +51,65 @@
     }
 
 
-    /* DIPLOMA PROGRAMMES */
+    /* PROGRAMME FRAMEWORK */
 
-    .diploma-grid {
+    .edu-framework {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 32px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
     }
 
-    .diploma-card {
-      min-width: 0;
+    .edu-framework-item {
+      padding: 23px 18px;
       background: #FFFFFF;
-      border: 1px solid #E2E0DC;
+      border: 1px solid #E7E5E2;
+      border-top: 3px solid #B20D2E;
+    }
+
+    .edu-framework-item strong {
+      display: block;
+      margin-bottom: 7px;
+      color: #B20D2E;
+      font-size: 23px;
+      line-height: 1.2;
+    }
+
+    .edu-framework-item span {
+      color: #666666;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+
+    /* SIX DIPLOMA PROGRAMMES */
+
+    .edu-programme-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 30px;
+    }
+
+    .edu-programme {
+      min-width: 0;
       display: flex;
       flex-direction: column;
+      background: #FFFFFF;
+      border: 1px solid #E3E0DC;
       transition: transform .25s ease,
                   box-shadow .25s ease;
     }
 
-    .diploma-card:hover {
+    .edu-programme:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 28px rgba(0,0,0,.07);
+      box-shadow: 0 12px 30px rgba(0,0,0,.07);
     }
 
-    .diploma-image {
-      width: 100%;
+    .edu-programme-image {
       overflow: hidden;
       background: #ECEBE8;
     }
 
-    .diploma-image img {
+    .edu-programme-image img {
       display: block;
       width: 100%;
       aspect-ratio: 16 / 9;
@@ -95,164 +117,142 @@
       transition: transform .4s ease;
     }
 
-    .diploma-card:hover .diploma-image img {
+    .edu-programme:hover .edu-programme-image img {
       transform: scale(1.025);
     }
 
-    .diploma-content {
+    .edu-programme-body {
       display: flex;
       flex-direction: column;
       flex: 1;
-      padding: 30px;
+      padding: 28px;
       border-top: 4px solid #B20D2E;
     }
 
-    .diploma-number {
+    .edu-programme-code {
       color: #B20D2E;
       font-size: 11px;
       font-weight: 800;
-      letter-spacing: .15em;
+      letter-spacing: .12em;
       text-transform: uppercase;
     }
 
-    .diploma-content h3 {
-      margin: 12px 0;
-      font-size: 23px;
-      line-height: 1.35;
+    .edu-programme h3 {
+      margin: 13px 0 15px;
+      font-size: 22px;
+      line-height: 1.4;
     }
 
-    .diploma-description {
-      color: #626262;
+    .edu-programme-description {
+      margin-bottom: 20px;
+      color: #606060;
       font-size: 14px;
       line-height: 1.85;
     }
 
-    .diploma-topics {
+    .edu-module-heading {
       padding-top: 17px;
-      margin-top: 12px;
-      border-top: 1px solid #E8E6E2;
-    }
-
-    .diploma-topics strong {
-      display: block;
       margin-bottom: 10px;
+      border-top: 1px solid #E7E5E2;
       color: #333333;
       font-size: 11px;
+      font-weight: 800;
       letter-spacing: .1em;
       text-transform: uppercase;
     }
 
-    .diploma-topics ul {
-      padding-left: 18px;
-      margin: 0;
-    }
-
-    .diploma-topics li {
-      padding: 4px 0;
-      color: #626262;
-      font-size: 13px;
-      line-height: 1.65;
-    }
-
-    .diploma-footer {
-      margin-top: auto;
-      padding-top: 22px;
-    }
-
-
-    /* PROFESSIONAL DEVELOPMENT */
-
-    .education-development {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 65px;
-    }
-
-    .education-development-content h2 {
-      margin: 13px 0 20px;
-    }
-
-    .education-development-content p {
-      font-size: 15px;
-      line-height: 1.9;
-    }
-
-    .development-list {
+    .edu-module-list {
       padding: 0;
-      margin: 20px 0 0;
+      margin: 0;
       list-style: none;
+      counter-reset: module;
     }
 
-    .development-list li {
-      padding: 12px 0;
-      border-bottom: 1px solid #E7E5E2;
-      color: #454545;
-      font-size: 14px;
+    .edu-module-list li {
+      position: relative;
+      padding: 10px 0 10px 34px;
+      border-bottom: 1px solid #F0EFEC;
+      color: #555555;
+      font-size: 13px;
+      line-height: 1.6;
+      counter-increment: module;
     }
 
-    .development-list li::before {
-      content: "—";
-      margin-right: 12px;
+    .edu-module-list li::before {
+      content: counter(module, decimal-leading-zero);
+      position: absolute;
+      left: 0;
+      top: 10px;
       color: #B20D2E;
+      font-size: 11px;
       font-weight: 800;
     }
 
-
-    /* EDUCATIONAL APPROACH */
-
-    .education-approach-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 23px;
+    .edu-programme-project {
+      padding: 14px 15px;
+      margin-top: 18px;
+      background: #F8F5F3;
+      border-left: 3px solid #B20D2E;
+      color: #555555;
+      font-size: 12px;
+      line-height: 1.7;
     }
 
-    .education-approach-card {
-      padding: 28px;
+    .edu-programme-project strong {
+      color: #333333;
+    }
+
+
+    /* ADMISSION FRAMEWORK */
+
+    .edu-admission {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+    }
+
+    .edu-admission-item {
+      padding: 30px;
       background: #FFFFFF;
       border: 1px solid #E7E5E2;
-      border-top: 3px solid #B20D2E;
+      border-left: 4px solid #B20D2E;
     }
 
-    .education-approach-card h3 {
-      margin: 12px 0;
+    .edu-admission-item h3 {
+      margin-bottom: 12px;
       font-size: 19px;
     }
 
-    .education-approach-card p {
+    .edu-admission-item p {
       margin: 0;
       font-size: 14px;
-      line-height: 1.8;
-    }
-
-    .education-approach-number {
-      color: #B20D2E;
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: .12em;
+      line-height: 1.85;
     }
 
 
-    /* EDUCATION NOTICE */
+    /* QUALIFICATION DISCLOSURE */
 
-    .education-notice {
-      margin-top: 35px;
-      padding: 23px 27px;
+    .edu-disclosure {
+      padding: 27px 30px;
       background: #F7F5F1;
       border-left: 4px solid #B20D2E;
     }
 
-    .education-notice p {
+    .edu-disclosure h3 {
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .edu-disclosure p {
       margin: 0;
-      color: #626262;
       font-size: 13px;
-      line-height: 1.8;
+      line-height: 1.85;
     }
 
 
     /* CLOSING */
 
-    .education-closing {
+    .edu-closing {
       padding: 65px 0;
       background: linear-gradient(
         120deg,
@@ -261,47 +261,54 @@
       );
     }
 
-    .education-closing-inner {
+    .edu-closing-inner {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       gap: 30px;
     }
 
-    .education-closing h2 {
+    .edu-closing h2 {
       margin: 12px 0;
       color: #FFFFFF;
     }
 
-    .education-closing p {
+    .edu-closing p {
       margin: 0;
       color: rgba(255,255,255,.85);
     }
 
-    .education-closing .ukaes-eyebrow {
+    .edu-closing .ukaes-eyebrow {
       color: #F4C7D0;
     }
 
 
     /* RESPONSIVE */
 
+    @media (max-width: 1000px) {
+
+      .edu-framework {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+    }
+
     @media (max-width: 850px) {
 
-      .education-intro,
-      .education-development {
+      .edu-intro {
         grid-template-columns: 1fr;
         gap: 30px;
       }
 
-      .diploma-grid {
+      .edu-programme-grid {
         grid-template-columns: 1fr;
       }
 
-      .education-approach-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+      .edu-admission {
+        grid-template-columns: 1fr;
       }
 
-      .education-closing-inner {
+      .edu-closing-inner {
         align-items: flex-start;
         flex-direction: column;
       }
@@ -310,15 +317,32 @@
 
     @media (max-width: 600px) {
 
-      .education-approach-grid {
-        grid-template-columns: 1fr;
+      .edu-framework {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
       }
 
-      .diploma-content {
+      .edu-framework-item {
+        padding: 18px 14px;
+      }
+
+      .edu-programme-body {
+        padding: 22px;
+      }
+
+      .edu-programme h3 {
+        font-size: 20px;
+      }
+
+      .edu-admission-item {
         padding: 23px;
       }
 
-      .education-closing {
+      .edu-disclosure {
+        padding: 22px;
+      }
+
+      .edu-closing {
         padding: 50px 0;
       }
 
@@ -348,7 +372,6 @@
 
       </a>
 
-
       <button
         class="ukaes-mobile-toggle"
         type="button"
@@ -358,7 +381,6 @@
         Menu
 
       </button>
-
 
       <nav
         class="ukaes-navigation"
@@ -385,7 +407,6 @@
 
     <!-- =====================================
          HERO
-         SOLID BURGUNDY
     ====================================== -->
 
     <section class="ukaes-hero">
@@ -396,26 +417,20 @@
           Education at UKAES
         </span>
 
-
         <h1>
-
-          Education That<br>
-          Advances Knowledge.
-
+          Advanced Learning.<br>
+          Scientific Excellence.
         </h1>
 
-
         <p>
-
-          Academic programmes, scientific
-          training and professional development
-          in epidemiology and related disciplines.
-
+          Six proposed Advanced Diploma programmes
+          designed around postgraduate-level
+          learning outcomes in scientific
+          and professional disciplines.
         </p>
 
-
         <a
-          href="#diploma-programmes"
+          href="#programmes"
           class="ukaes-button ukaes-button-white">
 
           Explore Programmes
@@ -429,542 +444,53 @@
 
 
     <!-- =====================================
-         EDUCATION OVERVIEW
+         INTRODUCTION
          IMAGE 01
-         UNIQUE TO EDUCATION PAGE
     ====================================== -->
 
     <section class="ukaes-section">
 
       <div class="ukaes-container">
 
-        <div class="education-intro">
+        <div class="edu-intro">
 
-
-          <div class="education-intro-content">
+          <div>
 
             <span class="ukaes-eyebrow">
               Education Overview
             </span>
 
-
             <h2>
-
-              Advancing Academic
-              Learning and Research Skills.
-
-            </h2>
-
-
-            <p>
-
-              Education is an important part
-              of the UK Academy of Epidemiology
-              Sciences' institutional mission.
-
-            </p>
-
-
-            <p>
-
-              UKAES aims to support advanced
-              learning in epidemiology,
-              public health, biostatistics
-              and related scientific disciplines.
-
-            </p>
-
-
-            <p>
-
-              Our educational approach emphasises
-              scientific reasoning, methodological
-              knowledge and the practical
-              understanding of research.
-
-            </p>
-
-          </div>
-
-
-
-          <div class="education-image">
-
-            <img
-              src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1200&q=85"
-              alt="Academic books and university learning environment"
-              loading="lazy">
-
-          </div>
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================
-         DIPLOMA PROGRAMMES
-    ====================================== -->
-
-    <section
-      class="ukaes-section ukaes-section-soft"
-      id="diploma-programmes">
-
-      <div class="ukaes-container">
-
-
-        <div class="ukaes-section-heading">
-
-          <span class="ukaes-eyebrow">
-
-            Academic Programmes
-
-          </span>
-
-
-          <h2>
-
-            Diploma Programmes
-
-          </h2>
-
-
-          <p>
-
-            Explore the Academy's proposed
-            specialised areas of academic
-            education and scientific training.
-
-          </p>
-
-        </div>
-
-
-
-        <div class="diploma-grid">
-
-
-          <!-- =================================
-               DIPLOMA 01
-               EPIDEMIOLOGY
-          ================================== -->
-
-          <article class="diploma-card">
-
-            <div class="diploma-image">
-
-              <img
-                src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1100&q=85"
-                alt="Epidemiology and population health research"
-                loading="lazy">
-
-            </div>
-
-
-            <div class="diploma-content">
-
-              <span class="diploma-number">
-                DIPLOMA PROGRAMME 01
-              </span>
-
-
-              <h3>
-
-                Diploma in Epidemiology
-                and Population Health
-
-              </h3>
-
-
-              <p class="diploma-description">
-
-                A specialised educational pathway
-                focusing on epidemiological
-                principles, disease distribution
-                and population health research.
-
-              </p>
-
-
-              <div class="diploma-topics">
-
-                <strong>Areas of Study</strong>
-
-                <ul>
-                  <li>Fundamentals of Epidemiology</li>
-                  <li>Infectious Disease Epidemiology</li>
-                  <li>Chronic Disease Epidemiology</li>
-                  <li>Population Health Research</li>
-                  <li>Public Health Assessment</li>
-                </ul>
-
-              </div>
-
-
-              <div class="diploma-footer">
-
-                <a
-                  href="contact.html"
-                  class="ukaes-text-link">
-
-                  Programme Enquiries →
-
-                </a>
-
-              </div>
-
-            </div>
-
-          </article>
-
-
-
-          <!-- =================================
-               DIPLOMA 02
-               BIOSTATISTICS
-          ================================== -->
-
-          <article class="diploma-card">
-
-            <div class="diploma-image">
-
-              <img
-                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1100&q=85"
-                alt="Statistical data analysis and research"
-                loading="lazy">
-
-            </div>
-
-
-            <div class="diploma-content">
-
-              <span class="diploma-number">
-                DIPLOMA PROGRAMME 02
-              </span>
-
-
-              <h3>
-
-                Diploma in Biostatistics
-                and Health Data Science
-
-              </h3>
-
-
-              <p class="diploma-description">
-
-                An academic programme focused
-                on statistical reasoning,
-                quantitative methods and
-                data-driven health research.
-
-              </p>
-
-
-              <div class="diploma-topics">
-
-                <strong>Areas of Study</strong>
-
-                <ul>
-                  <li>Fundamental Biostatistics</li>
-                  <li>Statistical Inference</li>
-                  <li>Health Data Analysis</li>
-                  <li>Research Data Interpretation</li>
-                  <li>Quantitative Research Methods</li>
-                </ul>
-
-              </div>
-
-
-              <div class="diploma-footer">
-
-                <a
-                  href="contact.html"
-                  class="ukaes-text-link">
-
-                  Programme Enquiries →
-
-                </a>
-
-              </div>
-
-            </div>
-
-          </article>
-
-
-
-          <!-- =================================
-               DIPLOMA 03
-               RESEARCH METHODOLOGY
-          ================================== -->
-
-          <article class="diploma-card">
-
-            <div class="diploma-image">
-
-              <img
-                src="https://images.unsplash.com/photo-1532619675605-1ede6c2ed2b0?auto=format&fit=crop&w=1100&q=85"
-                alt="Academic research and scientific methodology"
-                loading="lazy">
-
-            </div>
-
-
-            <div class="diploma-content">
-
-              <span class="diploma-number">
-                DIPLOMA PROGRAMME 03
-              </span>
-
-
-              <h3>
-
-                Diploma in Scientific
-                Research Methodology
-
-              </h3>
-
-
-              <p class="diploma-description">
-
-                A research-oriented programme
-                designed around scientific
-                investigation, research design
-                and academic analysis.
-
-              </p>
-
-
-              <div class="diploma-topics">
-
-                <strong>Areas of Study</strong>
-
-                <ul>
-                  <li>Research Design and Planning</li>
-                  <li>Scientific Literature Review</li>
-                  <li>Research Methods and Protocols</li>
-                  <li>Critical Appraisal</li>
-                  <li>Academic Writing and Communication</li>
-                </ul>
-
-              </div>
-
-
-              <div class="diploma-footer">
-
-                <a
-                  href="contact.html"
-                  class="ukaes-text-link">
-
-                  Programme Enquiries →
-
-                </a>
-
-              </div>
-
-            </div>
-
-          </article>
-
-
-
-          <!-- =================================
-               DIPLOMA 04
-               PUBLIC HEALTH SCIENCES
-          ================================== -->
-
-          <article class="diploma-card">
-
-            <div class="diploma-image">
-
-              <img
-                src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1100&q=85"
-                alt="Healthcare and public health professional education"
-                loading="lazy">
-
-            </div>
-
-
-            <div class="diploma-content">
-
-              <span class="diploma-number">
-                DIPLOMA PROGRAMME 04
-              </span>
-
-
-              <h3>
-
-                Diploma in Public
-                Health Sciences
-
-              </h3>
-
-
-              <p class="diploma-description">
-
-                An interdisciplinary educational
-                pathway exploring population
-                health, preventive strategies
-                and health-related sciences.
-
-              </p>
-
-
-              <div class="diploma-topics">
-
-                <strong>Areas of Study</strong>
-
-                <ul>
-                  <li>Foundations of Public Health</li>
-                  <li>Health Determinants</li>
-                  <li>Disease Prevention</li>
-                  <li>Health Promotion</li>
-                  <li>Environmental Health</li>
-                </ul>
-
-              </div>
-
-
-              <div class="diploma-footer">
-
-                <a
-                  href="contact.html"
-                  class="ukaes-text-link">
-
-                  Programme Enquiries →
-
-                </a>
-
-              </div>
-
-            </div>
-
-          </article>
-
-
-        </div>
-
-
-        <div class="education-notice">
-
-          <p>
-
-            Programme titles and study areas
-            shown here represent the proposed
-            educational framework of UKAES.
-            Formal programme availability,
-            admission requirements, duration
-            and award arrangements will be
-            confirmed separately before enrolment.
-
-          </p>
-
-        </div>
-
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================
-         PROFESSIONAL DEVELOPMENT
-         IMAGE 02
-         UNIQUE TO EDUCATION PAGE
-    ====================================== -->
-
-    <section class="ukaes-section">
-
-      <div class="ukaes-container">
-
-        <div class="education-development">
-
-
-          <div class="education-image">
-
-            <img
-              src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=85"
-              alt="Professional development and online learning"
-              loading="lazy">
-
-          </div>
-
-
-
-          <div class="education-development-content">
-
-            <span class="ukaes-eyebrow">
-
-              Professional Development
-
-            </span>
-
-
-            <h2>
-
-              Continuing Academic
+              Advanced Academic
               Development.
-
             </h2>
 
-
             <p>
-
-              In addition to Diploma programmes,
-              UKAES aims to support continuing
-              education and specialised
-              professional learning.
-
+              The UK Academy of Epidemiology Sciences
+              aims to support advanced learning
+              through specialised Diploma programmes
+              covering epidemiology, health sciences,
+              data science, management and
+              interdisciplinary research.
             </p>
 
-
             <p>
-
-              Educational activities may include
-              focused courses, workshops,
-              seminars and research-oriented
-              training.
-
+              Each proposed programme is structured
+              around advanced subject knowledge,
+              applied learning and an independent
+              research or project component.
             </p>
-
-
-            <ul class="development-list">
-
-              <li>
-                Short Courses and Workshops
-              </li>
-
-              <li>
-                Scientific Research Training
-              </li>
-
-              <li>
-                Academic Seminars
-              </li>
-
-              <li>
-                Continuing Professional Development
-              </li>
-
-            </ul>
-
-
-            <a
-              href="contact.html"
-              class="ukaes-text-link">
-
-              Education Enquiries →
-
-            </a>
 
           </div>
 
+          <div class="edu-image">
+
+            <img
+              src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=85"
+              alt="Academic teaching and higher education environment"
+              loading="lazy">
+
+          </div>
 
         </div>
 
@@ -975,108 +501,539 @@
 
 
     <!-- =====================================
-         TEACHING AND LEARNING
-         IMAGE-FREE SECTION
+         PROGRAMME FRAMEWORK
     ====================================== -->
 
     <section class="ukaes-section ukaes-section-soft">
 
       <div class="ukaes-container">
 
-
         <div class="ukaes-section-heading">
 
           <span class="ukaes-eyebrow">
-
-            Teaching and Learning
-
+            Programme Framework
           </span>
 
-
           <h2>
-
-            A Research-Led
-            Learning Approach.
-
+            A Structured Learning Experience.
           </h2>
 
-
           <p>
-
-            UKAES seeks to connect scientific
-            knowledge with academic learning
-            and methodological understanding.
-
+            Indicative academic structure
+            across the six proposed programmes.
           </p>
 
         </div>
 
 
+        <div class="edu-framework">
 
-        <div class="education-approach-grid">
+          <div class="edu-framework-item">
+            <strong>12 Months</strong>
+            <span>Indicative part-time duration</span>
+          </div>
+
+          <div class="edu-framework-item">
+            <strong>1,200</strong>
+            <span>Approximate total learning hours</span>
+          </div>
+
+          <div class="edu-framework-item">
+            <strong>Online</strong>
+            <span>Online or blended delivery</span>
+          </div>
+
+          <div class="edu-framework-item">
+            <strong>Research</strong>
+            <span>Independent applied research project</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
 
 
-          <article class="education-approach-card">
 
-            <span class="education-approach-number">
-              01
-            </span>
+    <!-- =====================================
+         SIX ADVANCED DIPLOMA PROGRAMMES
+    ====================================== -->
 
-            <h3>
-              Scientific Knowledge
-            </h3>
+    <section
+      class="ukaes-section"
+      id="programmes">
 
-            <p>
+      <div class="ukaes-container">
 
-              Developing an understanding
-              of scientific principles,
-              theories and current knowledge.
+        <div class="ukaes-section-heading">
 
-            </p>
+          <span class="ukaes-eyebrow">
+            Advanced Diploma Programmes
+          </span>
+
+          <h2>
+            Six Areas of Specialisation.
+          </h2>
+
+          <p>
+            Each programme is presented
+            as an independent academic
+            pathway with its own curriculum.
+          </p>
+
+        </div>
+
+
+        <div class="edu-programme-grid">
+
+
+          <!-- =================================
+               PROGRAMME 01
+          ================================== -->
+
+          <article class="edu-programme">
+
+            <div class="edu-programme-image">
+
+              <img
+                src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1100&q=85"
+                alt="Medical and epidemiological sciences"
+                loading="lazy">
+
+            </div>
+
+            <div class="edu-programme-body">
+
+              <span class="edu-programme-code">
+                UKAES-AD01
+              </span>
+
+              <h3>
+                Advanced Diploma in
+                Epidemiological Sciences
+              </h3>
+
+              <p class="edu-programme-description">
+                Explores advanced epidemiological
+                theory, causal inference, complex
+                study design and disease surveillance.
+                Students critically appraise research,
+                apply quantitative methods and develop
+                an independent epidemiological
+                investigation.
+              </p>
+
+              <div class="edu-module-heading">
+                Indicative Modules
+              </div>
+
+              <ol class="edu-module-list">
+
+                <li>
+                  Advanced Epidemiological Theory and Causal Inference
+                </li>
+
+                <li>
+                  Advanced Epidemiological Study Design
+                </li>
+
+                <li>
+                  Statistical Modelling in Epidemiology
+                </li>
+
+                <li>
+                  Infectious and Chronic Disease Epidemiology
+                </li>
+
+                <li>
+                  Systematic Review and Evidence Synthesis
+                </li>
+
+                <li>
+                  Independent Epidemiological Research Project
+                </li>
+
+              </ol>
+
+            </div>
 
           </article>
 
 
 
-          <article class="education-approach-card">
+          <!-- =================================
+               PROGRAMME 02
+          ================================== -->
 
-            <span class="education-approach-number">
-              02
-            </span>
+          <article class="edu-programme">
 
-            <h3>
-              Research Skills
-            </h3>
+            <div class="edu-programme-image">
 
-            <p>
+              <img
+                src="https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=1100&q=85"
+                alt="Statistical analysis and biostatistics"
+                loading="lazy">
 
-              Encouraging analytical thinking,
-              research design and
-              evidence-based reasoning.
+            </div>
 
-            </p>
+            <div class="edu-programme-body">
+
+              <span class="edu-programme-code">
+                UKAES-AD02
+              </span>
+
+              <h3>
+                Advanced Diploma in
+                Biostatistics and
+                Health Data Science
+              </h3>
+
+              <p class="edu-programme-description">
+                Develops advanced statistical
+                inference and computational analysis
+                for biomedical and population-health
+                data. Students learn model validation,
+                longitudinal and survival analysis,
+                responsible machine learning
+                and reproducible research.
+              </p>
+
+              <div class="edu-module-heading">
+                Indicative Modules
+              </div>
+
+              <ol class="edu-module-list">
+
+                <li>
+                  Advanced Statistical Inference
+                </li>
+
+                <li>
+                  Regression and Multilevel Modelling
+                </li>
+
+                <li>
+                  Survival and Longitudinal Data Analysis
+                </li>
+
+                <li>
+                  Machine Learning for Health Research
+                </li>
+
+                <li>
+                  Health Data Governance and Reproducible Computing
+                </li>
+
+                <li>
+                  Applied Health Data Science Project
+                </li>
+
+              </ol>
+
+            </div>
 
           </article>
 
 
 
-          <article class="education-approach-card">
+          <!-- =================================
+               PROGRAMME 03
+          ================================== -->
 
-            <span class="education-approach-number">
-              03
-            </span>
+          <article class="edu-programme">
 
-            <h3>
-              Academic Development
-            </h3>
+            <div class="edu-programme-image">
 
-            <p>
+              <img
+                src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1100&q=85"
+                alt="Nutrition and healthy lifestyle"
+                loading="lazy">
 
-              Supporting independent learning,
-              professional development
-              and academic communication.
+            </div>
 
-            </p>
+            <div class="edu-programme-body">
+
+              <span class="edu-programme-code">
+                UKAES-AD03
+              </span>
+
+              <h3>
+                Advanced Diploma in
+                Lifestyle Medicine and
+                Preventive Health
+              </h3>
+
+              <p class="edu-programme-description">
+                Critically examines evidence on
+                nutrition, physical activity, sleep,
+                stress and behavioural determinants
+                of health. Students design and
+                evaluate preventive interventions
+                and behaviour-change strategies
+                for clinical and community settings.
+              </p>
+
+              <div class="edu-module-heading">
+                Indicative Modules
+              </div>
+
+              <ol class="edu-module-list">
+
+                <li>
+                  Advanced Principles of Lifestyle Medicine
+                </li>
+
+                <li>
+                  Nutrition, Physical Activity and Metabolic Health
+                </li>
+
+                <li>
+                  Sleep, Stress and Behavioural Health
+                </li>
+
+                <li>
+                  Behaviour Change and Preventive Interventions
+                </li>
+
+                <li>
+                  Lifestyle Medicine Evidence and Population Prevention
+                </li>
+
+                <li>
+                  Lifestyle Intervention Research Project
+                </li>
+
+              </ol>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- =================================
+               PROGRAMME 04
+          ================================== -->
+
+          <article class="edu-programme">
+
+            <div class="edu-programme-image">
+
+              <img
+                src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1100&q=85"
+                alt="Health policy and management analysis"
+                loading="lazy">
+
+            </div>
+
+            <div class="edu-programme-body">
+
+              <span class="edu-programme-code">
+                UKAES-AD04
+              </span>
+
+              <h3>
+                Advanced Diploma in
+                Health Policy and
+                Health Systems
+              </h3>
+
+              <p class="edu-programme-description">
+                Examines health policy formulation,
+                comparative health systems,
+                governance, health economics
+                and inequalities. Students develop
+                evidence-based policy analyses
+                and evaluate implementation
+                challenges, equity and resource
+                allocation.
+              </p>
+
+              <div class="edu-module-heading">
+                Indicative Modules
+              </div>
+
+              <ol class="edu-module-list">
+
+                <li>
+                  Health Policy Theory and Analysis
+                </li>
+
+                <li>
+                  Comparative Health Systems and Governance
+                </li>
+
+                <li>
+                  Health Economics and Resource Allocation
+                </li>
+
+                <li>
+                  Health Equity, Ethics and Public Policy
+                </li>
+
+                <li>
+                  Policy Evaluation and Implementation Science
+                </li>
+
+                <li>
+                  Independent Health Policy Analysis Project
+                </li>
+
+              </ol>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- =================================
+               PROGRAMME 05
+          ================================== -->
+
+          <article class="edu-programme">
+
+            <div class="edu-programme-image">
+
+              <img
+                src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1100&q=85"
+                alt="Hospitality and wellbeing management"
+                loading="lazy">
+
+            </div>
+
+            <div class="edu-programme-body">
+
+              <span class="edu-programme-code">
+                UKAES-AD05
+              </span>
+
+              <h3>
+                Advanced Diploma in
+                Hospitality, Health and
+                Wellbeing Management
+              </h3>
+
+              <p class="edu-programme-description">
+                Connects advanced hospitality
+                management with wellness tourism,
+                public health, guest wellbeing
+                and sustainable service design.
+                Students evaluate hygiene, risk,
+                operations and the performance
+                of health-oriented hospitality services.
+              </p>
+
+              <div class="edu-module-heading">
+                Indicative Modules
+              </div>
+
+              <ol class="edu-module-list">
+
+                <li>
+                  Advanced Hospitality and Service Management
+                </li>
+
+                <li>
+                  Wellness Tourism and Health Hospitality
+                </li>
+
+                <li>
+                  Public Health, Hygiene and Risk Management
+                </li>
+
+                <li>
+                  Guest Experience, Wellbeing and Service Design
+                </li>
+
+                <li>
+                  Sustainable Hospitality and Strategic Operations
+                </li>
+
+                <li>
+                  Hospitality and Wellbeing Management Project
+                </li>
+
+              </ol>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- =================================
+               PROGRAMME 06
+          ================================== -->
+
+          <article class="edu-programme">
+
+            <div class="edu-programme-image">
+
+              <img
+                src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1100&q=85"
+                alt="Computational technology and artificial intelligence"
+                loading="lazy">
+
+            </div>
+
+            <div class="edu-programme-body">
+
+              <span class="edu-programme-code">
+                UKAES-AD06
+              </span>
+
+              <h3>
+                Advanced Diploma in
+                Bioinformatics and Artificial
+                Intelligence in Health Sciences
+              </h3>
+
+              <p class="edu-programme-description">
+                Integrates computational biology,
+                genomics, multi-omics and artificial
+                intelligence in biomedical and
+                population-health research.
+                Students build reproducible
+                analytical workflows, evaluate
+                machine-learning models and address
+                ethics, bias and data governance.
+              </p>
+
+              <div class="edu-module-heading">
+                Indicative Modules
+              </div>
+
+              <ol class="edu-module-list">
+
+                <li>
+                  Advanced Bioinformatics and Computational Biology
+                </li>
+
+                <li>
+                  Genomics, Transcriptomics and Multi-Omics Data Analysis
+                </li>
+
+                <li>
+                  Machine Learning and Deep Learning for Biomedical Research
+                </li>
+
+                <li>
+                  Artificial Intelligence in Epidemiology and Public Health
+                </li>
+
+                <li>
+                  Responsible AI, Data Governance and Reproducible Research
+                </li>
+
+                <li>
+                  Independent Bioinformatics and AI Research Project
+                </li>
+
+              </ol>
+
+            </div>
 
           </article>
 
@@ -1090,51 +1047,135 @@
 
 
     <!-- =====================================
-         EDUCATIONAL ENQUIRIES
+         ENTRY REQUIREMENTS
     ====================================== -->
 
-    <section class="education-closing">
+    <section class="ukaes-section ukaes-section-soft">
 
       <div class="ukaes-container">
 
-        <div class="education-closing-inner">
+        <div class="ukaes-section-heading">
+
+          <span class="ukaes-eyebrow">
+            Academic Entry
+          </span>
+
+          <h2>
+            Admission Framework.
+          </h2>
+
+        </div>
 
 
-          <div>
+        <div class="edu-admission">
 
-            <span class="ukaes-eyebrow">
+          <div class="edu-admission-item">
 
-              Education at UKAES
-
-            </span>
-
-
-            <h2>
-
-              Explore Your Academic Potential.
-
-            </h2>
-
+            <h3>
+              Academic Background
+            </h3>
 
             <p>
-
-              Contact the Academy for
-              educational and programme enquiries.
-
+              Entry would normally require
+              a relevant bachelor's degree
+              or assessed equivalent experience.
             </p>
 
           </div>
 
 
+          <div class="edu-admission-item">
+
+            <h3>
+              Learning and Assessment
+            </h3>
+
+            <p>
+              The indicative framework includes
+              advanced assessment and an
+              independent applied research
+              or programme-related project.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         QUALIFICATION STATUS
+    ====================================== -->
+
+    <section class="ukaes-section">
+
+      <div class="ukaes-container">
+
+        <div class="edu-disclosure">
+
+          <h3>
+            Qualification Status
+          </h3>
+
+          <p>
+            The six programmes are proposed
+            non-regulated UKAES institutional awards.
+            They are not UK-recognised Postgraduate
+            Diplomas (PGDip), Ofqual-regulated
+            qualifications or formally validated
+            UK Level 7 credits. Formal recognition
+            or credit requires an appropriate
+            authorised awarding arrangement.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         CLOSING
+    ====================================== -->
+
+    <section class="edu-closing">
+
+      <div class="ukaes-container">
+
+        <div class="edu-closing-inner">
+
+          <div>
+
+            <span class="ukaes-eyebrow">
+              Education at UKAES
+            </span>
+
+            <h2>
+              Advancing Knowledge.
+              Developing Expertise.
+            </h2>
+
+            <p>
+              For enquiries about the proposed
+              academic programmes, please contact
+              the Academy.
+            </p>
+
+          </div>
 
           <a
-            href="mailto:education@ukaes.org"
+            href="contact.html"
             class="ukaes-button ukaes-button-white">
 
-            Contact Education Affairs
+            Education Enquiries
 
           </a>
-
 
         </div>
 
@@ -1155,34 +1196,23 @@
 
     <div class="ukaes-container">
 
-
       <div class="ukaes-footer-grid">
-
 
         <div>
 
           <div class="ukaes-footer-brand">
-
             UKAES
-
           </div>
 
-
           <p>
-
             UK Academy of Epidemiology Sciences
-
           </p>
 
-
           <p>
-
             Advancing Science. Shaping the Future.
-
           </p>
 
         </div>
-
 
 
         <div>
@@ -1191,26 +1221,14 @@
 
           <ul>
 
-            <li>
-              <a href="about.html">About</a>
-            </li>
-
-            <li>
-              <a href="research.html">Research</a>
-            </li>
-
-            <li>
-              <a href="education.html">Education</a>
-            </li>
-
-            <li>
-              <a href="appointments.html">Appointments</a>
-            </li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="appointments.html">Appointments</a></li>
 
           </ul>
 
         </div>
-
 
 
         <div>
@@ -1219,52 +1237,32 @@
 
           <ul>
 
-            <li>
-              <a href="people.html">People</a>
-            </li>
-
-            <li>
-              <a href="contact.html">Contact</a>
-            </li>
-
-            <li>
-              <a href="mailto:education@ukaes.org">
-                Education Enquiries
-              </a>
-            </li>
+            <li><a href="people.html">People</a></li>
+            <li><a href="contact.html">Contact</a></li>
 
           </ul>
 
         </div>
 
-
       </div>
-
 
 
       <div class="ukaes-footer-bottom">
 
         <span>
-
           © <span class="ukaes-current-year"></span>
           UK Academy of Epidemiology Sciences.
-
         </span>
 
-
         <span>
-
           All Rights Reserved.
-
         </span>
 
       </div>
 
-
     </div>
 
   </footer>
-
 
 
   <!-- BACK TO TOP -->
