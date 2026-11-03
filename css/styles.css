@@ -1,130 +1,76 @@
 
-/* ============================================================
-   UK ACADEMY OF EPIDEMIOLOGY SCIENCES
-   UKAES OFFICIAL WEBSITE
-
-   GLOBAL STYLESHEET
-   Version 3.0
-
-   Design Direction:
-   Carnegie Mellon University Inspired
-
-   Main Features:
-   - Academic Burgundy Identity
-   - Clean University Layout
-   - Editorial Photography
-   - Minimal Navigation
-   - Responsive Design
-   - Accessible Components
-   - Consistent Page Structure
-   ============================================================ */
+/* =====================================================
+   UKAES WEBSITE
+   Version 4.0
+   Burgundy Academic Institutional Design
+===================================================== */
 
 
-/* ============================================================
-   01. DESIGN SYSTEM
-   ============================================================ */
+/* =====================================================
+   01. GLOBAL SETTINGS
+===================================================== */
 
 :root {
+  --ukaes-primary: #B20D2E;
+  --ukaes-primary-dark: #85001D;
+  --ukaes-primary-light: #F7EDEF;
 
-  /* Brand Colours */
+  --ukaes-ink: #252525;
+  --ukaes-text: #555555;
+  --ukaes-muted: #777777;
 
-  --brand-primary: #C41230;
-  --brand-dark: #990D25;
-  --brand-deep: #760015;
-  --brand-light: #E8A1AE;
+  --ukaes-background: #FFFFFF;
+  --ukaes-soft: #F6F6F4;
 
-  /* Neutral Colours */
+  --ukaes-border: #E7E5E2;
 
-  --color-white: #FFFFFF;
-  --color-black: #171717;
+  --ukaes-container: 1320px;
 
-  --color-heading: #202020;
-  --color-text: #454545;
-  --color-muted: #707070;
-
-  --color-background: #FFFFFF;
-  --color-background-soft: #F5F5F3;
-  --color-background-dark: #242424;
-
-  --color-border: #E2E2E2;
-
-  /* Typography */
-
-  --font-primary:
-    "Helvetica Neue",
-    Helvetica,
-    Arial,
-    sans-serif;
-
-  --font-heading:
-    "Helvetica Neue",
-    Helvetica,
-    Arial,
-    sans-serif;
-
-  --font-serif:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-  /* Layout */
-
-  --container: 1280px;
-  --container-narrow: 900px;
-
-  --header-height: 82px;
-
-  --space-xs: 8px;
-  --space-sm: 16px;
-  --space-md: 24px;
-  --space-lg: 40px;
-  --space-xl: 64px;
-  --space-2xl: 96px;
-
-  /* Effects */
-
-  --transition: 0.2s ease-in-out;
-
-  --shadow:
-    0 8px 25px rgba(0, 0, 0, 0.07);
-
+  --ukaes-transition: .25s ease;
 }
 
 
-/* ============================================================
-   02. RESET AND BASE
-   ============================================================ */
-
-*,
-*::before,
-*::after {
+* {
   box-sizing: border-box;
 }
+
 
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 100px;
 }
 
+
 body {
   margin: 0;
   padding: 0;
 
-  background: var(--color-background);
-  color: var(--color-text);
+  background: var(--ukaes-background);
 
-  font-family: var(--font-primary);
-  font-size: 16px;
-  line-height: 1.7;
+  color: var(--ukaes-ink);
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 15px;
+  line-height: 1.75;
 
   -webkit-font-smoothing: antialiased;
 }
 
+
 img {
-  display: block;
   max-width: 100%;
-  height: auto;
 }
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 
 button,
 input,
@@ -133,234 +79,163 @@ textarea {
   font: inherit;
 }
 
+
 button {
   cursor: pointer;
 }
 
-a {
-  color: var(--brand-primary);
-  text-decoration: none;
-  transition: color var(--transition);
-}
-
-a:hover {
-  color: var(--brand-dark);
-}
-
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-textarea:focus-visible,
-select:focus-visible {
-  outline: 3px solid var(--brand-light);
-  outline-offset: 4px;
-}
-
-::selection {
-  background: var(--brand-primary);
-  color: white;
-}
-
-
-/* ============================================================
-   03. GLOBAL LAYOUT
-   ============================================================ */
-
-.ukaes-container {
-  width: min(
-    var(--container),
-    calc(100% - 64px)
-  );
-
-  margin-inline: auto;
-}
-
-.ukaes-container-narrow {
-  width: min(
-    var(--container-narrow),
-    calc(100% - 64px)
-  );
-
-  margin-inline: auto;
-}
-
-.ukaes-section {
-  padding-block: var(--space-2xl);
-}
-
-.ukaes-section-soft {
-  background: var(--color-background-soft);
-}
-
-.ukaes-section-dark {
-  background: var(--color-background-dark);
-  color: white;
-}
-
-.ukaes-text-center {
-  text-align: center;
-}
-
-.ukaes-text-left {
-  text-align: left;
-}
-
-.ukaes-text-muted {
-  color: var(--color-muted);
-}
-
-
-/* ============================================================
-   04. TYPOGRAPHY
-   ============================================================ */
 
 h1,
 h2,
 h3,
 h4,
-h5 {
-  margin-top: 0;
-
-  color: var(--color-heading);
-
-  font-family: var(--font-heading);
-  font-weight: 700;
-
-  line-height: 1.2;
-
-  overflow-wrap: break-word;
-}
-
-h1 {
-  font-size: clamp(42px, 6vw, 76px);
-  letter-spacing: -0.045em;
-}
-
-h2 {
-  font-size: clamp(32px, 4vw, 48px);
-  letter-spacing: -0.035em;
-}
-
-h3 {
-  font-size: 23px;
-}
-
-h4 {
-  font-size: 18px;
-}
-
 p {
   margin-top: 0;
 }
 
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--ukaes-ink);
+  line-height: 1.25;
+}
+
+
+h1 {
+  font-size: clamp(38px, 5vw, 64px);
+  font-weight: 750;
+  letter-spacing: -1.8px;
+}
+
+
+h2 {
+  font-size: clamp(28px, 3.3vw, 40px);
+  font-weight: 700;
+  letter-spacing: -0.8px;
+}
+
+
+h3 {
+  font-size: 21px;
+  font-weight: 700;
+}
+
+
+p {
+  color: var(--ukaes-text);
+}
+
+
+::selection {
+  background: var(--ukaes-primary);
+  color: #FFFFFF;
+}
+
+
+
+/* =====================================================
+   02. MAIN CONTAINERS
+===================================================== */
+
+.ukaes-container {
+  width: min(
+    calc(100% - 64px),
+    var(--ukaes-container)
+  );
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.ukaes-container-narrow {
+  width: min(
+    calc(100% - 64px),
+    850px
+  );
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.ukaes-text-center {
+  text-align: center;
+}
+
+
 .ukaes-lead {
-  max-width: 760px;
+  max-width: 720px;
+  margin: 0 auto 28px;
 
-  color: var(--color-text);
+  font-size: 17px;
+  line-height: 1.85;
 
-  font-size: 19px;
-  line-height: 1.8;
-}
-
-.ukaes-eyebrow {
-  display: inline-block;
-
-  margin-bottom: 14px;
-
-  color: var(--brand-primary);
-
-  font-size: 12px;
-  font-weight: 800;
-
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-}
-
-.ukaes-section-heading {
-  max-width: 850px;
-  margin-bottom: 42px;
-}
-
-.ukaes-section-heading h2 {
-  margin-bottom: 14px;
-}
-
-.ukaes-section-heading p {
-  max-width: 680px;
-  color: var(--color-muted);
-  font-size: 16px;
+  color: var(--ukaes-text);
 }
 
 
-/* ============================================================
-   05. HEADER
-   ============================================================ */
+
+/* =====================================================
+   03. HEADER AND LOGO
+===================================================== */
 
 .ukaes-header {
   position: relative;
-  z-index: 100;
+  z-index: 1000;
 
   width: 100%;
 
-  background: white;
-  border-bottom: 1px solid var(--color-border);
+  background: #FFFFFF;
 
-  transition: box-shadow var(--transition);
+  border-bottom: 1px solid #EEEEEC;
+
+  box-shadow: 0 2px 12px rgba(0,0,0,.035);
 }
 
-.ukaes-header.is-scrolled {
-  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.07);
-}
 
 .ukaes-header-inner {
+  min-height: 96px;
+
   display: flex;
 
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 
-  gap: 30px;
-
-  min-height: var(--header-height);
-
-  padding-block: 12px;
+  gap: 35px;
 }
 
 
-/* ============================================================
-   06. LOGO
-   ============================================================ */
+/* LOGO */
 
 .ukaes-brand {
   display: flex;
+
   align-items: center;
 
   flex-shrink: 0;
 
-  text-decoration: none;
+  width: 310px;
+  min-width: 220px;
 }
+
 
 .ukaes-brand img {
   display: block;
 
-  width: min(440px, 38vw);
-  max-height: 76px;
+  width: 100%;
+  max-width: 310px;
+
+  height: 76px;
 
   object-fit: contain;
   object-position: left center;
 }
 
-.ukaes-brand-name {
-  color: var(--brand-primary);
 
-  font-family: var(--font-serif);
-  font-size: 27px;
-  font-weight: 700;
-}
-
-
-/* ============================================================
-   07. DESKTOP NAVIGATION
-   ============================================================ */
+/* NAVIGATION */
 
 .ukaes-navigation {
   display: flex;
@@ -368,25 +243,37 @@ p {
   align-items: center;
   justify-content: flex-end;
 
-  gap: 23px;
+  gap: clamp(15px, 2vw, 30px);
+
+  flex: 1;
 }
+
 
 .ukaes-navigation a {
   position: relative;
 
-  padding-block: 10px;
+  display: inline-flex;
 
-  color: var(--color-heading);
+  align-items: center;
+
+  padding: 12px 0;
+
+  color: #292929;
 
   font-size: 13px;
   font-weight: 700;
 
   white-space: nowrap;
 
-  text-decoration: none;
-
-  transition: color var(--transition);
+  transition: color var(--ukaes-transition);
 }
+
+
+.ukaes-navigation a:hover,
+.ukaes-navigation a.active {
+  color: var(--ukaes-primary);
+}
+
 
 .ukaes-navigation a::after {
   content: "";
@@ -399,240 +286,276 @@ p {
   width: 0;
   height: 2px;
 
-  background: var(--brand-primary);
+  background: var(--ukaes-primary);
 
-  transition: width var(--transition);
+  transition: width var(--ukaes-transition);
 }
 
-.ukaes-navigation a:hover,
-.ukaes-navigation a.active,
-.ukaes-navigation a[aria-current="page"] {
-  color: var(--brand-primary);
-}
 
 .ukaes-navigation a:hover::after,
-.ukaes-navigation a.active::after,
-.ukaes-navigation a[aria-current="page"]::after {
+.ukaes-navigation a.active::after {
   width: 100%;
 }
 
 
-/* ============================================================
-   08. MOBILE NAVIGATION BUTTON
-   ============================================================ */
+/* MOBILE MENU BUTTON */
 
 .ukaes-mobile-toggle {
   display: none;
 
-  padding: 10px 17px;
+  padding: 10px 15px;
 
-  background: var(--brand-primary);
-  color: white;
+  border: 1px solid var(--ukaes-border);
 
-  border: 0;
+  background: #FFFFFF;
+
+  color: var(--ukaes-primary);
 
   font-size: 13px;
   font-weight: 700;
-
-  transition: background var(--transition);
-}
-
-.ukaes-mobile-toggle:hover {
-  background: var(--brand-dark);
 }
 
 
-/* ============================================================
-   09. HERO SECTION
-   ============================================================ */
+
+/* =====================================================
+   04. HERO BANNER
+   ALL PAGES USE BURGUNDY BACKGROUND
+===================================================== */
 
 .ukaes-hero {
   position: relative;
 
-  display: flex;
-  align-items: center;
+  width: 100%;
 
-  min-height: 620px;
+  min-height: 430px;
+
+  display: flex;
+
+  align-items: center;
 
   overflow: hidden;
 
-  background: var(--brand-deep);
-  color: white;
-}
+  background: var(--ukaes-primary-dark);
 
-.ukaes-hero-image {
-  position: absolute;
-
-  inset: 0;
-
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-  object-position: center;
-
-  z-index: 0;
-}
-
-.ukaes-hero-overlay {
-  position: absolute;
-
-  inset: 0;
-
-  z-index: 1;
-
-  background:
+  background-image:
     linear-gradient(
-      90deg,
-      rgba(35, 0, 8, 0.88) 0%,
-      rgba(70, 0, 15, 0.70) 48%,
-      rgba(70, 0, 15, 0.20) 100%
+      120deg,
+      #85001D 0%,
+      #A6092C 55%,
+      #BE173A 100%
     );
 }
+
+
+/* REMOVE ALL HERO PHOTOGRAPHS */
+
+.ukaes-hero-image {
+  display: none !important;
+}
+
+
+/* REMOVE PHOTO OVERLAY */
+
+.ukaes-hero-overlay {
+  display: none !important;
+}
+
 
 .ukaes-hero-content {
   position: relative;
   z-index: 2;
 
-  width: 100%;
+  width: min(
+    calc(100% - 64px),
+    var(--ukaes-container)
+  );
 
-  padding-block: 110px;
+  margin: 0 auto;
+
+  padding-top: 85px;
+  padding-bottom: 85px;
+
+  color: #FFFFFF;
 }
 
-.ukaes-hero .ukaes-eyebrow {
-  color: #F3C8D0;
-}
 
-.ukaes-hero h1 {
+.ukaes-hero-content h1 {
   max-width: 850px;
 
-  margin-bottom: 25px;
+  margin: 15px 0 22px;
 
-  color: white;
+  color: #FFFFFF;
 
-  font-size: clamp(48px, 6.5vw, 82px);
+  font-size: clamp(42px, 5.2vw, 68px);
 
-  font-weight: 800;
-  line-height: 1.08;
+  font-weight: 750;
 
-  letter-spacing: -0.045em;
+  line-height: 1.12;
+
+  letter-spacing: -1.8px;
 }
 
-.ukaes-hero p {
+
+.ukaes-hero-content p {
   max-width: 650px;
 
-  margin-bottom: 32px;
+  margin-bottom: 30px;
 
-  color: #F5ECEE;
+  color: rgba(255,255,255,.88);
 
-  font-size: 18px;
-  line-height: 1.8;
+  font-size: 17px;
+
+  line-height: 1.85;
 }
 
 
-/* ============================================================
-   10. PAGE INTRODUCTION
-   ============================================================ */
+.ukaes-eyebrow {
+  display: inline-block;
 
-.ukaes-page-intro {
-  padding-block: 100px 80px;
+  color: var(--ukaes-primary);
 
-  background: var(--color-background-soft);
-}
+  font-size: 11px;
 
-.ukaes-page-intro h1 {
-  max-width: 900px;
+  font-weight: 800;
 
-  margin-bottom: 22px;
+  letter-spacing: .15em;
 
-  font-size: clamp(42px, 6vw, 72px);
-}
+  line-height: 1.6;
 
-.ukaes-page-intro p {
-  max-width: 720px;
-
-  color: var(--color-muted);
-
-  font-size: 18px;
-  line-height: 1.8;
+  text-transform: uppercase;
 }
 
 
-/* ============================================================
-   11. BUTTONS
-   ============================================================ */
+.ukaes-hero-content .ukaes-eyebrow {
+  color: #F5D8DE;
+}
+
+
+
+/* =====================================================
+   05. BUTTONS
+===================================================== */
 
 .ukaes-button {
   display: inline-flex;
 
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
-  gap: 10px;
+  min-height: 46px;
 
-  min-height: 48px;
+  padding: 12px 24px;
 
-  padding: 13px 25px;
+  border: 1px solid var(--ukaes-primary);
 
-  background: var(--brand-primary);
-  color: white;
+  background: var(--ukaes-primary);
 
-  border: 1px solid var(--brand-primary);
+  color: #FFFFFF;
 
-  font-size: 14px;
+  font-size: 13px;
+
   font-weight: 700;
 
-  text-decoration: none;
+  text-align: center;
 
   transition:
-    background var(--transition),
-    border-color var(--transition),
-    transform var(--transition);
+    background var(--ukaes-transition),
+    color var(--ukaes-transition),
+    border-color var(--ukaes-transition);
 }
+
 
 .ukaes-button:hover {
-  background: var(--brand-dark);
-  border-color: var(--brand-dark);
+  background: var(--ukaes-primary-dark);
 
-  color: white;
+  border-color: var(--ukaes-primary-dark);
 
-  transform: translateY(-2px);
+  color: #FFFFFF;
 }
+
 
 .ukaes-button-white {
-  background: white;
-  border-color: white;
-  color: var(--brand-primary);
+  background: #FFFFFF;
+
+  border-color: #FFFFFF;
+
+  color: var(--ukaes-primary);
 }
 
+
 .ukaes-button-white:hover {
-  background: var(--color-background-soft);
-  border-color: var(--color-background-soft);
-  color: var(--brand-dark);
+  background: #F4E9EC;
+
+  border-color: #F4E9EC;
+
+  color: var(--ukaes-primary-dark);
 }
+
 
 .ukaes-text-link {
   display: inline-block;
 
-  margin-top: 15px;
+  margin-top: 12px;
 
-  color: var(--brand-primary);
+  color: var(--ukaes-primary);
 
-  font-size: 14px;
+  font-size: 13px;
+
   font-weight: 700;
 
-  text-decoration: none;
+  transition: color var(--ukaes-transition);
 }
+
 
 .ukaes-text-link:hover {
-  color: var(--brand-dark);
-  text-decoration: underline;
+  color: var(--ukaes-primary-dark);
 }
 
 
-/* ============================================================
-   12. EDITORIAL LAYOUT
-   ============================================================ */
+
+/* =====================================================
+   06. GENERAL SECTIONS
+===================================================== */
+
+.ukaes-section {
+  padding: 90px 0;
+
+  background: #FFFFFF;
+}
+
+
+.ukaes-section-soft {
+  background: var(--ukaes-soft);
+}
+
+
+.ukaes-section-heading {
+  max-width: 760px;
+
+  margin-bottom: 45px;
+}
+
+
+.ukaes-section-heading h2 {
+  margin: 12px 0 15px;
+}
+
+
+.ukaes-section-heading p {
+  max-width: 650px;
+
+  margin-bottom: 0;
+
+  color: var(--ukaes-muted);
+
+  font-size: 15px;
+}
+
+
+
+/* =====================================================
+   07. EDITORIAL LAYOUT
+===================================================== */
 
 .ukaes-editorial {
   display: grid;
@@ -643,60 +566,62 @@ p {
 
   align-items: center;
 
-  gap: 75px;
+  gap: 65px;
 }
+
 
 .ukaes-editorial-content {
-  max-width: 570px;
+  min-width: 0;
 }
+
 
 .ukaes-editorial-content h2 {
-  margin-bottom: 22px;
+  margin: 12px 0 20px;
 }
+
 
 .ukaes-editorial-content p {
-  margin-bottom: 18px;
+  margin-bottom: 17px;
 
-  color: var(--color-muted);
+  font-size: 15px;
 
-  font-size: 16px;
-  line-height: 1.85;
+  line-height: 1.9;
 }
+
 
 .ukaes-editorial-image {
   width: 100%;
-  min-width: 0;
 
   overflow: hidden;
 
-  background: var(--color-background-soft);
+  background: #ECEBE8;
 }
 
+
 .ukaes-editorial-image img {
+  display: block;
+
   width: 100%;
-  height: 440px;
+
+  aspect-ratio: 4 / 3;
 
   object-fit: cover;
 
-  transition: transform 0.5s ease;
+  object-position: center;
+
+  transition: transform .5s ease;
 }
+
 
 .ukaes-editorial-image:hover img {
   transform: scale(1.025);
 }
 
-.ukaes-editorial-reverse {
-  direction: rtl;
-}
-
-.ukaes-editorial-reverse > * {
-  direction: ltr;
-}
 
 
-/* ============================================================
-   13. FEATURE GRID
-   ============================================================ */
+/* =====================================================
+   08. FEATURE CARDS
+===================================================== */
 
 .ukaes-feature-grid {
   display: grid;
@@ -704,112 +629,181 @@ p {
   grid-template-columns:
     repeat(3, minmax(0, 1fr));
 
-  gap: 30px;
+  gap: 25px;
 }
+
 
 .ukaes-feature {
   min-width: 0;
 
-  background: white;
+  background: #FFFFFF;
 
-  transition: box-shadow var(--transition);
+  border: 1px solid var(--ukaes-border);
+
+  transition:
+    transform var(--ukaes-transition),
+    box-shadow var(--ukaes-transition);
 }
+
 
 .ukaes-feature:hover {
-  box-shadow: var(--shadow);
+  transform: translateY(-4px);
+
+  box-shadow: 0 12px 30px rgba(0,0,0,.06);
 }
+
 
 .ukaes-feature-image {
   width: 100%;
 
-  aspect-ratio: 5 / 3;
-
   overflow: hidden;
 
-  background: var(--color-background-soft);
+  background: #ECEBE8;
 }
 
+
 .ukaes-feature-image img {
+  display: block;
+
   width: 100%;
-  height: 100%;
+
+  aspect-ratio: 16 / 10;
 
   object-fit: cover;
 
-  transition: transform 0.5s ease;
+  transition: transform .45s ease;
 }
+
 
 .ukaes-feature:hover .ukaes-feature-image img {
-  transform: scale(1.04);
+  transform: scale(1.035);
 }
+
 
 .ukaes-feature-content {
-  padding: 25px 24px 28px;
+  padding: 25px;
 }
+
 
 .ukaes-feature-content h3 {
-  margin-bottom: 13px;
+  margin: 0 0 12px;
 
-  color: var(--color-heading);
-
-  font-size: 22px;
+  font-size: 20px;
 }
 
-.ukaes-feature-content p {
-  margin-bottom: 0;
 
-  color: var(--color-muted);
+.ukaes-feature-content p {
+  margin: 0;
+
+  color: var(--ukaes-text);
 
   font-size: 14px;
+
   line-height: 1.8;
 }
 
 
-/* ============================================================
-   14. RESEARCH GRID
-   ============================================================ */
+
+/* =====================================================
+   09. RESEARCH AREAS
+===================================================== */
 
 .ukaes-research-grid {
   display: grid;
 
   grid-template-columns:
-    repeat(2, minmax(0, 1fr));
+    repeat(3, minmax(0, 1fr));
 
-  gap: 0 50px;
+  gap: 20px;
 }
+
 
 .ukaes-research-item {
-  padding: 28px 0;
+  min-width: 0;
 
-  border-bottom: 1px solid var(--color-border);
+  padding: 30px;
+
+  background: #FFFFFF;
+
+  border: 1px solid var(--ukaes-border);
+
+  border-top: 3px solid var(--ukaes-primary);
+
+  transition: box-shadow var(--ukaes-transition);
 }
+
+
+.ukaes-research-item:hover {
+  box-shadow: 0 8px 25px rgba(0,0,0,.055);
+}
+
 
 .ukaes-research-item h3 {
-  margin-bottom: 10px;
+  margin: 10px 0 14px;
 
-  font-size: 21px;
+  font-size: 19px;
+  line-height: 1.4;
 }
+
 
 .ukaes-research-item p {
   margin-bottom: 0;
 
-  color: var(--color-muted);
+  color: var(--ukaes-text);
 
-  font-size: 15px;
+  font-size: 14px;
+
   line-height: 1.8;
 }
 
 
-/* ============================================================
-   15. HIGHLIGHT SECTION
-   ============================================================ */
+.ukaes-research-item h4 {
+  margin: 23px 0 12px;
+
+  color: var(--ukaes-primary);
+
+  font-size: 13px;
+}
+
+
+.ukaes-research-item ol {
+  padding-left: 20px;
+
+  margin: 0;
+
+  color: var(--ukaes-text);
+
+  font-size: 13px;
+
+  line-height: 1.85;
+}
+
+
+.ukaes-research-item li {
+  padding-left: 3px;
+
+  margin-bottom: 7px;
+}
+
+
+
+/* =====================================================
+   10. HIGHLIGHT BANNER
+===================================================== */
 
 .ukaes-highlight {
-  padding-block: 75px;
+  padding: 65px 0;
 
-  background: var(--brand-primary);
+  background:
+    linear-gradient(
+      120deg,
+      #85001D,
+      #B20D2E
+    );
 
-  color: white;
+  color: #FFFFFF;
 }
+
 
 .ukaes-highlight-inner {
   display: flex;
@@ -817,156 +811,76 @@ p {
   align-items: center;
   justify-content: space-between;
 
-  gap: 45px;
+  gap: 35px;
 }
+
 
 .ukaes-highlight h2 {
-  margin-bottom: 12px;
+  margin: 12px 0;
 
-  color: white;
+  color: #FFFFFF;
 
-  font-size: clamp(34px, 4.5vw, 52px);
+  font-size: clamp(27px, 3vw, 38px);
 }
+
 
 .ukaes-highlight p {
   margin-bottom: 0;
 
-  color: #F6E8EB;
-
-  font-size: 17px;
-}
-
-.ukaes-highlight .ukaes-button {
-  flex-shrink: 0;
+  color: rgba(255,255,255,.85);
 }
 
 
-/* ============================================================
-   16. FOUNDATION YEAR
-   ============================================================ */
+.ukaes-highlight .ukaes-eyebrow {
+  color: #F4C7D0;
+}
+
 
 .ukaes-foundation-year {
-  color: white;
+  color: #FFFFFF;
 
-  font-size: clamp(76px, 12vw, 150px);
+  font-size: clamp(75px, 12vw, 150px);
 
   font-weight: 800;
 
   line-height: 1;
 
-  letter-spacing: -0.07em;
-
-  white-space: nowrap;
+  letter-spacing: -.07em;
 }
 
 
-/* ============================================================
-   17. APPOINTMENT ITEMS
-   ============================================================ */
 
-.ukaes-appointment-list {
-  display: flex;
-  flex-direction: column;
-}
+/* =====================================================
+   11. NOTICE / INFORMATION PANELS
+===================================================== */
 
-.ukaes-appointment-item {
-  display: grid;
+.ukaes-notice {
+  padding: 25px 30px;
 
-  grid-template-columns: 220px 1fr;
+  background: var(--ukaes-primary-light);
 
-  gap: 35px;
-
-  padding: 30px 0;
-
-  border-bottom: 1px solid var(--color-border);
-}
-
-.ukaes-appointment-item h3 {
-  margin-bottom: 10px;
-}
-
-.ukaes-appointment-item p {
-  margin-bottom: 0;
-
-  color: var(--color-muted);
-}
-
-.ukaes-appointment-label {
-  color: var(--brand-primary);
-
-  font-size: 12px;
-  font-weight: 800;
-
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  border-left: 4px solid var(--ukaes-primary);
 }
 
 
-/* ============================================================
-   18. PEOPLE PAGE
-   ============================================================ */
+.ukaes-notice strong {
+  color: var(--ukaes-primary-dark);
 
-.ukaes-people-grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(3, minmax(0, 1fr));
-
-  gap: 28px;
+  font-size: 15px;
 }
 
-.ukaes-person {
-  background: white;
 
-  border: 1px solid var(--color-border);
-}
-
-.ukaes-person-image {
-  aspect-ratio: 4 / 3;
-
-  overflow: hidden;
-
-  background: var(--color-background-soft);
-}
-
-.ukaes-person-image img {
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-}
-
-.ukaes-person-content {
-  padding: 22px;
-}
-
-.ukaes-person-content h3 {
-  margin-bottom: 7px;
-  font-size: 21px;
-}
-
-.ukaes-person-role {
-  color: var(--brand-primary);
-
-  font-size: 12px;
-  font-weight: 700;
-
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-.ukaes-person-content p {
-  margin-top: 12px;
-
-  color: var(--color-muted);
+.ukaes-notice p {
+  color: var(--ukaes-text);
 
   font-size: 14px;
 }
 
 
-/* ============================================================
-   19. CONTACT GRID
-   ============================================================ */
+
+/* =====================================================
+   12. CONTACT PAGE
+===================================================== */
 
 .ukaes-contact-grid {
   display: grid;
@@ -974,56 +888,70 @@ p {
   grid-template-columns:
     repeat(2, minmax(0, 1fr));
 
-  gap: 25px;
+  gap: 20px;
 }
+
 
 .ukaes-contact-item {
-  padding: 28px;
+  padding: 30px;
 
-  border: 1px solid var(--color-border);
+  background: #FFFFFF;
 
-  background: white;
+  border: 1px solid var(--ukaes-border);
+
+  border-left: 3px solid var(--ukaes-primary);
 }
+
 
 .ukaes-contact-item h3 {
-  margin-bottom: 12px;
+  margin-bottom: 10px;
+
+  font-size: 19px;
 }
+
 
 .ukaes-contact-item p {
-  color: var(--color-muted);
-  font-size: 15px;
-}
+  margin-bottom: 0;
 
-.ukaes-contact-item a {
-  color: var(--brand-primary);
-  font-weight: 700;
+  color: var(--ukaes-text);
 
-  overflow-wrap: anywhere;
+  font-size: 14px;
 }
 
 
-/* ============================================================
-   20. CONTACT FORM
-   ============================================================ */
+
+/* =====================================================
+   13. CONTACT FORM
+===================================================== */
 
 .ukaes-form {
-  max-width: 800px;
+  width: 100%;
+
+  padding: 35px;
+
+  background: #FFFFFF;
+
+  border: 1px solid var(--ukaes-border);
 }
+
 
 .ukaes-form-group {
   margin-bottom: 22px;
 }
+
 
 .ukaes-form-group label {
   display: block;
 
   margin-bottom: 8px;
 
-  color: var(--color-heading);
+  color: var(--ukaes-ink);
 
-  font-size: 14px;
+  font-size: 13px;
+
   font-weight: 700;
 }
+
 
 .ukaes-form-group input,
 .ukaes-form-group select,
@@ -1032,208 +960,391 @@ p {
 
   width: 100%;
 
-  padding: 13px 15px;
+  padding: 13px 14px;
 
-  border: 1px solid #D5D5D5;
+  border: 1px solid #DCDCD8;
 
   border-radius: 0;
 
-  background: white;
-  color: var(--color-heading);
+  outline: none;
 
-  font-family: var(--font-primary);
-  font-size: 15px;
+  background: #FFFFFF;
+
+  color: var(--ukaes-ink);
+
+  font-size: 14px;
+
+  transition: border-color var(--ukaes-transition);
 }
 
-.ukaes-form-group textarea {
-  min-height: 150px;
-  resize: vertical;
-}
 
 .ukaes-form-group input:focus,
 .ukaes-form-group select:focus,
 .ukaes-form-group textarea:focus {
-  border-color: var(--brand-primary);
-  outline: 2px solid rgba(196, 18, 48, 0.12);
+  border-color: var(--ukaes-primary);
 }
+
+
+.ukaes-form-group textarea {
+  min-height: 150px;
+
+  resize: vertical;
+}
+
+
+.ukaes-form-group input::placeholder,
+.ukaes-form-group textarea::placeholder {
+  color: #A5A5A5;
+}
+
 
 .ukaes-form [data-form-status] {
   margin-top: 15px;
 
-  color: var(--color-muted);
-
-  font-size: 14px;
+  font-size: 13px;
 }
 
 
-/* ============================================================
-   21. STATISTICS
-   ============================================================ */
 
-.ukaes-statistics {
+/* =====================================================
+   14. PEOPLE PAGE
+===================================================== */
+
+.people-founder-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 380px);
+
+  justify-content: center;
+}
+
+
+.people-leadership-grid {
   display: grid;
 
   grid-template-columns:
     repeat(3, minmax(0, 1fr));
 
-  gap: 30px;
+  gap: 25px;
 }
 
-.ukaes-stat-item {
-  text-align: center;
+
+.people-professor-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 25px;
 }
 
-.ukaes-stat-number {
+
+.people-card {
+  min-width: 0;
+
+  background: #FFFFFF;
+
+  border: 1px solid var(--ukaes-border);
+
+  border-top: 3px solid var(--ukaes-primary);
+}
+
+
+.people-portrait {
+  width: 100%;
+
+  aspect-ratio: 3 / 4;
+
+  overflow: hidden;
+
+  background: #EDECE9;
+}
+
+
+.people-portrait img {
   display: block;
 
-  color: var(--brand-primary);
+  width: 100%;
+  height: 100%;
 
-  font-size: 48px;
+  object-fit: cover;
+
+  object-position: center top;
+}
+
+
+.people-photo-placeholder {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #F0EFEC,
+      #E5E3DF
+    );
+
+  color: #A09D98;
+}
+
+
+.people-photo-placeholder svg {
+  width: 52px;
+  height: 52px;
+
+  stroke: currentColor;
+  stroke-width: 1.2;
+
+  fill: none;
+}
+
+
+.people-photo-placeholder span {
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: .14em;
+
+  text-transform: uppercase;
+}
+
+
+.people-info {
+  padding: 23px;
+}
+
+
+.people-info h3 {
+  margin: 5px 0 7px;
+
+  font-size: 19px;
+}
+
+
+.people-role {
+  margin-bottom: 17px;
+
+  color: var(--ukaes-primary);
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+
+.people-detail {
+  padding-top: 11px;
+
+  margin-top: 11px;
+
+  border-top: 1px solid var(--ukaes-border);
+}
+
+
+.people-detail-label {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: var(--ukaes-muted);
+
+  font-size: 10px;
+
   font-weight: 800;
 
-  line-height: 1.2;
-}
+  letter-spacing: .12em;
 
-.ukaes-stat-label {
-  color: var(--color-muted);
-
-  font-size: 14px;
+  text-transform: uppercase;
 }
 
 
-/* ============================================================
-   22. GENERAL CONTENT
-   ============================================================ */
+.people-detail-value {
+  margin: 0;
 
-.ukaes-content {
-  max-width: 850px;
-}
+  color: var(--ukaes-text);
 
-.ukaes-content p {
-  margin-bottom: 20px;
+  font-size: 13px;
 
-  color: var(--color-muted);
+  line-height: 1.6;
 
-  font-size: 16px;
-  line-height: 1.9;
-}
-
-.ukaes-content ul,
-.ukaes-content ol {
-  padding-left: 25px;
-}
-
-.ukaes-content li {
-  margin-bottom: 10px;
+  overflow-wrap: anywhere;
 }
 
 
-/* ============================================================
-   23. NOTICES
-   ============================================================ */
+.people-external-label {
+  display: inline-block;
 
-.ukaes-notice {
-  padding: 22px 25px;
+  padding: 5px 9px;
 
-  background: var(--color-background-soft);
+  margin-bottom: 9px;
 
-  border-left: 4px solid var(--brand-primary);
+  background: var(--ukaes-primary-light);
 
-  color: var(--color-text);
+  color: var(--ukaes-primary);
 
-  font-size: 14px;
-  line-height: 1.8;
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: .06em;
+
+  text-transform: uppercase;
 }
 
 
-/* ============================================================
-   24. FOOTER
-   ============================================================ */
+.people-member-panel {
+  padding: 48px;
+
+  background: var(--ukaes-soft);
+
+  border-left: 4px solid var(--ukaes-primary);
+}
+
+
+.people-member-panel h2 {
+  margin-bottom: 14px;
+}
+
+
+.people-member-panel p {
+  max-width: 650px;
+
+  color: var(--ukaes-text);
+}
+
+
+.people-member-actions {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 13px;
+
+  margin-top: 24px;
+}
+
+
+.people-section-heading {
+  margin-bottom: 35px;
+}
+
+
+.people-note {
+  margin-top: 25px;
+
+  color: var(--ukaes-muted);
+
+  font-size: 12px;
+}
+
+
+
+/* =====================================================
+   15. FOOTER
+===================================================== */
 
 .ukaes-footer {
-  padding-top: 65px;
+  padding: 65px 0 0;
 
-  background: var(--color-background-dark);
+  background: #222222;
 
-  color: #E5E5E5;
+  color: #FFFFFF;
 }
+
 
 .ukaes-footer-grid {
   display: grid;
 
   grid-template-columns:
-    1.5fr 1fr 1fr;
+    2fr 1fr 1fr;
 
-  gap: 55px;
+  gap: 60px;
 
-  padding-bottom: 50px;
+  padding-bottom: 45px;
 }
+
 
 .ukaes-footer-brand {
   margin-bottom: 12px;
 
-  color: white;
+  color: #FFFFFF;
 
-  font-family: var(--font-serif);
-  font-size: 32px;
-  font-weight: 700;
-}
+  font-size: 28px;
 
-.ukaes-footer p {
-  color: #C7C7C7;
-
-  font-size: 14px;
-  line-height: 1.8;
-}
-
-.ukaes-footer h3 {
-  margin-bottom: 20px;
-
-  color: white;
-
-  font-size: 13px;
   font-weight: 800;
 
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  letter-spacing: .03em;
 }
 
+
+.ukaes-footer p {
+  margin-bottom: 10px;
+
+  color: #C5C5C5;
+
+  font-size: 13px;
+}
+
+
+.ukaes-footer h3 {
+  margin-bottom: 18px;
+
+  color: #FFFFFF;
+
+  font-size: 14px;
+}
+
+
 .ukaes-footer ul {
-  margin: 0;
   padding: 0;
+
+  margin: 0;
 
   list-style: none;
 }
 
+
 .ukaes-footer li {
-  margin-bottom: 11px;
+  margin-bottom: 10px;
 }
+
 
 .ukaes-footer li a {
-  color: #C7C7C7;
+  color: #C5C5C5;
 
-  font-size: 14px;
+  font-size: 13px;
 
-  text-decoration: none;
-
-  transition: color var(--transition);
+  transition: color var(--ukaes-transition);
 }
+
 
 .ukaes-footer li a:hover {
-  color: white;
+  color: #FFFFFF;
 }
+
 
 .ukaes-footer-bottom {
   display: flex;
 
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 
-  gap: 20px;
+  gap: 15px;
 
-  padding-block: 22px;
+  padding: 20px 0;
 
-  border-top: 1px solid rgba(255,255,255,0.16);
+  border-top: 1px solid rgba(255,255,255,.14);
 
   color: #AAAAAA;
 
@@ -1241,9 +1352,10 @@ p {
 }
 
 
-/* ============================================================
-   25. BACK TO TOP
-   ============================================================ */
+
+/* =====================================================
+   16. BACK TO TOP
+===================================================== */
 
 .ukaes-back-to-top {
   position: fixed;
@@ -1251,169 +1363,183 @@ p {
   right: 25px;
   bottom: 25px;
 
-  z-index: 200;
+  z-index: 900;
 
-  width: 46px;
-  height: 46px;
+  width: 45px;
+  height: 45px;
 
-  border: 0;
+  border: 1px solid var(--ukaes-primary);
 
-  background: var(--brand-primary);
-  color: white;
+  border-radius: 50%;
 
-  font-size: 22px;
+  background: #FFFFFF;
 
-  box-shadow: var(--shadow);
+  color: var(--ukaes-primary);
+
+  font-size: 21px;
+
+  box-shadow: 0 3px 12px rgba(0,0,0,.12);
 
   transition:
-    background var(--transition),
-    transform var(--transition);
+    background var(--ukaes-transition),
+    color var(--ukaes-transition);
 }
 
+
 .ukaes-back-to-top:hover {
-  background: var(--brand-dark);
-  transform: translateY(-3px);
+  background: var(--ukaes-primary);
+
+  color: #FFFFFF;
 }
+
 
 .ukaes-back-to-top[hidden] {
   display: none !important;
 }
 
 
-/* ============================================================
-   26. TABLES
-   ============================================================ */
 
-.ukaes-table-wrap {
-  width: 100%;
-  overflow-x: auto;
-}
+/* =====================================================
+   17. TABLES
+===================================================== */
 
-.ukaes-table {
+table {
   width: 100%;
 
   border-collapse: collapse;
-
-  background: white;
 }
 
-.ukaes-table th,
-.ukaes-table td {
-  padding: 15px 18px;
 
-  border-bottom: 1px solid var(--color-border);
+th,
+td {
+  padding: 13px 16px;
+
+  border-bottom: 1px solid var(--ukaes-border);
 
   text-align: left;
-  vertical-align: top;
-
-  font-size: 14px;
-}
-
-.ukaes-table thead {
-  background: var(--brand-primary);
-  color: white;
-}
-
-.ukaes-table thead th {
-  color: white;
 }
 
 
-/* ============================================================
-   27. DIVIDERS
-   ============================================================ */
+th {
+  background: var(--ukaes-soft);
 
-.ukaes-divider {
-  width: 100%;
-  height: 1px;
+  color: var(--ukaes-ink);
 
-  margin-block: 30px;
-
-  background: var(--color-border);
+  font-weight: 700;
 }
 
 
-/* ============================================================
-   28. RESPONSIVE: TABLET
-   ============================================================ */
+
+/* =====================================================
+   18. RESPONSIVE DESIGN
+===================================================== */
+
+
+/* TABLETS */
 
 @media (max-width: 1100px) {
 
   .ukaes-header-inner {
-    gap: 18px;
+    gap: 22px;
+  }
+
+  .ukaes-brand {
+    width: 250px;
+    min-width: 190px;
+  }
+
+  .ukaes-brand img {
+    height: 68px;
   }
 
   .ukaes-navigation {
-    gap: 13px;
+    gap: 15px;
   }
 
   .ukaes-navigation a {
     font-size: 12px;
   }
 
-  .ukaes-brand img {
-    width: min(330px, 30vw);
-  }
-
   .ukaes-editorial {
     gap: 40px;
+  }
+
+  .ukaes-feature-grid,
+  .ukaes-research-grid,
+  .people-professor-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
   }
 
 }
 
 
-/* ============================================================
-   29. RESPONSIVE: MOBILE NAVIGATION
-   ============================================================ */
+/* MOBILE NAVIGATION */
 
-@media (max-width: 820px) {
-
-  :root {
-    --header-height: 72px;
-    --space-2xl: 65px;
-  }
-
-  .ukaes-container,
-  .ukaes-container-narrow {
-    width: calc(100% - 40px);
-  }
+@media (max-width: 850px) {
 
   .ukaes-header-inner {
+    min-height: 82px;
+
     flex-wrap: wrap;
-    gap: 12px;
+
+    gap: 0;
+  }
+
+  .ukaes-brand {
+    width: 245px;
+    min-width: 0;
   }
 
   .ukaes-brand img {
-    width: min(300px, 58vw);
-    max-height: 60px;
+    height: 65px;
   }
 
   .ukaes-mobile-toggle {
-    display: block;
-    margin-left: auto;
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
   }
 
   .ukaes-navigation {
     display: none;
 
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+
     width: 100%;
 
+    padding: 15px 25px 22px;
+
+    background: #FFFFFF;
+
+    border-top: 1px solid var(--ukaes-border);
+
+    border-bottom: 1px solid var(--ukaes-border);
+
+    box-shadow: 0 8px 15px rgba(0,0,0,.07);
+
     flex-direction: column;
+
     align-items: stretch;
 
     gap: 0;
-
-    padding-bottom: 12px;
   }
 
+  .ukaes-navigation.active,
   .ukaes-navigation.is-open {
     display: flex;
   }
 
   .ukaes-navigation a {
-    padding: 13px 4px;
+    display: block;
 
-    border-top: 1px solid var(--color-border);
+    padding: 13px 0;
+
+    border-bottom: 1px solid #F0F0EE;
 
     font-size: 14px;
   }
@@ -1422,211 +1548,144 @@ p {
     display: none;
   }
 
-  .ukaes-hero {
-    min-height: 520px;
-  }
-
-  .ukaes-hero-content {
-    padding-block: 80px;
-  }
-
-  .ukaes-hero-overlay {
-    background:
-      linear-gradient(
-        90deg,
-        rgba(35, 0, 8, 0.86),
-        rgba(70, 0, 15, 0.55)
-      );
-  }
-
   .ukaes-editorial {
     grid-template-columns: 1fr;
+
     gap: 35px;
   }
 
-  .ukaes-editorial-image img {
-    height: 360px;
-  }
-
-  .ukaes-editorial-reverse {
-    direction: ltr;
-  }
-
   .ukaes-highlight-inner {
-    flex-direction: column;
     align-items: flex-start;
+
+    flex-direction: column;
   }
 
-  .ukaes-appointment-item {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  .ukaes-feature-grid,
-  .ukaes-people-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .ukaes-footer-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .people-leadership-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
   }
 
 }
 
 
-/* ============================================================
-   30. RESPONSIVE: SMALL MOBILE
-   ============================================================ */
+/* SMALL MOBILE */
 
 @media (max-width: 600px) {
-
-  :root {
-    --space-xl: 45px;
-    --space-2xl: 55px;
-    --header-height: 68px;
-  }
 
   .ukaes-container,
   .ukaes-container-narrow {
     width: calc(100% - 36px);
   }
 
+  .ukaes-header-inner {
+    min-height: 75px;
+  }
+
+  .ukaes-brand {
+    width: 210px;
+  }
+
   .ukaes-brand img {
-    max-width: 235px;
-    max-height: 52px;
+    height: 58px;
   }
 
   .ukaes-mobile-toggle {
-    padding: 9px 13px;
+    padding: 8px 12px;
   }
 
   .ukaes-hero {
-    min-height: 480px;
+    min-height: 380px;
   }
 
   .ukaes-hero-content {
-    padding-block: 65px;
+    width: calc(100% - 40px);
+
+    padding-top: 70px;
+    padding-bottom: 70px;
   }
 
-  .ukaes-hero h1 {
-    font-size: clamp(40px, 11vw, 54px);
+  .ukaes-hero-content h1 {
+    font-size: clamp(36px, 9vw, 48px);
+
+    letter-spacing: -1px;
   }
 
-  .ukaes-hero p {
-    font-size: 16px;
+  .ukaes-hero-content p {
+    font-size: 15px;
   }
 
-  .ukaes-page-intro {
-    padding-block: 65px 50px;
+  .ukaes-section {
+    padding: 65px 0;
   }
 
-  .ukaes-page-intro h1 {
-    font-size: 40px;
-  }
-
-  .ukaes-page-intro p {
-    font-size: 16px;
+  .ukaes-section-heading {
+    margin-bottom: 30px;
   }
 
   .ukaes-feature-grid,
   .ukaes-research-grid,
-  .ukaes-people-grid,
-  .ukaes-contact-grid {
+  .ukaes-contact-grid,
+  .people-leadership-grid,
+  .people-professor-grid {
     grid-template-columns: 1fr;
   }
 
-  .ukaes-feature-grid {
-    gap: 30px;
+  .people-founder-grid {
+    grid-template-columns: 1fr;
   }
 
-  .ukaes-feature-content {
-    padding: 20px 0 10px;
-  }
-
-  .ukaes-editorial-image img {
-    height: 280px;
-  }
-
-  .ukaes-foundation-year {
-    font-size: clamp(65px, 18vw, 100px);
+  .ukaes-feature-content,
+  .ukaes-research-item {
+    padding: 23px;
   }
 
   .ukaes-highlight {
-    padding-block: 55px;
+    padding: 50px 0;
   }
 
-  .ukaes-statistics {
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+  .ukaes-form {
+    padding: 22px;
   }
 
-  .ukaes-stat-number {
-    font-size: 34px;
+  .people-member-panel {
+    padding: 28px 22px;
+  }
+
+  .ukaes-footer {
+    padding-top: 45px;
   }
 
   .ukaes-footer-grid {
     grid-template-columns: 1fr;
-    gap: 32px;
+
+    gap: 30px;
+
+    padding-bottom: 30px;
   }
 
   .ukaes-footer-bottom {
     flex-direction: column;
+
     align-items: flex-start;
+
+    gap: 8px;
   }
 
-  .ukaes-button {
-    max-width: 100%;
-  }
-
 }
 
 
-/* ============================================================
-   31. ACCESSIBILITY
-   ============================================================ */
-
-.ukaes-skip-link {
-  position: absolute;
-
-  top: -100px;
-  left: 15px;
-
-  z-index: 1000;
-
-  padding: 12px 18px;
-
-  background: white;
-  color: var(--brand-primary);
-}
-
-.ukaes-skip-link:focus {
-  top: 15px;
-}
-
-
-/* ============================================================
-   32. REDUCED MOTION
-   ============================================================ */
+/* ACCESSIBILITY */
 
 @media (prefers-reduced-motion: reduce) {
-
-  html {
-    scroll-behavior: auto;
-  }
 
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
 
-    transition-duration: 0.01ms !important;
+    transition-duration: .01ms !important;
+
+    animation-duration: .01ms !important;
   }
 
 }
-
-
-/* ============================================================
-   END OF UKAES GLOBAL STYLESHEET
-   VERSION 3.0
-   ============================================================ */
