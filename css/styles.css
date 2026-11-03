@@ -1039,28 +1039,18 @@ p {
   padding-bottom: 35px;
 }
 
-
-/* -----------------------------------------
-   LOGO SILHOUETTE
-
-   Required image:
-   assets/ukaes-logo-white.png
-
-   Transparent background.
-   White logo artwork.
-   ----------------------------------------- */
+/* WHITE LOGO ONLY */
 
 .ukaes-footer-brand {
-
   display: block;
 
-  width: 225px;
-  height: 78px;
+  width: 300px;
+  height: 105px;
 
-  margin-bottom: 12px;
+  margin: 0;
+  padding: 0;
 
   background-image: url("../assets/ukaes-logo-white.png");
-
   background-repeat: no-repeat;
   background-position: left center;
   background-size: contain;
@@ -1071,14 +1061,13 @@ p {
   overflow: hidden;
 }
 
+/* Hide the two additional brand descriptions */
 
-/* Footer description */
-
-.ukaes-footer p {
-  color: #BDBDBD;
-  font-size: 13px;
-  line-height: 1.8;
+.ukaes-footer-grid > div:first-child > p {
+  display: none !important;
 }
+
+/* Footer navigation */
 
 .ukaes-footer h3 {
   margin-bottom: 17px;
@@ -1106,15 +1095,42 @@ p {
   color: white;
 }
 
+/* Copyright */
+
 .ukaes-footer-bottom {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
+
   padding-top: 20px;
+
   border-top: 1px solid #444444;
+
   color: #AFAFAF;
   font-size: 11px;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+  .ukaes-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .ukaes-footer-brand {
+    width: 240px;
+    height: 85px;
+  }
+
+  .ukaes-footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
 }
 
 
