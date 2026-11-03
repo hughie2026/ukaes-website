@@ -1,1796 +1,368 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta name="description"
-        content="UK Academy of Epidemiology Sciences — an independent academic and research institution advancing epidemiological science, research education and global collaboration.">
+    content="UK Academy of Epidemiology Sciences — advancing epidemiological research and education.">
 
-  <meta name="theme-color" content="#102B49">
-  <link rel="canonical" href="https://ukaes.org/">
+  <meta name="theme-color" content="#C41230">
 
-  <title>
-    UK Academy of Epidemiology Sciences | UKAES
-  </title>
+  <title>UK Academy of Epidemiology Sciences | UKAES</title>
 
-  <!-- Open-source fonts -->
-  <link rel="preconnect"
-        href="https://fonts.googleapis.com">
-  <link rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin>
+  <link rel="stylesheet" href="css/styles.css">
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Source+Serif+4:wght@400;500;600;700&display=swap"
-    rel="stylesheet">
-
-  <style>
-
-    /* ==========================================
-       UKAES OFFICIAL WEBSITE
-       Inspired by modern research universities.
-       Original design — not a CMU reproduction.
-       ========================================== */
-
-    :root {
-      --navy: #102B49;
-      --navy-dark: #091D32;
-      --red: #B21F36;
-      --red-dark: #8E172B;
-      --gold: #D7B47D;
-      --cream: #F7F5F1;
-      --light: #EEF2F4;
-      --white: #FFFFFF;
-      --ink: #202B35;
-      --muted: #65717D;
-      --border: #DDE3E7;
-
-      --sans: "DM Sans", Arial, sans-serif;
-      --serif: "Source Serif 4", Georgia, serif;
-
-      --container: 1240px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      background: var(--white);
-      color: var(--ink);
-      font-family: var(--sans);
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    img, svg {
-      max-width: 100%;
-    }
-
-    a {
-      color: inherit;
-    }
-
-    a:focus-visible,
-    button:focus-visible {
-      outline: 3px solid var(--gold);
-      outline-offset: 4px;
-    }
-
-    .container {
-      width: min(
-        var(--container),
-        calc(100% - 48px)
-      );
-      margin-inline: auto;
-    }
-
-    .skip-link {
-      position: absolute;
-      top: -100px;
-      left: 15px;
-      z-index: 1000;
-      padding: 12px;
-      background: white;
-      color: var(--navy);
-    }
-
-    .skip-link:focus {
-      top: 15px;
-    }
-
-    /* ==========================================
-       UTILITY BAR
-       ========================================== */
-
-    .utility-bar {
-      background: var(--navy-dark);
-      color: #DCE6EE;
-      font-size: 12px;
-      letter-spacing: .05em;
-    }
-
-    .utility-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      min-height: 38px;
-    }
-
-    .utility-bar a {
-      text-decoration: none;
-    }
-
-    .utility-bar a:hover {
-      color: var(--gold);
-    }
-
-    /* ==========================================
-       MAIN HEADER
-       ========================================== */
-
-    .site-header {
-      background: white;
-      position: relative;
-      z-index: 20;
-    }
-
-    .header-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 30px;
-      padding-block: 18px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-    }
-
-    .brand img {
-      display: block;
-      width: min(540px, 72vw);
-      max-height: 110px;
-      object-fit: contain;
-      object-position: left center;
-    }
-
-    .brand-fallback {
-      display: none;
-      font-family: var(--serif);
-      font-size: clamp(20px, 3vw, 31px);
-      font-weight: 700;
-      line-height: 1.1;
-      color: var(--navy);
-    }
-
-    .header-tagline {
-      padding-left: 22px;
-      border-left: 3px solid var(--red);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: .12em;
-      line-height: 1.8;
-      color: var(--navy);
-      text-transform: uppercase;
-    }
-
-    /* ==========================================
-       NAVIGATION
-       ========================================== */
-
-    .nav-wrap {
-      background: var(--navy);
-      border-bottom: 5px solid var(--red);
-      position: relative;
-      z-index: 30;
-    }
-
-    .nav-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .nav-links a {
-      display: block;
-      padding: 19px 16px;
-      color: white;
-      font-size: 13px;
-      font-weight: 800;
-      text-decoration: none;
-      transition: background .2s;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      background: #234766;
-    }
-
-    .nav-contact {
-      color: var(--gold);
-      font-weight: 800;
-      font-size: 13px;
-      text-decoration: none;
-    }
-
-    .menu-toggle {
-      display: none;
-      padding: 12px 16px;
-      background: transparent;
-      color: white;
-      border: 1px solid #7790A7;
-      font: 700 14px var(--sans);
-      cursor: pointer;
-    }
-
-    /* ==========================================
-       HERO
-       ========================================== */
-
-    .hero {
-      min-height: 650px;
-      position: relative;
-      overflow: hidden;
-      background: var(--navy-dark);
-      color: white;
-      display: flex;
-      align-items: center;
-    }
-
-    .hero-art {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        90deg,
-        rgba(9,29,50,.98) 0%,
-        rgba(9,29,50,.94) 34%,
-        rgba(9,29,50,.57) 67%,
-        rgba(9,29,50,.15) 100%
-      );
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      padding-block: 105px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      color: var(--red);
-      text-transform: uppercase;
-      letter-spacing: .18em;
-      font-size: 12px;
-      font-weight: 800;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 28px;
-      height: 3px;
-      background: currentColor;
-    }
-
-    .hero .eyebrow {
-      color: var(--gold);
-    }
-
-    .hero h1 {
-      max-width: 840px;
-      margin: 22px 0;
-      font-size: clamp(46px, 6vw, 84px);
-      line-height: 1.06;
-      letter-spacing: -.045em;
-      font-weight: 800;
-    }
-
-    .hero h1 span {
-      color: #E3C18D;
-    }
-
-    .hero-description {
-      max-width: 630px;
-      font-size: 18px;
-      line-height: 1.9;
-      color: #E1E9F0;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-top: 35px;
-    }
-
-    .button {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      gap: 14px;
-      padding: 15px 25px;
-      border: 2px solid transparent;
-      font-family: var(--sans);
-      font-size: 13px;
-      font-weight: 800;
-      text-decoration: none;
-      transition: .2s ease;
-    }
-
-    .button:hover {
-      transform: translateY(-3px);
-    }
-
-    .button-red {
-      background: var(--red);
-      color: white;
-    }
-
-    .button-red:hover {
-      background: var(--red-dark);
-    }
-
-    .button-outline {
-      color: white;
-      border-color: white;
-    }
-
-    .button-outline:hover {
-      background: white;
-      color: var(--navy);
-    }
-
-    .button-navy {
-      background: var(--navy);
-      color: white;
-    }
-
-    /* ==========================================
-       INTRODUCTION
-       ========================================== */
-
-    .section {
-      padding-block: 95px;
-    }
-
-    .intro-grid {
-      display: grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 85px;
-      align-items: center;
-    }
-
-    h2 {
-      margin: 18px 0 24px;
-      font-size: clamp(34px, 4vw, 54px);
-      font-weight: 800;
-      line-height: 1.15;
-      letter-spacing: -.035em;
-      color: var(--navy);
-    }
-
-    h3 {
-      font-size: 25px;
-      line-height: 1.25;
-      color: var(--navy);
-      margin: 15px 0;
-    }
-
-    .lead {
-      font-size: 17px;
-      color: var(--muted);
-      line-height: 1.9;
-    }
-
-    .intro-statement {
-      background: var(--cream);
-      padding: 45px;
-      border-top: 6px solid var(--red);
-    }
-
-    .intro-statement blockquote {
-      margin: 0;
-      font-family: var(--serif);
-      font-size: clamp(26px, 3vw, 36px);
-      line-height: 1.4;
-      color: var(--navy);
-    }
-
-    .intro-statement small {
-      display: block;
-      margin-top: 24px;
-      font-size: 12px;
-      letter-spacing: .13em;
-      font-weight: 800;
-      color: var(--red);
-      text-transform: uppercase;
-    }
-
-    .text-link {
-      display: inline-block;
-      margin-top: 16px;
-      color: var(--red);
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 800;
-    }
-
-    .text-link:hover {
-      text-decoration: underline;
-    }
-
-    /* ==========================================
-       CORE ACTIVITIES
-       ========================================== */
-
-    .section-light {
-      background: var(--cream);
-    }
-
-    .section-heading {
-      max-width: 780px;
-      margin: 0 auto 48px;
-      text-align: center;
-    }
-
-    .section-heading .eyebrow {
-      justify-content: center;
-    }
-
-    .activity-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .activity-card {
-      background: white;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      transition: .25s ease;
-    }
-
-    .activity-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 15px 35px rgba(9,29,50,.10);
-    }
-
-    .activity-visual {
-      height: 220px;
-      overflow: hidden;
-      background: #E6EDF0;
-    }
-
-    .activity-visual svg {
-      display: block;
-      width: 100%;
-      height: 100%;
-    }
-
-    .activity-body {
-      padding: 32px;
-      border-top: 5px solid var(--red);
-    }
-
-    .activity-number {
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: .14em;
-      color: var(--red);
-    }
-
-    .activity-body p {
-      font-size: 15px;
-      color: var(--muted);
-    }
-
-    /* ==========================================
-       RESEARCH FEATURE
-       ========================================== */
-
-    .research-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 70px;
-      align-items: center;
-    }
-
-    .research-image {
-      background: #DFEAED;
-      border-bottom: 7px solid var(--red);
-      overflow: hidden;
-    }
-
-    .research-image svg {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
-    .research-areas {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin-top: 30px;
-    }
-
-    .research-area {
-      padding: 16px 4px;
-      border-top: 3px solid var(--gold);
-      font-size: 14px;
-      font-weight: 800;
-      color: var(--navy);
-    }
-
-    /* ==========================================
-       ACADEMIC PEOPLE
-       ========================================== */
-
-    .people-section {
-      background: var(--navy);
-      color: white;
-    }
-
-    .people-layout {
-      display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 70px;
-      align-items: center;
-    }
-
-    .people-section h2 {
-      color: white;
-    }
-
-    .people-section p {
-      color: #D8E3EC;
-    }
-
-    .people-panel {
-      padding: 40px;
-      background: #1B3B5B;
-      border-left: 5px solid var(--gold);
-    }
-
-    .people-panel h3 {
-      color: white;
-    }
-
-    .people-panel ul {
-      list-style: none;
-      padding: 0;
-      margin: 20px 0 0;
-    }
-
-    .people-panel li {
-      padding: 12px 0;
-      border-bottom: 1px solid #45617B;
-      font-size: 14px;
-    }
-
-    /* ==========================================
-       CONTACT CTA
-       ========================================== */
-
-    .contact-section {
-      text-align: center;
-    }
-
-    .contact-section p {
-      max-width: 680px;
-      margin: 0 auto 28px;
-    }
-
-    /* ==========================================
-       FOOTER
-       ========================================== */
-
-    .site-footer {
-      background: var(--navy-dark);
-      color: #D6E1EA;
-      padding-top: 75px;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr;
-      gap: 65px;
-    }
-
-    .footer-brand {
-      font-family: var(--serif);
-      font-size: 28px;
-      font-weight: 700;
-      line-height: 1.2;
-      color: white;
-    }
-
-    .site-footer h3 {
-      font-family: var(--sans);
-      font-size: 14px;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
-
-    .site-footer ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .site-footer li {
-      margin-bottom: 10px;
-    }
-
-    .site-footer a {
-      text-decoration: none;
-    }
-
-    .site-footer a:hover {
-      color: var(--gold);
-    }
-
-    .footer-bottom {
-      margin-top: 65px;
-      padding: 25px 0;
-      border-top: 1px solid #3B536B;
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      font-size: 12px;
-      color: #AABCCB;
-    }
-
-    /* ==========================================
-       RESPONSIVE
-       ========================================== */
-
-    @media (max-width: 1050px) {
-
-      .nav-contact {
-        display: none;
-      }
-
-      .nav-links a {
-        padding: 16px 11px;
-        font-size: 12px;
-      }
-
-      .intro-grid,
-      .research-layout,
-      .people-layout {
-        gap: 40px;
-      }
-    }
-
-    @media (max-width: 800px) {
-
-      .header-tagline {
-        display: none;
-      }
-
-      .menu-toggle {
-        display: block;
-        margin: 10px 0;
-      }
-
-      .nav-inner {
-        display: block;
-      }
-
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        padding-bottom: 15px;
-      }
-
-      .nav-links.open {
-        display: flex;
-      }
-
-      .nav-links a {
-        padding: 13px;
-        font-size: 14px;
-      }
-
-      .hero {
-        min-height: 560px;
-      }
-
-      .hero::after {
-        background: linear-gradient(
-          90deg,
-          rgba(9,29,50,.96),
-          rgba(9,29,50,.68)
-        );
-      }
-
-      .intro-grid,
-      .research-layout,
-      .people-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .activity-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .activity-visual {
-        height: 250px;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (max-width: 560px) {
-
-      .container {
-        width: calc(100% - 34px);
-      }
-
-      .utility-inner span:last-child {
-        display: none;
-      }
-
-      .brand img {
-        width: min(370px, 85vw);
-      }
-
-      .hero-content {
-        padding-block: 80px;
-      }
-
-      .hero-description {
-        font-size: 16px;
-      }
-
-      .section {
-        padding-block: 65px;
-      }
-
-      .intro-statement {
-        padding: 28px;
-      }
-
-      .research-areas,
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      .button,
-      .activity-card {
-        transition: none;
-      }
-    }
-
-  </style>
+  <script src="js/site.js" defer></script>
 </head>
 
 <body>
 
-<a class="skip-link" href="#main">
-  Skip to main content
-</a>
+  <!-- HEADER -->
 
-<!-- ==========================================
-     TOP UTILITY BAR
-     ========================================== -->
+  <header class="ukaes-header">
 
-<div class="utility-bar">
-  <div class="container utility-inner">
-    <span>
-      UK ACADEMY OF EPIDEMIOLOGY SCIENCES
-    </span>
+    <div class="ukaes-container ukaes-header-inner">
 
-    <span>
-      <a href="mailto:info@ukaes.org">
-        info@ukaes.org
+      <a href="index.html" class="ukaes-brand">
+        <img
+          src="assets/logo.png"
+          alt="UK Academy of Epidemiology Sciences">
       </a>
-      &nbsp; | &nbsp;
-      <a href="https://ukaes.org">
-        ukaes.org
-      </a>
-    </span>
-  </div>
-</div>
 
-<!-- ==========================================
-     HEADER
-     ========================================== -->
+      <button
+        class="ukaes-mobile-toggle"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false">
+        Menu
+      </button>
 
-<header class="site-header">
-  <div class="container header-inner">
+      <nav class="ukaes-navigation" aria-label="Main navigation">
 
-    <a class="brand"
-       href="index.html"
-       aria-label="UKAES Home">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="research.html">Research</a>
+        <a href="education.html">Education</a>
+        <a href="appointments.html">Appointments</a>
+        <a href="people.html">People</a>
+        <a href="contact.html">Contact</a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- HERO -->
+
+  <main>
+
+    <section class="ukaes-hero">
 
       <img
-        src="assets/ukaes-logo.jpg"
-        alt="UK Academy of Epidemiology Sciences official logo"
-        onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        class="ukaes-hero-image"
+        src="assets/home-hero.jpg"
+        alt="Academic research and scientific collaboration">
 
-      <span class="brand-fallback">
-        UK Academy of<br>
-        Epidemiology Sciences
-      </span>
+      <div class="ukaes-hero-overlay"></div>
 
-    </a>
+      <div class="ukaes-container ukaes-hero-content">
 
-    <div class="header-tagline">
-      Advancing Science<br>
-      Improving Health
-    </div>
+        <span class="ukaes-eyebrow">
+          UK Academy of Epidemiology Sciences
+        </span>
 
-  </div>
-</header>
-
-<!-- ==========================================
-     NAVIGATION
-     ========================================== -->
-
-<div class="nav-wrap">
-  <div class="container nav-inner">
-
-    <button
-      class="menu-toggle"
-      id="menuToggle"
-      type="button"
-      aria-expanded="false"
-      aria-controls="mainNav">
-      ☰ Menu
-    </button>
-
-    <nav
-      class="nav-links"
-      id="mainNav"
-      aria-label="Main Navigation">
-
-      <a href="index.html" class="active"
-         aria-current="page">
-        Home
-      </a>
-
-      <a href="about.html">
-        About
-      </a>
-
-      <a href="research.html">
-        Research
-      </a>
-
-      <a href="education.html">
-        Education
-      </a>
-
-      <a href="appointments.html">
-        Appointments &amp; Fellowships
-      </a>
-
-      <a href="people.html">
-        Leadership &amp; People
-      </a>
-
-      <a href="contact.html">
-        Contact
-      </a>
-
-    </nav>
-
-    <a class="nav-contact"
-       href="mailto:info@ukaes.org">
-      Connect With UKAES ↗
-    </a>
-
-  </div>
-</div>
-
-<!-- ==========================================
-     MAIN CONTENT
-     ========================================== -->
-
-<main id="main">
-
-<!-- ==========================================
-     HERO
-     Original SVG artwork, no external image.
-     ========================================== -->
-
-<section class="hero" aria-labelledby="hero-title">
-
-  <svg
-    class="hero-art"
-    viewBox="0 0 1440 650"
-    preserveAspectRatio="xMidYMid slice"
-    role="img"
-    aria-label="Abstract original illustration of epidemiological research and scientific networks">
-
-    <defs>
-      <linearGradient id="heroBg" x2="1" y2="1">
-        <stop offset="0" stop-color="#123754"/>
-        <stop offset="1" stop-color="#397783"/>
-      </linearGradient>
-
-      <radialGradient id="heroGlow">
-        <stop stop-color="#B3E0D8"
-              stop-opacity=".7"/>
-        <stop offset="1" stop-color="#B3E0D8"
-              stop-opacity="0"/>
-      </radialGradient>
-    </defs>
-
-    <rect width="1440"
-          height="650"
-          fill="url(#heroBg)"/>
-
-    <circle cx="1130"
-            cy="300"
-            r="380"
-            fill="url(#heroGlow)"/>
-
-    <!-- Scientific network -->
-    <g fill="none"
-       stroke="#B7E0DB"
-       stroke-width="2"
-       opacity=".45">
-
-      <circle cx="1080" cy="320" r="190"/>
-      <ellipse cx="1080" cy="320"
-               rx="95" ry="190"/>
-      <ellipse cx="1080" cy="320"
-               rx="190" ry="70"/>
-
-      <path d="M890 320H1270"/>
-      <path d="M1080 130V510"/>
-
-      <path d="M800 110L990 210L1230 160L1350 330"/>
-      <path d="M850 480L990 210L1160 440L1350 330"/>
-    </g>
-
-    <!-- Network nodes -->
-    <g fill="#E5BD85">
-      <circle cx="800" cy="110" r="8"/>
-      <circle cx="990" cy="210" r="9"/>
-      <circle cx="1230" cy="160" r="8"/>
-      <circle cx="1350" cy="330" r="10"/>
-      <circle cx="850" cy="480" r="7"/>
-      <circle cx="1160" cy="440" r="9"/>
-    </g>
-
-    <!-- Scientific sample flask -->
-    <g transform="translate(1190 435)"
-       fill="none"
-       stroke="#E7F3F1"
-       stroke-width="5">
-
-      <path d="
-        M0 -95
-        V45
-        Q0 100 65 100
-        Q130 100 130 45
-        V-95
-      "/>
-
-      <path d="M-15 -95H145"/>
-      <path d="M12 32Q65 5 118 32"
-            stroke="#E5BD85"/>
-
-      <path d="M30 112H100"/>
-    </g>
-
-    <!-- Fine data traces -->
-    <g fill="none"
-       stroke="#DCECE8"
-       opacity=".18"
-       stroke-width="2">
-
-      <path d="M720 70Q1050 260 1430 60"/>
-      <path d="M710 540Q1100 230 1440 520"/>
-      <path d="M810 0Q1150 330 1020 650"/>
-
-    </g>
-
-  </svg>
-
-  <div class="container hero-content">
-
-    <div class="eyebrow">
-      Research · Education · Academic Excellence
-    </div>
-
-    <h1 id="hero-title">
-      Science That
-      <span>Advances</span>
-      Human Health.
-    </h1>
-
-    <p class="hero-description">
-      The UK Academy of Epidemiology Sciences
-      advances epidemiological knowledge through
-      scientific research, academic education
-      and international collaboration.
-    </p>
-
-    <div class="hero-actions">
-
-      <a class="button button-red"
-         href="research.html">
-        Explore Our Research
-        <span aria-hidden="true">↗</span>
-      </a>
-
-      <a class="button button-outline"
-         href="about.html">
-        Discover UKAES
-        <span aria-hidden="true">→</span>
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- ==========================================
-     INTRODUCTION
-     ========================================== -->
-
-<section class="section">
-
-  <div class="container intro-grid">
-
-    <div>
-
-      <div class="eyebrow">
-        Welcome to UKAES
-      </div>
-
-      <h2>
-        Advancing Knowledge.
-        Strengthening Science.
-      </h2>
-
-      <p class="lead">
-        The UK Academy of Epidemiology Sciences
-        (UKAES) is an independent academic and
-        research institution dedicated to
-        advancing epidemiological sciences
-        and related scientific disciplines.
-      </p>
-
-      <p class="lead">
-        Through scientific research, research-led
-        education, professional development
-        and academic collaboration, the Academy
-        seeks to support rigorous scholarship
-        and the responsible advancement of
-        scientific knowledge.
-      </p>
-
-      <a class="text-link" href="about.html">
-        Learn More About the Academy →
-      </a>
-
-    </div>
-
-    <aside class="intro-statement">
-
-      <blockquote>
-        Scientific integrity,
-        academic excellence
-        and collaboration
-        are at the heart
-        of our mission.
-      </blockquote>
-
-      <small>
-        Our Guiding Principles
-      </small>
-
-    </aside>
-
-  </div>
-
-</section>
-
-<!-- ==========================================
-     CORE ACTIVITIES
-     ========================================== -->
-
-<section class="section section-light"
-         aria-labelledby="activities-title">
-
-  <div class="container">
-
-    <div class="section-heading">
-
-      <div class="eyebrow">
-        What We Do
-      </div>
-
-      <h2 id="activities-title">
-        Our Core Academic Activities
-      </h2>
-
-      <p class="lead">
-        UKAES focuses on scientific research,
-        academic education and the development
-        of a rigorous academic community.
-      </p>
-
-    </div>
-
-    <div class="activity-grid">
-
-      <!-- RESEARCH CARD -->
-
-      <article class="activity-card">
-
-        <div class="activity-visual">
-
-          <svg viewBox="0 0 400 220"
-               role="img"
-               aria-label="Original microscope illustration">
-
-            <rect width="400" height="220"
-                  fill="#E4EDF0"/>
-
-            <circle cx="305" cy="55" r="95"
-                    fill="#D1E0E5"/>
-
-            <g fill="none"
-               stroke="#173B58"
-               stroke-width="10"
-               stroke-linecap="round">
-
-              <path d="M185 50L250 115"/>
-              <path d="M175 43L198 20"/>
-              <path d="M155 75L187 43"/>
-              <path d="M245 118Q310 175 235 199"/>
-              <path d="M115 199H290"/>
-              <path d="M170 177H270"/>
-            </g>
-
-            <path d="M200 20L151 70L177 96L226 46Z"
-                  fill="#B21F36"/>
-
-            <circle cx="262" cy="140" r="16"
-                    fill="#D7B47D"/>
-
-          </svg>
-
-        </div>
-
-        <div class="activity-body">
-
-          <div class="activity-number">
-            01 / SCIENTIFIC RESEARCH
-          </div>
-
-          <h3>
-            Research &amp; Discovery
-          </h3>
-
-          <p>
-            Advancing scientific investigation
-            in epidemiology, disease patterns,
-            clinical research, population health
-            and quantitative methods.
-          </p>
-
-          <a class="text-link"
-             href="research.html">
-            Explore Research →
-          </a>
-
-        </div>
-
-      </article>
-
-      <!-- EDUCATION CARD -->
-
-      <article class="activity-card">
-
-        <div class="activity-visual">
-
-          <svg viewBox="0 0 400 220"
-               role="img"
-               aria-label="Original academic books illustration">
-
-            <rect width="400" height="220"
-                  fill="#EFE8DE"/>
-
-            <circle cx="100" cy="60" r="95"
-                    fill="#E0D5C5"/>
-
-            <path
-              d="M65 165
-                 Q130 135 200 165
-                 Q270 135 335 165
-                 V55
-                 Q265 30 200 58
-                 Q135 30 65 55Z"
-              fill="white"
-              stroke="#173B58"
-              stroke-width="5"/>
-
-            <path d="M200 58V165"
-                  stroke="#173B58"
-                  stroke-width="5"/>
-
-            <g stroke="#A1B3BD"
-               stroke-width="3"
-               fill="none">
-
-              <path d="M85 80Q135 65 180 80"/>
-              <path d="M85 105Q135 90 180 105"/>
-              <path d="M220 80Q270 65 315 80"/>
-              <path d="M220 105Q270 90 315 105"/>
-            </g>
-
-            <path d="M190 158H210V195L200 185L190 195Z"
-                  fill="#B21F36"/>
-
-          </svg>
-
-        </div>
-
-        <div class="activity-body">
-
-          <div class="activity-number">
-            02 / ACADEMIC EDUCATION
-          </div>
-
-          <h3>
-            Education &amp; Development
-          </h3>
-
-          <p>
-            Developing advanced learning,
-            postgraduate-level study opportunities,
-            research methodology training
-            and professional education.
-          </p>
-
-          <a class="text-link"
-             href="education.html">
-            Explore Education →
-          </a>
-
-        </div>
-
-      </article>
-
-      <!-- APPOINTMENTS CARD -->
-
-      <article class="activity-card">
-
-        <div class="activity-visual">
-
-          <svg viewBox="0 0 400 220"
-               role="img"
-               aria-label="Original academic recognition illustration">
-
-            <rect width="400" height="220"
-                  fill="#E6EAF0"/>
-
-            <circle cx="200" cy="90" r="82"
-                    fill="#D0DCE6"/>
-
-            <path
-              d="M200 25
-                 L262 50
-                 V100
-                 Q262 150 200 181
-                 Q138 150 138 100
-                 V50Z"
-              fill="#173B58"/>
-
-            <path
-              d="M200 43
-                 L244 62
-                 V99
-                 Q244 136 200 160
-                 Q156 136 156 99
-                 V62Z"
-              fill="none"
-              stroke="#D7B47D"
-              stroke-width="4"/>
-
-            <path d="M177 95L193 111L225 75"
-                  fill="none"
-                  stroke="white"
-                  stroke-width="8"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"/>
-
-            <path d="M162 168L148 210L185 191"
-                  fill="#B21F36"/>
-
-            <path d="M238 168L252 210L215 191"
-                  fill="#B21F36"/>
-
-          </svg>
-
-        </div>
-
-        <div class="activity-body">
-
-          <div class="activity-number">
-            03 / ACADEMIC AFFAIRS
-          </div>
-
-          <h3>
-            Appointments &amp; Fellowships
-          </h3>
-
-          <p>
-            Developing structured frameworks
-            for academic assessment, research
-            appointments, fellowships and
-            recognition of scholarly achievement.
-          </p>
-
-          <a class="text-link"
-             href="appointments.html">
-            Academic Appointments →
-          </a>
-
-        </div>
-
-      </article>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- ==========================================
-     RESEARCH FOCUS
-     ========================================== -->
-
-<section class="section">
-
-  <div class="container research-layout">
-
-    <div class="research-image">
-
-      <svg viewBox="0 0 600 430"
-           role="img"
-           aria-label="Original epidemiological data illustration">
-
-        <rect width="600" height="430"
-              fill="#E5EEF0"/>
-
-        <circle cx="455" cy="95" r="130"
-                fill="#D1E1E4"/>
-
-        <!-- Data grid -->
-        <g stroke="#B9CBD0"
-           stroke-width="1">
-
-          <path d="M60 65V365H555"/>
-          <path d="M60 125H555"/>
-          <path d="M60 185H555"/>
-          <path d="M60 245H555"/>
-          <path d="M60 305H555"/>
-
-        </g>
-
-        <!-- Epidemiology trend -->
-        <path
-          d="M65 315
-             L140 275
-             L210 292
-             L285 190
-             L355 215
-             L425 125
-             L515 90"
-          fill="none"
-          stroke="#B21F36"
-          stroke-width="7"
-          stroke-linecap="round"
-          stroke-linejoin="round"/>
-
-        <g fill="#B21F36"
-           stroke="white"
-           stroke-width="5">
-
-          <circle cx="140" cy="275" r="9"/>
-          <circle cx="285" cy="190" r="9"/>
-          <circle cx="425" cy="125" r="9"/>
-          <circle cx="515" cy="90" r="9"/>
-
-        </g>
-
-        <!-- Statistical bars -->
-        <g fill="#173B58" opacity=".75">
-
-          <rect x="90" y="335"
-                width="35" height="30"/>
-
-          <rect x="160" y="320"
-                width="35" height="45"/>
-
-          <rect x="230" y="280"
-                width="35" height="85"/>
-
-          <rect x="300" y="300"
-                width="35" height="65"/>
-
-          <rect x="370" y="245"
-                width="35" height="120"/>
-
-          <rect x="440" y="220"
-                width="35" height="145"/>
-
-        </g>
-
-      </svg>
-
-    </div>
-
-    <div>
-
-      <div class="eyebrow">
-        Our Research Focus
-      </div>
-
-      <h2>
-        Understanding Disease.
-        Advancing Population Health.
-      </h2>
-
-      <p class="lead">
-        Epidemiology connects scientific evidence
-        with the understanding of disease,
-        health determinants and population outcomes.
-      </p>
-
-      <p class="lead">
-        UKAES focuses its academic development
-        on four interconnected research areas.
-      </p>
-
-      <div class="research-areas">
-
-        <div class="research-area">
-          Infectious Disease Epidemiology
-        </div>
-
-        <div class="research-area">
-          Clinical &amp; Translational Epidemiology
-        </div>
-
-        <div class="research-area">
-          Environmental &amp; Population Health
-        </div>
-
-        <div class="research-area">
-          Computational &amp; Statistical Epidemiology
-        </div>
-
-      </div>
-
-      <a class="text-link"
-         href="research.html">
-        Discover Our Research Areas →
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- ==========================================
-     LEADERSHIP & PEOPLE
-     ========================================== -->
-
-<section class="section people-section">
-
-  <div class="container people-layout">
-
-    <div>
-
-      <div class="eyebrow"
-           style="color:#D7B47D">
-        Academic Community
-      </div>
-
-      <h2>
-        People Who Advance Science.
-      </h2>
-
-      <p class="lead">
-        UKAES is developing an academic community
-        dedicated to scientific integrity,
-        research excellence and the advancement
-        of epidemiological knowledge.
-      </p>
-
-      <p class="lead">
-        Our leadership and academic directory
-        provides a dedicated place for formally
-        appointed academic personnel and fellows.
-      </p>
-
-      <a class="button button-outline"
-         href="people.html">
-        Leadership &amp; People →
-      </a>
-
-    </div>
-
-    <div class="people-panel">
-
-      <h3>
-        Academic Appointments
-      </h3>
-
-      <p>
-        The Academy's proposed research
-        appointment framework includes:
-      </p>
-
-      <ul>
-        <li>Research Professor</li>
-        <li>Research Associate Professor</li>
-        <li>Senior Research Fellow</li>
-        <li>Research Fellow</li>
-        <li>Fellowships &amp; Academic Honours</li>
-      </ul>
-
-      <a class="text-link"
-         style="color:#D7B47D"
-         href="appointments.html">
-        Explore the Framework →
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- ==========================================
-     CONTACT
-     ========================================== -->
-
-<section class="section contact-section">
-
-  <div class="container">
-
-    <div class="eyebrow">
-      Connect With UKAES
-    </div>
-
-    <h2>
-      Advancing Science Through Collaboration.
-    </h2>
-
-    <p class="lead">
-      We welcome enquiries concerning academic
-      research, education, professional development
-      and potential institutional partnerships.
-    </p>
-
-    <a class="button button-navy"
-       href="mailto:info@ukaes.org">
-      Contact the Academy ↗
-    </a>
-
-  </div>
-
-</section>
-
-</main>
-
-<!-- ==========================================
-     FOOTER
-     ========================================== -->
-
-<footer class="site-footer">
-
-  <div class="container">
-
-    <div class="footer-grid">
-
-      <div>
-
-        <div class="footer-brand">
-          UK Academy of<br>
-          Epidemiology Sciences
-        </div>
+        <h1>
+          Advancing Science.<br>
+          Shaping Knowledge.
+        </h1>
 
         <p>
-          Advancing Epidemiological Science
-          for a Healthier World.
+          Advancing epidemiological research,
+          scientific knowledge and academic education.
         </p>
 
-        <p>
-          <a href="https://ukaes.org">
-            www.ukaes.org
-          </a>
-        </p>
+        <a href="about.html" class="ukaes-button ukaes-button-white">
+          Discover UKAES
+        </a>
 
       </div>
 
-      <div>
+    </section>
 
-        <h3>Explore UKAES</h3>
 
-        <ul>
-          <li>
-            <a href="about.html">About Us</a>
-          </li>
-          <li>
-            <a href="research.html">Research</a>
-          </li>
-          <li>
-            <a href="education.html">Education</a>
-          </li>
-          <li>
-            <a href="appointments.html">
-              Appointments &amp; Fellowships
+    <!-- INTRODUCTION -->
+
+    <section class="ukaes-section">
+
+      <div class="ukaes-container">
+
+        <div class="ukaes-editorial">
+
+          <div class="ukaes-editorial-content">
+
+            <span class="ukaes-eyebrow">
+              Welcome to UKAES
+            </span>
+
+            <h2>
+              Science and Education
+              for a Better Understanding of Health.
+            </h2>
+
+            <p>
+              The UK Academy of Epidemiology Sciences
+              is dedicated to advancing research,
+              education and academic development
+              in epidemiological sciences.
+            </p>
+
+            <a href="about.html" class="ukaes-text-link">
+              About the Academy →
             </a>
-          </li>
-          <li>
-            <a href="people.html">
-              Leadership &amp; People
-            </a>
-          </li>
-        </ul>
+
+          </div>
+
+          <div class="ukaes-editorial-image">
+
+            <img
+              src="assets/home-research.jpg"
+              alt="Scientific research and academic collaboration"
+              loading="lazy">
+
+          </div>
+
+        </div>
 
       </div>
 
-      <div>
+    </section>
 
-        <h3>Contact</h3>
 
-        <ul>
+    <!-- THREE CORE AREAS -->
 
-          <li>
-            <a href="mailto:info@ukaes.org">
-              info@ukaes.org
-            </a>
-          </li>
+    <section class="ukaes-section ukaes-section-soft">
 
-          <li>
-            <a href="mailto:research@ukaes.org">
-              research@ukaes.org
-            </a>
-          </li>
+      <div class="ukaes-container">
 
-          <li>
-            <a href="mailto:education@ukaes.org">
-              education@ukaes.org
-            </a>
-          </li>
+        <div class="ukaes-section-heading">
 
-          <li>
-            <a href="mailto:appointments@ukaes.org">
-              appointments@ukaes.org
-            </a>
-          </li>
+          <span class="ukaes-eyebrow">
+            Explore UKAES
+          </span>
 
-        </ul>
+          <h2>
+            Our Work
+          </h2>
+
+        </div>
+
+
+        <div class="ukaes-feature-grid">
+
+          <article class="ukaes-feature">
+
+            <div class="ukaes-feature-image">
+
+              <img
+                src="assets/research.jpg"
+                alt="Scientific research"
+                loading="lazy">
+
+            </div>
+
+            <div class="ukaes-feature-content">
+
+              <h3>Research</h3>
+
+              <p>
+                Advancing research in epidemiological
+                and natural sciences.
+              </p>
+
+              <a href="research.html" class="ukaes-text-link">
+                Explore Research →
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <article class="ukaes-feature">
+
+            <div class="ukaes-feature-image">
+
+              <img
+                src="assets/education.jpg"
+                alt="Higher education"
+                loading="lazy">
+
+            </div>
+
+            <div class="ukaes-feature-content">
+
+              <h3>Education</h3>
+
+              <p>
+                Supporting academic learning
+                and professional development.
+              </p>
+
+              <a href="education.html" class="ukaes-text-link">
+                Explore Education →
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <article class="ukaes-feature">
+
+            <div class="ukaes-feature-image">
+
+              <img
+                src="assets/appointments.jpg"
+                alt="Academic scholarship"
+                loading="lazy">
+
+            </div>
+
+            <div class="ukaes-feature-content">
+
+              <h3>Academic Appointments</h3>
+
+              <p>
+                Recognising academic contribution
+                and scholarly achievement.
+              </p>
+
+              <a href="appointments.html" class="ukaes-text-link">
+                Learn More →
+              </a>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CLOSING BANNER -->
+
+    <section class="ukaes-highlight">
+
+      <div class="ukaes-container ukaes-highlight-inner">
+
+        <div>
+
+          <span class="ukaes-eyebrow" style="color:#F4C7D0">
+            UK Academy of Epidemiology Sciences
+          </span>
+
+          <h2>
+            Explore the Academy.
+          </h2>
+
+        </div>
+
+        <a href="contact.html" class="ukaes-button ukaes-button-white">
+          Contact UKAES
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer class="ukaes-footer">
+
+    <div class="ukaes-container">
+
+      <div class="ukaes-footer-grid">
+
+        <div>
+
+          <div class="ukaes-footer-brand">
+            UKAES
+          </div>
+
+          <p>
+            UK Academy of Epidemiology Sciences
+          </p>
+
+        </div>
+
+
+        <div>
+
+          <h3>Explore</h3>
+
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="appointments.html">Appointments</a></li>
+          </ul>
+
+        </div>
+
+
+        <div>
+
+          <h3>Information</h3>
+
+          <ul>
+            <li><a href="people.html">People</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+
+        </div>
+
+      </div>
+
+
+      <div class="ukaes-footer-bottom">
+
+        <span>
+          © <span class="ukaes-current-year"></span>
+          UK Academy of Epidemiology Sciences.
+        </span>
+
+        <span>
+          All Rights Reserved.
+        </span>
 
       </div>
 
     </div>
 
-    <div class="footer-bottom">
+  </footer>
 
-      <span>
-        © <span id="year"></span>
-        UK Academy of Epidemiology Sciences.
-        All rights reserved.
-      </span>
 
-      <span>
-        Scientific Integrity · Academic Excellence ·
-        Global Collaboration
-      </span>
+  <!-- BACK TO TOP -->
 
-    </div>
+  <button
+    class="ukaes-back-to-top"
+    type="button"
+    aria-label="Back to top"
+    hidden>
+    ↑
+  </button>
 
-  </div>
-
-</footer>
-
-<!-- ==========================================
-     JAVASCRIPT
-     ========================================== -->
-
-<script>
-
-  // Current copyright year
-  document.getElementById("year").textContent =
-    new Date().getFullYear();
-
-  // Mobile navigation
-  const menuToggle =
-    document.getElementById("menuToggle");
-
-  const mainNav =
-    document.getElementById("mainNav");
-
-  menuToggle.addEventListener("click", () => {
-
-    const isOpen =
-      mainNav.classList.toggle("open");
-
-    menuToggle.setAttribute(
-      "aria-expanded",
-      String(isOpen)
-    );
-
-    menuToggle.textContent =
-      isOpen ? "✕ Close" : "☰ Menu";
-
-  });
-
-  // Close menu after selecting a link
-  mainNav.addEventListener("click", (event) => {
-
-    if (event.target.closest("a")) {
-
-      mainNav.classList.remove("open");
-
-      menuToggle.setAttribute(
-        "aria-expanded",
-        "false"
-      );
-
-      menuToggle.textContent = "☰ Menu";
-
-    }
-
-  });
-
-</script>
 
 </body>
 </html>
