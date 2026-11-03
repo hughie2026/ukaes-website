@@ -21,158 +21,183 @@
     /* ABOUT PAGE */
 
     .about-intro {
-      max-width: 800px;
+      max-width: 850px;
     }
 
-    .about-intro p {
-      color: #666;
-      font-size: 14px;
-      line-height: 1.95;
-    }
-
-    /* EDITORIAL */
-
-    .about-editorial {
-      display: grid;
-      grid-template-columns: 1fr 1.05fr;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .about-editorial-content h2 {
+    .about-intro h2 {
       margin: 12px 0 20px;
       font-size: clamp(28px, 3vw, 40px);
     }
 
-    .about-editorial-content p {
-      color: #555;
-      font-size: 14px;
+    .about-intro p {
+      color: #666;
+      font-size: 15px;
       line-height: 1.95;
-      margin-bottom: 17px;
-    }
-
-    .about-editorial-image {
-      width: 100%;
-      aspect-ratio: 5 / 4;
-      overflow: hidden;
-      background: #F0EFEC;
-    }
-
-    .about-editorial-image img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    /* IMAGE CREDIT */
-
-    .about-image-credit {
-      margin-top: 8px;
-      color: #999;
-      font-size: 10px;
-      line-height: 1.7;
-    }
-
-    .about-image-credit a {
-      color: #85001D;
-      text-decoration: none;
+      margin-bottom: 16px;
     }
 
     /* FOUNDATION */
 
     .about-foundation {
-      padding: 42px;
       background: #85001D;
       color: #FFFFFF;
+      padding: 65px 0;
+    }
+
+    .about-foundation-inner {
+      max-width: 850px;
     }
 
     .about-foundation h2 {
-      margin: 12px 0;
       color: #FFFFFF;
-      font-size: clamp(27px, 3vw, 38px);
+      font-size: clamp(30px, 4vw, 46px);
+      margin: 15px 0;
+      line-height: 1.2;
     }
 
     .about-foundation p {
-      max-width: 760px;
-      margin: 0;
-      color: #F4DDE2;
-      font-size: 15px;
+      color: #F5DDE3;
+      font-size: 16px;
       line-height: 1.9;
+      max-width: 720px;
     }
 
     /* SCIENTIFIC FOCUS */
 
-    .about-research-grid {
+    .about-focus {
+      background: #F5F4F1;
+    }
+
+    .about-focus-intro {
+      max-width: 800px;
+      margin-bottom: 35px;
+    }
+
+    .about-focus-intro h2 {
+      margin: 12px 0;
+      font-size: clamp(28px, 3vw, 38px);
+    }
+
+    .about-focus-intro p {
+      color: #666;
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .about-focus-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 22px;
-      margin-top: 32px;
+      gap: 20px;
     }
 
-    .about-research-card {
-      min-width: 0;
+    .about-focus-card {
       background: #FFFFFF;
-      border: 1px solid #E8E6E2;
+      padding: 30px 25px;
+      border-top: 3px solid #85001D;
+      min-height: 220px;
     }
 
-    .about-research-card img {
-      display: block;
-      width: 100%;
-      aspect-ratio: 5 / 4;
-      object-fit: cover;
+    .about-focus-number {
+      color: #B20D2E;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      margin-bottom: 22px;
     }
 
-    .about-research-content {
-      padding: 22px;
-    }
-
-    .about-research-content h3 {
-      margin-bottom: 11px;
-      font-size: 18px;
+    .about-focus-card h3 {
+      color: #242424;
+      font-size: 19px;
       line-height: 1.4;
+      margin-bottom: 13px;
     }
 
-    .about-research-content p {
-      margin: 0;
+    .about-focus-card p {
       color: #666;
       font-size: 13px;
-      line-height: 1.85;
+      line-height: 1.9;
+      margin: 0;
     }
 
     /* MISSION */
 
     .about-mission {
+      background: #FFFFFF;
+    }
+
+    .about-mission-inner {
       max-width: 850px;
     }
 
     .about-mission h2 {
+      font-size: clamp(28px, 3vw, 40px);
       margin: 12px 0 20px;
-      font-size: clamp(27px, 3vw, 38px);
     }
 
     .about-mission p {
-      color: #666;
-      font-size: 14px;
+      color: #555;
+      font-size: 15px;
       line-height: 1.95;
       margin-bottom: 16px;
     }
 
+    /* PRINCIPLES */
+
+    .about-principles {
+      background: #292626;
+      color: #FFFFFF;
+      padding: 55px 0;
+    }
+
+    .about-principles h2 {
+      color: #FFFFFF;
+      font-size: 30px;
+      margin: 12px 0 30px;
+    }
+
+    .about-principles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 30px;
+    }
+
+    .about-principle {
+      border-top: 1px solid rgba(255,255,255,.25);
+      padding-top: 18px;
+    }
+
+    .about-principle h3 {
+      color: #F0C6D0;
+      font-size: 17px;
+      margin-bottom: 10px;
+    }
+
+    .about-principle p {
+      color: #D5D0D0;
+      font-size: 13px;
+      line-height: 1.85;
+      margin: 0;
+    }
+
     /* RESPONSIVE */
 
-    @media (max-width: 850px) {
+    @media (max-width: 800px) {
 
-      .about-editorial {
+      .about-focus-grid,
+      .about-principles-grid {
         grid-template-columns: 1fr;
-        gap: 30px;
       }
 
-      .about-research-grid {
-        grid-template-columns: 1fr;
+      .about-focus-card {
+        min-height: auto;
       }
 
       .about-foundation {
-        padding: 30px 25px;
+        padding: 45px 0;
+      }
+
+      .about-principles {
+        padding: 40px 0;
       }
 
     }
@@ -199,6 +224,7 @@
 
       </a>
 
+
       <button
         class="ukaes-mobile-toggle"
         type="button"
@@ -208,6 +234,7 @@
         Menu
 
       </button>
+
 
       <nav class="ukaes-navigation" aria-label="Main navigation">
 
@@ -263,71 +290,36 @@
 
       <div class="ukaes-container">
 
-        <div class="about-editorial">
+        <div class="about-intro">
 
-          <div class="about-editorial-content">
+          <span class="ukaes-eyebrow">
+            Who We Are
+          </span>
 
-            <span class="ukaes-eyebrow">
-              Who We Are
-            </span>
+          <h2>
+            About UKAES
+          </h2>
 
-            <h2>
-              About UKAES
-            </h2>
+          <p>
+            The UK Academy of Epidemiology Sciences
+            (UKAES) is an independent academic institution
+            established in 2026.
+          </p>
 
-            <p>
-              The UK Academy of Epidemiology Sciences
-              (UKAES) is an independent academic institution
-              established in 2026.
-            </p>
+          <p>
+            As a young and pioneering research and
+            education institution, UKAES is committed
+            to advancing epidemiological sciences,
+            promoting scientific investigation and
+            supporting academic development.
+          </p>
 
-            <p>
-              As a young and pioneering research and
-              education institution, UKAES is committed
-              to advancing epidemiological sciences,
-              promoting scientific investigation and
-              supporting academic development.
-            </p>
-
-            <p>
-              We seek to encourage new perspectives
-              in the study of disease patterns,
-              population health and the determinants
-              of human health.
-            </p>
-
-            <a href="research.html" class="ukaes-text-link">
-              Explore Our Research →
-            </a>
-
-          </div>
-
-
-          <!-- IMAGE 01: FIELD EPIDEMIOLOGY -->
-
-          <div>
-
-            <div class="about-editorial-image">
-
-              <img
-                src="https://wwwn.cdc.gov/phil/PHIL_Images/19903/19903_lores.jpg"
-                alt="Field epidemiology researcher examining laboratory specimens through a microscope"
-                loading="lazy">
-
-            </div>
-
-            <div class="about-image-credit">
-              Image: CDC Public Health Image Library,
-              PHIL ID 19903.
-              <a
-                href="https://wwwn.cdc.gov/phil/Details.aspx?pid=19903"
-                target="_blank"
-                rel="noopener noreferrer">
-                Original image and source
-              </a>
-            </div>
-
-          </div>
+          <p>
+            We seek to encourage new perspectives
+            in the study of disease patterns,
+            population health and the determinants
+            of human health.
+          </p>
 
         </div>
 
@@ -339,11 +331,11 @@
 
     <!-- FOUNDATION -->
 
-    <section class="ukaes-section">
+    <section class="about-foundation">
 
       <div class="ukaes-container">
 
-        <div class="about-foundation">
+        <div class="about-foundation-inner">
 
           <span class="ukaes-eyebrow"
                 style="color:#F4C7D0">
@@ -374,11 +366,11 @@
 
     <!-- SCIENTIFIC FOCUS -->
 
-    <section class="ukaes-section ukaes-section-soft">
+    <section class="ukaes-section about-focus">
 
       <div class="ukaes-container">
 
-        <div class="about-intro">
+        <div class="about-focus-intro">
 
           <span class="ukaes-eyebrow">
             Our Scientific Focus
@@ -398,132 +390,64 @@
         </div>
 
 
-        <div class="about-research-grid">
+        <div class="about-focus-grid">
 
 
-          <!-- IMAGE 02: BIOMEDICAL RESEARCH -->
+          <article class="about-focus-card">
 
-          <article class="about-research-card">
-
-            <img
-              src="https://wwwn.cdc.gov/phil/PHIL_Images/8191/8191_lores.jpg"
-              alt="Two CDC laboratory scientists examining specimens through a microscope"
-              loading="lazy">
-
-            <div class="about-research-content">
-
-              <h3>
-                Epidemiological Sciences
-              </h3>
-
-              <p>
-                Exploring disease distribution,
-                determinants of health, risk factors
-                and epidemiological research methods.
-              </p>
-
-              <div class="about-image-credit">
-                Image: CDC Public Health Image Library,
-                PHIL ID 8191.
-                <a
-                  href="https://wwwn.cdc.gov/PHIL/Details.aspx?pid=8191"
-                  target="_blank"
-                  rel="noopener noreferrer">
-                  Image source
-                </a>
-              </div>
-
+            <div class="about-focus-number">
+              01
             </div>
+
+            <h3>
+              Epidemiological Sciences
+            </h3>
+
+            <p>
+              Exploring disease distribution,
+              determinants of health, risk factors
+              and epidemiological research methods.
+            </p>
 
           </article>
 
 
 
-          <!-- IMAGE 03: SCIENTIFIC ANALYSIS -->
+          <article class="about-focus-card">
 
-          <article class="about-research-card">
-
-            <img
-              src="https://wwwn.cdc.gov/phil/PHIL_Images/1960/1960_lores.jpg"
-              alt="CDC scientist examining scientific microscopy images at a computer workstation"
-              loading="lazy">
-
-            <div class="about-research-content">
-
-              <h3>
-                Biomedical Research
-              </h3>
-
-              <p>
-                Exploring biomedical mechanisms,
-                laboratory investigation and scientific
-                approaches to understanding human health.
-              </p>
-
-              <div class="about-image-credit">
-                Image: CDC / James D. Gathany,
-                PHIL ID 1960.
-                <a
-                  href="https://wwwn.cdc.gov/phil/Details.aspx?pid=1960"
-                  target="_blank"
-                  rel="noopener noreferrer">
-                  Image source
-                </a>
-              </div>
-
+            <div class="about-focus-number">
+              02
             </div>
+
+            <h3>
+              Population Health
+            </h3>
+
+            <p>
+              Examining public health challenges,
+              disease prevention, health inequalities
+              and population-level health outcomes.
+            </p>
 
           </article>
 
 
 
-          <!-- TEXT-ONLY CARD -->
+          <article class="about-focus-card">
 
-          <article class="about-research-card">
-
-            <div
-              style="
-                min-height:220px;
-                background:#85001D;
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                padding:25px;
-                color:#FFFFFF;
-                text-align:center;">
-
-              <div>
-
-                <div style="
-                  font-size:36px;
-                  font-weight:700;
-                  margin-bottom:12px;">
-                  UKAES
-                </div>
-
-                <div style="
-                  font-size:12px;
-                  letter-spacing:2px;">
-                  POPULATION HEALTH
-                </div>
-
-              </div>
-
+            <div class="about-focus-number">
+              03
             </div>
 
-            <div class="about-research-content">
+            <h3>
+              Biomedical and Clinical Research
+            </h3>
 
-              <h3>
-                Population Health
-              </h3>
-
-              <p>
-                Examining public health challenges,
-                disease prevention, health inequalities
-                and population-level health outcomes.
-              </p>
-
-            </div>
+            <p>
+              Exploring biomedical mechanisms,
+              clinical evidence and scientific approaches
+              to understanding human health.
+            </p>
 
           </article>
 
@@ -538,11 +462,11 @@
 
     <!-- MISSION -->
 
-    <section class="ukaes-section">
+    <section class="ukaes-section about-mission">
 
       <div class="ukaes-container">
 
-        <div class="about-mission">
+        <div class="about-mission-inner">
 
           <span class="ukaes-eyebrow">
             Our Mission
@@ -577,6 +501,80 @@
 
 
 
+    <!-- PRINCIPLES -->
+
+    <section class="about-principles">
+
+      <div class="ukaes-container">
+
+        <span class="ukaes-eyebrow"
+              style="color:#F0C6D0">
+
+          Our Outlook
+
+        </span>
+
+        <h2>
+          Moving Science Forward.
+        </h2>
+
+
+        <div class="about-principles-grid">
+
+
+          <div class="about-principle">
+
+            <h3>
+              Scientific Curiosity
+            </h3>
+
+            <p>
+              Encouraging inquiry, critical thinking
+              and the continuous pursuit of
+              scientific knowledge.
+            </p>
+
+          </div>
+
+
+          <div class="about-principle">
+
+            <h3>
+              Academic Collaboration
+            </h3>
+
+            <p>
+              Supporting the exchange of ideas
+              and cooperation across academic
+              and scientific disciplines.
+            </p>
+
+          </div>
+
+
+          <div class="about-principle">
+
+            <h3>
+              Future Development
+            </h3>
+
+            <p>
+              Promoting new perspectives in
+              epidemiological research and
+              academic education.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
     <!-- CLOSING -->
 
     <section class="ukaes-highlight">
@@ -598,6 +596,7 @@
           </p>
 
         </div>
+
 
         <a
           href="contact.html"
@@ -625,8 +624,11 @@
       <div class="ukaes-footer-grid">
 
         <div>
+
           <div class="ukaes-footer-brand"></div>
+
         </div>
+
 
         <div>
 
@@ -641,6 +643,7 @@
 
         </div>
 
+
         <div>
 
           <h3>Information</h3>
@@ -653,6 +656,7 @@
         </div>
 
       </div>
+
 
       <div class="ukaes-footer-bottom">
 
