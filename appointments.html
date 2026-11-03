@@ -1,1 +1,1391 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102B49">
+  <meta name="description" content="Research academic appointments and fellowships at the UK Academy of Epidemiology Sciences.">
+  <link rel="canonical" href="https://ukaes.org/appointments.html">
+  <title>Academic Appointments & Fellowships | UKAES</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #102B49;
+      --deep: #091D32;
+      --red: #B21F36;
+      --gold: #D7B47D;
+      --cream: #F7F5F1;
+      --ink: #202B35;
+      --muted: #65717D;
+      --line: #DDE3E7;
+      --sans: "DM Sans", Arial, sans-serif;
+      --serif: "Source Serif 4", Georgia, serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      color: var(--ink);
+      line-height: 1.75;
+    }
+    a { color: inherit; }
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 4px;
+    }
+    .container {
+      width: min(1240px, calc(100% - 48px));
+      margin: auto;
+    }
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 12px;
+      padding: 12px;
+      background: white;
+      z-index: 100;
+    }
+    .skip-link:focus { top: 12px; }
+
+    /* HEADER */
+    .utility {
+      background: var(--deep);
+      color: #DCE6EE;
+      font-size: 12px;
+    }
+    .utility .container {
+      min-height: 38px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    .utility a { text-decoration: none; }
+    .utility a:hover { color: var(--gold); }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      padding: 18px 0;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+    .brand img {
+      display: block;
+      width: min(540px, 72vw);
+      max-height: 110px;
+      object-fit: contain;
+      object-position: left;
+    }
+    .brand-fallback {
+      display: none;
+      font: 700 28px/1.2 var(--serif);
+      color: var(--navy);
+    }
+    .tagline {
+      border-left: 3px solid var(--red);
+      padding-left: 22px;
+      color: var(--navy);
+      font-size: 12px;
+      font-weight: 800;
+      line-height: 1.8;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    /* NAVIGATION */
+    .nav-wrap {
+      background: var(--navy);
+      border-bottom: 5px solid var(--red);
+      position: relative;
+      z-index: 10;
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      display: block;
+      padding: 19px 16px;
+      color: white;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 800;
+    }
+    .nav-links a:hover,
+    .nav-links a.active { background: #234766; }
+    .nav-contact {
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid #7790A7;
+      color: white;
+      padding: 12px 16px;
+      font: 700 14px var(--sans);
+      cursor: pointer;
+    }
+
+    /* SHARED COMPONENTS */
+    .section { padding: 92px 0; }
+    .light { background: var(--cream); }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--red);
+      text-transform: uppercase;
+      letter-spacing: .17em;
+      font-size: 12px;
+      font-weight: 800;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 3px;
+      background: currentColor;
+    }
+    h1, h2, h3 { color: var(--navy); }
+    h2 {
+      font-size: clamp(32px, 4vw, 52px);
+      line-height: 1.17;
+      letter-spacing: -.035em;
+      margin: 16px 0 22px;
+    }
+    h3 {
+      font-size: 24px;
+      line-height: 1.3;
+      margin: 12px 0;
+    }
+    .lead {
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.9;
+    }
+    .section-head {
+      text-align: center;
+      max-width: 850px;
+      margin: 0 auto 45px;
+    }
+    .section-head .eyebrow { justify-content: center; }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      min-height: 490px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: var(--deep);
+      color: white;
+    }
+    .hero-art {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        90deg,
+        rgba(9,29,50,.99),
+        rgba(9,29,50,.92) 44%,
+        rgba(9,29,50,.2)
+      );
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      padding: 85px 0;
+    }
+    .hero .eyebrow { color: var(--gold); }
+    .hero h1 {
+      color: white;
+      max-width: 980px;
+      font-size: clamp(43px, 6vw, 78px);
+      line-height: 1.09;
+      letter-spacing: -.045em;
+      margin: 18px 0;
+    }
+    .hero h1 em {
+      color: #E3C18D;
+      font-style: normal;
+    }
+    .hero p {
+      max-width: 750px;
+      color: #E2EBF2;
+      font-size: 19px;
+    }
+    .breadcrumb {
+      background: var(--cream);
+      border-bottom: 1px solid var(--line);
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .breadcrumb .container { padding: 13px 0; }
+    .breadcrumb a {
+      color: var(--navy);
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .breadcrumb span { margin: 0 12px; }
+
+    /* INTRODUCTION */
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 65px;
+      align-items: center;
+    }
+    .note-panel {
+      background: var(--cream);
+      border-top: 6px solid var(--red);
+      padding: 38px;
+    }
+    .note-panel h3 {
+      font-family: var(--serif);
+      font-size: 31px;
+    }
+    .note-panel p { color: var(--muted); }
+
+    /* TWO SYSTEMS */
+    .systems {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 26px;
+    }
+    .system {
+      background: white;
+      border: 1px solid var(--line);
+      border-top: 5px solid var(--red);
+      padding: 35px;
+    }
+    .system:nth-child(2) {
+      border-top-color: var(--navy);
+    }
+    .system p, .system ul { color: var(--muted); }
+    .system li { margin: 8px 0; }
+    .system a {
+      color: var(--red);
+      text-decoration: none;
+      font-weight: 800;
+    }
+
+    /* TITLES */
+    .rank-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 26px;
+    }
+    .rank {
+      background: white;
+      border: 1px solid var(--line);
+      border-top: 5px solid var(--red);
+      padding: 32px;
+    }
+    .rank.honour { border-top-color: var(--navy); }
+    .kicker {
+      color: var(--red);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .14em;
+    }
+    .rank.honour .kicker { color: var(--navy); }
+    .rank h3 { font-size: 27px; }
+    .rank p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .rank .detail {
+      border-top: 1px solid var(--line);
+      margin-top: 20px;
+      padding-top: 18px;
+      font-size: 14px;
+    }
+    .rank .detail strong { color: var(--navy); }
+
+    /* APPOINTMENT TYPES */
+    .types {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .type {
+      padding: 32px;
+      border: 1px solid var(--line);
+      border-top: 5px solid var(--red);
+    }
+    .type h3 { font-size: 22px; }
+    .type p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .type small {
+      color: var(--red);
+      font-weight: 800;
+      letter-spacing: .08em;
+    }
+
+    /* ASSESSMENT TABLE */
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 720px;
+    }
+    th, td {
+      padding: 17px 18px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+      font-size: 14px;
+    }
+    thead th {
+      background: var(--navy);
+      color: white;
+      font-size: 13px;
+    }
+    tbody th {
+      color: var(--navy);
+      background: #F6F7F8;
+      width: 24%;
+    }
+    .disclaimer {
+      border-left: 5px solid var(--red);
+      padding: 24px 30px;
+      background: #F0EDE7;
+      margin-top: 32px;
+      color: #475563;
+      font-size: 14px;
+    }
+    .disclaimer strong { color: var(--navy); }
+
+    /* APPLICATION PROCESS */
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+    .step {
+      padding: 27px;
+      background: white;
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--red);
+    }
+    .step .num {
+      font: 700 34px var(--serif);
+      color: var(--red);
+    }
+    .step h3 { font-size: 21px; }
+    .step p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* GOVERNANCE */
+    .governance {
+      background: var(--navy);
+      color: #DCE6EE;
+    }
+    .governance h2,
+    .governance h3 { color: white; }
+    .governance .eyebrow { color: var(--gold); }
+    .governance-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .governance-box {
+      padding: 35px;
+      background: #1B3B5B;
+      border-left: 5px solid var(--gold);
+    }
+    .governance-box li { margin: 12px 0; }
+
+    /* DIRECTORY */
+    .directory {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+    .directory article {
+      padding: 35px;
+      background: white;
+      border: 1px solid var(--line);
+      border-top: 5px solid var(--navy);
+    }
+    .directory p { color: var(--muted); }
+    .directory a {
+      color: var(--red);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    /* CTA */
+    .cta { text-align: center; }
+    .cta p {
+      max-width: 740px;
+      margin: 0 auto 28px;
+    }
+    .btn {
+      display: inline-flex;
+      padding: 15px 26px;
+      background: var(--red);
+      color: white;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 14px;
+      transition: .2s;
+    }
+    .btn:hover { background: #8E172B; }
+
+    /* FOOTER */
+    .footer {
+      background: var(--deep);
+      color: #D6E1EA;
+      padding-top: 75px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 60px;
+    }
+    .footer-brand {
+      font: 700 28px/1.2 var(--serif);
+      color: white;
+    }
+    .footer h3 {
+      color: var(--gold);
+      font: 800 14px var(--sans);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .footer ul {
+      list-style: none;
+      padding: 0;
+    }
+    .footer li { margin: 10px 0; }
+    .footer a { text-decoration: none; }
+    .footer a:hover { color: var(--gold); }
+    .footer-bottom {
+      margin-top: 65px;
+      padding: 24px 0;
+      border-top: 1px solid #3B536B;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: #AABCCB;
+      font-size: 12px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1100px) {
+      .nav-contact { display: none; }
+      .nav-links a {
+        padding: 17px 11px;
+        font-size: 12px;
+      }
+    }
+    @media (max-width: 850px) {
+      .tagline { display: none; }
+      .menu-toggle {
+        display: block;
+        margin: 10px 0;
+      }
+      .nav-inner { display: block; }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        padding-bottom: 14px;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a {
+        padding: 12px;
+        font-size: 14px;
+      }
+      .intro-grid,
+      .governance-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+      .types, .process {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .container { width: calc(100% - 34px); }
+      .utility .container > span:last-child { display: none; }
+      .brand img { width: min(370px, 85vw); }
+      .hero-content { padding: 65px 0; }
+      .hero p { font-size: 16px; }
+      .section { padding: 65px 0; }
+      .systems, .rank-grid, .types,
+      .process, .directory, .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .note-panel, .system, .rank,
+      .type, .governance-box { padding: 26px; }
+      .footer-bottom { flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .btn { transition: none; }
+    }
+  </style>
+</head>
+
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- TOP BAR -->
+<div class="utility">
+  <div class="container">
+    <span>UK ACADEMY OF EPIDEMIOLOGY SCIENCES</span>
+    <span>
+      <a href="mailto:info@ukaes.org">info@ukaes.org</a>
+      &nbsp; | &nbsp;
+      <a href="https://ukaes.org">ukaes.org</a>
+    </span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="UKAES Home">
+      <img
+        src="assets/ukaes-logo.jpg"
+        alt="UK Academy of Epidemiology Sciences official logo"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="brand-fallback">
+        UK Academy of<br>Epidemiology Sciences
+      </span>
+    </a>
+    <div class="tagline">
+      Advancing Science<br>Improving Health
+    </div>
+  </div>
+</header>
+
+<!-- NAVIGATION -->
+<div class="nav-wrap">
+  <div class="container nav-inner">
+    <button
+      class="menu-toggle"
+      id="menuToggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="mainNav">
+      ☰ Menu
+    </button>
+
+    <nav class="nav-links" id="mainNav" aria-label="Main Navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="research.html">Research</a>
+      <a href="education.html">Education</a>
+      <a href="appointments.html" class="active" aria-current="page">
+        Appointments &amp; Fellowships
+      </a>
+      <a href="people.html">Leadership &amp; People</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <a class="nav-contact" href="mailto:appointments@ukaes.org">
+      Academic Affairs ↗
+    </a>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="page-title">
+    <svg class="hero-art" viewBox="0 0 1440 520"
+         preserveAspectRatio="xMidYMid slice"
+         role="img"
+         aria-label="Original academic recognition illustration">
+      <defs>
+        <linearGradient id="heroBg" x2="1" y2="1">
+          <stop offset="0" stop-color="#123754"/>
+          <stop offset="1" stop-color="#397783"/>
+        </linearGradient>
+        <radialGradient id="glow">
+          <stop stop-color="#C7E1D9" stop-opacity=".65"/>
+          <stop offset="1" stop-color="#C7E1D9" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <rect width="1440" height="520" fill="url(#heroBg)"/>
+      <circle cx="1130" cy="250" r="350" fill="url(#glow)"/>
+
+      <!-- Academic shield -->
+      <g transform="translate(1110 250)">
+        <path d="M0-175L155-112V25Q155 135 0 195Q-155 135-155 25V-112Z"
+              fill="#173B58" stroke="#D7B47D" stroke-width="6"/>
+        <path d="M0-145L125-92V20Q125 105 0 162Q-125 105-125 20V-92Z"
+              fill="none" stroke="#D7B47D" stroke-width="3"/>
+        <path d="M-65 15L-10 70L80-40"
+              fill="none" stroke="#F7F5F1"
+              stroke-width="15" stroke-linecap="round"
+              stroke-linejoin="round"/>
+      </g>
+
+      <!-- Scientific network -->
+      <g stroke="#E5C28E" stroke-width="2" fill="none" opacity=".75">
+        <path d="M780 100L940 145L1100 55L1290 110L1400 60"/>
+        <path d="M840 420L940 145L1250 385L1290 110"/>
+      </g>
+      <g fill="#E5C28E">
+        <circle cx="780" cy="100" r="7"/>
+        <circle cx="940" cy="145" r="8"/>
+        <circle cx="1100" cy="55" r="7"/>
+        <circle cx="1290" cy="110" r="8"/>
+        <circle cx="1400" cy="60" r="7"/>
+        <circle cx="840" cy="420" r="7"/>
+        <circle cx="1250" cy="385" r="8"/>
+      </g>
+    </svg>
+
+    <div class="container hero-content">
+      <div class="eyebrow">Academic Affairs at UKAES</div>
+      <h1 id="page-title">
+        Academic Appointments<br>
+        <em>&amp; Fellowships.</em>
+      </h1>
+      <p>
+        A framework for research academic appointments,
+        scholarly recognition and the responsible
+        assessment of academic achievement.
+      </p>
+    </div>
+  </section>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <div class="container">
+      <a href="index.html">Home</a>
+      <span>/</span>
+      <strong>Appointments &amp; Fellowships</strong>
+    </div>
+  </div>
+
+  <!-- INTRODUCTION -->
+  <section class="section">
+    <div class="container intro-grid">
+      <div>
+        <div class="eyebrow">Academic Recognition</div>
+        <h2>Recognising Achievement. Supporting Research.</h2>
+        <p class="lead">
+          The UK Academy of Epidemiology Sciences is
+          developing an institutional framework for
+          research academic appointments and fellowships.
+        </p>
+        <p class="lead">
+          The framework is intended to recognise academic
+          achievement while supporting meaningful
+          research activity, scholarly collaboration
+          and institutional academic development.
+        </p>
+        <p class="lead">
+          Research appointments and fellowship honours
+          are distinct forms of academic recognition,
+          with separate eligibility criteria,
+          responsibilities and assessment procedures.
+        </p>
+      </div>
+
+      <aside class="note-panel">
+        <div class="eyebrow">Institutional Framework</div>
+        <h3>Two Distinct Academic Systems</h3>
+        <p>
+          Research Academic Appointments establish
+          a defined academic relationship with UKAES.
+        </p>
+        <p>
+          Fellowships and Academic Honours recognise
+          scholarly achievement and contribution.
+        </p>
+        <p>
+          Neither system independently confers a
+          university degree or an externally
+          regulated professional qualification.
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- TWO SYSTEMS -->
+  <section class="section light">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Academic Structure</div>
+        <h2>Two Complementary Systems</h2>
+        <p class="lead">
+          Academic appointments and fellowship honours
+          serve different institutional purposes.
+        </p>
+      </div>
+
+      <div class="systems">
+        <article class="system">
+          <div class="eyebrow">System 01</div>
+          <h3>Research Academic Appointments</h3>
+          <p>
+            Formal institutional research appointments
+            based on academic merit, research capability
+            and an appropriate appointment relationship.
+          </p>
+          <ul>
+            <li>Research Professor</li>
+            <li>Research Associate Professor</li>
+            <li>Senior Research Fellow</li>
+            <li>Research Fellow</li>
+          </ul>
+          <a href="#research-appointments">Explore Appointments →</a>
+        </article>
+
+        <article class="system">
+          <div class="eyebrow">System 02</div>
+          <h3>Fellowships &amp; Academic Honours</h3>
+          <p>
+            Scholarly recognition based on academic
+            achievement, professional distinction
+            and contributions to relevant disciplines.
+          </p>
+          <ul>
+            <li>Distinguished Fellow</li>
+            <li>Senior Fellow</li>
+            <li>Fellow</li>
+            <li>Honorary Fellow</li>
+          </ul>
+          <a href="#fellowships">Explore Fellowships →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH APPOINTMENTS -->
+  <section class="section" id="research-appointments">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Research Academic Appointments</div>
+        <h2>Research Academic Titles</h2>
+        <p class="lead">
+          Four proposed academic levels reflect
+          increasing research achievement,
+          independence and scholarly leadership.
+        </p>
+      </div>
+
+      <div class="rank-grid">
+        <article class="rank">
+          <div class="kicker">LEVEL 04 / SENIOR ACADEMIC LEADERSHIP</div>
+          <h3>Research Professor</h3>
+          <p>
+            For an established researcher with
+            outstanding scholarly achievements,
+            sustained academic influence and
+            significant research leadership.
+          </p>
+          <div class="detail">
+            <strong>Indicative assessment</strong>
+            <p>
+              Major original research contributions,
+              an influential scholarly record,
+              independent research leadership,
+              mentoring and strategic contribution.
+            </p>
+          </div>
+        </article>
+
+        <article class="rank">
+          <div class="kicker">LEVEL 03 / ADVANCED RESEARCH LEADERSHIP</div>
+          <h3>Research Associate Professor</h3>
+          <p>
+            For an accomplished researcher with
+            sustained research output, independent
+            academic capability and demonstrated
+            scholarly leadership.
+          </p>
+          <div class="detail">
+            <strong>Indicative assessment</strong>
+            <p>
+              Strong original research,
+              independent projects, mentoring,
+              collaboration and a sustained
+              contribution to the discipline.
+            </p>
+          </div>
+        </article>
+
+        <article class="rank">
+          <div class="kicker">LEVEL 02 / ESTABLISHED RESEARCH</div>
+          <h3>Senior Research Fellow</h3>
+          <p>
+            For an experienced researcher
+            with a substantial research record,
+            independent capability and
+            contributions to project development.
+          </p>
+          <div class="detail">
+            <strong>Indicative assessment</strong>
+            <p>
+              Consistent scientific contributions,
+              methodological expertise,
+              research independence and
+              collaborative or mentoring activity.
+            </p>
+          </div>
+        </article>
+
+        <article class="rank">
+          <div class="kicker">LEVEL 01 / RESEARCH APPOINTMENT</div>
+          <h3>Research Fellow</h3>
+          <p>
+            For a researcher with demonstrated
+            academic potential and the capability
+            to undertake or contribute
+            meaningfully to scientific research.
+          </p>
+          <div class="detail">
+            <strong>Indicative assessment</strong>
+            <p>
+              Research experience, relevant
+              scientific contributions,
+              methodological competence
+              and a commitment to research integrity.
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FELLOWSHIPS -->
+  <section class="section light" id="fellowships">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Fellowships &amp; Academic Honours</div>
+        <h2>Academy Fellowships</h2>
+        <p class="lead">
+          Fellowships recognise scholarly
+          achievement and distinguished
+          contributions rather than
+          establishing employment.
+        </p>
+      </div>
+
+      <div class="rank-grid">
+        <article class="rank honour">
+          <div class="kicker">DISTINGUISHED RECOGNITION</div>
+          <h3>Distinguished Fellow</h3>
+          <p>
+            Recognition of exceptional academic
+            achievement, major scientific
+            contributions and substantial
+            international scholarly influence.
+          </p>
+        </article>
+
+        <article class="rank honour">
+          <div class="kicker">SENIOR SCHOLARLY RECOGNITION</div>
+          <h3>Senior Fellow</h3>
+          <p>
+            Recognition of sustained research
+            achievement, professional distinction
+            and significant contributions
+            to the discipline.
+          </p>
+        </article>
+
+        <article class="rank honour">
+          <div class="kicker">SCHOLARLY RECOGNITION</div>
+          <h3>Fellow</h3>
+          <p>
+            Recognition of established academic
+            achievement and meaningful contributions
+            to research, education or
+            professional practice.
+          </p>
+        </article>
+
+        <article class="rank honour">
+          <div class="kicker">HONORARY RECOGNITION</div>
+          <h3>Honorary Fellow</h3>
+          <p>
+            Recognition of exceptional service
+            or distinguished contributions
+            to science, public health,
+            education or society.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPOINTMENT TYPES -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Appointment Relationships</div>
+        <h2>Types of Research Appointment</h2>
+        <p class="lead">
+          The appointment category must be
+          clearly stated in the appointment
+          letter and public academic directory.
+        </p>
+      </div>
+
+      <div class="types">
+        <article class="type">
+          <small>TYPE 01</small>
+          <h3>Substantive Appointment</h3>
+          <p>
+            A formal appointment with documented
+            research responsibilities and a
+            genuine contractual or other defined
+            institutional relationship.
+          </p>
+          <p>
+            Employment status and remuneration
+            depend on the actual agreement
+            and applicable law.
+          </p>
+        </article>
+
+        <article class="type">
+          <small>TYPE 02</small>
+          <h3>Honorary Appointment</h3>
+          <p>
+            A normally unpaid academic association
+            with defined scholarly contributions.
+            The title must explicitly include
+            "Honorary" and must not imply
+            salaried employment.
+          </p>
+        </article>
+
+        <article class="type">
+          <small>TYPE 03</small>
+          <h3>Visiting Appointment</h3>
+          <p>
+            A time-limited research or academic
+            association for a visiting scholar
+            with an agreed purpose, duration
+            and institutional responsibilities.
+          </p>
+          <p>
+            The title must explicitly
+            include "Visiting".
+          </p>
+        </article>
+      </div>
+
+      <div class="disclaimer">
+        <strong>Examples of appropriate title usage:</strong>
+        Research Professor at UKAES;
+        Honorary Research Professor at UKAES;
+        Visiting Research Associate Professor at UKAES;
+        Research Fellow at UKAES.
+        The designation must match the
+        individual's actual approved appointment.
+      </div>
+    </div>
+  </section>
+
+  <!-- ASSESSMENT CRITERIA -->
+  <section class="section light" id="criteria">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Academic Assessment</div>
+        <h2>Assessment Criteria</h2>
+        <p class="lead">
+          Assessment should be holistic,
+          evidence-based and proportionate
+          to the academic level sought.
+        </p>
+      </div>
+
+      <div class="table-wrap" role="region"
+           aria-label="Research appointment criteria table"
+           tabindex="0">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Criterion</th>
+              <th scope="col">Research Fellow</th>
+              <th scope="col">Senior Research Fellow</th>
+              <th scope="col">Research Associate Professor</th>
+              <th scope="col">Research Professor</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Research experience</th>
+              <td>Demonstrated capability</td>
+              <td>Substantial experience</td>
+              <td>Sustained independent record</td>
+              <td>Outstanding sustained record</td>
+            </tr>
+            <tr>
+              <th scope="row">Scientific outputs</th>
+              <td>Relevant contributions</td>
+              <td>Consistent quality outputs</td>
+              <td>Strong original scholarship</td>
+              <td>Major influential contributions</td>
+            </tr>
+            <tr>
+              <th scope="row">Independent research</th>
+              <td>Developing or demonstrated</td>
+              <td>Established</td>
+              <td>Strong</td>
+              <td>Exceptional</td>
+            </tr>
+            <tr>
+              <th scope="row">Research leadership</th>
+              <td>Not essential</td>
+              <td>Contributions expected</td>
+              <td>Demonstrated</td>
+              <td>Substantial and sustained</td>
+            </tr>
+            <tr>
+              <th scope="row">Mentoring &amp; collaboration</th>
+              <td>Participation</td>
+              <td>Active contribution</td>
+              <td>Leadership and mentoring</td>
+              <td>Strategic academic leadership</td>
+            </tr>
+            <tr>
+              <th scope="row">Research integrity</th>
+              <td>Required</td>
+              <td>Required</td>
+              <td>Required</td>
+              <td>Required</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="disclaimer">
+        <strong>Qualifications and evidence:</strong>
+        A doctorate or equivalent demonstrated
+        research expertise may be considered
+        according to approved role criteria.
+        No fixed publication count, citation
+        threshold or academic degree alone
+        guarantees an appointment.
+        These criteria remain indicative
+        until formally adopted by UKAES.
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLICATION PROCESS -->
+  <section class="section" id="process">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Proposed Procedure</div>
+        <h2>Application &amp; Review Process</h2>
+        <p class="lead">
+          A transparent review pathway
+          protects the credibility of
+          academic appointments and honours.
+        </p>
+      </div>
+
+      <div class="process">
+        <article class="step">
+          <div class="num">01</div>
+          <h3>Expression of Interest</h3>
+          <p>
+            The candidate or nominator submits
+            an enquiry with a proposed title,
+            academic CV and supporting evidence.
+          </p>
+        </article>
+
+        <article class="step">
+          <div class="num">02</div>
+          <h3>Eligibility Screening</h3>
+          <p>
+            UKAES reviews the intended appointment
+            relationship, academic evidence,
+            eligibility and potential
+            conflicts of interest.
+          </p>
+        </article>
+
+        <article class="step">
+          <div class="num">03</div>
+          <h3>Academic Assessment</h3>
+          <p>
+            Qualified reviewers evaluate
+            research quality, academic contribution,
+            integrity and the criteria
+            for the proposed level.
+          </p>
+        </article>
+
+        <article class="step">
+          <div class="num">04</div>
+          <h3>Formal Decision</h3>
+          <p>
+            An authorised decision is recorded.
+            Approved candidates receive
+            written terms and, where appropriate,
+            an entry in the public directory.
+          </p>
+        </article>
+      </div>
+
+      <div class="disclaimer">
+        <strong>Current status:</strong>
+        This page describes a proposed
+        institutional framework. It does
+        not announce that applications
+        are open, that regulations have
+        been formally adopted or that
+        any person has received an appointment.
+      </div>
+    </div>
+  </section>
+
+  <!-- ACADEMIC GOVERNANCE -->
+  <section class="section governance">
+    <div class="container governance-grid">
+      <div>
+        <div class="eyebrow">Academic Governance</div>
+        <h2>Clear Terms. Accountable Decisions.</h2>
+        <p>
+          A credible appointment system requires
+          written rules covering eligibility,
+          assessment, conflicts of interest,
+          appointment terms, renewal, withdrawal
+          and appropriate public representation
+          of academic titles.
+        </p>
+        <p>
+          Honorary and visiting titles should
+          be used in full. Appointees should
+          follow applicable research integrity,
+          confidentiality and conduct requirements.
+        </p>
+      </div>
+
+      <div class="governance-box">
+        <h3>Proposed Governance Documents</h3>
+        <ul>
+          <li>Research Academic Appointment Regulations</li>
+          <li>Fellowship and Academic Honours Regulations</li>
+          <li>Academic Assessment and Conflicts of Interest Policy</li>
+          <li>Appointment Terms and Title Usage Guidance</li>
+          <li>Renewal, Review and Withdrawal Procedures</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIRECTORY -->
+  <section class="section light">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Academic Directory</div>
+        <h2>People &amp; Appointments</h2>
+        <p class="lead">
+          The Academy's public directory
+          will distinguish research appointees
+          from fellowship holders and display
+          verified information only.
+        </p>
+      </div>
+
+      <div class="directory">
+        <article>
+          <h3>Research Academic Personnel</h3>
+          <p>
+            Research Professors, Research Associate
+            Professors, Senior Research Fellows
+            and Research Fellows, including their
+            exact appointment categories and terms.
+          </p>
+          <a href="people.html">
+            Visit Leadership &amp; People →
+          </a>
+        </article>
+
+        <article>
+          <h3>Academy Fellows</h3>
+          <p>
+            Fellowship holders and academic
+            honourees, with their approved
+            designation, area of expertise
+            and verified academic profile.
+          </p>
+          <a href="people.html">
+            View the Academic Directory →
+          </a>
+        </article>
+      </div>
+
+      <div class="disclaimer">
+        <strong>Title usage and legal status:</strong>
+        UKAES appointments and fellowships
+        are institutional designations.
+        They do not automatically constitute
+        university appointments, UK-recognised
+        degrees, government endorsements,
+        statutory professional registrations
+        or externally accredited qualifications.
+        Appointment documents must accurately
+        describe the actual relationship.
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section cta">
+    <div class="container">
+      <div class="eyebrow">Academic Affairs</div>
+      <h2>Academic Appointment Enquiries</h2>
+      <p class="lead">
+        For enquiries about the proposed
+        research appointment and fellowship
+        frameworks, please contact Academic Affairs.
+        Formal application arrangements will
+        be published once approved.
+      </p>
+      <a class="btn"
+         href="mailto:appointments@ukaes.org?subject=UKAES%20Academic%20Appointments%20Enquiry">
+        Contact Academic Affairs ↗
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          UK Academy of<br>
+          Epidemiology Sciences
+        </div>
+        <p>
+          Advancing Epidemiological Science
+          for a Healthier World.
+        </p>
+        <p>
+          <a href="https://ukaes.org">www.ukaes.org</a>
+        </p>
+      </div>
+
+      <div>
+        <h3>Explore UKAES</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="education.html">Education</a></li>
+          <li>
+            <a href="appointments.html">
+              Appointments &amp; Fellowships
+            </a>
+          </li>
+          <li>
+            <a href="people.html">
+              Leadership &amp; People
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Contact</h3>
+        <ul>
+          <li>
+            <a href="mailto:info@ukaes.org">info@ukaes.org</a>
+          </li>
+          <li>
+            <a href="mailto:research@ukaes.org">research@ukaes.org</a>
+          </li>
+          <li>
+            <a href="mailto:education@ukaes.org">education@ukaes.org</a>
+          </li>
+          <li>
+            <a href="mailto:appointments@ukaes.org">
+              appointments@ukaes.org
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>
+        © <span id="year"></span>
+        UK Academy of Epidemiology Sciences.
+        All rights reserved.
+      </span>
+      <span>
+        Scientific Integrity · Academic Excellence ·
+        Global Collaboration
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Copyright year
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+  // Mobile navigation
+  const menuToggle = document.getElementById("menuToggle");
+  const mainNav = document.getElementById("mainNav");
+
+  menuToggle.addEventListener("click", () => {
+    const isOpen = mainNav.classList.toggle("open");
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    menuToggle.textContent = isOpen ? "✕ Close" : "☰ Menu";
+  });
+
+  mainNav.addEventListener("click", (event) => {
+    if (event.target.closest("a")) {
+      mainNav.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.textContent = "☰ Menu";
+    }
+  });
+</script>
+
+</body>
+</html>
