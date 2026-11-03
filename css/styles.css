@@ -1,19 +1,15 @@
 
 /* =========================================================
-   UK ACADEMY OF EPIDEMIOLOGY SCIENCES
    UKAES GLOBAL STYLESHEET
-   Design: Modern Academic Institutional Website
+   Modern Academic Institutional Design
    ========================================================= */
 
 
-/* =========================================================
-   01. DESIGN SYSTEM
-   ========================================================= */
+/* 01. DESIGN SYSTEM */
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap');
 
 :root {
-
   --burgundy: #B20D2E;
   --burgundy-dark: #85001D;
   --burgundy-deep: #720018;
@@ -30,10 +26,6 @@
 
   --font-main: "DM Sans", Arial, sans-serif;
 
-  /* IMPORTANT:
-     All major page content shares this width.
-  */
-
   --container-width: 1240px;
   --container-gutter: 48px;
 
@@ -41,13 +33,10 @@
   --section-spacing: 76px;
 
   --transition: .25s ease;
-
 }
 
 
-/* =========================================================
-   02. RESET
-   ========================================================= */
+/* 02. RESET */
 
 *,
 *::before,
@@ -102,19 +91,8 @@ a:hover {
   color: white;
 }
 
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-textarea:focus-visible {
-  outline: 3px solid #D98B9A;
-  outline-offset: 4px;
-}
 
-
-/* =========================================================
-   03. GLOBAL CONTAINER
-   ALL PAGES USE THE SAME ALIGNMENT
-   ========================================================= */
+/* 03. GLOBAL CONTAINER */
 
 .ukaes-container,
 .container {
@@ -122,15 +100,12 @@ textarea:focus-visible {
     var(--container-width),
     calc(100% - var(--container-gutter))
   );
-
   margin-left: auto;
   margin-right: auto;
 }
 
 
-/* =========================================================
-   04. GLOBAL TYPOGRAPHY
-   ========================================================= */
+/* 04. TYPOGRAPHY */
 
 h1,
 h2,
@@ -173,10 +148,7 @@ p {
   text-transform: uppercase;
 }
 
-.ukaes-text-center {
-  text-align: center;
-}
-
+.ukaes-text-center,
 .text-center {
   text-align: center;
 }
@@ -186,9 +158,7 @@ p {
 }
 
 
-/* =========================================================
-   05. HEADER
-   ========================================================= */
+/* 05. HEADER */
 
 .ukaes-header {
   position: relative;
@@ -200,68 +170,52 @@ p {
 
 .ukaes-header-inner {
   min-height: var(--header-height);
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   gap: 35px;
   padding-top: 9px;
   padding-bottom: 9px;
 }
 
-
-/* LOGO */
-
 .ukaes-brand {
   display: flex;
   align-items: center;
   flex-shrink: 0;
-
   max-width: 450px;
   text-decoration: none;
 }
 
 .ukaes-brand img {
   display: block;
-
   width: auto;
   height: 64px;
   max-width: 420px;
-
   object-fit: contain;
   object-position: left center;
 }
 
 
-/* =========================================================
-   06. NAVIGATION
-   ========================================================= */
+/* 06. NAVIGATION */
 
 .ukaes-navigation {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-
   gap: clamp(15px, 1.6vw, 25px);
   flex-wrap: nowrap;
 }
 
 .ukaes-navigation a {
   position: relative;
-
   display: inline-flex;
   align-items: center;
-
   padding: 12px 0;
-
   color: #262626;
   font-size: 14px;
   font-weight: 700;
-
   white-space: nowrap;
   text-decoration: none;
-
   transition: color var(--transition);
 }
 
@@ -274,16 +228,12 @@ p {
 
 .ukaes-navigation a::after {
   content: "";
-
   position: absolute;
   bottom: 4px;
   left: 0;
-
   width: 0;
   height: 2px;
-
   background: var(--burgundy);
-
   transition: width var(--transition);
 }
 
@@ -294,77 +244,41 @@ p {
   width: 100%;
 }
 
-
-/* MOBILE MENU BUTTON */
-
 .ukaes-mobile-toggle {
   display: none;
-
   padding: 10px 17px;
-
   color: var(--burgundy);
   background: white;
-
   border: 1px solid var(--burgundy);
-
   font-size: 14px;
   font-weight: 700;
 }
-
-
-/* HEADER SCROLL */
 
 .ukaes-header.is-scrolled {
   box-shadow: 0 4px 18px rgba(0,0,0,.06);
 }
 
 
-/* =========================================================
-   07. HERO BANNER
-   MOST IMPORTANT UPDATE
-   ========================================================= */
+/* 07. HERO BANNER */
 
 .ukaes-hero {
   position: relative;
-
   display: flex;
   align-items: center;
-
   width: 100%;
   min-height: 480px;
-
   padding: 0;
-
   overflow: hidden;
-
   background: var(--burgundy-dark);
   color: white;
 }
 
-
-/* No background photographs */
-
-.ukaes-hero::before {
-  content: none;
-}
-
+.ukaes-hero::before,
 .ukaes-hero::after {
   content: none;
 }
 
-
-/*
-  KEY FIX:
-
-  Hero content now shares exactly
-  the same central alignment as
-  .ukaes-container.
-
-  It will no longer start at x = 0.
-*/
-
 .ukaes-hero-content {
-
   position: relative;
   z-index: 2;
 
@@ -374,85 +288,48 @@ p {
   );
 
   max-width: var(--container-width);
-
   margin-left: auto;
   margin-right: auto;
 
-  padding-top: 90px;
-  padding-bottom: 90px;
-  padding-left: 0;
-  padding-right: 0;
-
+  padding: 90px 0;
   color: white;
 }
-
-
-/* HERO EYEBROW */
 
 .ukaes-hero .ukaes-eyebrow {
   margin-bottom: 17px;
   color: #F5C9D2;
 }
 
-
-/* HERO TITLE */
-
 .ukaes-hero h1 {
   max-width: 850px;
-
-  margin-top: 0;
-  margin-bottom: 22px;
-
+  margin: 0 0 22px;
   color: white;
-
   font-size: clamp(42px, 5.5vw, 70px);
   font-weight: 800;
-
   line-height: 1.08;
   letter-spacing: -.045em;
 }
 
-
-/* HERO DESCRIPTION */
-
 .ukaes-hero p {
   max-width: 680px;
-
-  margin-top: 0;
-  margin-bottom: 28px;
-
+  margin: 0 0 28px;
   color: rgba(255,255,255,.93);
-
   font-size: 17px;
   line-height: 1.8;
 }
-
-
-/* HERO BUTTON */
 
 .ukaes-hero .ukaes-button {
   margin-top: 5px;
 }
 
 
-/* =========================================================
-   08. PAGE INTRODUCTION
-   ========================================================= */
+/* 08. PAGE INTRODUCTION */
 
 .ukaes-page-intro {
-  position: relative;
-
   width: 100%;
-
-  padding-top: 85px;
-  padding-bottom: 85px;
-
+  padding: 85px 0;
   background: var(--burgundy-dark);
   color: white;
-}
-
-.ukaes-page-intro .ukaes-container {
-  position: relative;
 }
 
 .ukaes-page-intro .ukaes-eyebrow {
@@ -462,9 +339,7 @@ p {
 .ukaes-page-intro h1 {
   max-width: 850px;
   margin: 15px 0 20px;
-
   color: white;
-
   font-size: clamp(40px, 5.5vw, 68px);
   line-height: 1.1;
 }
@@ -472,40 +347,27 @@ p {
 .ukaes-page-intro p {
   max-width: 700px;
   margin: 0;
-
   color: rgba(255,255,255,.9);
   font-size: 16px;
   line-height: 1.85;
 }
 
 
-/* =========================================================
-   09. BUTTONS
-   ========================================================= */
+/* 09. BUTTONS */
 
 .ukaes-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   min-height: 46px;
-
   padding: 12px 23px;
-
   background: var(--burgundy);
   color: white;
-
   border: 1px solid var(--burgundy);
-
   font-size: 13px;
   font-weight: 700;
-
   text-decoration: none;
-
-  transition:
-    background var(--transition),
-    color var(--transition),
-    border-color var(--transition);
+  transition: all var(--transition);
 }
 
 .ukaes-button:hover {
@@ -526,18 +388,11 @@ p {
   border-color: #F7EDEF;
 }
 
-
-/* TEXT LINKS */
-
 .ukaes-text-link {
   display: inline-block;
-
   color: var(--burgundy);
-
   font-size: 13px;
   font-weight: 700;
-
-  text-decoration: none;
 }
 
 .ukaes-text-link:hover {
@@ -545,13 +400,10 @@ p {
 }
 
 
-/* =========================================================
-   10. SECTIONS
-   ========================================================= */
+/* 10. SECTIONS */
 
 .ukaes-section {
-  padding-top: var(--section-spacing);
-  padding-bottom: var(--section-spacing);
+  padding: var(--section-spacing) 0;
   background: white;
 }
 
@@ -580,17 +432,11 @@ p {
 }
 
 
-/* =========================================================
-   11. EDITORIAL LAYOUT
-   ========================================================= */
+/* 11. EDITORIAL LAYOUT */
 
 .ukaes-editorial {
   display: grid;
-
-  grid-template-columns:
-    minmax(0, 1fr)
-    minmax(0, 1fr);
-
+  grid-template-columns: minmax(0,1fr) minmax(0,1fr);
   align-items: center;
   gap: 55px;
 }
@@ -616,37 +462,25 @@ p {
 }
 
 .ukaes-editorial-image img {
-  display: block;
-
   width: 100%;
   aspect-ratio: 5 / 4;
-
   object-fit: cover;
 }
 
 
-/* =========================================================
-   12. FEATURE GRID
-   ========================================================= */
+/* 12. FEATURE GRID */
 
 .ukaes-feature-grid {
   display: grid;
-
-  grid-template-columns:
-    repeat(3, minmax(0, 1fr));
-
+  grid-template-columns: repeat(3,minmax(0,1fr));
   gap: 25px;
 }
 
 .ukaes-feature {
   min-width: 0;
-
   background: white;
   border: 1px solid var(--border);
-
-  transition:
-    transform var(--transition),
-    box-shadow var(--transition);
+  transition: transform var(--transition), box-shadow var(--transition);
 }
 
 .ukaes-feature:hover {
@@ -681,14 +515,10 @@ p {
 }
 
 
-/* =========================================================
-   13. HIGHLIGHT SECTION
-   ========================================================= */
+/* 13. HIGHLIGHT */
 
 .ukaes-highlight {
-  padding-top: 60px;
-  padding-bottom: 60px;
-
+  padding: 60px 0;
   background: var(--burgundy-dark);
   color: white;
 }
@@ -697,7 +527,6 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   gap: 35px;
 }
 
@@ -715,22 +544,16 @@ p {
 }
 
 
-/* =========================================================
-   14. RESEARCH PAGE
-   ========================================================= */
+/* 14. RESEARCH */
 
 .ukaes-research-grid {
   display: grid;
-
-  grid-template-columns:
-    repeat(3, minmax(0, 1fr));
-
+  grid-template-columns: repeat(3,minmax(0,1fr));
   gap: 20px;
 }
 
 .ukaes-research-item {
   padding: 25px;
-
   background: white;
   border: 1px solid var(--border);
   border-top: 3px solid var(--burgundy);
@@ -743,35 +566,27 @@ p {
 
 .ukaes-research-item p {
   margin: 0;
-  color: #666666;
+  color: #666;
   font-size: 13px;
   line-height: 1.8;
 }
 
 
-/* =========================================================
-   15. EDUCATION PAGE
-   ========================================================= */
+/* 15. EDUCATION */
 
 .ukaes-education-grid,
 .edu-programme-grid {
   display: grid;
-
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
-
+  grid-template-columns: repeat(2,minmax(0,1fr));
   gap: 28px;
 }
 
 .edu-programme {
   display: flex;
   flex-direction: column;
-
   min-width: 0;
-
   background: white;
   border: 1px solid var(--border);
-
   transition: transform var(--transition);
 }
 
@@ -810,7 +625,7 @@ p {
 }
 
 .edu-programme-description {
-  color: #666666;
+  color: #666;
   font-size: 13px;
   line-height: 1.85;
 }
@@ -818,9 +633,7 @@ p {
 .edu-module-heading {
   padding-top: 15px;
   margin-bottom: 10px;
-
   border-top: 1px solid var(--border);
-
   color: var(--ink);
   font-size: 11px;
   font-weight: 800;
@@ -837,56 +650,41 @@ p {
 
 .edu-module-list li {
   position: relative;
-
   padding: 10px 0 10px 32px;
-
   border-bottom: 1px solid #F0EFEC;
-
-  color: #555555;
+  color: #555;
   font-size: 13px;
   line-height: 1.65;
-
   counter-increment: module;
 }
 
 .edu-module-list li::before {
   content: counter(module, decimal-leading-zero);
-
   position: absolute;
   left: 0;
   top: 10px;
-
   color: var(--burgundy);
   font-size: 11px;
   font-weight: 800;
 }
 
 
-/* =========================================================
-   16. PEOPLE PAGE
-   ========================================================= */
+/* 16. PEOPLE */
 
 .people-grid {
   display: grid;
-
-  grid-template-columns:
-    repeat(3, minmax(0, 1fr));
-
+  grid-template-columns: repeat(3,minmax(0,1fr));
   gap: 22px;
 }
 
 .person-card {
   display: flex;
   align-items: flex-start;
-
   min-width: 0;
   gap: 17px;
-
   padding: 19px;
-
   background: white;
   border: 1px solid var(--border);
-
   transition: border-color var(--transition);
 }
 
@@ -896,12 +694,9 @@ p {
 
 .person-photo {
   flex: 0 0 94px;
-
   width: 94px;
   aspect-ratio: 3 / 4;
-
   overflow: hidden;
-
   background: var(--soft);
   border-radius: 3px;
 }
@@ -925,9 +720,7 @@ p {
 .person-role {
   display: inline-block;
   margin-bottom: 9px;
-
   color: var(--burgundy);
-
   font-size: 11px;
   font-weight: 700;
   line-height: 1.5;
@@ -935,12 +728,9 @@ p {
 
 .person-detail {
   margin-bottom: 7px;
-
-  color: #666666;
-
+  color: #666;
   font-size: 12px;
   line-height: 1.7;
-
   overflow-wrap: anywhere;
 }
 
@@ -954,26 +744,19 @@ p {
   display: inline-block;
   padding: 4px 7px;
   margin-bottom: 8px;
-
   background: var(--soft);
   color: #756B60;
-
   font-size: 9px;
   font-weight: 700;
   letter-spacing: .05em;
 }
 
 
-/* =========================================================
-   17. CONTACT PAGE
-   ========================================================= */
+/* 17. CONTACT */
 
 .contact-email-grid {
   display: grid;
-
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
-
+  grid-template-columns: repeat(2,minmax(0,1fr));
   gap: 20px;
 }
 
@@ -981,12 +764,9 @@ p {
   display: flex;
   align-items: flex-start;
   gap: 20px;
-
   padding: 27px;
-
   background: white;
   border: 1px solid var(--border);
-
   transition: border-color var(--transition);
 }
 
@@ -996,17 +776,13 @@ p {
 
 .contact-email-icon {
   flex: 0 0 45px;
-
   width: 45px;
   height: 45px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   background: var(--burgundy-light);
   color: var(--burgundy);
-
   border-radius: 50%;
 }
 
@@ -1021,7 +797,7 @@ p {
 }
 
 .contact-email-content p {
-  color: #777777;
+  color: #777;
   font-size: 13px;
   line-height: 1.7;
 }
@@ -1036,28 +812,21 @@ p {
 .contact-general {
   padding: 38px;
   margin-top: 35px;
-
   background: var(--soft);
   text-align: center;
 }
 
 
-/* =========================================================
-   18. APPOINTMENTS PAGE
-   ========================================================= */
+/* 18. APPOINTMENTS */
 
 .selection-grid {
   display: grid;
-
-  grid-template-columns:
-    repeat(3, minmax(0, 1fr));
-
+  grid-template-columns: repeat(3,minmax(0,1fr));
   gap: 18px;
 }
 
 .selection-card {
   padding: 24px;
-
   background: white;
   border: 1px solid var(--border);
   border-top: 3px solid var(--burgundy);
@@ -1077,20 +846,17 @@ p {
 
 .selection-card p {
   margin: 0;
-  color: #666666;
+  color: #666;
   font-size: 13px;
   line-height: 1.8;
 }
 
 .selection-label {
   display: inline-block;
-
   padding: 7px 12px;
   margin-bottom: 12px;
-
   background: var(--burgundy-light);
   color: var(--burgundy);
-
   font-size: 11px;
   font-weight: 800;
   letter-spacing: .1em;
@@ -1100,7 +866,6 @@ p {
   width: 100%;
   overflow-x: auto;
   margin: 25px 0 35px;
-
   background: white;
   border: 1px solid var(--border);
 }
@@ -1108,26 +873,21 @@ p {
 .criteria-table {
   width: 100%;
   min-width: 600px;
-
   border-collapse: collapse;
   font-size: 13px;
 }
 
 .criteria-table th {
   padding: 16px;
-
   background: var(--burgundy-dark);
   color: white;
-
   text-align: left;
 }
 
 .criteria-table td {
   padding: 15px 16px;
-
   border-bottom: 1px solid var(--border);
-
-  color: #555555;
+  color: #555;
   line-height: 1.7;
   vertical-align: top;
 }
@@ -1144,7 +904,6 @@ p {
 
 .criteria-note {
   padding: 23px 26px;
-
   background: var(--soft);
   border-left: 4px solid var(--burgundy);
 }
@@ -1162,7 +921,7 @@ p {
 
 .weight-list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2,1fr);
   gap: 15px;
 }
 
@@ -1180,24 +939,20 @@ p {
 }
 
 .weight-item span {
-  color: #555555;
+  color: #555;
   font-size: 12px;
   line-height: 1.6;
 }
 
 
-/* =========================================================
-   19. MEMBER DIRECTORY
-   ========================================================= */
+/* 19. MEMBER DIRECTORY */
 
 .member-directory {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   gap: 35px;
   padding: 42px;
-
   background: var(--soft);
 }
 
@@ -1210,30 +965,24 @@ p {
 }
 
 .member-directory p {
-  color: #666666;
+  color: #666;
   font-size: 14px;
   line-height: 1.85;
 }
 
 
-/* =========================================================
-   20. GENERIC CLOSING BANNER
-   ========================================================= */
+/* 20. CLOSING BANNERS */
 
 .edu-closing,
 .people-closing,
 .contact-closing,
 .appointment-closing {
-
-  padding-top: 60px;
-  padding-bottom: 60px;
-
+  padding: 60px 0;
   background: linear-gradient(
     120deg,
     var(--burgundy-dark),
     var(--burgundy)
   );
-
   color: white;
 }
 
@@ -1241,11 +990,9 @@ p {
 .people-closing-inner,
 .contact-closing-inner,
 .appointment-closing-inner {
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   gap: 30px;
 }
 
@@ -1275,36 +1022,57 @@ p {
 
 /* =========================================================
    21. FOOTER
+   UPDATED: WHITE LOGO SILHOUETTE
    ========================================================= */
 
 .ukaes-footer {
   padding-top: 55px;
   padding-bottom: 20px;
-
   background: #222222;
   color: #D5D5D5;
 }
 
 .ukaes-footer-grid {
   display: grid;
-
-  grid-template-columns:
-    2fr 1fr 1fr;
-
+  grid-template-columns: 2fr 1fr 1fr;
   gap: 45px;
-
   padding-bottom: 35px;
 }
 
+
+/* -----------------------------------------
+   LOGO SILHOUETTE
+
+   Required image:
+   assets/ukaes-logo-white.png
+
+   Transparent background.
+   White logo artwork.
+   ----------------------------------------- */
+
 .ukaes-footer-brand {
-  margin-bottom: 10px;
 
-  color: white;
+  display: block;
 
-  font-size: 28px;
-  font-weight: 800;
-  letter-spacing: -.04em;
+  width: 225px;
+  height: 78px;
+
+  margin-bottom: 12px;
+
+  background-image: url("../assets/ukaes-logo-white.png");
+
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: contain;
+
+  font-size: 0;
+  line-height: 0;
+
+  overflow: hidden;
 }
+
+
+/* Footer description */
 
 .ukaes-footer p {
   color: #BDBDBD;
@@ -1342,26 +1110,20 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   gap: 20px;
   padding-top: 20px;
-
   border-top: 1px solid #444444;
-
   color: #AFAFAF;
   font-size: 11px;
 }
 
 
-/* =========================================================
-   22. BACK TO TOP
-   ========================================================= */
+/* 22. BACK TO TOP */
 
 .ukaes-back-to-top {
   position: fixed;
   right: 24px;
   bottom: 25px;
-
   z-index: 200;
 
   width: 43px;
@@ -1378,7 +1140,6 @@ p {
   border-radius: 50%;
 
   font-size: 20px;
-
   box-shadow: 0 3px 12px rgba(0,0,0,.1);
 }
 
@@ -1392,9 +1153,7 @@ p {
 }
 
 
-/* =========================================================
-   23. FORMS
-   ========================================================= */
+/* 23. FORMS */
 
 .ukaes-form {
   width: 100%;
@@ -1408,7 +1167,6 @@ p {
 .ukaes-form-group label {
   display: block;
   margin-bottom: 8px;
-
   color: var(--ink);
   font-size: 13px;
   font-weight: 700;
@@ -1418,12 +1176,9 @@ p {
 .ukaes-form-group textarea,
 .ukaes-form-group select {
   width: 100%;
-
   padding: 13px 15px;
-
   background: white;
   color: var(--ink);
-
   border: 1px solid #DADADA;
   border-radius: 0;
 }
@@ -1440,15 +1195,8 @@ p {
   outline: none;
 }
 
-[data-form-status] {
-  margin-top: 15px;
-  font-size: 13px;
-}
 
-
-/* =========================================================
-   24. IMAGE RESPONSIVENESS
-   ========================================================= */
+/* 24. IMAGE RESPONSIVENESS */
 
 .ukaes-editorial-image img,
 .ukaes-feature-image img,
@@ -1464,9 +1212,7 @@ p {
 }
 
 
-/* =========================================================
-   25. TABLET RESPONSIVE
-   ========================================================= */
+/* 25. TABLET */
 
 @media (max-width: 1100px) {
 
@@ -1491,20 +1237,15 @@ p {
     font-size: 12px;
   }
 
-  .people-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
+  .people-grid,
   .ukaes-feature-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2,minmax(0,1fr));
   }
 
 }
 
 
-/* =========================================================
-   26. MOBILE NAVIGATION
-   ========================================================= */
+/* 26. MOBILE NAVIGATION */
 
 @media (max-width: 850px) {
 
@@ -1533,23 +1274,17 @@ p {
 
   .ukaes-navigation {
     display: none;
-
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
-
     width: 100%;
-
     flex-direction: column;
     align-items: stretch;
-
     gap: 0;
     padding: 8px 0;
-
     background: white;
     border: 1px solid var(--border);
-
     box-shadow: 0 10px 20px rgba(0,0,0,.08);
   }
 
@@ -1572,8 +1307,7 @@ p {
   }
 
   .ukaes-hero-content {
-    padding-top: 70px;
-    padding-bottom: 70px;
+    padding: 70px 0;
   }
 
   .ukaes-editorial {
@@ -1583,7 +1317,7 @@ p {
 
   .ukaes-research-grid,
   .selection-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2,minmax(0,1fr));
   }
 
   .ukaes-footer-grid {
@@ -1593,9 +1327,7 @@ p {
 }
 
 
-/* =========================================================
-   27. SMALL MOBILE
-   ========================================================= */
+/* 27. SMALL MOBILE */
 
 @media (max-width: 600px) {
 
@@ -1637,12 +1369,11 @@ p {
 
   .ukaes-hero-content {
     width: calc(100% - 32px);
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding: 60px 0;
   }
 
   .ukaes-hero h1 {
-    font-size: clamp(37px, 9vw, 48px);
+    font-size: clamp(37px,9vw,48px);
   }
 
   .ukaes-hero p {
@@ -1650,8 +1381,7 @@ p {
   }
 
   .ukaes-page-intro {
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding: 60px 0;
   }
 
   .ukaes-page-intro h1 {
@@ -1710,6 +1440,11 @@ p {
     gap: 28px;
   }
 
+  .ukaes-footer-brand {
+    width: 195px;
+    height: 68px;
+  }
+
   .ukaes-footer-bottom {
     align-items: flex-start;
     flex-direction: column;
@@ -1724,9 +1459,7 @@ p {
 }
 
 
-/* =========================================================
-   28. ACCESSIBILITY
-   ========================================================= */
+/* 28. ACCESSIBILITY */
 
 @media (prefers-reduced-motion: reduce) {
 
