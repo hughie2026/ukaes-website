@@ -6,8 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta name="description"
-    content="Meet the management and research professionals of the UK Academy of Epidemiology Sciences.">
+  <meta name="description" content="Meet the management and research professionals of the UK Academy of Epidemiology Sciences.">
 
   <meta name="theme-color" content="#85001D">
 
@@ -18,10 +17,8 @@
 
   <style>
 
-    /* PEOPLE PAGE */
-
     .people-intro {
-      max-width: 800px;
+      max-width: 850px;
     }
 
     .people-intro p {
@@ -30,22 +27,20 @@
       line-height: 1.9;
     }
 
-    .people-section-heading {
+    .people-heading {
       margin-bottom: 30px;
     }
 
-    .people-section-heading h2 {
+    .people-heading h2 {
       font-size: clamp(25px, 3vw, 34px);
       margin: 12px 0;
     }
 
-    .people-section-heading p {
+    .people-heading p {
       color: #777;
       font-size: 13px;
       line-height: 1.8;
     }
-
-    /* PEOPLE GRID */
 
     .people-grid {
       display: grid;
@@ -53,14 +48,11 @@
       gap: 25px 20px;
     }
 
-    /* PERSON CARD */
-
     .person-card {
       min-width: 0;
-      background: #FFFFFF;
-      border: 1px solid #EAE8E5;
-      transition: transform .25s ease,
-                  box-shadow .25s ease;
+      background: #fff;
+      border: 1px solid #eae8e5;
+      transition: transform .25s ease, box-shadow .25s ease;
     }
 
     .person-card:hover {
@@ -68,25 +60,32 @@
       box-shadow: 0 8px 24px rgba(0,0,0,.06);
     }
 
-    /* PORTRAIT */
-
     .person-photo {
       width: 100%;
       aspect-ratio: 3 / 4;
       overflow: hidden;
-      background: #F0EFEC;
+      background: #eeeae7;
     }
 
     .person-photo img {
       display: block;
       width: 100%;
       height: 100%;
-      aspect-ratio: 3 / 4;
       object-fit: cover;
       object-position: center top;
     }
 
-    /* PERSON INFORMATION */
+    .photo-error {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px;
+      text-align: center;
+      color: #777;
+      font-size: 12px;
+    }
 
     .person-info {
       padding: 17px 16px 20px;
@@ -95,23 +94,23 @@
     .person-role {
       display: block;
       margin-bottom: 9px;
-      color: #A00025;
+      color: #a00025;
       font-size: 10px;
       font-weight: 700;
-      line-height: 1.6;
+      line-height: 1.7;
       letter-spacing: .04em;
       text-transform: uppercase;
     }
 
     .person-info h3 {
-      margin: 0 0 12px;
+      margin: 0 0 14px;
       color: #252525;
       font-size: 17px;
       line-height: 1.4;
     }
 
     .person-detail {
-      margin-bottom: 10px;
+      margin-bottom: 11px;
     }
 
     .person-detail-label {
@@ -133,8 +132,7 @@
     }
 
     .person-email {
-      display: inline-block;
-      color: #85001D;
+      color: #85001d;
       font-size: 12px;
       text-decoration: none;
       overflow-wrap: anywhere;
@@ -144,26 +142,22 @@
       text-decoration: underline;
     }
 
-    /* EXTERNAL EXPERT LABEL */
-
     .person-external {
       display: inline-block;
       margin-bottom: 10px;
       padding: 4px 8px;
-      background: #F5EEF0;
-      color: #85001D;
+      background: #f5eef0;
+      color: #85001d;
       font-size: 9px;
       font-weight: 700;
-      letter-spacing: .04em;
+      line-height: 1.6;
     }
-
-    /* MEMBERS DIRECTORY */
 
     .people-directory {
       margin-top: 55px;
       padding: 35px;
-      background: #F5F4F1;
-      border-left: 4px solid #85001D;
+      background: #f5f4f1;
+      border-left: 4px solid #85001d;
     }
 
     .people-directory h2 {
@@ -177,8 +171,6 @@
       font-size: 13px;
       line-height: 1.9;
     }
-
-    /* RESPONSIVE */
 
     @media (max-width: 1050px) {
       .people-grid {
@@ -220,9 +212,7 @@
 
 </head>
 
-
 <body>
-
 
   <!-- HEADER -->
 
@@ -231,11 +221,9 @@
     <div class="ukaes-container ukaes-header-inner">
 
       <a href="index.html" class="ukaes-brand">
-
         <img
           src="assets/ukaes-logo.jpg"
           alt="UK Academy of Epidemiology Sciences">
-
       </a>
 
       <button
@@ -243,13 +231,10 @@
         type="button"
         aria-label="Open navigation"
         aria-expanded="false">
-
         Menu
-
       </button>
 
       <nav class="ukaes-navigation" aria-label="Main navigation">
-
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="research.html">Research</a>
@@ -257,7 +242,6 @@
         <a href="appointments.html">Appointments</a>
         <a href="people.html" class="active">People</a>
         <a href="contact.html">Contact</a>
-
       </nav>
 
     </div>
@@ -265,9 +249,7 @@
   </header>
 
 
-
   <main>
-
 
     <!-- HERO -->
 
@@ -275,9 +257,7 @@
 
       <div class="ukaes-container">
 
-        <span class="ukaes-eyebrow">
-          Our People
-        </span>
+        <span class="ukaes-eyebrow">Our People</span>
 
         <h1>
           The People Behind<br>
@@ -295,20 +275,15 @@
     </section>
 
 
-
-    <!-- PEOPLE INTRODUCTION -->
+    <!-- INTRODUCTION -->
 
     <section class="ukaes-section">
 
       <div class="ukaes-container people-intro">
 
-        <span class="ukaes-eyebrow">
-          Management & Research
-        </span>
+        <span class="ukaes-eyebrow">Management & Research</span>
 
-        <h2>
-          Our Academic Community
-        </h2>
+        <h2>Our Academic Community</h2>
 
         <p>
           UKAES brings together academic professionals
@@ -328,22 +303,17 @@
     </section>
 
 
-
-    <!-- MANAGEMENT AND RESEARCH PERSONNEL -->
+    <!-- PEOPLE -->
 
     <section class="ukaes-section ukaes-section-soft">
 
       <div class="ukaes-container">
 
-        <div class="people-section-heading">
+        <div class="people-heading">
 
-          <span class="ukaes-eyebrow">
-            Our People
-          </span>
+          <span class="ukaes-eyebrow">Our People</span>
 
-          <h2>
-            Management & Research Professionals
-          </h2>
+          <h2>Management & Research Professionals</h2>
 
           <p>
             Individual profiles, academic interests
@@ -356,650 +326,395 @@
         <div class="people-grid">
 
 
-          <!-- 01 CATHERINE ASHFORD -->
+          <!-- 01 PRESIDENT -->
 
           <article class="person-card">
 
             <div class="person-photo">
               <img
-                src="assets/people/catherine-ashford.jpg"
+                src="assets/people/founder-president.jpg"
+                data-fallback="assets/people/catherine-ashford.jpg"
                 alt="Professor Catherine Ashford"
                 loading="lazy">
             </div>
 
             <div class="person-info">
 
-              <span class="person-role">
-                Founder & President
-              </span>
+              <span class="person-role">Founder & President</span>
 
-              <h3>
-                Professor Catherine Ashford
-              </h3>
+              <h3>Professor Catherine Ashford</h3>
 
               <div class="person-detail">
-
-                <span class="person-detail-label">
-                  Research Interests
-                </span>
-
-                <p>
-                  Global Epidemiology; Public Health Policy
-                </p>
-
+                <span class="person-detail-label">Research Interests</span>
+                <p>Global Epidemiology; Public Health Policy</p>
               </div>
 
               <div class="person-detail">
-
-                <span class="person-detail-label">
-                  Email
-                </span>
-
-                <a class="person-email"
-                   href="mailto:catherine@ukaes.org">
+                <span class="person-detail-label">Email</span>
+                <a class="person-email" href="mailto:catherine@ukaes.org">
                   catherine@ukaes.org
                 </a>
-
               </div>
 
             </div>
-
           </article>
 
 
-
-          <!-- 02 PRIYA NAIR -->
+          <!-- 02 EDUCATION DIRECTOR -->
 
           <article class="person-card">
 
             <div class="person-photo">
               <img
-                src="assets/people/priya-nair.jpg"
+                src="assets/people/education-director.jpg"
+                data-fallback="assets/people/priya-nair.jpg"
                 alt="Professor Priya Nair"
                 loading="lazy">
             </div>
 
             <div class="person-info">
 
-              <span class="person-role">
-                Director of Education Centre
-              </span>
+              <span class="person-role">Director of Education Centre</span>
 
-              <h3>
-                Professor Priya Nair
-              </h3>
+              <h3>Professor Priya Nair</h3>
 
               <div class="person-detail">
-                <span class="person-detail-label">
-                  Research Interests
-                </span>
-
-                <p>
-                  Epidemiology Education; Medical Education
-                </p>
+                <span class="person-detail-label">Research Interests</span>
+                <p>Epidemiology Education; Medical Education</p>
               </div>
 
               <div class="person-detail">
-                <span class="person-detail-label">
-                  Email
-                </span>
-
-                <a class="person-email"
-                   href="mailto:priya@ukaes.org">
+                <span class="person-detail-label">Email</span>
+                <a class="person-email" href="mailto:priya@ukaes.org">
                   priya@ukaes.org
                 </a>
               </div>
 
             </div>
-
           </article>
 
 
-
-          <!-- 03 DANIEL CHEN -->
+          <!-- 03 RESEARCH DIRECTOR -->
 
           <article class="person-card">
 
             <div class="person-photo">
               <img
-                src="assets/people/daniel-chen.jpg"
+                src="assets/people/research-director.jpg"
+                data-fallback="assets/people/daniel-chen.jpg"
                 alt="Professor Daniel Chen"
                 loading="lazy">
             </div>
 
             <div class="person-info">
 
-              <span class="person-role">
-                Director of Research Centre
-              </span>
+              <span class="person-role">Director of Research Centre</span>
 
-              <h3>
-                Professor Daniel Chen
-              </h3>
+              <h3>Professor Daniel Chen</h3>
 
               <div class="person-detail">
-                <span class="person-detail-label">
-                  Research Interests
-                </span>
-
-                <p>
-                  Infectious Disease Epidemiology;
-                  Molecular Epidemiology
-                </p>
+                <span class="person-detail-label">Research Interests</span>
+                <p>Infectious Disease Epidemiology; Molecular Epidemiology</p>
               </div>
 
               <div class="person-detail">
-                <span class="person-detail-label">
-                  Email
-                </span>
-
-                <a class="person-email"
-                   href="mailto:daniel@ukaes.org">
+                <span class="person-detail-label">Email</span>
+                <a class="person-email" href="mailto:daniel@ukaes.org">
                   daniel@ukaes.org
                 </a>
               </div>
 
             </div>
-
           </article>
 
 
-
-          <!-- 04 FIONA MCALLISTER -->
+          <!-- 04 ADMINISTRATION -->
 
           <article class="person-card">
 
             <div class="person-photo">
               <img
-                src="assets/people/fiona-mcallister.jpg"
+                src="assets/people/administration-director.jpg"
+                data-fallback="assets/people/fiona-mcallister.jpg"
                 alt="Fiona McAllister"
                 loading="lazy">
             </div>
 
             <div class="person-info">
 
-              <span class="person-role">
-                Chief Administrative Officer
-              </span>
+              <span class="person-role">Chief Administrative Officer</span>
 
-              <h3>
-                Fiona McAllister
-              </h3>
+              <h3>Fiona McAllister</h3>
 
               <div class="person-detail">
-                <span class="person-detail-label">
-                  Research Interests
-                </span>
-
-                <p>
-                  Institutional Governance;
-                  Academic Administration
-                </p>
+                <span class="person-detail-label">Research Interests</span>
+                <p>Institutional Governance; Academic Administration</p>
               </div>
 
               <div class="person-detail">
-                <span class="person-detail-label">
-                  Email
-                </span>
-
-                <a class="person-email"
-                   href="mailto:fiona@ukaes.org">
+                <span class="person-detail-label">Email</span>
+                <a class="person-email" href="mailto:fiona@ukaes.org">
                   fiona@ukaes.org
                 </a>
               </div>
 
             </div>
-
           </article>
-
 
 
           <!-- 05 HELEN PRICE -->
 
           <article class="person-card">
-
             <div class="person-photo">
               <img
-                src="assets/people/helen-price.jpg"
+                src="assets/people/research-professor-01.jpg"
+                data-fallback="assets/people/helen-price.jpg"
                 alt="Professor Helen Price"
                 loading="lazy">
             </div>
 
             <div class="person-info">
-
-              <span class="person-role">
-                Research Professor
-              </span>
-
-              <h3>
-                Professor Helen Price
-              </h3>
+              <span class="person-role">Research Professor</span>
+              <h3>Professor Helen Price</h3>
 
               <div class="person-detail">
-                <span class="person-detail-label">
-                  Research Interests
-                </span>
-
-                <p>
-                  Cancer Epidemiology
-                </p>
+                <span class="person-detail-label">Research Interests</span>
+                <p>Cancer Epidemiology</p>
               </div>
 
               <div class="person-detail">
-                <span class="person-detail-label">
-                  Email
-                </span>
-
-                <a class="person-email"
-                   href="mailto:helen@ukaes.org">
-                  helen@ukaes.org
-                </a>
+                <span class="person-detail-label">Email</span>
+                <a class="person-email" href="mailto:helen@ukaes.org">helen@ukaes.org</a>
               </div>
-
             </div>
-
           </article>
-
 
 
           <!-- 06 JAMES O'CONNELL -->
 
           <article class="person-card">
-
             <div class="person-photo">
               <img
-                src="assets/people/james-oconnell.jpg"
+                src="assets/people/research-professor-02.jpg"
+                data-fallback="assets/people/james-oconnell.jpg"
                 alt="Professor James O'Connell"
                 loading="lazy">
             </div>
 
             <div class="person-info">
-
-              <span class="person-role">
-                Research Professor
-              </span>
-
-              <h3>
-                Professor James O’Connell
-              </h3>
+              <span class="person-role">Research Professor</span>
+              <h3>Professor James O’Connell</h3>
 
               <div class="person-detail">
-                <span class="person-detail-label">
-                  Research Interests
-                </span>
-
-                <p>
-                  Cardiovascular Epidemiology
-                </p>
+                <span class="person-detail-label">Research Interests</span>
+                <p>Cardiovascular Epidemiology</p>
               </div>
 
               <div class="person-detail">
-                <span class="person-detail-label">
-                  Email
-                </span>
-
-                <a class="person-email"
-                   href="mailto:james@ukaes.org">
-                  james@ukaes.org
-                </a>
+                <span class="person-detail-label">Email</span>
+                <a class="person-email" href="mailto:james@ukaes.org">james@ukaes.org</a>
               </div>
-
             </div>
-
           </article>
-
 
 
           <!-- 07 AISHA RAHMAN -->
 
           <article class="person-card">
-
             <div class="person-photo">
               <img
-                src="assets/people/aisha-rahman.jpg"
+                src="assets/people/research-professor-03.jpg"
+                data-fallback="assets/people/aisha-rahman.jpg"
                 alt="Professor Aisha Rahman"
                 loading="lazy">
             </div>
 
             <div class="person-info">
-
-              <span class="person-role">
-                Research Professor
-              </span>
-
-              <h3>
-                Professor Aisha Rahman
-              </h3>
+              <span class="person-role">Research Professor</span>
+              <h3>Professor Aisha Rahman</h3>
 
               <div class="person-detail">
-                <span class="person-detail-label">
-                  Research Interests
-                </span>
-
-                <p>
-                  Social Epidemiology; Health Inequalities
-                </p>
+                <span class="person-detail-label">Research Interests</span>
+                <p>Social Epidemiology; Health Inequalities</p>
               </div>
 
               <div class="person-detail">
-                <span class="person-detail-label">
-                  Email
-                </span>
-
-                <a class="person-email"
-                   href="mailto:aisha@ukaes.org">
-                  aisha@ukaes.org
-                </a>
+                <span class="person-detail-label">Email</span>
+                <a class="person-email" href="mailto:aisha@ukaes.org">aisha@ukaes.org</a>
               </div>
-
             </div>
-
           </article>
-
 
 
           <!-- 08 THOMAS FLETCHER -->
 
           <article class="person-card">
-
             <div class="person-photo">
               <img
-                src="assets/people/thomas-fletcher.jpg"
+                src="assets/people/research-professor-04.jpg"
+                data-fallback="assets/people/thomas-fletcher.jpg"
                 alt="Professor Thomas Fletcher"
                 loading="lazy">
             </div>
 
             <div class="person-info">
-
-              <span class="person-role">
-                Research Professor
-              </span>
-
-              <h3>
-                Professor Thomas Fletcher
-              </h3>
+              <span class="person-role">Research Professor</span>
+              <h3>Professor Thomas Fletcher</h3>
 
               <div class="person-detail">
-                <span class="person-detail-label">
-                  Research Interests
-                </span>
-
-                <p>
-                  Clinical Epidemiology; Biostatistics
-                </p>
+                <span class="person-detail-label">Research Interests</span>
+                <p>Clinical Epidemiology; Biostatistics</p>
               </div>
 
               <div class="person-detail">
-                <span class="person-detail-label">
-                  Email
-                </span>
-
-                <a class="person-email"
-                   href="mailto:thomas@ukaes.org">
-                  thomas@ukaes.org
-                </a>
+                <span class="person-detail-label">Email</span>
+                <a class="person-email" href="mailto:thomas@ukaes.org">thomas@ukaes.org</a>
               </div>
-
             </div>
-
           </article>
-
 
 
           <!-- 09 MAY LIN -->
 
           <article class="person-card">
-
             <div class="person-photo">
               <img
-                src="assets/people/may-lin.jpg"
+                src="assets/people/research-professor-05.jpg"
+                data-fallback="assets/people/may-lin.jpg"
                 alt="Professor May Lin"
                 loading="lazy">
             </div>
 
             <div class="person-info">
-
-              <span class="person-role">
-                Research Professor
-              </span>
-
-              <h3>
-                Professor May Lin
-              </h3>
+              <span class="person-role">Research Professor</span>
+              <h3>Professor May Lin</h3>
 
               <div class="person-detail">
-                <span class="person-detail-label">
-                  Research Interests
-                </span>
-
-                <p>
-                  Genetic Epidemiology;
-                  Population Health Genomics
-                </p>
+                <span class="person-detail-label">Research Interests</span>
+                <p>Genetic Epidemiology; Population Health Genomics</p>
               </div>
 
               <div class="person-detail">
-                <span class="person-detail-label">
-                  Email
-                </span>
-
-                <a class="person-email"
-                   href="mailto:may@ukaes.org">
-                  may@ukaes.org
-                </a>
+                <span class="person-detail-label">Email</span>
+                <a class="person-email" href="mailto:may@ukaes.org">may@ukaes.org</a>
               </div>
-
             </div>
-
           </article>
-
 
 
           <!-- 10 DAVID HUGHES -->
 
           <article class="person-card">
-
             <div class="person-photo">
               <img
-                src="assets/people/david-hughes.jpg"
+                src="assets/people/research-professor-06.jpg"
+                data-fallback="assets/people/david-hughes.jpg"
                 alt="Professor David Hughes"
                 loading="lazy">
             </div>
 
             <div class="person-info">
-
-              <span class="person-role">
-                Research Professor
-              </span>
-
-              <span class="person-external">
-                PART-TIME EXTERNAL · CHIEF EXPERT ADVISOR
-              </span>
-
-              <h3>
-                Professor David Hughes
-              </h3>
+              <span class="person-role">Research Professor</span>
+              <span class="person-external">PART-TIME EXTERNAL · CHIEF EXPERT ADVISOR</span>
+              <h3>Professor David Hughes</h3>
 
               <div class="person-detail">
-                <span class="person-detail-label">
-                  Research Interests
-                </span>
-
-                <p>
-                  Environmental Epidemiology
-                </p>
+                <span class="person-detail-label">Research Interests</span>
+                <p>Environmental Epidemiology</p>
               </div>
 
               <div class="person-detail">
-                <span class="person-detail-label">
-                  Email
-                </span>
-
-                <a class="person-email"
-                   href="mailto:hughes@ukaes.org">
-                  hughes@ukaes.org
-                </a>
+                <span class="person-detail-label">Email</span>
+                <a class="person-email" href="mailto:hughes@ukaes.org">hughes@ukaes.org</a>
               </div>
-
             </div>
-
           </article>
-
 
 
           <!-- 11 LAURA BENNETT -->
 
           <article class="person-card">
-
             <div class="person-photo">
               <img
-                src="assets/people/laura-bennett.jpg"
+                src="assets/people/research-professor-07.jpg"
+                data-fallback="assets/people/laura-bennett.jpg"
                 alt="Professor Laura Bennett"
                 loading="lazy">
             </div>
 
             <div class="person-info">
-
-              <span class="person-role">
-                Research Professor
-              </span>
-
-              <span class="person-external">
-                PART-TIME EXTERNAL · CHIEF EXPERT ADVISOR
-              </span>
-
-              <h3>
-                Professor Laura Bennett
-              </h3>
+              <span class="person-role">Research Professor</span>
+              <span class="person-external">PART-TIME EXTERNAL · CHIEF EXPERT ADVISOR</span>
+              <h3>Professor Laura Bennett</h3>
 
               <div class="person-detail">
-                <span class="person-detail-label">
-                  Research Interests
-                </span>
-
-                <p>
-                  Maternal and Child Health Epidemiology
-                </p>
+                <span class="person-detail-label">Research Interests</span>
+                <p>Maternal and Child Health Epidemiology</p>
               </div>
 
               <div class="person-detail">
-                <span class="person-detail-label">
-                  Email
-                </span>
-
-                <a class="person-email"
-                   href="mailto:laura@ukaes.org">
-                  laura@ukaes.org
-                </a>
+                <span class="person-detail-label">Email</span>
+                <a class="person-email" href="mailto:laura@ukaes.org">laura@ukaes.org</a>
               </div>
-
             </div>
-
           </article>
-
 
 
           <!-- 12 PETER CAMPBELL -->
 
           <article class="person-card">
-
             <div class="person-photo">
               <img
-                src="assets/people/peter-campbell.jpg"
+                src="assets/people/research-professor-08.jpg"
+                data-fallback="assets/people/peter-campbell.jpg"
                 alt="Professor Peter Campbell"
                 loading="lazy">
             </div>
 
             <div class="person-info">
-
-              <span class="person-role">
-                Research Professor
-              </span>
-
-              <span class="person-external">
-                PART-TIME EXTERNAL · CHIEF EXPERT ADVISOR
-              </span>
-
-              <h3>
-                Professor Peter Campbell
-              </h3>
+              <span class="person-role">Research Professor</span>
+              <span class="person-external">PART-TIME EXTERNAL · CHIEF EXPERT ADVISOR</span>
+              <h3>Professor Peter Campbell</h3>
 
               <div class="person-detail">
-                <span class="person-detail-label">
-                  Research Interests
-                </span>
-
-                <p>
-                  Ageing Epidemiology;
-                  Longitudinal Population Studies
-                </p>
+                <span class="person-detail-label">Research Interests</span>
+                <p>Ageing Epidemiology; Longitudinal Population Studies</p>
               </div>
 
               <div class="person-detail">
-                <span class="person-detail-label">
-                  Email
-                </span>
-
-                <a class="person-email"
-                   href="mailto:petercampbell1@ukaes.org">
-                  petercampbell1@ukaes.org
-                </a>
+                <span class="person-detail-label">Email</span>
+                <a class="person-email" href="mailto:petercampbell1@ukaes.org">petercampbell1@ukaes.org</a>
               </div>
-
             </div>
-
           </article>
-
 
 
           <!-- 13 HUGHIE TAO -->
 
           <article class="person-card">
-
             <div class="person-photo">
               <img
-                src="assets/people/hughie-tao.jpg"
+                src="assets/people/research-professor-09.jpg"
+                data-fallback="assets/people/hughie-tao.jpg"
                 alt="Professor Hughie Tao"
                 loading="lazy">
             </div>
 
             <div class="person-info">
-
-              <span class="person-role">
-                Research Professor
-              </span>
-
-              <span class="person-external">
-                PART-TIME EXTERNAL · CHIEF EXPERT ADVISOR
-              </span>
-
-              <h3>
-                Professor Hughie Tao
-              </h3>
+              <span class="person-role">Research Professor</span>
+              <span class="person-external">PART-TIME EXTERNAL · CHIEF EXPERT ADVISOR</span>
+              <h3>Professor Hughie Tao</h3>
 
               <div class="person-detail">
-                <span class="person-detail-label">
-                  Research Interests
-                </span>
-
-                <p>
-                  Travel Epidemiology; Biostatistics
-                </p>
+                <span class="person-detail-label">Research Interests</span>
+                <p>Travel Epidemiology; Biostatistics</p>
               </div>
 
               <div class="person-detail">
-                <span class="person-detail-label">
-                  Email
-                </span>
-
-                <a class="person-email"
-                   href="mailto:hughie@ukaes.org">
-                  hughie@ukaes.org
-                </a>
+                <span class="person-detail-label">Email</span>
+                <a class="person-email" href="mailto:peter.campbell@ukaes.org">peter.campbell@ukaes.org</a>
               </div>
-
             </div>
-
           </article>
 
 
@@ -1010,25 +725,20 @@
 
         <div class="people-directory">
 
-          <span class="ukaes-eyebrow">
-            UKAES Academic Community
-          </span>
+          <span class="ukaes-eyebrow">UKAES Academic Community</span>
 
-          <h2>
-            Members & Academic Network
-          </h2>
+          <h2>Members & Academic Network</h2>
 
           <p>
             Beyond the individuals featured on this page,
-            UKAES welcomes members and academic
-            professionals from diverse research
-            and professional backgrounds.
+            UKAES welcomes members and academic professionals
+            from diverse research and professional backgrounds.
           </p>
 
           <p>
-            For membership enquiries and information
-            about the wider academic community,
-            please contact the Academy.
+            For membership enquiries and information about
+            the wider academic community, please contact
+            the Academy.
           </p>
 
           <a href="contact.html" class="ukaes-button">
@@ -1040,7 +750,6 @@
       </div>
 
     </section>
-
 
 
     <!-- CLOSING -->
@@ -1055,31 +764,22 @@
             UK Academy of Epidemiology Sciences
           </span>
 
-          <h2>
-            Advancing Science Together.
-          </h2>
+          <h2>Advancing Science Together.</h2>
 
-          <p>
-            Research. Education. Academic Collaboration.
-          </p>
+          <p>Research. Education. Academic Collaboration.</p>
 
         </div>
 
-        <a
-          href="contact.html"
-          class="ukaes-button ukaes-button-white">
-
+        <a href="contact.html"
+           class="ukaes-button ukaes-button-white">
           Contact UKAES
-
         </a>
 
       </div>
 
     </section>
 
-
   </main>
-
 
 
   <!-- FOOTER -->
@@ -1095,27 +795,21 @@
         </div>
 
         <div>
-
           <h3>Explore</h3>
-
           <ul>
             <li><a href="about.html">About</a></li>
             <li><a href="research.html">Research</a></li>
             <li><a href="education.html">Education</a></li>
             <li><a href="appointments.html">Appointments</a></li>
           </ul>
-
         </div>
 
         <div>
-
           <h3>Information</h3>
-
           <ul>
             <li><a href="people.html">People</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
-
         </div>
 
       </div>
@@ -1127,16 +821,13 @@
           UK Academy of Epidemiology Sciences.
         </span>
 
-        <span>
-          All Rights Reserved.
-        </span>
+        <span>All Rights Reserved.</span>
 
       </div>
 
     </div>
 
   </footer>
-
 
 
   <!-- BACK TO TOP -->
@@ -1146,11 +837,44 @@
     type="button"
     aria-label="Back to top"
     hidden>
-
     ↑
-
   </button>
 
+
+  <!-- IMAGE FALLBACK -->
+
+  <script>
+
+    document.querySelectorAll('.person-photo img').forEach(function(img) {
+
+      img.addEventListener('error', function() {
+
+        const fallback = img.dataset.fallback;
+
+        if (fallback && img.src !== new URL(fallback, document.baseURI).href) {
+
+          img.dataset.fallback = '';
+          img.src = fallback;
+
+        } else {
+
+          const container = img.parentElement;
+
+          img.remove();
+
+          const message = document.createElement('div');
+          message.className = 'photo-error';
+          message.textContent = 'Photo unavailable';
+
+          container.appendChild(message);
+
+        }
+
+      });
+
+    });
+
+  </script>
 
 </body>
 </html>
