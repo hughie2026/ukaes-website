@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta name="description"
-    content="About the UK Academy of Epidemiology Sciences, established in 2026 as a young and pioneering academic institution dedicated to research and education.">
+    content="Discover the UK Academy of Epidemiology Sciences, established in 2026 as a young and pioneering research and education institution.">
 
   <meta name="theme-color" content="#85001D">
 
@@ -14,9 +15,185 @@
 
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/site.js" defer></script>
+
+  <style>
+
+    /* ABOUT PAGE */
+
+    .about-intro {
+      max-width: 790px;
+    }
+
+    .about-intro p {
+      color: #666;
+      font-size: 14px;
+      line-height: 1.95;
+    }
+
+    /* EDITORIAL LAYOUT */
+
+    .about-editorial {
+      display: grid;
+      grid-template-columns: 1fr 1.05fr;
+      gap: 65px;
+      align-items: center;
+    }
+
+    .about-editorial-content h2 {
+      margin: 12px 0 20px;
+      font-size: clamp(28px, 3vw, 40px);
+    }
+
+    .about-editorial-content p {
+      color: #555;
+      font-size: 14px;
+      line-height: 1.95;
+      margin-bottom: 17px;
+    }
+
+    .about-editorial-image {
+      width: 100%;
+      aspect-ratio: 5 / 4;
+      overflow: hidden;
+      background: #F0EFEC;
+    }
+
+    .about-editorial-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* IMAGE CREDIT */
+
+    .about-image-credit {
+      margin-top: 8px;
+      color: #999;
+      font-size: 10px;
+      line-height: 1.6;
+    }
+
+    .about-image-credit a {
+      color: #85001D;
+      text-decoration: none;
+    }
+
+    /* FOUNDATION */
+
+    .about-foundation {
+      padding: 42px;
+      background: #85001D;
+      color: #FFFFFF;
+    }
+
+    .about-foundation h2 {
+      margin: 12px 0;
+      color: #FFFFFF;
+      font-size: clamp(27px, 3vw, 38px);
+    }
+
+    .about-foundation p {
+      max-width: 700px;
+      margin: 0;
+      color: #F4DDE2;
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    /* RESEARCH APPROACH */
+
+    .about-focus-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 25px;
+    }
+
+    .about-focus-card {
+      background: #FFFFFF;
+      border: 1px solid #E8E6E2;
+    }
+
+    .about-focus-card img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+
+    .about-focus-content {
+      padding: 23px;
+    }
+
+    .about-focus-content h3 {
+      margin-bottom: 10px;
+      font-size: 19px;
+    }
+
+    .about-focus-content p {
+      margin: 0;
+      color: #666;
+      font-size: 13px;
+      line-height: 1.85;
+    }
+
+    /* APPROACH */
+
+    .about-approach {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-approach-image {
+      width: 100%;
+      aspect-ratio: 5 / 4;
+      overflow: hidden;
+    }
+
+    .about-approach-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-approach-content h2 {
+      margin: 12px 0 20px;
+      font-size: clamp(27px, 3vw, 38px);
+    }
+
+    .about-approach-content p {
+      color: #666;
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 800px) {
+
+      .about-editorial,
+      .about-approach {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .about-focus-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-foundation {
+        padding: 30px 25px;
+      }
+
+    }
+
+  </style>
+
 </head>
 
+
 <body>
+
 
   <!-- HEADER -->
 
@@ -25,18 +202,24 @@
     <div class="ukaes-container ukaes-header-inner">
 
       <a href="index.html" class="ukaes-brand">
+
         <img
           src="assets/ukaes-logo.jpg"
           alt="UK Academy of Epidemiology Sciences">
+
       </a>
+
 
       <button
         class="ukaes-mobile-toggle"
         type="button"
         aria-label="Open navigation"
         aria-expanded="false">
+
         Menu
+
       </button>
+
 
       <nav class="ukaes-navigation" aria-label="Main navigation">
 
@@ -55,9 +238,11 @@
   </header>
 
 
+
   <main>
 
-    <!-- PAGE HERO -->
+
+    <!-- HERO -->
 
     <section class="ukaes-page-intro">
 
@@ -73,9 +258,9 @@
         </h1>
 
         <p>
-          An emerging academic institution advancing
-          research, scientific knowledge and education
-          in epidemiological sciences.
+          A young and pioneering academic institution
+          advancing scientific research, computational
+          innovation and education.
         </p>
 
       </div>
@@ -83,44 +268,73 @@
     </section>
 
 
+
     <!-- ABOUT UKAES -->
 
     <section class="ukaes-section">
 
-      <div class="ukaes-container ukaes-editorial">
+      <div class="ukaes-container">
 
-        <div class="ukaes-editorial-content">
+        <div class="about-editorial">
 
-          <span class="ukaes-eyebrow">
-            Who We Are
-          </span>
+          <div class="about-editorial-content">
 
-          <h2>
-            About UKAES
-          </h2>
+            <span class="ukaes-eyebrow">
+              Who We Are
+            </span>
 
-          <p>
-            The UK Academy of Epidemiology Sciences
-            (UKAES) is an independent academic institution
-            established in 2026.
-          </p>
+            <h2>
+              About UKAES
+            </h2>
 
-          <p>
-            As a young and pioneering research and
-            education institution, UKAES is committed
-            to developing scientific research, advancing
-            academic learning and encouraging new
-            perspectives in epidemiological sciences.
-          </p>
+            <p>
+              The UK Academy of Epidemiology Sciences
+              (UKAES) is an independent academic institution
+              established in 2026.
+            </p>
 
-        </div>
+            <p>
+              As a young and pioneering research and
+              education institution, UKAES is committed
+              to advancing scientific knowledge,
+              encouraging interdisciplinary research
+              and supporting academic development.
+            </p>
 
-        <div class="ukaes-editorial-image">
+            <p>
+              We embrace emerging technologies,
+              computational approaches and new
+              perspectives in scientific exploration.
+            </p>
 
-          <img
-            src="https://images.unsplash.com/photo-1631556760585-2e846196d5a9?auto=format&fit=crop&w=1200&q=85"
-            alt="A scientist conducting laboratory research using a microscope"
-            loading="eager">
+            <a href="research.html" class="ukaes-text-link">
+              Explore Our Research →
+            </a>
+
+          </div>
+
+
+          <div>
+
+            <div class="about-editorial-image">
+
+              <img
+                src="https://images.unsplash.com/photo-1766297247924-6638d54e7c89?auto=format&fit=crop&w=1400&q=85"
+                alt="Two scientists working together on computers in a research laboratory"
+                loading="lazy">
+
+            </div>
+
+            <div class="about-image-credit">
+              Image: Faustina Okeke /
+              <a href="https://unsplash.com/photos/two-scientists-working-on-computers-in-a-laboratory-XLQuTdktpa8"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                Unsplash
+              </a>
+            </div>
+
+          </div>
 
         </div>
 
@@ -129,16 +343,20 @@
     </section>
 
 
-    <!-- OUR FOUNDATION -->
 
-    <section class="ukaes-highlight">
+    <!-- FOUNDATION -->
+
+    <section class="ukaes-section">
 
       <div class="ukaes-container">
 
-        <div>
+        <div class="about-foundation">
 
-          <span class="ukaes-eyebrow">
+          <span class="ukaes-eyebrow"
+                style="color:#F4C7D0">
+
             Our Foundation
+
           </span>
 
           <h2>
@@ -147,6 +365,10 @@
 
           <p>
             Young in age. Forward in vision.
+            UKAES represents a new generation of
+            academic research and education,
+            embracing innovation, scientific curiosity
+            and interdisciplinary collaboration.
           </p>
 
         </div>
@@ -156,91 +378,160 @@
     </section>
 
 
-    <!-- OUR MISSION -->
+
+    <!-- ACADEMIC APPROACH -->
+
+    <section class="ukaes-section ukaes-section-soft">
+
+      <div class="ukaes-container">
+
+        <div class="about-intro">
+
+          <span class="ukaes-eyebrow">
+            Our Academic Approach
+          </span>
+
+          <h2>
+            Science Meets Technology.
+          </h2>
+
+          <p>
+            We recognise the growing importance of
+            computational methods, artificial intelligence
+            and digital technologies in modern scientific
+            research and academic development.
+          </p>
+
+        </div>
+
+
+        <div class="about-focus-grid">
+
+
+          <!-- COMPUTATIONAL RESEARCH -->
+
+          <article class="about-focus-card">
+
+            <img
+              src="https://images.unsplash.com/photo-1763568258367-1c52beb60be7?auto=format&fit=crop&w=1200&q=85"
+              alt="Computer programming code and scientific data analysis"
+              loading="lazy">
+
+            <div class="about-focus-content">
+
+              <h3>
+                Computational Research
+              </h3>
+
+              <p>
+                Exploring computational methods,
+                programming, data analysis and
+                quantitative approaches to scientific
+                investigation.
+              </p>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- AI AND EMERGING TECHNOLOGY -->
+
+          <article class="about-focus-card">
+
+            <img
+              src="https://images.unsplash.com/photo-1581093577421-f561a654a353?auto=format&fit=crop&w=1200&q=85"
+              alt="Scientific researcher using computer technology in a laboratory"
+              loading="lazy">
+
+            <div class="about-focus-content">
+
+              <h3>
+                AI and Emerging Technologies
+              </h3>
+
+              <p>
+                Encouraging exploration of artificial
+                intelligence, digital innovation and
+                emerging technologies in scientific
+                research.
+              </p>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- OUR APPROACH -->
 
     <section class="ukaes-section">
 
       <div class="ukaes-container">
 
-        <div class="ukaes-section-heading">
-
-          <span class="ukaes-eyebrow">
-            Our Mission
-          </span>
-
-          <h2>
-            Research. Education. Discovery.
-          </h2>
-
-          <p>
-            Bringing scientific inquiry and academic
-            education together to support the development
-            of epidemiological sciences.
-          </p>
-
-        </div>
+        <div class="about-approach">
 
 
-        <div class="ukaes-feature-grid">
+          <div>
 
-          <article class="ukaes-feature">
+            <div class="about-approach-image">
 
-            <div class="ukaes-feature-content">
-
-              <span class="ukaes-eyebrow">01</span>
-
-              <h3>
-                Scientific Research
-              </h3>
-
-              <p>
-                Encouraging research and scientific
-                exploration.
-              </p>
+              <img
+                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1400&q=85"
+                alt="Collaborative technology and computer science research environment"
+                loading="lazy">
 
             </div>
 
-          </article>
-
-
-          <article class="ukaes-feature">
-
-            <div class="ukaes-feature-content">
-
-              <span class="ukaes-eyebrow">02</span>
-
-              <h3>
-                Academic Education
-              </h3>
-
-              <p>
-                Supporting advanced learning
-                and academic development.
-              </p>
-
+            <div class="about-image-credit">
+              Image: 
+              <a href="https://unsplash.com/photos/person-typing-code-on-laptop-workspace-UcYBL5V0xWQ"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                Unsplash
+              </a>
             </div>
 
-          </article>
+          </div>
 
 
-          <article class="ukaes-feature">
+          <div class="about-approach-content">
 
-            <div class="ukaes-feature-content">
+            <span class="ukaes-eyebrow">
+              Our Approach
+            </span>
 
-              <span class="ukaes-eyebrow">03</span>
+            <h2>
+              Looking Forward.
+            </h2>
 
-              <h3>
-                Future Perspectives
-              </h3>
+            <p>
+              UKAES embraces an open, forward-looking
+              and interdisciplinary approach to research
+              and education.
+            </p>
 
-              <p>
-                Exploring new ideas and emerging
-                scientific opportunities.
-              </p>
+            <p>
+              We aim to encourage collaboration between
+              academic disciplines, integrate emerging
+              technologies into scientific inquiry
+              and support new generations of researchers
+              and professionals.
+            </p>
 
-            </div>
+            <a href="education.html" class="ukaes-text-link">
+              Explore Education →
+            </a>
 
-          </article>
+          </div>
 
         </div>
 
@@ -248,71 +539,36 @@
 
     </section>
 
-
-    <!-- OUR APPROACH -->
-
-    <section class="ukaes-section ukaes-section-soft">
-
-      <div class="ukaes-container ukaes-editorial">
-
-        <div class="ukaes-editorial-image">
-
-          <img
-            src="https://images.unsplash.com/photo-1760074032649-0243993135b6?auto=format&fit=crop&w=1200&q=85"
-            alt="Two scientists collaborating on scientific research"
-            loading="lazy">
-
-        </div>
-
-
-        <div class="ukaes-editorial-content">
-
-          <span class="ukaes-eyebrow">
-            Our Approach
-          </span>
-
-          <h2>
-            Looking Forward.
-          </h2>
-
-          <p>
-            UKAES embraces an open, forward-looking
-            and interdisciplinary approach to research
-            and education.
-          </p>
-
-          <p>
-            We aim to build an environment where
-            scientific curiosity, academic collaboration
-            and innovative thinking can grow.
-          </p>
-
-        </div>
-
-      </div>
-
-    </section>
 
 
     <!-- CLOSING -->
 
-    <section class="ukaes-section">
+    <section class="ukaes-highlight">
 
-      <div class="ukaes-container ukaes-text-center">
+      <div class="ukaes-container ukaes-highlight-inner">
 
-        <span class="ukaes-eyebrow">
-          UK Academy of Epidemiology Sciences
-        </span>
+        <div>
 
-        <h2>
-          Shaping the Future of Science.
-        </h2>
+          <span class="ukaes-eyebrow">
+            UK Academy of Epidemiology Sciences
+          </span>
+
+          <h2>
+            Shaping the Future of Science.
+          </h2>
+
+          <p>
+            Research. Education. Innovation.
+          </p>
+
+        </div>
+
 
         <a
-          href="research.html"
-          class="ukaes-button">
+          href="contact.html"
+          class="ukaes-button ukaes-button-white">
 
-          Explore Our Research
+          Contact UKAES
 
         </a>
 
@@ -320,7 +576,9 @@
 
     </section>
 
+
   </main>
+
 
 
   <!-- FOOTER -->
@@ -382,6 +640,7 @@
     </div>
 
   </footer>
+
 
 
   <!-- BACK TO TOP -->
