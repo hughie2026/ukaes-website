@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta name="description"
-    content="Explore academic courses, diplomas and professional education offered by the UK Academy of Epidemiology Sciences.">
+    content="Explore six proposed Advanced Diploma programmes offered by the UK Academy of Epidemiology Sciences.">
 
   <meta name="theme-color" content="#85001D">
 
@@ -20,12 +20,13 @@
     /* EDUCATION PAGE */
 
     .education-intro {
-      max-width: 780px;
+      max-width: 800px;
+      margin-bottom: 38px;
     }
 
     .education-intro p {
       color: #666;
-      font-size: 15px;
+      font-size: 14px;
       line-height: 1.9;
     }
 
@@ -34,15 +35,18 @@
     .education-programme-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 28px;
+      gap: 25px;
     }
+
+    /* INDIVIDUAL PROGRAMME */
 
     .education-programme {
       display: flex;
       flex-direction: column;
       min-width: 0;
-      background: #fff;
+      background: #FFFFFF;
       border: 1px solid #E8E6E2;
+      border-top: 4px solid #B20D2E;
       transition: transform .25s ease,
                   box-shadow .25s ease;
     }
@@ -52,28 +56,14 @@
       box-shadow: 0 10px 25px rgba(0,0,0,.05);
     }
 
-    .education-programme-visual {
-      position: relative;
-      min-height: 220px;
-      overflow: hidden;
-      background: #F4F1ED;
-    }
-
-    .education-programme-visual svg {
-      display: block;
-      width: 100%;
-      height: 220px;
-    }
-
     .education-programme-body {
       flex: 1;
       padding: 27px;
-      border-top: 4px solid #B20D2E;
     }
 
     .education-programme-label {
       display: inline-block;
-      margin-bottom: 12px;
+      margin-bottom: 13px;
       color: #B20D2E;
       font-size: 11px;
       font-weight: 800;
@@ -81,115 +71,153 @@
       text-transform: uppercase;
     }
 
-    .education-programme-body h3 {
-      margin-bottom: 14px;
+    .education-programme-code {
+      display: block;
+      margin-bottom: 10px;
+      color: #999;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .08em;
+    }
+
+    .education-programme h3 {
+      margin-bottom: 15px;
+      color: #242424;
       font-size: 21px;
       line-height: 1.4;
     }
 
-    .education-programme-body p {
+    .education-programme-description {
+      margin-bottom: 22px;
       color: #666;
       font-size: 13px;
       line-height: 1.85;
     }
 
-    .education-programme-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-      margin-top: 18px;
-    }
-
-    .education-programme-meta span {
-      padding: 6px 10px;
-      background: #F5F4F1;
-      color: #555;
-      font-size: 11px;
-    }
-
-    /* MODULE LIST */
+    /* MODULES */
 
     .education-modules {
-      padding-top: 17px;
-      margin-top: 20px;
+      padding-top: 19px;
       border-top: 1px solid #E8E6E2;
     }
 
     .education-modules h4 {
       margin-bottom: 12px;
+      color: #242424;
       font-size: 12px;
       font-weight: 800;
       letter-spacing: .1em;
       text-transform: uppercase;
     }
 
-    .education-modules ul {
+    .education-modules ol {
       padding: 0;
       margin: 0;
       list-style: none;
+      counter-reset: module;
     }
 
     .education-modules li {
       position: relative;
-      padding: 9px 0 9px 20px;
+      padding: 10px 0 10px 34px;
       border-bottom: 1px solid #F0EFEC;
       color: #555;
       font-size: 12px;
-      line-height: 1.65;
+      line-height: 1.7;
+      counter-increment: module;
+    }
+
+    .education-modules li:last-child {
+      border-bottom: none;
     }
 
     .education-modules li::before {
-      content: "";
+      content: counter(module, decimal-leading-zero);
       position: absolute;
       left: 0;
-      top: 17px;
-      width: 6px;
-      height: 6px;
-      background: #B20D2E;
-      border-radius: 50%;
+      top: 10px;
+      color: #B20D2E;
+      font-size: 11px;
+      font-weight: 800;
     }
 
-    /* OTHER EDUCATION */
+    /* PROGRAMME FRAMEWORK */
 
-    .education-other-grid {
+    .education-framework {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 15px;
+      margin-top: 35px;
     }
 
-    .education-other-card {
-      padding: 27px;
-      background: #fff;
-      border: 1px solid #E8E6E2;
-      border-top: 3px solid #B20D2E;
+    .education-framework-item {
+      padding: 19px;
+      background: #F5F4F1;
+      border-bottom: 2px solid #B20D2E;
     }
 
-    .education-other-card h3 {
-      margin-bottom: 12px;
-      font-size: 19px;
+    .education-framework-item strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #B20D2E;
+      font-size: 18px;
     }
 
-    .education-other-card p {
+    .education-framework-item span {
+      color: #666;
+      font-size: 11px;
+      line-height: 1.6;
+    }
+
+    /* QUALIFICATION NOTE */
+
+    .education-qualification-note {
+      padding: 22px 25px;
+      margin-top: 28px;
+      background: #F5F4F1;
+      border-left: 4px solid #B20D2E;
+    }
+
+    .education-qualification-note h3 {
+      margin-bottom: 8px;
+      font-size: 15px;
+    }
+
+    .education-qualification-note p {
       margin: 0;
       color: #666;
-      font-size: 13px;
+      font-size: 12px;
       line-height: 1.85;
     }
 
+    /* RESPONSIVE */
+
     @media (max-width: 850px) {
+
       .education-programme-grid {
         grid-template-columns: 1fr;
       }
 
-      .education-other-grid {
+      .education-framework {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
+
     }
 
     @media (max-width: 600px) {
-      .education-other-grid {
-        grid-template-columns: 1fr;
+
+      .education-programme-body {
+        padding: 22px;
       }
+
+      .education-programme h3 {
+        font-size: 19px;
+      }
+
+      .education-framework {
+        grid-template-columns: 1fr 1fr;
+      }
+
     }
 
   </style>
@@ -207,18 +235,24 @@
     <div class="ukaes-container ukaes-header-inner">
 
       <a href="index.html" class="ukaes-brand">
+
         <img
           src="assets/ukaes-logo.jpg"
           alt="UK Academy of Epidemiology Sciences">
+
       </a>
+
 
       <button
         class="ukaes-mobile-toggle"
         type="button"
         aria-label="Open navigation"
         aria-expanded="false">
+
         Menu
+
       </button>
+
 
       <nav class="ukaes-navigation" aria-label="Main navigation">
 
@@ -257,9 +291,9 @@
         </h1>
 
         <p>
-          Academic education and professional development
-          in epidemiology, public health and related
-          scientific disciplines.
+          Advanced academic learning across
+          epidemiological sciences, health research
+          and interdisciplinary disciplines.
         </p>
 
       </div>
@@ -268,7 +302,7 @@
 
 
 
-    <!-- DIPLOMA PROGRAMMES -->
+    <!-- DIPLOMA INTRODUCTION -->
 
     <section class="ukaes-section">
 
@@ -281,199 +315,35 @@
           </span>
 
           <h2>
-            Diploma Programmes
+            Advanced Diploma Programmes
           </h2>
 
           <p>
-            UKAES aims to provide structured academic
-            learning opportunities across epidemiology
-            and related scientific fields.
+            UKAES presents six proposed Advanced Diploma
+            programmes designed with reference to
+            postgraduate-level learning outcomes.
+            Each programme combines advanced academic
+            study with applied learning and an
+            independent research project.
           </p>
 
         </div>
 
 
+        <!-- SIX DIPLOMA PROGRAMMES -->
+
         <div class="education-programme-grid">
 
 
-          <!-- ADVANCED DIPLOMA -->
+          <!-- PROGRAMME 01 -->
 
           <article class="education-programme">
 
-            <div class="education-programme-visual">
-
-              <!-- Original epidemiology illustration -->
-
-              <svg viewBox="0 0 800 440"
-                   xmlns="http://www.w3.org/2000/svg"
-                   role="img"
-                   aria-label="Epidemiological data analysis illustration">
-
-                <defs>
-
-                  <pattern id="epi-grid"
-                           width="32"
-                           height="32"
-                           patternUnits="userSpaceOnUse">
-                    <path d="M32 0H0V32"
-                          fill="none"
-                          stroke="#DAD5CC"
-                          stroke-width="1"/>
-                  </pattern>
-
-                </defs>
-
-                <rect width="800" height="440"
-                      fill="#F2EEE7"/>
-
-                <rect width="800" height="440"
-                      fill="url(#epi-grid)"
-                      opacity=".65"/>
-
-                <!-- Background map -->
-
-                <path
-                  d="M105 94
-                     L172 66
-                     L223 90
-                     L268 74
-                     L315 112
-                     L298 164
-                     L249 190
-                     L215 236
-                     L158 222
-                     L125 175
-                     L87 151 Z"
-                  fill="#D9E3DC"
-                  stroke="#547B70"
-                  stroke-width="3"/>
-
-                <path
-                  d="M105 94L172 66L223 90L268 74L315 112
-                     M125 175L215 236L249 190L298 164"
-                  fill="none"
-                  stroke="#FFFFFF"
-                  stroke-width="2"/>
-
-                <!-- Population markers -->
-
-                <g fill="#B20D2E">
-                  <circle cx="153" cy="121" r="8"/>
-                  <circle cx="204" cy="108" r="8"/>
-                  <circle cx="244" cy="146" r="8"/>
-                  <circle cx="179" cy="175" r="8"/>
-                  <circle cx="274" cy="185" r="8"/>
-                </g>
-
-                <g stroke="#B20D2E"
-                   stroke-width="2"
-                   opacity=".45"
-                   fill="none">
-                  <circle cx="153" cy="121" r="19"/>
-                  <circle cx="244" cy="146" r="19"/>
-                  <circle cx="179" cy="175" r="19"/>
-                </g>
-
-                <!-- Main epidemiology data panel -->
-
-                <rect x="363" y="55"
-                      width="365" height="302"
-                      rx="9"
-                      fill="#FFFFFF"
-                      stroke="#D8D2C8"
-                      stroke-width="2"/>
-
-                <text x="391" y="91"
-                      font-size="17"
-                      font-weight="700"
-                      fill="#263F42">
-                  Population Health Analysis
-                </text>
-
-                <text x="391" y="116"
-                      font-size="11"
-                      fill="#77827B">
-                  Illustrative epidemiological trends
-                </text>
-
-                <!-- Chart grid -->
-
-                <g stroke="#E8E5DE" stroke-width="1">
-                  <path d="M400 155H695"/>
-                  <path d="M400 200H695"/>
-                  <path d="M400 245H695"/>
-                  <path d="M400 290H695"/>
-                </g>
-
-                <!-- Trend line -->
-
-                <path
-                  d="M408 269
-                     C445 255 456 220 490 231
-                     S540 188 568 198
-                     S617 150 650 170
-                     S678 143 694 130"
-                  fill="none"
-                  stroke="#B20D2E"
-                  stroke-width="5"
-                  stroke-linecap="round"/>
-
-                <g fill="#B20D2E">
-                  <circle cx="408" cy="269" r="5"/>
-                  <circle cx="490" cy="231" r="5"/>
-                  <circle cx="568" cy="198" r="5"/>
-                  <circle cx="650" cy="170" r="5"/>
-                  <circle cx="694" cy="130" r="5"/>
-                </g>
-
-                <!-- Secondary trend -->
-
-                <path
-                  d="M408 284
-                     C455 276 469 262 490 268
-                     S545 243 568 250
-                     S630 221 650 229
-                     S680 210 694 205"
-                  fill="none"
-                  stroke="#548477"
-                  stroke-width="3"
-                  stroke-linecap="round"/>
-
-                <!-- Small population icons -->
-
-                <g fill="#547B70">
-                  <circle cx="409" cy="391" r="9"/>
-                  <circle cx="450" cy="391" r="9"/>
-                  <circle cx="491" cy="391" r="9"/>
-                  <circle cx="532" cy="391" r="9"/>
-                  <circle cx="573" cy="391" r="9"/>
-                  <circle cx="614" cy="391" r="9"/>
-                </g>
-
-                <g stroke="#547B70"
-                   stroke-width="7"
-                   stroke-linecap="round">
-                  <path d="M409 405V421"/>
-                  <path d="M450 405V421"/>
-                  <path d="M491 405V421"/>
-                  <path d="M532 405V421"/>
-                  <path d="M573 405V421"/>
-                  <path d="M614 405V421"/>
-                </g>
-
-                <text x="650" y="404"
-                      font-size="12"
-                      font-weight="700"
-                      fill="#547B70">
-                  POPULATION
-                </text>
-
-              </svg>
-
-            </div>
-
-
             <div class="education-programme-body">
+
+              <span class="education-programme-code">
+                UKAES-AD01
+              </span>
 
               <span class="education-programme-label">
                 Advanced Diploma
@@ -483,33 +353,267 @@
                 Advanced Diploma in Epidemiological Sciences
               </h3>
 
-              <p>
-                A specialised academic programme focusing
-                on epidemiological principles, population
-                health research, disease patterns and
-                quantitative approaches to public health.
+              <p class="education-programme-description">
+                Explores advanced epidemiological theory,
+                causal inference, complex study design
+                and disease surveillance. Students
+                critically appraise research, apply
+                quantitative methods and develop an
+                independent epidemiological investigation.
               </p>
-
-              <div class="education-programme-meta">
-
-                <span>Advanced Study</span>
-                <span>Epidemiology</span>
-                <span>Population Health</span>
-
-              </div>
 
               <div class="education-modules">
 
-                <h4>Indicative Study Areas</h4>
+                <h4>Indicative Modules</h4>
 
-                <ul>
-                  <li>Fundamentals of Epidemiology</li>
-                  <li>Study Design and Epidemiological Methods</li>
+                <ol>
+                  <li>Advanced Epidemiological Theory and Causal Inference</li>
+                  <li>Advanced Epidemiological Study Design</li>
+                  <li>Statistical Modelling in Epidemiology</li>
                   <li>Infectious and Chronic Disease Epidemiology</li>
-                  <li>Biostatistics and Data Analysis</li>
-                  <li>Population Health and Disease Surveillance</li>
-                  <li>Research Methods and Critical Appraisal</li>
-                </ul>
+                  <li>Systematic Review and Evidence Synthesis</li>
+                  <li>Independent Epidemiological Research Project</li>
+                </ol>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- PROGRAMME 02 -->
+
+          <article class="education-programme">
+
+            <div class="education-programme-body">
+
+              <span class="education-programme-code">
+                UKAES-AD02
+              </span>
+
+              <span class="education-programme-label">
+                Advanced Diploma
+              </span>
+
+              <h3>
+                Advanced Diploma in Biostatistics and Health Data Science
+              </h3>
+
+              <p class="education-programme-description">
+                Develops advanced statistical inference
+                and computational analysis for biomedical
+                and population-health data. Students learn
+                model validation, longitudinal and survival
+                analysis, responsible machine learning
+                and reproducible research.
+              </p>
+
+              <div class="education-modules">
+
+                <h4>Indicative Modules</h4>
+
+                <ol>
+                  <li>Advanced Statistical Inference</li>
+                  <li>Regression and Multilevel Modelling</li>
+                  <li>Survival and Longitudinal Data Analysis</li>
+                  <li>Machine Learning for Health Research</li>
+                  <li>Health Data Governance and Reproducible Computing</li>
+                  <li>Applied Health Data Science Project</li>
+                </ol>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- PROGRAMME 03 -->
+
+          <article class="education-programme">
+
+            <div class="education-programme-body">
+
+              <span class="education-programme-code">
+                UKAES-AD03
+              </span>
+
+              <span class="education-programme-label">
+                Advanced Diploma
+              </span>
+
+              <h3>
+                Advanced Diploma in Lifestyle Medicine and Preventive Health
+              </h3>
+
+              <p class="education-programme-description">
+                Critically examines evidence on nutrition,
+                physical activity, sleep, stress and
+                behavioural determinants of health.
+                Students design and evaluate preventive
+                interventions and behaviour-change
+                strategies for clinical and community settings.
+              </p>
+
+              <div class="education-modules">
+
+                <h4>Indicative Modules</h4>
+
+                <ol>
+                  <li>Advanced Principles of Lifestyle Medicine</li>
+                  <li>Nutrition, Physical Activity and Metabolic Health</li>
+                  <li>Sleep, Stress and Behavioural Health</li>
+                  <li>Behaviour Change and Preventive Interventions</li>
+                  <li>Lifestyle Medicine Evidence and Population Prevention</li>
+                  <li>Lifestyle Intervention Research Project</li>
+                </ol>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- PROGRAMME 04 -->
+
+          <article class="education-programme">
+
+            <div class="education-programme-body">
+
+              <span class="education-programme-code">
+                UKAES-AD04
+              </span>
+
+              <span class="education-programme-label">
+                Advanced Diploma
+              </span>
+
+              <h3>
+                Advanced Diploma in Health Policy and Health Systems
+              </h3>
+
+              <p class="education-programme-description">
+                Examines health policy formulation,
+                comparative health systems, governance,
+                health economics and inequalities.
+                Students develop evidence-based policy
+                analyses and evaluate implementation
+                challenges, equity and resource allocation.
+              </p>
+
+              <div class="education-modules">
+
+                <h4>Indicative Modules</h4>
+
+                <ol>
+                  <li>Health Policy Theory and Analysis</li>
+                  <li>Comparative Health Systems and Governance</li>
+                  <li>Health Economics and Resource Allocation</li>
+                  <li>Health Equity, Ethics and Public Policy</li>
+                  <li>Policy Evaluation and Implementation Science</li>
+                  <li>Independent Health Policy Analysis Project</li>
+                </ol>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- PROGRAMME 05 -->
+
+          <article class="education-programme">
+
+            <div class="education-programme-body">
+
+              <span class="education-programme-code">
+                UKAES-AD05
+              </span>
+
+              <span class="education-programme-label">
+                Advanced Diploma
+              </span>
+
+              <h3>
+                Advanced Diploma in Hospitality, Health and Wellbeing Management
+              </h3>
+
+              <p class="education-programme-description">
+                Connects advanced hospitality management
+                with wellness tourism, public health,
+                guest wellbeing and sustainable service
+                design. Students evaluate hygiene, risk,
+                operations and the performance of
+                health-oriented hospitality services.
+              </p>
+
+              <div class="education-modules">
+
+                <h4>Indicative Modules</h4>
+
+                <ol>
+                  <li>Advanced Hospitality and Service Management</li>
+                  <li>Wellness Tourism and Health Hospitality</li>
+                  <li>Public Health, Hygiene and Risk Management</li>
+                  <li>Guest Experience, Wellbeing and Service Design</li>
+                  <li>Sustainable Hospitality and Strategic Operations</li>
+                  <li>Hospitality and Wellbeing Management Project</li>
+                </ol>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- PROGRAMME 06 -->
+
+          <article class="education-programme">
+
+            <div class="education-programme-body">
+
+              <span class="education-programme-code">
+                UKAES-AD06
+              </span>
+
+              <span class="education-programme-label">
+                Advanced Diploma
+              </span>
+
+              <h3>
+                Advanced Diploma in Bioinformatics and Artificial Intelligence in Health Sciences
+              </h3>
+
+              <p class="education-programme-description">
+                Integrates computational biology, genomics,
+                multi-omics and artificial intelligence
+                in biomedical and population-health research.
+                Students build reproducible analytical
+                workflows, evaluate machine-learning models
+                and address ethics, bias and data governance.
+              </p>
+
+              <div class="education-modules">
+
+                <h4>Indicative Modules</h4>
+
+                <ol>
+                  <li>Advanced Bioinformatics and Computational Biology</li>
+                  <li>Genomics, Transcriptomics and Multi-Omics Data Analysis</li>
+                  <li>Machine Learning and Deep Learning for Biomedical Research</li>
+                  <li>Artificial Intelligence in Epidemiology and Public Health</li>
+                  <li>Responsible AI, Data Governance and Reproducible Research</li>
+                  <li>Independent Bioinformatics and AI Research Project</li>
+                </ol>
 
               </div>
 
@@ -526,7 +630,7 @@
 
 
 
-    <!-- OTHER EDUCATION -->
+    <!-- PROGRAMME FRAMEWORK -->
 
     <section class="ukaes-section ukaes-section-soft">
 
@@ -535,65 +639,85 @@
         <div class="ukaes-section-heading">
 
           <span class="ukaes-eyebrow">
-            Further Learning
+            Programme Framework
           </span>
 
           <h2>
-            Professional Education
+            A Structured Learning Experience.
           </h2>
 
           <p>
-            Additional academic learning opportunities
-            across research methods and related disciplines.
+            The indicative programme format
+            across the six proposed Advanced Diploma
+            programmes is designed as follows.
           </p>
 
         </div>
 
 
-        <div class="education-other-grid">
+        <div class="education-framework">
 
-          <article class="education-other-card">
+          <div class="education-framework-item">
 
-            <h3>
-              Research Methods
-            </h3>
+            <strong>12 Months</strong>
 
-            <p>
-              Academic approaches to research design,
-              scientific literature evaluation
-              and research methodology.
-            </p>
+            <span>
+              Indicative part-time duration
+            </span>
 
-          </article>
+          </div>
 
 
-          <article class="education-other-card">
+          <div class="education-framework-item">
 
-            <h3>
-              Biostatistics
-            </h3>
+            <strong>1,200</strong>
 
-            <p>
-              Statistical principles, quantitative
-              analysis and interpretation
-              of scientific data.
-            </p>
+            <span>
+              Approximate total learning hours
+            </span>
 
-          </article>
+          </div>
 
 
-          <article class="education-other-card">
+          <div class="education-framework-item">
 
-            <h3>
-              Public Health
-            </h3>
+            <strong>Online / Blended</strong>
 
-            <p>
-              Population health, health promotion
-              and evidence-based public health practice.
-            </p>
+            <span>
+              Indicative learning delivery
+            </span>
 
-          </article>
+          </div>
+
+
+          <div class="education-framework-item">
+
+            <strong>Research</strong>
+
+            <span>
+              Independent applied research project
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="education-qualification-note">
+
+          <h3>
+            Programme Information
+          </h3>
+
+          <p>
+            These are proposed UKAES institutional
+            Advanced Diploma awards. They are not
+            UK-recognised Postgraduate Diplomas (PGDip),
+            Ofqual-regulated qualifications or formally
+            validated UK Level 7 credits. Programme
+            specifications and academic arrangements
+            are subject to approval and development.
+          </p>
 
         </div>
 
@@ -622,10 +746,11 @@
 
           <p>
             Explore academic learning opportunities
-            with UKAES.
+            across our six proposed programmes.
           </p>
 
         </div>
+
 
         <a
           href="contact.html"
@@ -705,6 +830,7 @@
   </footer>
 
 
+
   <!-- BACK TO TOP -->
 
   <button
@@ -712,7 +838,9 @@
     type="button"
     aria-label="Back to top"
     hidden>
+
     ↑
+
   </button>
 
 
