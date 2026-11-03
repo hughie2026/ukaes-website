@@ -7,11 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta name="description"
-    content="Explore Membership and Fellowship opportunities at the UK Academy of Epidemiology Sciences.">
+    content="Explore Membership and Research Professor appointment criteria at the UK Academy of Epidemiology Sciences.">
 
   <meta name="theme-color" content="#85001D">
 
-  <title>Membership & Fellowship | UKAES</title>
+  <title>Appointments | UK Academy of Epidemiology Sciences</title>
 
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/site.js" defer></script>
@@ -21,123 +21,188 @@
     /* APPOINTMENTS PAGE */
 
     .appointment-intro {
-      max-width: 760px;
+      max-width: 780px;
     }
 
     .appointment-intro p {
-      color: #666666;
-      font-size: 15px;
+      color: #666;
+      font-size: 14px;
       line-height: 1.9;
     }
 
-    /* TWO CATEGORIES */
+    /* SECTION HEADINGS */
 
-    .appointment-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 28px;
+    .appointment-section-heading {
+      margin-bottom: 30px;
     }
 
-    .appointment-card {
-      display: flex;
-      flex-direction: column;
-      padding: 35px;
+    .appointment-section-heading h2 {
+      margin: 12px 0;
+    }
+
+    .appointment-section-heading p {
+      max-width: 750px;
+      color: #666;
+      font-size: 13px;
+      line-height: 1.85;
+    }
+
+    /* MEMBERSHIP LEVELS */
+
+    .membership-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .membership-card {
+      padding: 25px;
       background: #FFFFFF;
       border: 1px solid #E8E6E2;
-      border-top: 4px solid #B20D2E;
+      border-top: 3px solid #B20D2E;
     }
 
-    .appointment-number {
-      margin-bottom: 23px;
+    .membership-card h3 {
+      margin: 8px 0 10px;
+      font-size: 19px;
+    }
+
+    .membership-code {
       color: #B20D2E;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 800;
-      letter-spacing: .14em;
+      letter-spacing: .12em;
     }
 
-    .appointment-card h2 {
-      margin-bottom: 15px;
-      font-size: 29px;
+    .membership-position {
+      display: inline-block;
+      margin-bottom: 12px;
+      color: #777;
+      font-size: 11px;
     }
 
-    .appointment-description {
-      margin-bottom: 27px;
-      color: #666666;
-      font-size: 14px;
-      line-height: 1.9;
-    }
-
-    /* SELECTION CRITERIA */
-
-    .appointment-criteria {
-      padding-top: 22px;
-      margin-top: auto;
-      border-top: 1px solid #E8E6E2;
-    }
-
-    .appointment-criteria h3 {
-      margin-bottom: 16px;
-      font-size: 14px;
-      font-weight: 800;
-    }
-
-    .appointment-criteria ul {
-      padding: 0;
+    .membership-card p {
       margin: 0;
-      list-style: none;
+      color: #666;
+      font-size: 12px;
+      line-height: 1.8;
     }
 
-    .appointment-criteria li {
-      position: relative;
-      padding: 9px 0 9px 22px;
-      color: #555555;
-      font-size: 13px;
-      line-height: 1.75;
-      border-bottom: 1px solid #F1F0ED;
-    }
+    /* HONORARY */
 
-    .appointment-criteria li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 18px;
-      width: 6px;
-      height: 6px;
-      background: #B20D2E;
-      border-radius: 50%;
-    }
-
-    /* COMPARISON */
-
-    .appointment-note {
-      max-width: 760px;
-      margin-top: 38px;
-      padding: 23px 26px;
+    .honorary-note {
+      padding: 19px 23px;
+      margin-top: 20px;
       background: #F5F4F1;
       border-left: 4px solid #B20D2E;
     }
 
-    .appointment-note p {
+    .honorary-note p {
       margin: 0;
-      color: #666666;
+      color: #555;
       font-size: 13px;
+      line-height: 1.8;
+    }
+
+    /* PROFESSOR LEVELS */
+
+    .professor-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+
+    .professor-card {
+      padding: 24px 27px;
+      background: #FFFFFF;
+      border: 1px solid #E5E3DF;
+      border-radius: 9px;
+    }
+
+    .professor-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 12px;
+    }
+
+    .professor-card h3 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .professor-code {
+      color: #B20D2E;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .1em;
+    }
+
+    .professor-position {
+      color: #777;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .professor-eligibility {
+      margin-bottom: 12px;
+      color: #777;
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .professor-card p {
+      margin: 7px 0 0;
+      color: #555;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    /* GENERAL NOTES */
+
+    .appointment-guidance {
+      padding: 21px 24px;
+      margin-top: 25px;
+      background: #F5F4F1;
+      border-left: 4px solid #B20D2E;
+    }
+
+    .appointment-guidance p {
+      margin: 0;
+      color: #666;
+      font-size: 12px;
       line-height: 1.85;
     }
 
     /* RESPONSIVE */
 
-    @media (max-width: 700px) {
+    @media (max-width: 850px) {
 
-      .appointment-grid {
+      .membership-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+    }
+
+    @media (max-width: 600px) {
+
+      .membership-grid {
         grid-template-columns: 1fr;
       }
 
-      .appointment-card {
-        padding: 27px;
+      .membership-card {
+        padding: 22px;
       }
 
-      .appointment-card h2 {
-        font-size: 25px;
+      .professor-card {
+        padding: 21px;
+      }
+
+      .professor-card-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 7px;
       }
 
     }
@@ -204,19 +269,18 @@
       <div class="ukaes-container">
 
         <span class="ukaes-eyebrow">
-          Membership & Fellowship
+          Academic Appointments
         </span>
 
         <h1>
-          Academic Recognition.<br>
-          Professional Excellence.
+          Recognising Achievement.<br>
+          Advancing Scholarship.
         </h1>
 
         <p>
-          UKAES offers two academic appointment
-          categories recognising professional
-          experience, scholarly contribution
-          and academic achievement.
+          Membership and Research Professor appointments
+          recognising academic qualifications,
+          professional experience and scholarly contributions.
         </p>
 
       </div>
@@ -234,20 +298,20 @@
         <div class="appointment-intro">
 
           <span class="ukaes-eyebrow">
-            Academic Appointments
+            Appointment Framework
           </span>
 
           <h2>
-            Membership & Fellowship
+            Two Academic Appointment Series
           </h2>
 
           <p>
-            The UK Academy of Epidemiology Sciences
-            provides Membership and Fellowship
-            opportunities for individuals with
-            relevant academic backgrounds,
-            professional experience and contributions
-            to scientific development.
+            UKAES offers two distinct academic pathways:
+            Membership and Research Professor appointments.
+            Each pathway has its own selection criteria
+            based on academic background, professional
+            experience and contributions to scientific
+            research and education.
           </p>
 
         </div>
@@ -258,144 +322,413 @@
 
 
 
-    <!-- TWO CATEGORIES -->
+    <!-- MEMBERSHIP SERIES -->
 
     <section class="ukaes-section ukaes-section-soft">
 
       <div class="ukaes-container">
 
-        <div class="appointment-grid">
+        <div class="appointment-section-heading">
 
+          <span class="ukaes-eyebrow">
+            Series I
+          </span>
 
-          <!-- MEMBER -->
-
-          <article class="appointment-card">
-
-            <span class="appointment-number">
-              CATEGORY 01
-            </span>
-
-            <h2>
-              Member
-            </h2>
-
-            <p class="appointment-description">
-              Membership recognises individuals
-              with relevant academic qualifications,
-              professional experience or demonstrated
-              interest in epidemiological sciences
-              and related disciplines.
-            </p>
-
-
-            <div class="appointment-criteria">
-
-              <h3>
-                Selection Criteria
-              </h3>
-
-              <ul>
-
-                <li>
-                  Relevant academic qualifications
-                  or professional background.
-                </li>
-
-                <li>
-                  Interest or experience in research,
-                  education or related scientific fields.
-                </li>
-
-                <li>
-                  Commitment to academic development
-                  and professional standards.
-                </li>
-
-                <li>
-                  A record of professional integrity
-                  and responsible conduct.
-                </li>
-
-              </ul>
-
-            </div>
-
-          </article>
-
-
-
-          <!-- FELLOW -->
-
-          <article class="appointment-card">
-
-            <span class="appointment-number">
-              CATEGORY 02
-            </span>
-
-            <h2>
-              Fellow
-            </h2>
-
-            <p class="appointment-description">
-              Fellowship recognises individuals
-              with substantial academic achievements,
-              professional distinction or significant
-              contributions to research, education
-              and scientific advancement.
-            </p>
-
-
-            <div class="appointment-criteria">
-
-              <h3>
-                Selection Criteria
-              </h3>
-
-              <ul>
-
-                <li>
-                  Advanced academic qualifications
-                  or equivalent professional standing.
-                </li>
-
-                <li>
-                  An established record of scholarly
-                  or professional achievements.
-                </li>
-
-                <li>
-                  Significant contributions to research,
-                  education or related disciplines.
-                </li>
-
-                <li>
-                  Evidence of academic leadership,
-                  professional recognition or
-                  wider disciplinary impact.
-                </li>
-
-              </ul>
-
-            </div>
-
-          </article>
-
-
-        </div>
-
-
-        <!-- GENERAL NOTE -->
-
-        <div class="appointment-note">
+          <h2>
+            Membership Series
+          </h2>
 
           <p>
-            All appointments are subject to
-            individual academic and professional
-            assessment in accordance with the
-            relevant selection criteria.
+            Five membership levels recognising
+            different stages of academic development,
+            professional experience and scholarly
+            achievement.
           </p>
 
         </div>
+
+
+        <div class="membership-grid">
+
+
+          <!-- M1 -->
+
+          <article class="membership-card">
+
+            <span class="membership-code">M1</span>
+
+            <h3>Associate Member</h3>
+
+            <span class="membership-position">
+              Initial Academic Membership
+            </span>
+
+            <p>
+              Suitable for postgraduate students,
+              recent graduates and early-career
+              professionals with relevant academic
+              or professional backgrounds.
+            </p>
+
+          </article>
+
+
+          <!-- M2 -->
+
+          <article class="membership-card">
+
+            <span class="membership-code">M2</span>
+
+            <h3>Member</h3>
+
+            <span class="membership-position">
+              Full Membership
+            </span>
+
+            <p>
+              For individuals with relevant academic
+              qualifications or equivalent professional
+              capabilities and demonstrated engagement
+              in their fields.
+            </p>
+
+          </article>
+
+
+          <!-- M3 -->
+
+          <article class="membership-card">
+
+            <span class="membership-code">M3</span>
+
+            <h3>Senior Member</h3>
+
+            <span class="membership-position">
+              Senior Membership
+            </span>
+
+            <p>
+              Normally requires at least five years
+              of relevant professional experience,
+              with sustained contributions to research,
+              practice or academic activities.
+            </p>
+
+          </article>
+
+
+          <!-- M4 -->
+
+          <article class="membership-card">
+
+            <span class="membership-code">M4</span>
+
+            <h3>Fellow</h3>
+
+            <span class="membership-position">
+              Fellowship
+            </span>
+
+            <p>
+              Normally requires at least eight years
+              of relevant experience and demonstrable
+              academic achievements, research
+              contributions or professional leadership.
+            </p>
+
+          </article>
+
+
+          <!-- M5 -->
+
+          <article class="membership-card">
+
+            <span class="membership-code">M5</span>
+
+            <h3>Distinguished Fellow</h3>
+
+            <span class="membership-position">
+              Distinguished Fellowship
+            </span>
+
+            <p>
+              Normally requires at least fifteen years
+              of outstanding academic or professional
+              contributions, with significant scholarly
+              influence and leadership.
+            </p>
+
+          </article>
+
+
+        </div>
+
+
+        <div class="honorary-note">
+
+          <p>
+            <strong>Honorary Fellow</strong> may be
+            considered as a separate honorary distinction
+            for individuals with exceptional academic
+            or professional contributions. It is not
+            included in the ordinary membership progression.
+          </p>
+
+        </div>
+
+
+
+        <!-- MEMBERSHIP SELECTION -->
+
+        <div class="appointment-section-heading"
+             style="margin-top:45px;">
+
+          <span class="ukaes-eyebrow">
+            Selection Criteria
+          </span>
+
+          <h2>
+            Membership Assessment
+          </h2>
+
+          <p>
+            Selection considers academic qualifications,
+            professional experience, research participation,
+            professional contributions and academic potential.
+          </p>
+
+        </div>
+
+
+        <div class="appointment-guidance">
+
+          <p>
+            <strong>Indicative experience requirements:</strong>
+            Associate Member — qualification-based assessment;
+            Member — relevant academic or professional capability;
+            Senior Member — normally 5 years;
+            Fellow — normally 8 years;
+            Distinguished Fellow — normally 15 years
+            of relevant experience or outstanding contribution.
+            Exceptional candidates may be considered through
+            a special assessment process.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- RESEARCH PROFESSOR SERIES -->
+
+    <section class="ukaes-section">
+
+      <div class="ukaes-container">
+
+
+        <div class="appointment-section-heading">
+
+          <span class="ukaes-eyebrow">
+            Series II
+          </span>
+
+          <h2>
+            Research Professor Series
+          </h2>
+
+          <p>
+            Four research academic titles recognising
+            increasing levels of research experience,
+            independent scholarship and academic leadership.
+          </p>
+
+        </div>
+
+
+
+        <div class="professor-list">
+
+
+          <!-- R1 -->
+
+          <article class="professor-card">
+
+            <div class="professor-card-header">
+
+              <div>
+
+                <span class="professor-code">R1</span>
+
+                <h3>Research Fellow</h3>
+
+              </div>
+
+              <span class="professor-position">
+                Researcher
+              </span>
+
+            </div>
+
+            <div class="professor-eligibility">
+              Minimum Eligibility: Doctoral Degree
+            </div>
+
+            <p>
+              Applicants should hold a relevant doctoral
+              degree and demonstrate research methodology
+              knowledge, academic integrity and the ability
+              to participate in research activities.
+            </p>
+
+          </article>
+
+
+
+          <!-- R2 -->
+
+          <article class="professor-card">
+
+            <div class="professor-card-header">
+
+              <div>
+
+                <span class="professor-code">R2</span>
+
+                <h3>Senior Research Fellow</h3>
+
+              </div>
+
+              <span class="professor-position">
+                Senior Researcher
+              </span>
+
+            </div>
+
+            <div class="professor-eligibility">
+              Minimum Eligibility: One Year of Postdoctoral
+              or Equivalent Research Experience
+            </div>
+
+            <p>
+              Applicants should hold a doctoral degree
+              and have at least one year of relevant
+              postdoctoral or equivalent research experience.
+            </p>
+
+            <p>
+              Evidence of sustained research activity,
+              independent research capability and
+              research collaboration is expected.
+            </p>
+
+          </article>
+
+
+
+          <!-- R3 -->
+
+          <article class="professor-card">
+
+            <div class="professor-card-header">
+
+              <div>
+
+                <span class="professor-code">R3</span>
+
+                <h3>Research Associate Professor</h3>
+
+              </div>
+
+              <span class="professor-position">
+                Research Associate Professor
+              </span>
+
+            </div>
+
+            <div class="professor-eligibility">
+              Minimum Eligibility: Four Years of Relevant
+              Research Experience
+            </div>
+
+            <p>
+              Applicants should hold a doctoral degree
+              and have at least four years of relevant
+              research experience.
+            </p>
+
+            <p>
+              Candidates should demonstrate quality
+              original research, independent research
+              capability and academic or project leadership.
+            </p>
+
+          </article>
+
+
+
+          <!-- R4 -->
+
+          <article class="professor-card">
+
+            <div class="professor-card-header">
+
+              <div>
+
+                <span class="professor-code">R4</span>
+
+                <h3>Research Professor</h3>
+
+              </div>
+
+              <span class="professor-position">
+                Research Professor
+              </span>
+
+            </div>
+
+            <div class="professor-eligibility">
+              Minimum Eligibility: Six Years of Relevant
+              Research Experience
+            </div>
+
+            <p>
+              Applicants should hold a doctoral degree
+              and have at least six years of relevant
+              research experience.
+            </p>
+
+            <p>
+              Candidates should demonstrate significant
+              original research contributions, academic
+              influence, research leadership and the
+              ability to support UKAES research development
+              and academic collaboration.
+            </p>
+
+          </article>
+
+
+        </div>
+
+
+
+        <div class="appointment-guidance">
+
+          <p>
+            The experience requirements represent
+            proposed UKAES internal appointment criteria.
+            For R2 to R4, relevant research experience
+            is normally calculated from the award of
+            the doctoral degree. Exceptional prior
+            independent research experience may be
+            considered as equivalent through academic review.
+          </p>
+
+        </div>
+
 
       </div>
 
@@ -412,16 +745,18 @@
         <div>
 
           <span class="ukaes-eyebrow">
-            UK Academy of Epidemiology Sciences
+            Academic Appointments
           </span>
 
           <h2>
-            Advancing Academic Excellence.
+            Advancing Knowledge.<br>
+            Recognising Excellence.
           </h2>
 
           <p>
-            For enquiries about Membership
-            and Fellowship, please contact UKAES.
+            For enquiries about Membership and
+            Research Professor appointments,
+            please contact UKAES.
           </p>
 
         </div>
