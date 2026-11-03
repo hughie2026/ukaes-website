@@ -3,22 +3,291 @@
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta name="description"
-    content="Discover the academic membership and fellowship framework of the UK Academy of Epidemiology Sciences.">
+    content="Explore the membership, fellowship and research academic appointment selection criteria of UKAES.">
 
-  <meta name="theme-color" content="#C41230">
+  <meta name="theme-color" content="#B20D2E">
 
-  <title>Academic Appointments | UKAES</title>
+  <title>Academic Appointments | UK Academy of Epidemiology Sciences</title>
 
   <link rel="stylesheet" href="css/styles.css">
-
   <script src="js/site.js" defer></script>
+
+
+  <style>
+
+    /* PAGE INTRODUCTION */
+
+    .appointment-intro {
+      max-width: 760px;
+    }
+
+    .appointment-intro h2 {
+      margin: 13px 0 20px;
+    }
+
+    .appointment-intro p {
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+
+    /* SECTION INTRODUCTION */
+
+    .selection-heading {
+      margin-bottom: 35px;
+    }
+
+    .selection-heading h2 {
+      margin: 12px 0;
+    }
+
+    .selection-heading p {
+      max-width: 750px;
+      font-size: 14px;
+      line-height: 1.85;
+    }
+
+    .selection-label {
+      display: inline-block;
+      padding: 7px 12px;
+      margin-bottom: 12px;
+      background: #F8EDEF;
+      color: #B20D2E;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .1em;
+    }
+
+
+    /* CATEGORY CARDS */
+
+    .selection-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .selection-card {
+      padding: 24px;
+      background: #FFFFFF;
+      border: 1px solid #E7E5E2;
+      border-top: 3px solid #B20D2E;
+    }
+
+    .selection-card .grade {
+      color: #B20D2E;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .12em;
+    }
+
+    .selection-card h3 {
+      margin: 12px 0;
+      font-size: 19px;
+      line-height: 1.4;
+    }
+
+    .selection-card p {
+      margin: 0;
+      color: #626262;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+
+    /* CRITERIA TABLES */
+
+    .criteria-table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      margin: 25px 0 35px;
+      border: 1px solid #E7E5E2;
+      background: #FFFFFF;
+    }
+
+    .criteria-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 600px;
+      font-size: 13px;
+    }
+
+    .criteria-table th {
+      padding: 16px;
+      background: #8E102A;
+      color: #FFFFFF;
+      text-align: left;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .criteria-table td {
+      padding: 15px 16px;
+      border-bottom: 1px solid #EAE8E5;
+      color: #555555;
+      line-height: 1.7;
+      vertical-align: top;
+    }
+
+    .criteria-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .criteria-table td:first-child {
+      color: #303030;
+      font-weight: 700;
+    }
+
+    .criteria-table .score {
+      color: #B20D2E;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+
+    /* INFORMATION BLOCKS */
+
+    .criteria-note {
+      padding: 23px 26px;
+      margin-top: 25px;
+      background: #F7F5F1;
+      border-left: 4px solid #B20D2E;
+    }
+
+    .criteria-note h3 {
+      margin: 0 0 10px;
+      font-size: 17px;
+    }
+
+    .criteria-note p {
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.85;
+    }
+
+    .criteria-list {
+      padding-left: 20px;
+      margin: 15px 0 0;
+    }
+
+    .criteria-list li {
+      padding: 6px 0;
+      color: #555555;
+      font-size: 13px;
+      line-height: 1.75;
+    }
+
+
+    /* WEIGHTING */
+
+    .weight-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .weight-item {
+      padding: 18px 20px;
+      background: #FFFFFF;
+      border: 1px solid #E7E5E2;
+    }
+
+    .weight-item strong {
+      display: block;
+      margin-bottom: 5px;
+      color: #B20D2E;
+      font-size: 22px;
+    }
+
+    .weight-item span {
+      color: #555555;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+
+    /* CLOSING */
+
+    .appointment-closing {
+      padding: 65px 0;
+      background: linear-gradient(
+        120deg,
+        #85001D,
+        #B20D2E
+      );
+    }
+
+    .appointment-closing-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .appointment-closing h2 {
+      margin: 12px 0;
+      color: #FFFFFF;
+    }
+
+    .appointment-closing p {
+      margin: 0;
+      color: rgba(255,255,255,.85);
+    }
+
+    .appointment-closing .ukaes-eyebrow {
+      color: #F4C7D0;
+    }
+
+
+    /* RESPONSIVE */
+
+    @media (max-width: 850px) {
+
+      .selection-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .appointment-closing-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+    }
+
+    @media (max-width: 600px) {
+
+      .selection-grid,
+      .weight-list {
+        grid-template-columns: 1fr;
+      }
+
+      .selection-card {
+        padding: 21px;
+      }
+
+      .criteria-note {
+        padding: 20px;
+      }
+
+      .appointment-closing {
+        padding: 50px 0;
+      }
+
+    }
+
+  </style>
+
 </head>
 
+
 <body>
+
 
   <!-- =====================================
        HEADER
@@ -29,12 +298,13 @@
     <div class="ukaes-container ukaes-header-inner">
 
       <a href="index.html" class="ukaes-brand">
+
         <img
           src="assets/ukaes-logo.jpg"
-          alt="UK Academy of Epidemiology Sciences"
-          width="440"
-          height="90">
+          alt="UK Academy of Epidemiology Sciences">
+
       </a>
+
 
       <button
         class="ukaes-mobile-toggle"
@@ -46,6 +316,7 @@
 
       </button>
 
+
       <nav
         class="ukaes-navigation"
         aria-label="Main navigation">
@@ -54,7 +325,7 @@
         <a href="about.html">About</a>
         <a href="research.html">Research</a>
         <a href="education.html">Education</a>
-        <a href="appointments.html">Appointments</a>
+        <a href="appointments.html" class="active">Appointments</a>
         <a href="people.html">People</a>
         <a href="contact.html">Contact</a>
 
@@ -65,47 +336,38 @@
   </header>
 
 
-  <!-- =====================================
-       MAIN CONTENT
-  ====================================== -->
 
   <main>
 
 
-    <!-- HERO -->
+    <!-- =====================================
+         HERO
+    ====================================== -->
 
     <section class="ukaes-hero">
 
-      <img
-        class="ukaes-hero-image"
-        src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=2200&q=85"
-        alt="Academic community and university gathering"
-        fetchpriority="high">
-
-      <div class="ukaes-hero-overlay"></div>
-
-      <div class="ukaes-container ukaes-hero-content">
+      <div class="ukaes-hero-content">
 
         <span class="ukaes-eyebrow">
-          Academic Appointments
+          Academic Selection and Appointments
         </span>
 
         <h1>
           Recognising Excellence.<br>
-          Connecting Scholars.
+          Advancing Scholarship.
         </h1>
 
         <p>
-          An academic membership and fellowship
-          framework recognising scholarly engagement
-          and professional contribution.
+          Two independent selection systems
+          for academic membership, fellowship
+          and research appointments at UKAES.
         </p>
 
         <a
           href="#membership"
           class="ukaes-button ukaes-button-white">
 
-          Explore Membership
+          Explore Selection Criteria
 
         </a>
 
@@ -114,36 +376,48 @@
     </section>
 
 
-    <!-- INTRODUCTION -->
+
+    <!-- =====================================
+         INTRODUCTION
+    ====================================== -->
 
     <section class="ukaes-section">
 
-      <div class="ukaes-container-narrow">
+      <div class="ukaes-container">
 
-        <span class="ukaes-eyebrow">
-          Our Academic Community
-        </span>
+        <div class="appointment-intro">
 
-        <h2>
-          Membership & Fellowship
-        </h2>
+          <span class="ukaes-eyebrow">
+            Academic Recognition
+          </span>
 
-        <p class="ukaes-lead">
+          <h2>
+            Two Distinct Selection Systems.
+          </h2>
 
-          UKAES aims to build an international
-          academic community through membership
-          and fellowship, bringing together
-          individuals with an interest in research,
-          education and scientific advancement.
+          <p>
+            UKAES operates two independent
+            academic selection frameworks.
+            Membership and Fellowship recognise
+            academic and professional standing,
+            while Research Academic Appointments
+            assess qualifications, research
+            capability and institutional
+            academic responsibilities.
+          </p>
 
-        </p>
+        </div>
 
       </div>
 
     </section>
 
 
-    <!-- MEMBERSHIP AND FELLOWSHIP -->
+
+    <!-- =====================================
+         PART I
+         MEMBERSHIP AND FELLOWSHIP
+    ====================================== -->
 
     <section
       class="ukaes-section ukaes-section-soft"
@@ -151,86 +425,811 @@
 
       <div class="ukaes-container">
 
-        <div class="ukaes-section-heading">
 
-          <span class="ukaes-eyebrow">
-            Academic Recognition
+        <div class="selection-heading">
+
+          <span class="selection-label">
+            PART I
           </span>
 
           <h2>
-            Two Forms of Academic Affiliation
+            Membership and Fellowship
           </h2>
+
+          <p>
+            Selection based on academic
+            qualifications, professional
+            competence, scholarly contributions,
+            leadership and professional influence.
+          </p>
 
         </div>
 
 
-        <div class="ukaes-feature-grid">
+
+        <!-- MEMBERSHIP GRADES -->
+
+        <div class="selection-grid">
 
 
-          <!-- MEMBER -->
+          <article class="selection-card">
 
-          <article class="ukaes-feature">
+            <span class="grade">M1</span>
 
-            <div class="ukaes-feature-content">
+            <h3>Associate Member</h3>
 
-              <span class="ukaes-eyebrow">
-                Academic Membership
-              </span>
-
-              <h3>
-                Member
-              </h3>
-
-              <p>
-                Membership for individuals interested
-                in epidemiological sciences, research,
-                education and related academic fields.
-              </p>
-
-              <p>
-                Members form part of the UKAES
-                academic community and may participate
-                in relevant academic activities
-                and knowledge exchange.
-              </p>
-
-            </div>
+            <p>
+              Relevant postgraduate student,
+              bachelor's graduate or early-career
+              practitioner with demonstrable
+              interest in relevant sciences.
+            </p>
 
           </article>
 
 
-          <!-- FELLOW -->
 
-          <article class="ukaes-feature">
+          <article class="selection-card">
 
-            <div class="ukaes-feature-content">
+            <span class="grade">M2</span>
 
-              <span class="ukaes-eyebrow">
-                Academic Fellowship
-              </span>
+            <h3>Member</h3>
 
-              <h3>
-                Fellow
-              </h3>
-
-              <p>
-                An academic distinction recognising
-                individuals with significant scholarly,
-                research, educational or professional
-                contributions.
-              </p>
-
-              <p>
-                Fellowship reflects academic
-                achievement, professional standing
-                and contribution to the advancement
-                of relevant disciplines.
-              </p>
-
-            </div>
+            <p>
+              Relevant degree or assessed
+              equivalent competence, with
+              evidence of professional practice,
+              research participation or
+              scholarly engagement.
+            </p>
 
           </article>
 
+
+
+          <article class="selection-card">
+
+            <span class="grade">M3</span>
+
+            <h3>Senior Member</h3>
+
+            <p>
+              Normally at least five years
+              of relevant experience, sustained
+              professional contributions,
+              research or programme participation,
+              and service.
+            </p>
+
+          </article>
+
+
+
+          <article class="selection-card">
+
+            <span class="grade">M4</span>
+
+            <h3>Fellow</h3>
+
+            <p>
+              Normally at least eight years
+              of relevant experience, substantial
+              scholarly or professional achievement,
+              original contributions, influence
+              and leadership.
+            </p>
+
+          </article>
+
+
+
+          <article class="selection-card">
+
+            <span class="grade">M5</span>
+
+            <h3>Distinguished Fellow</h3>
+
+            <p>
+              Normally at least fifteen years
+              of exceptional contribution,
+              major sustained impact, recognised
+              leadership and significant
+              disciplinary or international influence.
+            </p>
+
+          </article>
+
+
+
+          <article class="selection-card">
+
+            <span class="grade">HONORARY</span>
+
+            <h3>Honorary Fellow</h3>
+
+            <p>
+              A separate discretionary academic
+              honour recognising exceptional
+              contributions. It is not a routine
+              progression grade.
+            </p>
+
+          </article>
+
+
+        </div>
+
+
+
+        <!-- MEMBERSHIP ASSESSMENT -->
+
+        <div style="margin-top:55px;">
+
+          <div class="selection-heading">
+
+            <h3>
+              Assessment Framework
+            </h3>
+
+            <p>
+              Different assessment weightings
+              apply to the membership and
+              fellowship categories.
+            </p>
+
+          </div>
+
+
+          <div class="criteria-table-wrap">
+
+            <table class="criteria-table">
+
+              <thead>
+
+                <tr>
+
+                  <th>Assessment Criterion</th>
+
+                  <th>Member / Senior Member</th>
+
+                  <th>Fellow / Distinguished Fellow</th>
+
+                </tr>
+
+              </thead>
+
+
+              <tbody>
+
+                <tr>
+
+                  <td>
+                    Qualifications and Professional Competence
+                  </td>
+
+                  <td class="score">25%</td>
+
+                  <td class="score">10%</td>
+
+                </tr>
+
+
+                <tr>
+
+                  <td>
+                    Research Output and Scholarly Quality
+                  </td>
+
+                  <td class="score">20%</td>
+
+                  <td class="score">35%</td>
+
+                </tr>
+
+
+                <tr>
+
+                  <td>
+                    Professional Practice and Societal Contribution
+                  </td>
+
+                  <td class="score">30%</td>
+
+                  <td class="score">15%</td>
+
+                </tr>
+
+
+                <tr>
+
+                  <td>
+                    Academic Leadership and Service
+                  </td>
+
+                  <td class="score">15%</td>
+
+                  <td class="score">25%</td>
+
+                </tr>
+
+
+                <tr>
+
+                  <td>
+                    International Collaboration and Influence
+                  </td>
+
+                  <td class="score">10%</td>
+
+                  <td class="score">15%</td>
+
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- MEMBERSHIP THRESHOLDS -->
+
+        <div class="selection-heading">
+
+          <h3>
+            Indicative Selection Thresholds
+          </h3>
+
+        </div>
+
+
+        <div class="criteria-table-wrap">
+
+          <table class="criteria-table">
+
+            <thead>
+
+              <tr>
+                <th>Membership Category</th>
+                <th>Indicative Threshold</th>
+              </tr>
+
+            </thead>
+
+
+            <tbody>
+
+              <tr>
+                <td>Associate Member</td>
+                <td>Eligibility Screening</td>
+              </tr>
+
+              <tr>
+                <td>Member</td>
+                <td class="score">60 / 100</td>
+              </tr>
+
+              <tr>
+                <td>Senior Member</td>
+                <td class="score">70 / 100</td>
+              </tr>
+
+              <tr>
+                <td>Fellow</td>
+                <td class="score">80 / 100</td>
+              </tr>
+
+              <tr>
+                <td>Distinguished Fellow</td>
+                <td class="score">90 / 100 + External Academic Support</td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+
+
+        <!-- EVIDENCE -->
+
+        <div class="criteria-note">
+
+          <h3>
+            Supporting Evidence
+          </h3>
+
+          <p>
+            Applicants are expected to provide
+            relevant documentation, including:
+          </p>
+
+          <ul class="criteria-list">
+
+            <li>
+              Current curriculum vitae and
+              evidence of education or
+              professional competence.
+            </li>
+
+            <li>
+              Selected scholarly outputs,
+              research contributions, projects
+              or professional achievements.
+            </li>
+
+            <li>
+              Personal statement explaining
+              suitability and contribution
+              to the Academy.
+            </li>
+
+            <li>
+              Fellow and Distinguished Fellow
+              candidates: supporting nominations
+              or references and independent
+              scholarly review.
+            </li>
+
+          </ul>
+
+        </div>
+
+
+        <div class="criteria-note">
+
+          <h3>
+            Selection Principle
+          </h3>
+
+          <p>
+            Experience thresholds are UKAES
+            guidance rather than statutory UK
+            requirements. Scores guide rather
+            than replace reasoned peer judgement.
+            Academic quality, originality,
+            integrity and attributable contribution
+            are assessed rather than publication
+            counts alone.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         PART II
+         RESEARCH ACADEMIC APPOINTMENTS
+    ====================================== -->
+
+    <section
+      class="ukaes-section"
+      id="research-appointments">
+
+      <div class="ukaes-container">
+
+
+        <div class="selection-heading">
+
+          <span class="selection-label">
+            PART II
+          </span>
+
+          <h2>
+            Research Academic Appointments
+          </h2>
+
+          <p>
+            Academic appointment selection
+            evaluates doctoral qualifications,
+            research experience, original
+            scholarship, research independence
+            and academic leadership.
+          </p>
+
+        </div>
+
+
+
+        <!-- RESEARCH GRADES -->
+
+        <div class="selection-grid">
+
+
+          <article class="selection-card">
+
+            <span class="grade">R1</span>
+
+            <h3>Research Fellow</h3>
+
+            <p>
+              Relevant doctoral degree
+              (PhD or equivalent).
+              No minimum postdoctoral
+              experience requirement.
+            </p>
+
+          </article>
+
+
+
+          <article class="selection-card">
+
+            <span class="grade">R2</span>
+
+            <h3>Senior Research Fellow</h3>
+
+            <p>
+              Doctoral degree plus at least
+              one year of postdoctoral or
+              equivalent relevant research
+              experience.
+            </p>
+
+          </article>
+
+
+
+          <article class="selection-card">
+
+            <span class="grade">R3</span>
+
+            <h3>Research Associate Professor</h3>
+
+            <p>
+              Doctoral degree plus at least
+              four years of relevant
+              research experience.
+            </p>
+
+          </article>
+
+
+
+          <article class="selection-card">
+
+            <span class="grade">R4</span>
+
+            <h3>Research Professor</h3>
+
+            <p>
+              Doctoral degree plus at least
+              six years of relevant research
+              experience.
+            </p>
+
+          </article>
+
+
+        </div>
+
+
+
+        <!-- RESEARCH EXPECTATIONS -->
+
+        <div style="margin-top:55px;">
+
+          <div class="selection-heading">
+
+            <h3>
+              Academic Expectations
+            </h3>
+
+          </div>
+
+
+          <div class="criteria-table-wrap">
+
+            <table class="criteria-table">
+
+              <thead>
+
+                <tr>
+                  <th>Academic Grade</th>
+                  <th>Expected Academic Standard</th>
+                </tr>
+
+              </thead>
+
+
+              <tbody>
+
+                <tr>
+
+                  <td>Research Fellow</td>
+
+                  <td>
+                    Sound research methodology,
+                    scholarly integrity, substantive
+                    contribution to research projects
+                    and verifiable academic or
+                    scientific outputs.
+                  </td>
+
+                </tr>
+
+
+                <tr>
+
+                  <td>Senior Research Fellow</td>
+
+                  <td>
+                    Sustained research activity,
+                    independent completion of
+                    substantial tasks, quality outputs
+                    and collaborative or project
+                    coordination capability.
+                  </td>
+
+                </tr>
+
+
+                <tr>
+
+                  <td>Research Associate Professor</td>
+
+                  <td>
+                    Sustained original scholarship,
+                    research independence, significant
+                    outputs and emerging leadership
+                    in research supervision or
+                    academic collaboration.
+                  </td>
+
+                </tr>
+
+
+                <tr>
+
+                  <td>Research Professor</td>
+
+                  <td>
+                    Substantial original research
+                    contributions, significant scholarly
+                    influence, established research
+                    leadership and a credible plan
+                    to advance UKAES research
+                    programmes and partnerships.
+                  </td>
+
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- RESEARCH SCORING -->
+
+        <div class="selection-heading">
+
+          <h3>
+            Research Appointment Assessment
+          </h3>
+
+          <p>
+            All research academic appointments
+            are assessed against the following
+            weighted criteria.
+          </p>
+
+        </div>
+
+
+        <div class="weight-list">
+
+          <div class="weight-item">
+            <strong>30%</strong>
+            <span>
+              Original Research Contribution and Quality
+            </span>
+          </div>
+
+          <div class="weight-item">
+            <strong>20%</strong>
+            <span>
+              Research Independence and Methodological Capability
+            </span>
+          </div>
+
+          <div class="weight-item">
+            <strong>20%</strong>
+            <span>
+              Academic Leadership and Project Management
+            </span>
+          </div>
+
+          <div class="weight-item">
+            <strong>15%</strong>
+            <span>
+              Scholarly Influence and International Collaboration
+            </span>
+          </div>
+
+          <div class="weight-item">
+            <strong>10%</strong>
+            <span>
+              Proposed Contribution to UKAES Research
+            </span>
+          </div>
+
+          <div class="weight-item">
+            <strong>5%</strong>
+            <span>
+              Academic Service and Professional Contribution
+            </span>
+          </div>
+
+        </div>
+
+
+
+        <!-- APPOINTMENT THRESHOLDS -->
+
+        <div class="selection-heading"
+          style="margin-top:45px;">
+
+          <h3>
+            Indicative Appointment Thresholds
+          </h3>
+
+        </div>
+
+
+        <div class="criteria-table-wrap">
+
+          <table class="criteria-table">
+
+            <thead>
+
+              <tr>
+                <th>Research Grade</th>
+                <th>Minimum Score</th>
+                <th>Additional Expectation</th>
+              </tr>
+
+            </thead>
+
+
+            <tbody>
+
+              <tr>
+
+                <td>Research Fellow</td>
+
+                <td class="score">65 / 100</td>
+
+                <td>
+                  Demonstrated research competence
+                </td>
+
+              </tr>
+
+
+              <tr>
+
+                <td>Senior Research Fellow</td>
+
+                <td class="score">75 / 100</td>
+
+                <td>
+                  Independent research capability
+                </td>
+
+              </tr>
+
+
+              <tr>
+
+                <td>Research Associate Professor</td>
+
+                <td class="score">85 / 100</td>
+
+                <td>
+                  Academic leadership capability
+                </td>
+
+              </tr>
+
+
+              <tr>
+
+                <td>Research Professor</td>
+
+                <td class="score">90 / 100</td>
+
+                <td>
+                  Major scholarly contributions
+                  and research leadership
+                </td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+
+
+        <!-- EXCEPTIONAL APPOINTMENT -->
+
+        <div class="criteria-note">
+
+          <h3>
+            Exceptional Academic Appointment
+          </h3>
+
+          <p>
+            Exceptional researchers may be
+            considered for appointment without
+            satisfying the normal minimum years
+            of research experience, provided
+            they demonstrably meet the substantive
+            academic standards of the relevant
+            grade. Academic quality, research
+            integrity, independence and leadership
+            standards cannot be waived.
+          </p>
+
+          <p style="margin-top:12px;">
+            The normal doctoral degree requirement
+            remains in place. Exceptional
+            appointments require documented
+            justification, independent academic
+            reviews and appropriate institutional
+            approval.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         FINAL NOTE
+    ====================================== -->
+
+    <section class="ukaes-section ukaes-section-soft">
+
+      <div class="ukaes-container">
+
+        <div class="criteria-note">
+
+          <h3>
+            Institutional Status
+          </h3>
+
+          <p>
+            These criteria constitute a proposed
+            internal UKAES selection framework.
+            They are not statutory UK academic
+            ranks or government-recognised
+            professional qualifications.
+            Formal adoption is subject to
+            institutional governance approval,
+            legal review and appropriate
+            oversight arrangements.
+          </p>
 
         </div>
 
@@ -239,95 +1238,45 @@
     </section>
 
 
-    <!-- APPOINTMENT FRAMEWORK -->
 
-    <section class="ukaes-section">
+    <!-- =====================================
+         CLOSING
+    ====================================== -->
 
-      <div class="ukaes-container ukaes-editorial">
+    <section class="appointment-closing">
 
-        <div class="ukaes-editorial-content">
+      <div class="ukaes-container">
 
-          <span class="ukaes-eyebrow">
-            Appointment Framework
-          </span>
+        <div class="appointment-closing-inner">
 
-          <h2>
-            A Commitment to Academic Standards.
-          </h2>
+          <div>
 
-          <p>
-            Membership and Fellowship appointments
-            may be considered through application
-            or nomination, subject to the Academy's
-            relevant eligibility requirements
-            and academic review.
-          </p>
+            <span class="ukaes-eyebrow">
+              UK Academy of Epidemiology Sciences
+            </span>
 
-          <p>
-            Each category represents a distinct
-            form of academic affiliation
-            or recognition.
-          </p>
+            <h2>
+              Academic Excellence and Recognition.
+            </h2>
+
+            <p>
+              For enquiries regarding membership,
+              fellowship or academic appointments,
+              please contact UKAES.
+            </p>
+
+          </div>
+
 
           <a
             href="contact.html"
-            class="ukaes-text-link">
+            class="ukaes-button ukaes-button-white">
 
-            Enquire About Appointments →
+            Contact UKAES
 
           </a>
 
         </div>
-
-
-        <div class="ukaes-editorial-image">
-
-          <img
-            src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1100&q=85"
-            alt="Academic professionals exchanging ideas"
-            loading="lazy">
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- CLOSING -->
-
-    <section class="ukaes-highlight">
-
-      <div class="ukaes-container ukaes-highlight-inner">
-
-        <div>
-
-          <span
-            class="ukaes-eyebrow"
-            style="color:#F4C7D0">
-
-            Join the UKAES Community
-
-          </span>
-
-          <h2>
-            Advancing Knowledge Together.
-          </h2>
-
-          <p>
-            Connect with UKAES and explore
-            academic membership opportunities.
-          </p>
-
-        </div>
-
-        <a
-          href="contact.html"
-          class="ukaes-button ukaes-button-white">
-
-          Contact UKAES
-
-        </a>
 
       </div>
 
@@ -335,6 +1284,7 @@
 
 
   </main>
+
 
 
   <!-- =====================================
@@ -346,6 +1296,7 @@
     <div class="ukaes-container">
 
       <div class="ukaes-footer-grid">
+
 
         <div>
 
@@ -369,10 +1320,12 @@
           <h3>Explore</h3>
 
           <ul>
+
             <li><a href="about.html">About</a></li>
             <li><a href="research.html">Research</a></li>
             <li><a href="education.html">Education</a></li>
             <li><a href="appointments.html">Appointments</a></li>
+
           </ul>
 
         </div>
@@ -383,11 +1336,14 @@
           <h3>Information</h3>
 
           <ul>
+
             <li><a href="people.html">People</a></li>
             <li><a href="contact.html">Contact</a></li>
+
           </ul>
 
         </div>
+
 
       </div>
 
@@ -408,6 +1364,7 @@
     </div>
 
   </footer>
+
 
 
   <!-- BACK TO TOP -->
