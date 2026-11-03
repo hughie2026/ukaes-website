@@ -7,19 +7,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta name="description"
-    content="Discover the UK Academy of Epidemiology Sciences, established in 2026 as an independent research and education institution.">
+    content="Learn about the UK Academy of Epidemiology Sciences, established in 2026 as a young and pioneering research and education institution.">
 
   <meta name="theme-color" content="#C41230">
 
   <title>About | UK Academy of Epidemiology Sciences</title>
 
   <link rel="stylesheet" href="css/styles.css">
+
   <script src="js/site.js" defer></script>
 </head>
 
 <body>
 
-  <!-- HEADER -->
+  <!-- =====================================
+       HEADER
+  ====================================== -->
 
   <header class="ukaes-header">
 
@@ -27,8 +30,10 @@
 
       <a href="index.html" class="ukaes-brand">
         <img
-          src="assets/logo.png"
-          alt="UK Academy of Epidemiology Sciences">
+          src="assets/ukaes-logo.jpg"
+          alt="UK Academy of Epidemiology Sciences"
+          width="440"
+          height="90">
       </a>
 
       <button
@@ -36,10 +41,14 @@
         type="button"
         aria-label="Open navigation"
         aria-expanded="false">
+
         Menu
+
       </button>
 
-      <nav class="ukaes-navigation" aria-label="Main navigation">
+      <nav
+        class="ukaes-navigation"
+        aria-label="Main navigation">
 
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
@@ -56,13 +65,26 @@
   </header>
 
 
+  <!-- =====================================
+       MAIN CONTENT
+  ====================================== -->
+
   <main>
 
-    <!-- PAGE HERO -->
 
-    <section class="ukaes-page-intro">
+    <!-- HERO -->
 
-      <div class="ukaes-container">
+    <section class="ukaes-hero">
+
+      <img
+        class="ukaes-hero-image"
+        src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=2200&q=85"
+        alt="Modern scientific research laboratory"
+        fetchpriority="high">
+
+      <div class="ukaes-hero-overlay"></div>
+
+      <div class="ukaes-container ukaes-hero-content">
 
         <span class="ukaes-eyebrow">
           About the Academy
@@ -74,19 +96,28 @@
         </h1>
 
         <p>
-          An emerging academic institution advancing
-          research, scientific knowledge and education
-          in epidemiological sciences.
+          A young and pioneering academic institution
+          advancing scientific research and education.
         </p>
+
+        <a
+          href="#about-ukaes"
+          class="ukaes-button ukaes-button-white">
+
+          Discover Our Academy
+
+        </a>
 
       </div>
 
     </section>
 
 
-    <!-- ABOUT -->
+    <!-- ABOUT UKAES -->
 
-    <section class="ukaes-section">
+    <section
+      class="ukaes-section"
+      id="about-ukaes">
 
       <div class="ukaes-container ukaes-editorial">
 
@@ -102,25 +133,34 @@
 
           <p>
             The UK Academy of Epidemiology Sciences
-            (UKAES) is an independent academic institution
+            (UKAES) is an academic institution
             established in 2026.
           </p>
 
           <p>
-            As a young and pioneering research and
-            education institution, UKAES is committed
-            to developing scientific research, advancing
-            academic learning and encouraging new
-            perspectives in epidemiological sciences.
+            As a young and pioneering research
+            and education institution, UKAES is
+            committed to scientific exploration,
+            academic development and new perspectives
+            in epidemiological sciences.
           </p>
 
+          <a
+            href="research.html"
+            class="ukaes-text-link">
+
+            Explore Our Research →
+
+          </a>
+
         </div>
+
 
         <div class="ukaes-editorial-image">
 
           <img
-            src="assets/about-academy.jpg"
-            alt="Modern academic research environment"
+            src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=1100&q=85"
+            alt="Biomedical scientists conducting research"
             loading="lazy">
 
         </div>
@@ -138,9 +178,12 @@
 
         <div>
 
-          <span class="ukaes-eyebrow"
+          <span
+            class="ukaes-eyebrow"
             style="color:#F4C7D0">
+
             Our Foundation
+
           </span>
 
           <h2>
@@ -153,12 +196,7 @@
 
         </div>
 
-        <div style="
-          font-size:clamp(75px,12vw,150px);
-          font-weight:800;
-          line-height:1;
-          color:#FFFFFF;
-          letter-spacing:-0.07em;">
+        <div class="ukaes-foundation-year">
           2026
         </div>
 
@@ -167,9 +205,9 @@
     </section>
 
 
-    <!-- MISSION -->
+    <!-- OUR MISSION -->
 
-    <section class="ukaes-section">
+    <section class="ukaes-section ukaes-section-soft">
 
       <div class="ukaes-container">
 
@@ -184,28 +222,37 @@
           </h2>
 
           <p>
-            Bringing scientific inquiry and academic
-            education together to support the development
-            of epidemiological sciences.
+            Bringing scientific inquiry and
+            academic education together.
           </p>
 
         </div>
 
+
         <div class="ukaes-feature-grid">
+
+
+          <!-- RESEARCH -->
 
           <article class="ukaes-feature">
 
-            <div class="ukaes-feature-content">
+            <div class="ukaes-feature-image">
 
-              <span class="ukaes-eyebrow">
-                01
-              </span>
+              <img
+                src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=900&q=85"
+                alt="Scientific research and laboratory work"
+                loading="lazy">
+
+            </div>
+
+            <div class="ukaes-feature-content">
 
               <h3>Scientific Research</h3>
 
               <p>
-                Encouraging research and scientific
-                exploration.
+                Encouraging scientific inquiry,
+                research exploration and
+                interdisciplinary thinking.
               </p>
 
             </div>
@@ -213,19 +260,27 @@
           </article>
 
 
+          <!-- EDUCATION -->
+
           <article class="ukaes-feature">
 
-            <div class="ukaes-feature-content">
+            <div class="ukaes-feature-image">
 
-              <span class="ukaes-eyebrow">
-                02
-              </span>
+              <img
+                src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=85"
+                alt="University students in an academic environment"
+                loading="lazy">
+
+            </div>
+
+            <div class="ukaes-feature-content">
 
               <h3>Academic Education</h3>
 
               <p>
-                Supporting advanced learning
-                and academic development.
+                Supporting academic learning,
+                scientific education and
+                professional development.
               </p>
 
             </div>
@@ -233,24 +288,33 @@
           </article>
 
 
+          <!-- DISCOVERY -->
+
           <article class="ukaes-feature">
 
-            <div class="ukaes-feature-content">
+            <div class="ukaes-feature-image">
 
-              <span class="ukaes-eyebrow">
-                03
-              </span>
+              <img
+                src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=85"
+                alt="Academic collaboration and knowledge exchange"
+                loading="lazy">
+
+            </div>
+
+            <div class="ukaes-feature-content">
 
               <h3>Future Perspectives</h3>
 
               <p>
-                Exploring new ideas and emerging
-                scientific opportunities.
+                Embracing new ideas,
+                academic collaboration and
+                emerging scientific opportunities.
               </p>
 
             </div>
 
           </article>
+
 
         </div>
 
@@ -259,20 +323,21 @@
     </section>
 
 
-    <!-- APPROACH -->
+    <!-- OUR APPROACH -->
 
-    <section class="ukaes-section ukaes-section-soft">
+    <section class="ukaes-section">
 
       <div class="ukaes-container ukaes-editorial">
 
         <div class="ukaes-editorial-image">
 
           <img
-            src="assets/about-research.jpg"
-            alt="Scientific collaboration and research"
+            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1100&q=85"
+            alt="Researchers and professionals working together"
             loading="lazy">
 
         </div>
+
 
         <div class="ukaes-editorial-content">
 
@@ -285,16 +350,25 @@
           </h2>
 
           <p>
-            UKAES embraces an open, forward-looking
-            and interdisciplinary approach to research
-            and education.
+            UKAES embraces an open,
+            forward-looking and interdisciplinary
+            approach to scientific research
+            and academic education.
           </p>
 
           <p>
-            We aim to build an environment where
-            scientific curiosity, academic collaboration
-            and innovative thinking can grow.
+            We aim to encourage scientific curiosity,
+            academic exchange and collaboration
+            across different fields of knowledge.
           </p>
+
+          <a
+            href="contact.html"
+            class="ukaes-text-link">
+
+            Connect With UKAES →
+
+          </a>
 
         </div>
 
@@ -303,34 +377,51 @@
     </section>
 
 
-    <!-- CLOSING -->
+    <!-- CLOSING SECTION -->
 
-    <section class="ukaes-section">
+    <section class="ukaes-highlight">
 
-      <div class="ukaes-container ukaes-text-center">
+      <div class="ukaes-container ukaes-highlight-inner">
 
-        <span class="ukaes-eyebrow">
-          UK Academy of Epidemiology Sciences
-        </span>
+        <div>
 
-        <h2>
-          Shaping the Future of Science.
-        </h2>
+          <span
+            class="ukaes-eyebrow"
+            style="color:#F4C7D0">
+
+            UK Academy of Epidemiology Sciences
+
+          </span>
+
+          <h2>
+            Shaping the Future of Science.
+          </h2>
+
+          <p>
+            Research, education and scientific discovery.
+          </p>
+
+        </div>
 
         <a
-          href="research.html"
-          class="ukaes-button">
-          Explore Our Research
+          href="contact.html"
+          class="ukaes-button ukaes-button-white">
+
+          Contact UKAES
+
         </a>
 
       </div>
 
     </section>
 
+
   </main>
 
 
-  <!-- FOOTER -->
+  <!-- =====================================
+       FOOTER
+  ====================================== -->
 
   <footer class="ukaes-footer">
 
@@ -348,6 +439,10 @@
             UK Academy of Epidemiology Sciences
           </p>
 
+          <p>
+            Advancing Science. Shaping the Future.
+          </p>
+
         </div>
 
 
@@ -356,10 +451,23 @@
           <h3>Explore</h3>
 
           <ul>
-            <li><a href="about.html">About</a></li>
-            <li><a href="research.html">Research</a></li>
-            <li><a href="education.html">Education</a></li>
-            <li><a href="appointments.html">Appointments</a></li>
+
+            <li>
+              <a href="about.html">About</a>
+            </li>
+
+            <li>
+              <a href="research.html">Research</a>
+            </li>
+
+            <li>
+              <a href="education.html">Education</a>
+            </li>
+
+            <li>
+              <a href="appointments.html">Appointments</a>
+            </li>
+
           </ul>
 
         </div>
@@ -370,8 +478,15 @@
           <h3>Information</h3>
 
           <ul>
-            <li><a href="people.html">People</a></li>
-            <li><a href="contact.html">Contact</a></li>
+
+            <li>
+              <a href="people.html">People</a>
+            </li>
+
+            <li>
+              <a href="contact.html">Contact</a>
+            </li>
+
           </ul>
 
         </div>
@@ -397,12 +512,16 @@
   </footer>
 
 
+  <!-- BACK TO TOP -->
+
   <button
     class="ukaes-back-to-top"
     type="button"
     aria-label="Back to top"
     hidden>
+
     ↑
+
   </button>
 
 
