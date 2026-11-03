@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta name="description"
-    content="Discover the UK Academy of Epidemiology Sciences, established in 2026 as a young and pioneering research and education institution.">
+    content="Discover the UK Academy of Epidemiology Sciences, established in 2026 as a pioneering research and education institution in epidemiological sciences.">
 
   <meta name="theme-color" content="#85001D">
 
@@ -30,12 +30,12 @@
       line-height: 1.95;
     }
 
-    /* EDITORIAL LAYOUT */
+    /* EDITORIAL */
 
     .about-editorial {
       display: grid;
       grid-template-columns: 1fr 1.05fr;
-      gap: 65px;
+      gap: 60px;
       align-items: center;
     }
 
@@ -64,20 +64,6 @@
       object-fit: cover;
     }
 
-    /* IMAGE CREDIT */
-
-    .about-image-credit {
-      margin-top: 8px;
-      color: #999;
-      font-size: 10px;
-      line-height: 1.6;
-    }
-
-    .about-image-credit a {
-      color: #85001D;
-      text-decoration: none;
-    }
-
     /* FOUNDATION */
 
     .about-foundation {
@@ -93,91 +79,95 @@
     }
 
     .about-foundation p {
-      max-width: 700px;
+      max-width: 760px;
       margin: 0;
       color: #F4DDE2;
       font-size: 15px;
       line-height: 1.9;
     }
 
-    /* RESEARCH APPROACH */
+    /* RESEARCH AREAS */
 
-    .about-focus-grid {
+    .about-research-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 32px;
     }
 
-    .about-focus-card {
+    .about-research-card {
       background: #FFFFFF;
       border: 1px solid #E8E6E2;
     }
 
-    .about-focus-card img {
+    .about-research-card img {
       width: 100%;
-      aspect-ratio: 16 / 9;
+      aspect-ratio: 5 / 4;
       object-fit: cover;
     }
 
-    .about-focus-content {
-      padding: 23px;
+    .about-research-content {
+      padding: 22px;
     }
 
-    .about-focus-content h3 {
-      margin-bottom: 10px;
-      font-size: 19px;
+    .about-research-content h3 {
+      margin-bottom: 11px;
+      font-size: 18px;
+      line-height: 1.4;
     }
 
-    .about-focus-content p {
+    .about-research-content p {
       margin: 0;
       color: #666;
       font-size: 13px;
       line-height: 1.85;
     }
 
-    /* APPROACH */
+    /* MISSION */
 
-    .about-approach {
+    .about-mission {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 60px;
       align-items: center;
     }
 
-    .about-approach-image {
+    .about-mission-image {
       width: 100%;
       aspect-ratio: 5 / 4;
       overflow: hidden;
+      background: #F0EFEC;
     }
 
-    .about-approach-image img {
+    .about-mission-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
 
-    .about-approach-content h2 {
+    .about-mission-content h2 {
       margin: 12px 0 20px;
       font-size: clamp(27px, 3vw, 38px);
     }
 
-    .about-approach-content p {
+    .about-mission-content p {
       color: #666;
       font-size: 14px;
       line-height: 1.9;
+      margin-bottom: 15px;
     }
 
     /* RESPONSIVE */
 
-    @media (max-width: 800px) {
+    @media (max-width: 850px) {
 
       .about-editorial,
-      .about-approach {
+      .about-mission {
         grid-template-columns: 1fr;
         gap: 30px;
       }
 
-      .about-focus-grid {
+      .about-research-grid {
         grid-template-columns: 1fr;
       }
 
@@ -253,14 +243,14 @@
         </span>
 
         <h1>
-          A New Generation<br>
-          of Scientific Thinking.
+          Advancing Epidemiology.<br>
+          Improving Population Health.
         </h1>
 
         <p>
           A young and pioneering academic institution
-          advancing scientific research, computational
-          innovation and education.
+          dedicated to epidemiological research,
+          scientific discovery and education.
         </p>
 
       </div>
@@ -296,15 +286,16 @@
             <p>
               As a young and pioneering research and
               education institution, UKAES is committed
-              to advancing scientific knowledge,
-              encouraging interdisciplinary research
-              and supporting academic development.
+              to advancing epidemiological sciences,
+              promoting scientific investigation and
+              supporting academic development.
             </p>
 
             <p>
-              We embrace emerging technologies,
-              computational approaches and new
-              perspectives in scientific exploration.
+              We seek to encourage new perspectives
+              in the study of disease patterns,
+              population health and the determinants
+              of human health.
             </p>
 
             <a href="research.html" class="ukaes-text-link">
@@ -314,25 +305,12 @@
           </div>
 
 
-          <div>
+          <div class="about-editorial-image">
 
-            <div class="about-editorial-image">
-
-              <img
-                src="https://images.unsplash.com/photo-1766297247924-6638d54e7c89?auto=format&fit=crop&w=1400&q=85"
-                alt="Two scientists working together on computers in a research laboratory"
-                loading="lazy">
-
-            </div>
-
-            <div class="about-image-credit">
-              Image: Faustina Okeke /
-              <a href="https://unsplash.com/photos/two-scientists-working-on-computers-in-a-laboratory-XLQuTdktpa8"
-                 target="_blank"
-                 rel="noopener noreferrer">
-                Unsplash
-              </a>
-            </div>
+            <img
+              src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1400&q=85"
+              alt="Medical researchers examining clinical information"
+              loading="lazy">
 
           </div>
 
@@ -367,8 +345,8 @@
             Young in age. Forward in vision.
             UKAES represents a new generation of
             academic research and education,
-            embracing innovation, scientific curiosity
-            and interdisciplinary collaboration.
+            embracing scientific curiosity,
+            innovation and interdisciplinary collaboration.
           </p>
 
         </div>
@@ -379,7 +357,7 @@
 
 
 
-    <!-- ACADEMIC APPROACH -->
+    <!-- EPIDEMIOLOGICAL RESEARCH -->
 
     <section class="ukaes-section ukaes-section-soft">
 
@@ -388,46 +366,45 @@
         <div class="about-intro">
 
           <span class="ukaes-eyebrow">
-            Our Academic Approach
+            Our Scientific Focus
           </span>
 
           <h2>
-            Science Meets Technology.
+            Understanding Health Through Research.
           </h2>
 
           <p>
-            We recognise the growing importance of
-            computational methods, artificial intelligence
-            and digital technologies in modern scientific
-            research and academic development.
+            Epidemiological sciences provide an important
+            foundation for understanding disease occurrence,
+            population health and the factors influencing
+            health outcomes.
           </p>
 
         </div>
 
 
-        <div class="about-focus-grid">
+        <div class="about-research-grid">
 
 
-          <!-- COMPUTATIONAL RESEARCH -->
+          <!-- EPIDEMIOLOGY -->
 
-          <article class="about-focus-card">
+          <article class="about-research-card">
 
             <img
-              src="https://images.unsplash.com/photo-1763568258367-1c52beb60be7?auto=format&fit=crop&w=1200&q=85"
-              alt="Computer programming code and scientific data analysis"
+              src="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&w=1000&q=85"
+              alt="Scientific investigation of infectious disease and epidemiology"
               loading="lazy">
 
-            <div class="about-focus-content">
+            <div class="about-research-content">
 
               <h3>
-                Computational Research
+                Epidemiological Sciences
               </h3>
 
               <p>
-                Exploring computational methods,
-                programming, data analysis and
-                quantitative approaches to scientific
-                investigation.
+                Exploring disease distribution,
+                determinants of health, risk factors
+                and epidemiological research methods.
               </p>
 
             </div>
@@ -436,26 +413,52 @@
 
 
 
-          <!-- AI AND EMERGING TECHNOLOGY -->
+          <!-- POPULATION HEALTH -->
 
-          <article class="about-focus-card">
+          <article class="about-research-card">
 
             <img
-              src="https://images.unsplash.com/photo-1581093577421-f561a654a353?auto=format&fit=crop&w=1200&q=85"
-              alt="Scientific researcher using computer technology in a laboratory"
+              src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=1000&q=85"
+              alt="Healthcare professionals working together on population health"
               loading="lazy">
 
-            <div class="about-focus-content">
+            <div class="about-research-content">
 
               <h3>
-                AI and Emerging Technologies
+                Population Health
               </h3>
 
               <p>
-                Encouraging exploration of artificial
-                intelligence, digital innovation and
-                emerging technologies in scientific
-                research.
+                Examining public health challenges,
+                disease prevention, health inequalities
+                and population-level health outcomes.
+              </p>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- BIOMEDICAL RESEARCH -->
+
+          <article class="about-research-card">
+
+            <img
+              src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1000&q=85"
+              alt="Biomedical scientific research and medical laboratory investigation"
+              loading="lazy">
+
+            <div class="about-research-content">
+
+              <h3>
+                Biomedical and Clinical Research
+              </h3>
+
+              <p>
+                Exploring biomedical mechanisms,
+                clinical evidence and scientific
+                approaches to understanding human health.
               </p>
 
             </div>
@@ -471,60 +474,46 @@
 
 
 
-    <!-- OUR APPROACH -->
+    <!-- RESEARCH AND EDUCATION MISSION -->
 
     <section class="ukaes-section">
 
       <div class="ukaes-container">
 
-        <div class="about-approach">
+        <div class="about-mission">
 
 
-          <div>
+          <div class="about-mission-image">
 
-            <div class="about-approach-image">
-
-              <img
-                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1400&q=85"
-                alt="Collaborative technology and computer science research environment"
-                loading="lazy">
-
-            </div>
-
-            <div class="about-image-credit">
-              Image: 
-              <a href="https://unsplash.com/photos/person-typing-code-on-laptop-workspace-UcYBL5V0xWQ"
-                 target="_blank"
-                 rel="noopener noreferrer">
-                Unsplash
-              </a>
-            </div>
+            <img
+              src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1400&q=85"
+              alt="Medical professionals discussing scientific and clinical research"
+              loading="lazy">
 
           </div>
 
 
-          <div class="about-approach-content">
+          <div class="about-mission-content">
 
             <span class="ukaes-eyebrow">
-              Our Approach
+              Our Mission
             </span>
 
             <h2>
-              Looking Forward.
+              Research. Education. Discovery.
             </h2>
 
             <p>
-              UKAES embraces an open, forward-looking
-              and interdisciplinary approach to research
-              and education.
+              UKAES aims to promote scientific research
+              and academic education in epidemiological
+              sciences and related disciplines.
             </p>
 
             <p>
-              We aim to encourage collaboration between
-              academic disciplines, integrate emerging
-              technologies into scientific inquiry
-              and support new generations of researchers
-              and professionals.
+              We encourage evidence-based thinking,
+              academic collaboration and the development
+              of knowledge that contributes to a better
+              understanding of population health.
             </p>
 
             <a href="education.html" class="ukaes-text-link">
@@ -558,7 +547,7 @@
           </h2>
 
           <p>
-            Research. Education. Innovation.
+            Research. Education. Scientific Discovery.
           </p>
 
         </div>
