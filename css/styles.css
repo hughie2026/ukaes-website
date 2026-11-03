@@ -1,210 +1,213 @@
 
-/* =====================================================
-   UKAES WEBSITE
-   Version 4.0
-   Burgundy Academic Institutional Design
-===================================================== */
+/* =========================================================
+   UK ACADEMY OF EPIDEMIOLOGY SCIENCES
+   UKAES GLOBAL STYLESHEET
+   Design: Modern Academic Institutional Website
+   ========================================================= */
 
 
-/* =====================================================
-   01. GLOBAL SETTINGS
-===================================================== */
+/* =========================================================
+   01. DESIGN SYSTEM
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap');
 
 :root {
-  --ukaes-primary: #B20D2E;
-  --ukaes-primary-dark: #85001D;
-  --ukaes-primary-light: #F7EDEF;
 
-  --ukaes-ink: #252525;
-  --ukaes-text: #555555;
-  --ukaes-muted: #777777;
+  --burgundy: #B20D2E;
+  --burgundy-dark: #85001D;
+  --burgundy-deep: #720018;
+  --burgundy-light: #F8ECEF;
 
-  --ukaes-background: #FFFFFF;
-  --ukaes-soft: #F6F6F4;
+  --ink: #242424;
+  --ink-soft: #505050;
+  --muted: #747474;
 
-  --ukaes-border: #E7E5E2;
+  --white: #FFFFFF;
+  --paper: #FAFAF8;
+  --soft: #F5F4F1;
+  --border: #E8E6E2;
 
-  --ukaes-container: 1320px;
+  --font-main: "DM Sans", Arial, sans-serif;
 
-  --ukaes-transition: .25s ease;
+  /* IMPORTANT:
+     All major page content shares this width.
+  */
+
+  --container-width: 1240px;
+  --container-gutter: 48px;
+
+  --header-height: 84px;
+  --section-spacing: 76px;
+
+  --transition: .25s ease;
+
 }
 
 
-* {
+/* =========================================================
+   02. RESET
+   ========================================================= */
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
-
 
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 100px;
 }
 
-
 body {
   margin: 0;
-  padding: 0;
-
-  background: var(--ukaes-background);
-
-  color: var(--ukaes-ink);
-
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
-
-  font-size: 15px;
-  line-height: 1.75;
-
+  background: var(--white);
+  color: var(--ink);
+  font-family: var(--font-main);
+  font-size: 16px;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
 }
 
-
 img {
+  display: block;
   max-width: 100%;
+  height: auto;
 }
-
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
 
 button,
 input,
-select,
-textarea {
+textarea,
+select {
   font: inherit;
 }
-
 
 button {
   cursor: pointer;
 }
 
-
-h1,
-h2,
-h3,
-h4,
-p {
-  margin-top: 0;
+a {
+  color: var(--burgundy);
+  text-decoration: none;
+  transition: color var(--transition);
 }
 
+a:hover {
+  color: var(--burgundy-dark);
+}
+
+::selection {
+  background: var(--burgundy);
+  color: white;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #D98B9A;
+  outline-offset: 4px;
+}
+
+
+/* =========================================================
+   03. GLOBAL CONTAINER
+   ALL PAGES USE THE SAME ALIGNMENT
+   ========================================================= */
+
+.ukaes-container,
+.container {
+  width: min(
+    var(--container-width),
+    calc(100% - var(--container-gutter))
+  );
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* =========================================================
+   04. GLOBAL TYPOGRAPHY
+   ========================================================= */
 
 h1,
 h2,
 h3,
 h4 {
-  color: var(--ukaes-ink);
-  line-height: 1.25;
+  margin-top: 0;
+  color: var(--ink);
+  font-family: var(--font-main);
+  font-weight: 700;
+  line-height: 1.2;
+  overflow-wrap: break-word;
 }
-
 
 h1 {
-  font-size: clamp(38px, 5vw, 64px);
-  font-weight: 750;
-  letter-spacing: -1.8px;
+  font-size: clamp(38px, 5.5vw, 68px);
+  letter-spacing: -.045em;
 }
-
 
 h2 {
-  font-size: clamp(28px, 3.3vw, 40px);
-  font-weight: 700;
-  letter-spacing: -0.8px;
+  font-size: clamp(29px, 3.5vw, 44px);
+  letter-spacing: -.035em;
 }
-
 
 h3 {
   font-size: 21px;
-  font-weight: 700;
 }
-
 
 p {
-  color: var(--ukaes-text);
+  margin-top: 0;
+  overflow-wrap: break-word;
 }
 
-
-::selection {
-  background: var(--ukaes-primary);
-  color: #FFFFFF;
+.ukaes-eyebrow {
+  display: inline-block;
+  color: var(--burgundy);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .15em;
+  line-height: 1.6;
+  text-transform: uppercase;
 }
-
-
-
-/* =====================================================
-   02. MAIN CONTAINERS
-===================================================== */
-
-.ukaes-container {
-  width: min(
-    calc(100% - 64px),
-    var(--ukaes-container)
-  );
-
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
-.ukaes-container-narrow {
-  width: min(
-    calc(100% - 64px),
-    850px
-  );
-
-  margin-left: auto;
-  margin-right: auto;
-}
-
 
 .ukaes-text-center {
   text-align: center;
 }
 
+.text-center {
+  text-align: center;
+}
 
-.ukaes-lead {
-  max-width: 720px;
-  margin: 0 auto 28px;
-
-  font-size: 17px;
-  line-height: 1.85;
-
-  color: var(--ukaes-text);
+.text-muted {
+  color: var(--muted);
 }
 
 
-
-/* =====================================================
-   03. HEADER AND LOGO
-===================================================== */
+/* =========================================================
+   05. HEADER
+   ========================================================= */
 
 .ukaes-header {
   position: relative;
-  z-index: 1000;
-
+  z-index: 100;
   width: 100%;
-
-  background: #FFFFFF;
-
+  background: var(--white);
   border-bottom: 1px solid #EEEEEC;
-
-  box-shadow: 0 2px 12px rgba(0,0,0,.035);
 }
 
-
 .ukaes-header-inner {
-  min-height: 96px;
+  min-height: var(--header-height);
 
   display: flex;
-
   align-items: center;
   justify-content: space-between;
 
   gap: 35px;
+  padding-top: 9px;
+  padding-bottom: 9px;
 }
 
 
@@ -212,88 +215,82 @@ p {
 
 .ukaes-brand {
   display: flex;
-
   align-items: center;
-
   flex-shrink: 0;
 
-  width: 310px;
-  min-width: 220px;
+  max-width: 450px;
+  text-decoration: none;
 }
-
 
 .ukaes-brand img {
   display: block;
 
-  width: 100%;
-  max-width: 310px;
-
-  height: 76px;
+  width: auto;
+  height: 64px;
+  max-width: 420px;
 
   object-fit: contain;
   object-position: left center;
 }
 
 
-/* NAVIGATION */
+/* =========================================================
+   06. NAVIGATION
+   ========================================================= */
 
 .ukaes-navigation {
   display: flex;
-
   align-items: center;
   justify-content: flex-end;
 
-  gap: clamp(15px, 2vw, 30px);
-
-  flex: 1;
+  gap: clamp(15px, 1.6vw, 25px);
+  flex-wrap: nowrap;
 }
-
 
 .ukaes-navigation a {
   position: relative;
 
   display: inline-flex;
-
   align-items: center;
 
   padding: 12px 0;
 
-  color: #292929;
-
-  font-size: 13px;
+  color: #262626;
+  font-size: 14px;
   font-weight: 700;
 
   white-space: nowrap;
+  text-decoration: none;
 
-  transition: color var(--ukaes-transition);
+  transition: color var(--transition);
 }
-
 
 .ukaes-navigation a:hover,
-.ukaes-navigation a.active {
-  color: var(--ukaes-primary);
+.ukaes-navigation a.active,
+.ukaes-navigation a.is-active,
+.ukaes-navigation a[aria-current="page"] {
+  color: var(--burgundy);
 }
-
 
 .ukaes-navigation a::after {
   content: "";
 
   position: absolute;
-
-  bottom: 2px;
+  bottom: 4px;
   left: 0;
 
   width: 0;
   height: 2px;
 
-  background: var(--ukaes-primary);
+  background: var(--burgundy);
 
-  transition: width var(--ukaes-transition);
+  transition: width var(--transition);
 }
 
-
 .ukaes-navigation a:hover::after,
-.ukaes-navigation a.active::after {
+.ukaes-navigation a.active::after,
+.ukaes-navigation a.is-active::after,
+.ukaes-navigation a[aria-current="page"]::after {
   width: 100%;
 }
 
@@ -303,259 +300,289 @@ p {
 .ukaes-mobile-toggle {
   display: none;
 
-  padding: 10px 15px;
+  padding: 10px 17px;
 
-  border: 1px solid var(--ukaes-border);
+  color: var(--burgundy);
+  background: white;
 
-  background: #FFFFFF;
+  border: 1px solid var(--burgundy);
 
-  color: var(--ukaes-primary);
-
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
 }
 
 
+/* HEADER SCROLL */
 
-/* =====================================================
-   04. HERO BANNER
-   ALL PAGES USE BURGUNDY BACKGROUND
-===================================================== */
+.ukaes-header.is-scrolled {
+  box-shadow: 0 4px 18px rgba(0,0,0,.06);
+}
+
+
+/* =========================================================
+   07. HERO BANNER
+   MOST IMPORTANT UPDATE
+   ========================================================= */
 
 .ukaes-hero {
   position: relative;
 
-  width: 100%;
-
-  min-height: 430px;
-
   display: flex;
-
   align-items: center;
+
+  width: 100%;
+  min-height: 480px;
+
+  padding: 0;
 
   overflow: hidden;
 
-  background: var(--ukaes-primary-dark);
-
-  background-image:
-    linear-gradient(
-      120deg,
-      #85001D 0%,
-      #A6092C 55%,
-      #BE173A 100%
-    );
+  background: var(--burgundy-dark);
+  color: white;
 }
 
 
-/* REMOVE ALL HERO PHOTOGRAPHS */
+/* No background photographs */
 
-.ukaes-hero-image {
-  display: none !important;
+.ukaes-hero::before {
+  content: none;
+}
+
+.ukaes-hero::after {
+  content: none;
 }
 
 
-/* REMOVE PHOTO OVERLAY */
+/*
+  KEY FIX:
 
-.ukaes-hero-overlay {
-  display: none !important;
-}
+  Hero content now shares exactly
+  the same central alignment as
+  .ukaes-container.
 
+  It will no longer start at x = 0.
+*/
 
 .ukaes-hero-content {
+
   position: relative;
   z-index: 2;
 
   width: min(
-    calc(100% - 64px),
-    var(--ukaes-container)
+    var(--container-width),
+    calc(100% - var(--container-gutter))
   );
 
-  margin: 0 auto;
+  max-width: var(--container-width);
+
+  margin-left: auto;
+  margin-right: auto;
+
+  padding-top: 90px;
+  padding-bottom: 90px;
+  padding-left: 0;
+  padding-right: 0;
+
+  color: white;
+}
+
+
+/* HERO EYEBROW */
+
+.ukaes-hero .ukaes-eyebrow {
+  margin-bottom: 17px;
+  color: #F5C9D2;
+}
+
+
+/* HERO TITLE */
+
+.ukaes-hero h1 {
+  max-width: 850px;
+
+  margin-top: 0;
+  margin-bottom: 22px;
+
+  color: white;
+
+  font-size: clamp(42px, 5.5vw, 70px);
+  font-weight: 800;
+
+  line-height: 1.08;
+  letter-spacing: -.045em;
+}
+
+
+/* HERO DESCRIPTION */
+
+.ukaes-hero p {
+  max-width: 680px;
+
+  margin-top: 0;
+  margin-bottom: 28px;
+
+  color: rgba(255,255,255,.93);
+
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+
+/* HERO BUTTON */
+
+.ukaes-hero .ukaes-button {
+  margin-top: 5px;
+}
+
+
+/* =========================================================
+   08. PAGE INTRODUCTION
+   ========================================================= */
+
+.ukaes-page-intro {
+  position: relative;
+
+  width: 100%;
 
   padding-top: 85px;
   padding-bottom: 85px;
 
-  color: #FFFFFF;
+  background: var(--burgundy-dark);
+  color: white;
 }
 
+.ukaes-page-intro .ukaes-container {
+  position: relative;
+}
 
-.ukaes-hero-content h1 {
+.ukaes-page-intro .ukaes-eyebrow {
+  color: #F5C9D2;
+}
+
+.ukaes-page-intro h1 {
   max-width: 850px;
+  margin: 15px 0 20px;
 
-  margin: 15px 0 22px;
+  color: white;
 
-  color: #FFFFFF;
-
-  font-size: clamp(42px, 5.2vw, 68px);
-
-  font-weight: 750;
-
-  line-height: 1.12;
-
-  letter-spacing: -1.8px;
+  font-size: clamp(40px, 5.5vw, 68px);
+  line-height: 1.1;
 }
 
+.ukaes-page-intro p {
+  max-width: 700px;
+  margin: 0;
 
-.ukaes-hero-content p {
-  max-width: 650px;
-
-  margin-bottom: 30px;
-
-  color: rgba(255,255,255,.88);
-
-  font-size: 17px;
-
+  color: rgba(255,255,255,.9);
+  font-size: 16px;
   line-height: 1.85;
 }
 
 
-.ukaes-eyebrow {
-  display: inline-block;
-
-  color: var(--ukaes-primary);
-
-  font-size: 11px;
-
-  font-weight: 800;
-
-  letter-spacing: .15em;
-
-  line-height: 1.6;
-
-  text-transform: uppercase;
-}
-
-
-.ukaes-hero-content .ukaes-eyebrow {
-  color: #F5D8DE;
-}
-
-
-
-/* =====================================================
-   05. BUTTONS
-===================================================== */
+/* =========================================================
+   09. BUTTONS
+   ========================================================= */
 
 .ukaes-button {
   display: inline-flex;
-
   align-items: center;
   justify-content: center;
 
   min-height: 46px;
 
-  padding: 12px 24px;
+  padding: 12px 23px;
 
-  border: 1px solid var(--ukaes-primary);
+  background: var(--burgundy);
+  color: white;
 
-  background: var(--ukaes-primary);
-
-  color: #FFFFFF;
+  border: 1px solid var(--burgundy);
 
   font-size: 13px;
-
   font-weight: 700;
 
-  text-align: center;
+  text-decoration: none;
 
   transition:
-    background var(--ukaes-transition),
-    color var(--ukaes-transition),
-    border-color var(--ukaes-transition);
+    background var(--transition),
+    color var(--transition),
+    border-color var(--transition);
 }
-
 
 .ukaes-button:hover {
-  background: var(--ukaes-primary-dark);
-
-  border-color: var(--ukaes-primary-dark);
-
-  color: #FFFFFF;
+  background: var(--burgundy-dark);
+  border-color: var(--burgundy-dark);
+  color: white;
 }
-
 
 .ukaes-button-white {
-  background: #FFFFFF;
-
-  border-color: #FFFFFF;
-
-  color: var(--ukaes-primary);
+  background: white;
+  color: var(--burgundy);
+  border-color: white;
 }
-
 
 .ukaes-button-white:hover {
-  background: #F4E9EC;
-
-  border-color: #F4E9EC;
-
-  color: var(--ukaes-primary-dark);
+  background: #F7EDEF;
+  color: var(--burgundy-dark);
+  border-color: #F7EDEF;
 }
 
+
+/* TEXT LINKS */
 
 .ukaes-text-link {
   display: inline-block;
 
-  margin-top: 12px;
-
-  color: var(--ukaes-primary);
+  color: var(--burgundy);
 
   font-size: 13px;
-
   font-weight: 700;
 
-  transition: color var(--ukaes-transition);
+  text-decoration: none;
 }
-
 
 .ukaes-text-link:hover {
-  color: var(--ukaes-primary-dark);
+  color: var(--burgundy-dark);
 }
 
 
-
-/* =====================================================
-   06. GENERAL SECTIONS
-===================================================== */
+/* =========================================================
+   10. SECTIONS
+   ========================================================= */
 
 .ukaes-section {
-  padding: 90px 0;
-
-  background: #FFFFFF;
+  padding-top: var(--section-spacing);
+  padding-bottom: var(--section-spacing);
+  background: white;
 }
-
 
 .ukaes-section-soft {
-  background: var(--ukaes-soft);
+  background: var(--paper);
 }
-
 
 .ukaes-section-heading {
-  max-width: 760px;
-
-  margin-bottom: 45px;
+  max-width: 800px;
+  margin-bottom: 38px;
 }
 
+.ukaes-section-heading .ukaes-eyebrow {
+  margin-bottom: 12px;
+}
 
 .ukaes-section-heading h2 {
-  margin: 12px 0 15px;
+  margin-bottom: 15px;
 }
-
 
 .ukaes-section-heading p {
-  max-width: 650px;
-
-  margin-bottom: 0;
-
-  color: var(--ukaes-muted);
-
-  font-size: 15px;
+  max-width: 720px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.85;
 }
 
 
-
-/* =====================================================
-   07. EDITORIAL LAYOUT
-===================================================== */
+/* =========================================================
+   11. EDITORIAL LAYOUT
+   ========================================================= */
 
 .ukaes-editorial {
   display: grid;
@@ -565,63 +592,42 @@ p {
     minmax(0, 1fr);
 
   align-items: center;
-
-  gap: 65px;
+  gap: 55px;
 }
-
 
 .ukaes-editorial-content {
   min-width: 0;
 }
 
-
 .ukaes-editorial-content h2 {
   margin: 12px 0 20px;
 }
 
-
 .ukaes-editorial-content p {
-  margin-bottom: 17px;
-
-  font-size: 15px;
-
+  color: #626262;
+  font-size: 14px;
   line-height: 1.9;
 }
 
-
 .ukaes-editorial-image {
-  width: 100%;
-
+  min-width: 0;
   overflow: hidden;
-
-  background: #ECEBE8;
+  background: var(--soft);
 }
-
 
 .ukaes-editorial-image img {
   display: block;
 
   width: 100%;
-
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 5 / 4;
 
   object-fit: cover;
-
-  object-position: center;
-
-  transition: transform .5s ease;
 }
 
 
-.ukaes-editorial-image:hover img {
-  transform: scale(1.025);
-}
-
-
-
-/* =====================================================
-   08. FEATURE CARDS
-===================================================== */
+/* =========================================================
+   12. FEATURE GRID
+   ========================================================= */
 
 .ukaes-feature-grid {
   display: grid;
@@ -632,81 +638,86 @@ p {
   gap: 25px;
 }
 
-
 .ukaes-feature {
   min-width: 0;
 
-  background: #FFFFFF;
-
-  border: 1px solid var(--ukaes-border);
+  background: white;
+  border: 1px solid var(--border);
 
   transition:
-    transform var(--ukaes-transition),
-    box-shadow var(--ukaes-transition);
+    transform var(--transition),
+    box-shadow var(--transition);
 }
-
 
 .ukaes-feature:hover {
-  transform: translateY(-4px);
-
-  box-shadow: 0 12px 30px rgba(0,0,0,.06);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,.06);
 }
-
 
 .ukaes-feature-image {
-  width: 100%;
-
   overflow: hidden;
-
-  background: #ECEBE8;
+  background: var(--soft);
 }
-
 
 .ukaes-feature-image img {
-  display: block;
-
   width: 100%;
-
-  aspect-ratio: 16 / 10;
-
+  aspect-ratio: 16 / 9;
   object-fit: cover;
-
-  transition: transform .45s ease;
 }
-
-
-.ukaes-feature:hover .ukaes-feature-image img {
-  transform: scale(1.035);
-}
-
 
 .ukaes-feature-content {
   padding: 25px;
 }
 
-
 .ukaes-feature-content h3 {
-  margin: 0 0 12px;
-
+  margin-bottom: 12px;
   font-size: 20px;
 }
 
-
 .ukaes-feature-content p {
-  margin: 0;
-
-  color: var(--ukaes-text);
-
-  font-size: 14px;
-
+  color: #686868;
+  font-size: 13px;
   line-height: 1.8;
 }
 
 
+/* =========================================================
+   13. HIGHLIGHT SECTION
+   ========================================================= */
 
-/* =====================================================
-   09. RESEARCH AREAS
-===================================================== */
+.ukaes-highlight {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  background: var(--burgundy-dark);
+  color: white;
+}
+
+.ukaes-highlight-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 35px;
+}
+
+.ukaes-highlight h2 {
+  margin: 12px 0 15px;
+  color: white;
+}
+
+.ukaes-highlight p {
+  color: rgba(255,255,255,.85);
+}
+
+.ukaes-highlight .ukaes-eyebrow {
+  color: #F5C9D2;
+}
+
+
+/* =========================================================
+   14. RESEARCH PAGE
+   ========================================================= */
 
 .ukaes-research-grid {
   display: grid;
@@ -717,172 +728,247 @@ p {
   gap: 20px;
 }
 
-
 .ukaes-research-item {
-  min-width: 0;
+  padding: 25px;
 
-  padding: 30px;
-
-  background: #FFFFFF;
-
-  border: 1px solid var(--ukaes-border);
-
-  border-top: 3px solid var(--ukaes-primary);
-
-  transition: box-shadow var(--ukaes-transition);
+  background: white;
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--burgundy);
 }
-
-
-.ukaes-research-item:hover {
-  box-shadow: 0 8px 25px rgba(0,0,0,.055);
-}
-
 
 .ukaes-research-item h3 {
-  margin: 10px 0 14px;
-
+  margin-bottom: 12px;
   font-size: 19px;
-  line-height: 1.4;
 }
 
-
 .ukaes-research-item p {
-  margin-bottom: 0;
-
-  color: var(--ukaes-text);
-
-  font-size: 14px;
-
+  margin: 0;
+  color: #666666;
+  font-size: 13px;
   line-height: 1.8;
 }
 
 
-.ukaes-research-item h4 {
-  margin: 23px 0 12px;
+/* =========================================================
+   15. EDUCATION PAGE
+   ========================================================= */
 
-  color: var(--ukaes-primary);
+.ukaes-education-grid,
+.edu-programme-grid {
+  display: grid;
 
-  font-size: 13px;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 28px;
 }
 
+.edu-programme {
+  display: flex;
+  flex-direction: column;
 
-.ukaes-research-item ol {
-  padding-left: 20px;
+  min-width: 0;
 
-  margin: 0;
+  background: white;
+  border: 1px solid var(--border);
 
-  color: var(--ukaes-text);
+  transition: transform var(--transition);
+}
 
+.edu-programme:hover {
+  transform: translateY(-3px);
+}
+
+.edu-programme-image {
+  overflow: hidden;
+  background: var(--soft);
+}
+
+.edu-programme-image img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.edu-programme-body {
+  flex: 1;
+  padding: 27px;
+  border-top: 4px solid var(--burgundy);
+}
+
+.edu-programme-code {
+  color: var(--burgundy);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .1em;
+}
+
+.edu-programme-body h3 {
+  margin: 13px 0;
+  font-size: 21px;
+  line-height: 1.4;
+}
+
+.edu-programme-description {
+  color: #666666;
   font-size: 13px;
-
   line-height: 1.85;
 }
 
+.edu-module-heading {
+  padding-top: 15px;
+  margin-bottom: 10px;
 
-.ukaes-research-item li {
-  padding-left: 3px;
+  border-top: 1px solid var(--border);
 
-  margin-bottom: 7px;
-}
-
-
-
-/* =====================================================
-   10. HIGHLIGHT BANNER
-===================================================== */
-
-.ukaes-highlight {
-  padding: 65px 0;
-
-  background:
-    linear-gradient(
-      120deg,
-      #85001D,
-      #B20D2E
-    );
-
-  color: #FFFFFF;
-}
-
-
-.ukaes-highlight-inner {
-  display: flex;
-
-  align-items: center;
-  justify-content: space-between;
-
-  gap: 35px;
-}
-
-
-.ukaes-highlight h2 {
-  margin: 12px 0;
-
-  color: #FFFFFF;
-
-  font-size: clamp(27px, 3vw, 38px);
-}
-
-
-.ukaes-highlight p {
-  margin-bottom: 0;
-
-  color: rgba(255,255,255,.85);
-}
-
-
-.ukaes-highlight .ukaes-eyebrow {
-  color: #F4C7D0;
-}
-
-
-.ukaes-foundation-year {
-  color: #FFFFFF;
-
-  font-size: clamp(75px, 12vw, 150px);
-
+  color: var(--ink);
+  font-size: 11px;
   font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
 
-  line-height: 1;
+.edu-module-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  counter-reset: module;
+}
 
-  letter-spacing: -.07em;
+.edu-module-list li {
+  position: relative;
+
+  padding: 10px 0 10px 32px;
+
+  border-bottom: 1px solid #F0EFEC;
+
+  color: #555555;
+  font-size: 13px;
+  line-height: 1.65;
+
+  counter-increment: module;
+}
+
+.edu-module-list li::before {
+  content: counter(module, decimal-leading-zero);
+
+  position: absolute;
+  left: 0;
+  top: 10px;
+
+  color: var(--burgundy);
+  font-size: 11px;
+  font-weight: 800;
 }
 
 
+/* =========================================================
+   16. PEOPLE PAGE
+   ========================================================= */
 
-/* =====================================================
-   11. NOTICE / INFORMATION PANELS
-===================================================== */
+.people-grid {
+  display: grid;
 
-.ukaes-notice {
-  padding: 25px 30px;
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
 
-  background: var(--ukaes-primary-light);
+  gap: 22px;
+}
 
-  border-left: 4px solid var(--ukaes-primary);
+.person-card {
+  display: flex;
+  align-items: flex-start;
+
+  min-width: 0;
+  gap: 17px;
+
+  padding: 19px;
+
+  background: white;
+  border: 1px solid var(--border);
+
+  transition: border-color var(--transition);
+}
+
+.person-card:hover {
+  border-color: #CDA4AD;
+}
+
+.person-photo {
+  flex: 0 0 94px;
+
+  width: 94px;
+  aspect-ratio: 3 / 4;
+
+  overflow: hidden;
+
+  background: var(--soft);
+  border-radius: 3px;
+}
+
+.person-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.person-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.person-info h3 {
+  margin: 2px 0 7px;
+  font-size: 16px;
+}
+
+.person-role {
+  display: inline-block;
+  margin-bottom: 9px;
+
+  color: var(--burgundy);
+
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.person-detail {
+  margin-bottom: 7px;
+
+  color: #666666;
+
+  font-size: 12px;
+  line-height: 1.7;
+
+  overflow-wrap: anywhere;
+}
+
+.person-email {
+  color: var(--burgundy);
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+
+.person-affiliation {
+  display: inline-block;
+  padding: 4px 7px;
+  margin-bottom: 8px;
+
+  background: var(--soft);
+  color: #756B60;
+
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .05em;
 }
 
 
-.ukaes-notice strong {
-  color: var(--ukaes-primary-dark);
+/* =========================================================
+   17. CONTACT PAGE
+   ========================================================= */
 
-  font-size: 15px;
-}
-
-
-.ukaes-notice p {
-  color: var(--ukaes-text);
-
-  font-size: 14px;
-}
-
-
-
-/* =====================================================
-   12. CONTACT PAGE
-===================================================== */
-
-.ukaes-contact-grid {
+.contact-email-grid {
   display: grid;
 
   grid-template-columns:
@@ -891,377 +977,313 @@ p {
   gap: 20px;
 }
 
+.contact-email-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
 
-.ukaes-contact-item {
-  padding: 30px;
+  padding: 27px;
 
-  background: #FFFFFF;
+  background: white;
+  border: 1px solid var(--border);
 
-  border: 1px solid var(--ukaes-border);
-
-  border-left: 3px solid var(--ukaes-primary);
+  transition: border-color var(--transition);
 }
 
-
-.ukaes-contact-item h3 {
-  margin-bottom: 10px;
-
-  font-size: 19px;
+.contact-email-card:hover {
+  border-color: #C58B98;
 }
 
-
-.ukaes-contact-item p {
-  margin-bottom: 0;
-
-  color: var(--ukaes-text);
-
-  font-size: 14px;
-}
-
-
-
-/* =====================================================
-   13. CONTACT FORM
-===================================================== */
-
-.ukaes-form {
-  width: 100%;
-
-  padding: 35px;
-
-  background: #FFFFFF;
-
-  border: 1px solid var(--ukaes-border);
-}
-
-
-.ukaes-form-group {
-  margin-bottom: 22px;
-}
-
-
-.ukaes-form-group label {
-  display: block;
-
-  margin-bottom: 8px;
-
-  color: var(--ukaes-ink);
-
-  font-size: 13px;
-
-  font-weight: 700;
-}
-
-
-.ukaes-form-group input,
-.ukaes-form-group select,
-.ukaes-form-group textarea {
-  display: block;
-
-  width: 100%;
-
-  padding: 13px 14px;
-
-  border: 1px solid #DCDCD8;
-
-  border-radius: 0;
-
-  outline: none;
-
-  background: #FFFFFF;
-
-  color: var(--ukaes-ink);
-
-  font-size: 14px;
-
-  transition: border-color var(--ukaes-transition);
-}
-
-
-.ukaes-form-group input:focus,
-.ukaes-form-group select:focus,
-.ukaes-form-group textarea:focus {
-  border-color: var(--ukaes-primary);
-}
-
-
-.ukaes-form-group textarea {
-  min-height: 150px;
-
-  resize: vertical;
-}
-
-
-.ukaes-form-group input::placeholder,
-.ukaes-form-group textarea::placeholder {
-  color: #A5A5A5;
-}
-
-
-.ukaes-form [data-form-status] {
-  margin-top: 15px;
-
-  font-size: 13px;
-}
-
-
-
-/* =====================================================
-   14. PEOPLE PAGE
-===================================================== */
-
-.people-founder-grid {
-  display: grid;
-
-  grid-template-columns:
-    minmax(0, 380px);
-
-  justify-content: center;
-}
-
-
-.people-leadership-grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(3, minmax(0, 1fr));
-
-  gap: 25px;
-}
-
-
-.people-professor-grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(3, minmax(0, 1fr));
-
-  gap: 25px;
-}
-
-
-.people-card {
-  min-width: 0;
-
-  background: #FFFFFF;
-
-  border: 1px solid var(--ukaes-border);
-
-  border-top: 3px solid var(--ukaes-primary);
-}
-
-
-.people-portrait {
-  width: 100%;
-
-  aspect-ratio: 3 / 4;
-
-  overflow: hidden;
-
-  background: #EDECE9;
-}
-
-
-.people-portrait img {
-  display: block;
-
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-
-  object-position: center top;
-}
-
-
-.people-photo-placeholder {
-  width: 100%;
-  height: 100%;
+.contact-email-icon {
+  flex: 0 0 45px;
+
+  width: 45px;
+  height: 45px;
 
   display: flex;
-
-  flex-direction: column;
-
   align-items: center;
   justify-content: center;
 
-  gap: 12px;
+  background: var(--burgundy-light);
+  color: var(--burgundy);
 
-  background:
-    linear-gradient(
-      145deg,
-      #F0EFEC,
-      #E5E3DF
-    );
-
-  color: #A09D98;
+  border-radius: 50%;
 }
 
-
-.people-photo-placeholder svg {
-  width: 52px;
-  height: 52px;
-
-  stroke: currentColor;
-  stroke-width: 1.2;
-
-  fill: none;
+.contact-email-content {
+  flex: 1;
+  min-width: 0;
 }
 
-
-.people-photo-placeholder span {
-  font-size: 10px;
-
-  font-weight: 700;
-
-  letter-spacing: .14em;
-
-  text-transform: uppercase;
+.contact-email-content h3 {
+  margin-bottom: 7px;
+  font-size: 18px;
 }
 
-
-.people-info {
-  padding: 23px;
-}
-
-
-.people-info h3 {
-  margin: 5px 0 7px;
-
-  font-size: 19px;
-}
-
-
-.people-role {
-  margin-bottom: 17px;
-
-  color: var(--ukaes-primary);
-
+.contact-email-content p {
+  color: #777777;
   font-size: 13px;
+  line-height: 1.7;
+}
 
+.contact-email-link {
+  color: var(--burgundy);
+  font-size: 14px;
   font-weight: 700;
-}
-
-
-.people-detail {
-  padding-top: 11px;
-
-  margin-top: 11px;
-
-  border-top: 1px solid var(--ukaes-border);
-}
-
-
-.people-detail-label {
-  display: block;
-
-  margin-bottom: 4px;
-
-  color: var(--ukaes-muted);
-
-  font-size: 10px;
-
-  font-weight: 800;
-
-  letter-spacing: .12em;
-
-  text-transform: uppercase;
-}
-
-
-.people-detail-value {
-  margin: 0;
-
-  color: var(--ukaes-text);
-
-  font-size: 13px;
-
-  line-height: 1.6;
-
   overflow-wrap: anywhere;
 }
 
+.contact-general {
+  padding: 38px;
+  margin-top: 35px;
 
-.people-external-label {
+  background: var(--soft);
+  text-align: center;
+}
+
+
+/* =========================================================
+   18. APPOINTMENTS PAGE
+   ========================================================= */
+
+.selection-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+.selection-card {
+  padding: 24px;
+
+  background: white;
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--burgundy);
+}
+
+.selection-card .grade {
+  color: var(--burgundy);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+.selection-card h3 {
+  margin: 12px 0;
+  font-size: 19px;
+}
+
+.selection-card p {
+  margin: 0;
+  color: #666666;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.selection-label {
   display: inline-block;
 
-  padding: 5px 9px;
+  padding: 7px 12px;
+  margin-bottom: 12px;
 
-  margin-bottom: 9px;
+  background: var(--burgundy-light);
+  color: var(--burgundy);
 
-  background: var(--ukaes-primary-light);
-
-  color: var(--ukaes-primary);
-
-  font-size: 10px;
-
+  font-size: 11px;
   font-weight: 800;
-
-  letter-spacing: .06em;
-
-  text-transform: uppercase;
+  letter-spacing: .1em;
 }
 
+.criteria-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  margin: 25px 0 35px;
 
-.people-member-panel {
-  padding: 48px;
-
-  background: var(--ukaes-soft);
-
-  border-left: 4px solid var(--ukaes-primary);
+  background: white;
+  border: 1px solid var(--border);
 }
 
+.criteria-table {
+  width: 100%;
+  min-width: 600px;
 
-.people-member-panel h2 {
-  margin-bottom: 14px;
+  border-collapse: collapse;
+  font-size: 13px;
 }
 
+.criteria-table th {
+  padding: 16px;
 
-.people-member-panel p {
-  max-width: 650px;
+  background: var(--burgundy-dark);
+  color: white;
 
-  color: var(--ukaes-text);
+  text-align: left;
 }
 
+.criteria-table td {
+  padding: 15px 16px;
 
-.people-member-actions {
-  display: flex;
+  border-bottom: 1px solid var(--border);
 
-  flex-wrap: wrap;
-
-  gap: 13px;
-
-  margin-top: 24px;
+  color: #555555;
+  line-height: 1.7;
+  vertical-align: top;
 }
 
-
-.people-section-heading {
-  margin-bottom: 35px;
+.criteria-table td:first-child {
+  color: #303030;
+  font-weight: 700;
 }
 
+.criteria-table .score {
+  color: var(--burgundy);
+  font-weight: 800;
+}
 
-.people-note {
-  margin-top: 25px;
+.criteria-note {
+  padding: 23px 26px;
 
-  color: var(--ukaes-muted);
+  background: var(--soft);
+  border-left: 4px solid var(--burgundy);
+}
 
+.criteria-note h3 {
+  margin-bottom: 10px;
+  font-size: 17px;
+}
+
+.criteria-note p {
+  margin-bottom: 0;
+  font-size: 13px;
+  line-height: 1.85;
+}
+
+.weight-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.weight-item {
+  padding: 18px 20px;
+  background: white;
+  border: 1px solid var(--border);
+}
+
+.weight-item strong {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--burgundy);
+  font-size: 22px;
+}
+
+.weight-item span {
+  color: #555555;
   font-size: 12px;
+  line-height: 1.6;
 }
 
 
+/* =========================================================
+   19. MEMBER DIRECTORY
+   ========================================================= */
 
-/* =====================================================
-   15. FOOTER
-===================================================== */
+.member-directory {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 35px;
+  padding: 42px;
+
+  background: var(--soft);
+}
+
+.member-directory-content {
+  max-width: 650px;
+}
+
+.member-directory h2 {
+  margin: 12px 0;
+}
+
+.member-directory p {
+  color: #666666;
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+
+/* =========================================================
+   20. GENERIC CLOSING BANNER
+   ========================================================= */
+
+.edu-closing,
+.people-closing,
+.contact-closing,
+.appointment-closing {
+
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  background: linear-gradient(
+    120deg,
+    var(--burgundy-dark),
+    var(--burgundy)
+  );
+
+  color: white;
+}
+
+.edu-closing-inner,
+.people-closing-inner,
+.contact-closing-inner,
+.appointment-closing-inner {
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+.edu-closing h2,
+.people-closing h2,
+.contact-closing h2,
+.appointment-closing h2 {
+  margin: 12px 0;
+  color: white;
+}
+
+.edu-closing p,
+.people-closing p,
+.contact-closing p,
+.appointment-closing p {
+  color: rgba(255,255,255,.85);
+  margin-bottom: 0;
+}
+
+.edu-closing .ukaes-eyebrow,
+.people-closing .ukaes-eyebrow,
+.contact-closing .ukaes-eyebrow,
+.appointment-closing .ukaes-eyebrow {
+  color: #F5C9D2;
+}
+
+
+/* =========================================================
+   21. FOOTER
+   ========================================================= */
 
 .ukaes-footer {
-  padding: 65px 0 0;
+  padding-top: 55px;
+  padding-bottom: 20px;
 
   background: #222222;
-
-  color: #FFFFFF;
+  color: #D5D5D5;
 }
-
 
 .ukaes-footer-grid {
   display: grid;
@@ -1269,476 +1291,196 @@ p {
   grid-template-columns:
     2fr 1fr 1fr;
 
-  gap: 60px;
+  gap: 45px;
 
-  padding-bottom: 45px;
+  padding-bottom: 35px;
 }
-
 
 .ukaes-footer-brand {
-  margin-bottom: 12px;
-
-  color: #FFFFFF;
-
-  font-size: 28px;
-
-  font-weight: 800;
-
-  letter-spacing: .03em;
-}
-
-
-.ukaes-footer p {
   margin-bottom: 10px;
 
-  color: #C5C5C5;
+  color: white;
 
-  font-size: 13px;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -.04em;
 }
 
+.ukaes-footer p {
+  color: #BDBDBD;
+  font-size: 13px;
+  line-height: 1.8;
+}
 
 .ukaes-footer h3 {
-  margin-bottom: 18px;
-
-  color: #FFFFFF;
-
-  font-size: 14px;
+  margin-bottom: 17px;
+  color: white;
+  font-size: 15px;
 }
-
 
 .ukaes-footer ul {
   padding: 0;
-
   margin: 0;
-
   list-style: none;
 }
 
-
 .ukaes-footer li {
-  margin-bottom: 10px;
+  margin-bottom: 9px;
 }
-
 
 .ukaes-footer li a {
-  color: #C5C5C5;
-
+  color: #C8C8C8;
   font-size: 13px;
-
-  transition: color var(--ukaes-transition);
+  text-decoration: none;
 }
-
 
 .ukaes-footer li a:hover {
-  color: #FFFFFF;
+  color: white;
 }
-
 
 .ukaes-footer-bottom {
   display: flex;
-
   align-items: center;
   justify-content: space-between;
 
-  gap: 15px;
+  gap: 20px;
+  padding-top: 20px;
 
-  padding: 20px 0;
+  border-top: 1px solid #444444;
 
-  border-top: 1px solid rgba(255,255,255,.14);
-
-  color: #AAAAAA;
-
-  font-size: 12px;
+  color: #AFAFAF;
+  font-size: 11px;
 }
 
 
-
-/* =====================================================
-   16. BACK TO TOP
-===================================================== */
+/* =========================================================
+   22. BACK TO TOP
+   ========================================================= */
 
 .ukaes-back-to-top {
   position: fixed;
-
-  right: 25px;
+  right: 24px;
   bottom: 25px;
 
-  z-index: 900;
+  z-index: 200;
 
-  width: 45px;
-  height: 45px;
+  width: 43px;
+  height: 43px;
 
-  border: 1px solid var(--ukaes-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
+  background: white;
+  color: var(--burgundy);
+
+  border: 1px solid var(--burgundy);
   border-radius: 50%;
 
-  background: #FFFFFF;
+  font-size: 20px;
 
-  color: var(--ukaes-primary);
-
-  font-size: 21px;
-
-  box-shadow: 0 3px 12px rgba(0,0,0,.12);
-
-  transition:
-    background var(--ukaes-transition),
-    color var(--ukaes-transition);
+  box-shadow: 0 3px 12px rgba(0,0,0,.1);
 }
-
 
 .ukaes-back-to-top:hover {
-  background: var(--ukaes-primary);
-
-  color: #FFFFFF;
+  background: var(--burgundy);
+  color: white;
 }
-
 
 .ukaes-back-to-top[hidden] {
-  display: none !important;
+  display: none;
 }
 
 
+/* =========================================================
+   23. FORMS
+   ========================================================= */
 
-/* =====================================================
-   17. TABLES
-===================================================== */
+.ukaes-form {
+  width: 100%;
+  max-width: 760px;
+}
 
-table {
+.ukaes-form-group {
+  margin-bottom: 20px;
+}
+
+.ukaes-form-group label {
+  display: block;
+  margin-bottom: 8px;
+
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.ukaes-form-group input,
+.ukaes-form-group textarea,
+.ukaes-form-group select {
   width: 100%;
 
-  border-collapse: collapse;
+  padding: 13px 15px;
+
+  background: white;
+  color: var(--ink);
+
+  border: 1px solid #DADADA;
+  border-radius: 0;
+}
+
+.ukaes-form-group textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.ukaes-form-group input:focus,
+.ukaes-form-group textarea:focus,
+.ukaes-form-group select:focus {
+  border-color: var(--burgundy);
+  outline: none;
+}
+
+[data-form-status] {
+  margin-top: 15px;
+  font-size: 13px;
 }
 
 
-th,
-td {
-  padding: 13px 16px;
+/* =========================================================
+   24. IMAGE RESPONSIVENESS
+   ========================================================= */
 
-  border-bottom: 1px solid var(--ukaes-border);
+.ukaes-editorial-image img,
+.ukaes-feature-image img,
+.edu-programme-image img {
+  display: block;
+  max-width: 100%;
+}
 
-  text-align: left;
+.person-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 
-th {
-  background: var(--ukaes-soft);
-
-  color: var(--ukaes-ink);
-
-  font-weight: 700;
-}
-
-
-
-/* =====================================================
-   18. RESPONSIVE DESIGN
-===================================================== */
-
-
-/* TABLETS */
+/* =========================================================
+   25. TABLET RESPONSIVE
+   ========================================================= */
 
 @media (max-width: 1100px) {
 
-  .ukaes-header-inner {
-    gap: 22px;
+  :root {
+    --container-gutter: 40px;
   }
 
-  .ukaes-brand {
-    width: 250px;
-    min-width: 190px;
-  }
-
-  .ukaes-brand img {
-    height: 68px;
-  }
-
-  .ukaes-navigation {
-    gap: 15px;
-  }
-
-  .ukaes-navigation a {
-    font-size: 12px;
-  }
-
-  .ukaes-editorial {
-    gap: 40px;
-  }
-
-  .ukaes-feature-grid,
-  .ukaes-research-grid,
-  .people-professor-grid {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
-  }
-
-}
-
-
-/* MOBILE NAVIGATION */
-
-@media (max-width: 850px) {
-
-  .ukaes-header-inner {
-    min-height: 82px;
-
-    flex-wrap: wrap;
-
-    gap: 0;
-  }
-
-  .ukaes-brand {
-    width: 245px;
-    min-width: 0;
-  }
-
-  .ukaes-brand img {
-    height: 65px;
-  }
-
-  .ukaes-mobile-toggle {
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-  }
-
-  .ukaes-navigation {
-    display: none;
-
-    position: absolute;
-
-    top: 100%;
-    left: 0;
-
-    width: 100%;
-
-    padding: 15px 25px 22px;
-
-    background: #FFFFFF;
-
-    border-top: 1px solid var(--ukaes-border);
-
-    border-bottom: 1px solid var(--ukaes-border);
-
-    box-shadow: 0 8px 15px rgba(0,0,0,.07);
-
-    flex-direction: column;
-
-    align-items: stretch;
-
-    gap: 0;
-  }
-
-  .ukaes-navigation.active,
-  .ukaes-navigation.is-open {
-    display: flex;
-  }
-
-  .ukaes-navigation a {
-    display: block;
-
-    padding: 13px 0;
-
-    border-bottom: 1px solid #F0F0EE;
-
-    font-size: 14px;
-  }
-
-  .ukaes-navigation a::after {
-    display: none;
-  }
-
-  .ukaes-editorial {
-    grid-template-columns: 1fr;
-
-    gap: 35px;
-  }
-
-  .ukaes-highlight-inner {
-    align-items: flex-start;
-
-    flex-direction: column;
-  }
-
-  .people-leadership-grid {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
-  }
-
-}
-
-
-/* SMALL MOBILE */
-
-@media (max-width: 600px) {
-
-  .ukaes-container,
-  .ukaes-container-narrow {
-    width: calc(100% - 36px);
-  }
-
-  .ukaes-header-inner {
-    min-height: 75px;
-  }
-
-  .ukaes-brand {
-    width: 210px;
-  }
-
-  .ukaes-brand img {
-    height: 58px;
-  }
-
-  .ukaes-mobile-toggle {
-    padding: 8px 12px;
-  }
-
-  .ukaes-hero {
-    min-height: 380px;
-  }
-
-  .ukaes-hero-content {
-    width: calc(100% - 40px);
-
-    padding-top: 70px;
-    padding-bottom: 70px;
-  }
-
-  .ukaes-hero-content h1 {
-    font-size: clamp(36px, 9vw, 48px);
-
-    letter-spacing: -1px;
-  }
-
-  .ukaes-hero-content p {
-    font-size: 15px;
-  }
-
-  .ukaes-section {
-    padding: 65px 0;
-  }
-
-  .ukaes-section-heading {
-    margin-bottom: 30px;
-  }
-
-  .ukaes-feature-grid,
-  .ukaes-research-grid,
-  .ukaes-contact-grid,
-  .people-leadership-grid,
-  .people-professor-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .people-founder-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .ukaes-feature-content,
-  .ukaes-research-item {
-    padding: 23px;
-  }
-
-  .ukaes-highlight {
-    padding: 50px 0;
-  }
-
-  .ukaes-form {
-    padding: 22px;
-  }
-
-  .people-member-panel {
-    padding: 28px 22px;
-  }
-
-  .ukaes-footer {
-    padding-top: 45px;
-  }
-
-  .ukaes-footer-grid {
-    grid-template-columns: 1fr;
-
-    gap: 30px;
-
-    padding-bottom: 30px;
-  }
-
-  .ukaes-footer-bottom {
-    flex-direction: column;
-
-    align-items: flex-start;
-
-    gap: 8px;
-  }
-
-}
-
-
-/* ACCESSIBILITY */
-
-@media (prefers-reduced-motion: reduce) {
-
-  *,
-  *::before,
-  *::after {
-    scroll-behavior: auto !important;
-
-    transition-duration: .01ms !important;
-
-    animation-duration: .01ms !important;
-  }
-
-}
-
-
-/* GLOBAL HEADER REFINEMENT */
-
-.ukaes-header-inner {
-  width: min(calc(100% - 80px), 1480px);
-  min-height: 112px;
-  gap: 40px;
-}
-
-.ukaes-brand {
-  width: 350px;
-  min-width: 300px;
-}
-
-.ukaes-brand img {
-  max-width: 350px;
-  height: 88px;
-}
-
-.ukaes-navigation {
-  gap: clamp(20px, 2vw, 34px);
-}
-
-.ukaes-navigation a {
-  font-size: 14px;
-  font-weight: 700;
-  padding: 15px 0;
-}
-
-.ukaes-hero-content {
-  width: min(calc(100% - 100px), 1480px);
-  max-width: 1480px;
-  padding: 90px 45px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-@media (max-width: 1100px) {
   .ukaes-header-inner {
     gap: 20px;
   }
 
-  .ukaes-brand {
-    width: 270px;
-    min-width: 230px;
-  }
-
   .ukaes-brand img {
-    height: 75px;
+    height: 58px;
+    max-width: 320px;
   }
 
   .ukaes-navigation {
@@ -1748,43 +1490,252 @@ th {
   .ukaes-navigation a {
     font-size: 12px;
   }
+
+  .people-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ukaes-feature-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
 }
+
+
+/* =========================================================
+   26. MOBILE NAVIGATION
+   ========================================================= */
 
 @media (max-width: 850px) {
-  .ukaes-header-inner {
-    width: calc(100% - 36px);
-    min-height: 82px;
+
+  :root {
+    --header-height: 74px;
+    --container-gutter: 36px;
+    --section-spacing: 55px;
   }
 
-  .ukaes-brand {
-    width: 245px;
-    min-width: 0;
+  .ukaes-header-inner {
+    position: relative;
+    flex-wrap: wrap;
+    min-height: var(--header-height);
   }
 
   .ukaes-brand img {
-    height: 65px;
+    height: 52px;
+    max-width: 290px;
+  }
+
+  .ukaes-mobile-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ukaes-navigation {
+    display: none;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    width: 100%;
+
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 0;
+    padding: 8px 0;
+
+    background: white;
+    border: 1px solid var(--border);
+
+    box-shadow: 0 10px 20px rgba(0,0,0,.08);
+  }
+
+  .ukaes-navigation.is-open {
+    display: flex;
+  }
+
+  .ukaes-navigation a {
+    padding: 13px 20px;
+    border-bottom: 1px solid #F0EFEC;
+    font-size: 14px;
+  }
+
+  .ukaes-navigation a::after {
+    display: none;
+  }
+
+  .ukaes-hero {
+    min-height: 420px;
   }
 
   .ukaes-hero-content {
-    width: calc(100% - 36px);
-    padding: 65px 12px;
+    padding-top: 70px;
+    padding-bottom: 70px;
   }
+
+  .ukaes-editorial {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .ukaes-research-grid,
+  .selection-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ukaes-footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
 }
 
+
+/* =========================================================
+   27. SMALL MOBILE
+   ========================================================= */
+
 @media (max-width: 600px) {
+
+  :root {
+    --container-gutter: 32px;
+    --section-spacing: 45px;
+  }
+
+  body {
+    font-size: 15px;
+  }
+
+  .ukaes-container,
+  .container {
+    width: calc(100% - 32px);
+  }
+
   .ukaes-header-inner {
-    min-height: 75px;
+    gap: 10px;
   }
 
   .ukaes-brand {
-    width: 210px;
+    max-width: 75%;
   }
 
   .ukaes-brand img {
-    height: 58px;
+    height: 46px;
+    max-width: 100%;
+  }
+
+  .ukaes-mobile-toggle {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .ukaes-hero {
+    min-height: 400px;
   }
 
   .ukaes-hero-content {
-    padding: 55px 5px;
+    width: calc(100% - 32px);
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
+
+  .ukaes-hero h1 {
+    font-size: clamp(37px, 9vw, 48px);
+  }
+
+  .ukaes-hero p {
+    font-size: 14px;
+  }
+
+  .ukaes-page-intro {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .ukaes-page-intro h1 {
+    font-size: 40px;
+  }
+
+  .ukaes-section-heading h2 {
+    font-size: 29px;
+  }
+
+  .ukaes-feature-grid,
+  .ukaes-research-grid,
+  .edu-programme-grid,
+  .people-grid,
+  .contact-email-grid,
+  .selection-grid,
+  .weight-list {
+    grid-template-columns: 1fr;
+  }
+
+  .edu-programme-body {
+    padding: 22px;
+  }
+
+  .person-card {
+    padding: 15px;
+    gap: 14px;
+  }
+
+  .person-photo {
+    flex-basis: 82px;
+    width: 82px;
+  }
+
+  .contact-email-card {
+    padding: 21px;
+  }
+
+  .member-directory {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 25px;
+  }
+
+  .ukaes-highlight-inner,
+  .edu-closing-inner,
+  .people-closing-inner,
+  .contact-closing-inner,
+  .appointment-closing-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .ukaes-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .ukaes-footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .ukaes-back-to-top {
+    right: 15px;
+    bottom: 15px;
+  }
+
+}
+
+
+/* =========================================================
+   28. ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+  }
+
 }
