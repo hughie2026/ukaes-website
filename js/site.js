@@ -1,433 +1,580 @@
 
-/* =========================================================
-   UK ACADEMY OF EPIDEMIOLOGY SCIENCES
+/* ============================================================
    UKAES OFFICIAL WEBSITE
+   UK Academy of Epidemiology Sciences
 
-   Global JavaScript
-   File: js/site.js
+   GLOBAL JAVASCRIPT
+   Version 2.0
+
+   Design system: New UKAES Website
+   CSS dependency: css/styles.css
 
    Features:
-   - Automatic copyright year
-   - Active navigation highlighting
-   - Responsive mobile navigation
-   - Contact form email preparation
-   - Accessibility enhancements
-   - Safe initialization across pages
+   1. Mobile navigation
+   2. Active page navigation
+   3. Header scroll state
+   4. Back to top
+   5. Contact form validation
+   6. Email application support
+   7. Automatic copyright year
+   8. Accessibility support
 
-   Compatible with GitHub Pages
-   ========================================================= */
+   No external JavaScript libraries.
+   ============================================================ */
 
-"use strict";
+(function () {
 
-/* =========================================================
-   1. INITIALIZATION
-   ========================================================= */
+  "use strict";
 
-document.addEventListener("DOMContentLoaded", function () {
 
-  initializeCopyrightYear();
+  /* ==========================================================
+     01. GLOBAL SETTINGS
+     ========================================================== */
 
-  initializeActiveNavigation();
-
-  initializeMobileNavigation();
-
-  initializeContactForm();
-
-});
-
-
-/* =========================================================
-   2. AUTOMATIC COPYRIGHT YEAR
-   ========================================================= */
-
-function initializeCopyrightYear() {
-
-  const currentYear = new Date().getFullYear();
-
-  const yearElements = document.querySelectorAll(
-    "#year, [data-year]"
-  );
-
-  yearElements.forEach(function (element) {
-
-    element.textContent = currentYear;
-
-  });
-
-}
-
-
-/* =========================================================
-   3. ACTIVE NAVIGATION
-   ========================================================= */
-
-function initializeActiveNavigation() {
-
-  const path = window.location.pathname;
-
-  let currentPage = path.split("/").pop();
-
-  if (!currentPage) {
-    currentPage = "index.html";
-  }
-
-  currentPage = currentPage.toLowerCase();
-
-  const navigationLinks = document.querySelectorAll(
-    ".nav-links a"
-  );
-
-  navigationLinks.forEach(function (link) {
-
-    const linkURL = new URL(
-      link.getAttribute("href"),
-      window.location.href
-    );
-
-    const linkPage = linkURL.pathname
-      .split("/")
-      .pop()
-      .toLowerCase();
-
-    if (linkPage === currentPage) {
-
-      link.classList.add("active");
-
-      link.setAttribute(
-        "aria-current",
-        "page"
-      );
-
-    } else {
-
-      link.classList.remove("active");
-
-      link.removeAttribute("aria-current");
-
-    }
-
-  });
-
-}
-
-
-/* =========================================================
-   4. RESPONSIVE MOBILE NAVIGATION
-   ========================================================= */
-
-function initializeMobileNavigation() {
-
-  const menuToggle = document.querySelector(
-    "#menuToggle, .menu-toggle"
-  );
-
-  const mainNav = document.querySelector(
-    "#mainNav, #main-navigation, .nav-links"
-  );
-
-  if (!menuToggle || !mainNav) {
-    return;
-  }
-
-  const mobileBreakpoint = window.matchMedia(
-    "(max-width: 850px)"
-  );
-
-  function setMenuState(isOpen) {
-
-    mainNav.classList.toggle(
-      "open",
-      isOpen
-    );
-
-    menuToggle.setAttribute(
-      "aria-expanded",
-      String(isOpen)
-    );
-
-    menuToggle.textContent = isOpen
-      ? "✕ Close"
-      : "☰ Menu";
-
-  }
-
-  /* Initial state */
-
-  setMenuState(false);
-
-  /* Toggle menu */
-
-  menuToggle.addEventListener(
-    "click",
-    function () {
-
-      const isOpen = mainNav.classList.contains(
-        "open"
-      );
-
-      setMenuState(!isOpen);
-
-    }
-  );
-
-  /* Close menu after navigation */
-
-  mainNav.addEventListener(
-    "click",
-    function (event) {
-
-      if (event.target.closest("a")) {
-
-        setMenuState(false);
-
-      }
-
-    }
-  );
-
-  /* Escape key closes mobile menu */
-
-  document.addEventListener(
-    "keydown",
-    function (event) {
-
-      if (
-        event.key === "Escape" &&
-        mainNav.classList.contains("open")
-      ) {
-
-        setMenuState(false);
-
-        menuToggle.focus();
-
-      }
-
-    }
-  );
-
-  /* Reset menu on desktop */
-
-  function handleBreakpointChange(event) {
-
-    if (!event.matches) {
-
-      setMenuState(false);
-
-    }
-
-  }
-
-  if (mobileBreakpoint.addEventListener) {
-
-    mobileBreakpoint.addEventListener(
-      "change",
-      handleBreakpointChange
-    );
-
-  } else if (mobileBreakpoint.addListener) {
-
-    mobileBreakpoint.addListener(
-      handleBreakpointChange
-    );
-
-  }
-
-}
-
-
-/* =========================================================
-   5. CONTACT FORM
-
-   This website is hosted on GitHub Pages.
-
-   GitHub Pages does not provide a
-   built-in email submission backend.
-
-   The form generates a mailto URL
-   and opens the visitor's email app.
-
-   The visitor must send the email.
-   ========================================================= */
-
-function initializeContactForm() {
-
-  const contactForm = document.getElementById(
-    "contactForm"
-  );
-
-  if (!contactForm) {
-    return;
-  }
-
-  /* Department email addresses */
-
-  const recipients = {
-
-    general: "info@ukaes.org",
-
-    research: "research@ukaes.org",
-
-    education: "education@ukaes.org",
-
-    appointments: "appointments@ukaes.org"
-
+  const UKAES = {
+    mobileBreakpoint: 820,
+    scrollThreshold: 120
   };
 
-  contactForm.addEventListener(
-    "submit",
-    function (event) {
 
-      event.preventDefault();
+  const SELECTORS = {
+    header: ".ukaes-header",
+    navigation: ".ukaes-navigation",
+    menuToggle: ".ukaes-mobile-toggle",
+    navLinks: ".ukaes-navigation a",
+    backToTop: ".ukaes-back-to-top",
+    contactForm: ".ukaes-form",
+    copyrightYear: ".ukaes-current-year"
+  };
 
-      /* Native form validation */
 
-      if (!contactForm.reportValidity()) {
-        return;
-      }
+  /* ==========================================================
+     02. DOM READY
+     ========================================================== */
 
-      /* Read form values */
+  function ready(callback) {
 
-      const fullName = getFieldValue(
-        "fullName"
+    if (document.readyState === "loading") {
+      document.addEventListener(
+        "DOMContentLoaded",
+        callback,
+        { once: true }
       );
-
-      const email = getFieldValue(
-        "email"
-      );
-
-      const organisation = getFieldValue(
-        "organisation"
-      );
-
-      const enquiryType = getFieldValue(
-        "enquiryType"
-      );
-
-      const subject = getFieldValue(
-        "subject"
-      );
-
-      const message = getFieldValue(
-        "message"
-      );
-
-      /* Validate required values */
-
-      if (
-        !fullName ||
-        !email ||
-        !subject ||
-        !message
-      ) {
-
-        alert(
-          "Please complete all required fields."
-        );
-
-        return;
-
-      }
-
-      /* Choose appropriate department */
-
-      const recipient = Object.prototype.hasOwnProperty.call(
-        recipients,
-        enquiryType
-      )
-        ? recipients[enquiryType]
-        : recipients.general;
-
-      /* Prepare email subject */
-
-      const emailSubject =
-        "UKAES Enquiry: " + subject;
-
-      /* Prepare email body */
-
-      const emailBody = [
-
-        "UK Academy of Epidemiology Sciences",
-
-        "Website Enquiry",
-
-        "",
-
-        "Full Name: " + fullName,
-
-        "Email Address: " + email,
-
-        "Institution / Organisation: " +
-          (organisation || "Not provided"),
-
-        "Enquiry Category: " + enquiryType,
-
-        "",
-
-        "Message:",
-
-        message,
-
-        "",
-
-        "---------------------------------",
-
-        "Prepared via the UKAES website.",
-
-        "https://ukaes.org"
-
-      ].join("\n");
-
-      /* Encode URL parameters */
-
-      const mailtoURL =
-        "mailto:" + recipient +
-        "?subject=" +
-        encodeURIComponent(emailSubject) +
-        "&body=" +
-        encodeURIComponent(emailBody);
-
-      /* Open visitor's email application */
-
-      window.location.href = mailtoURL;
-
-      /*
-       Important:
-
-       Do not show a "message sent"
-       confirmation here.
-
-       The browser only opens the
-       email application.
-
-       The visitor must manually
-       send the prepared email.
-      */
-
+    } else {
+      callback();
     }
-  );
 
-}
-
-
-/* =========================================================
-   6. HELPER FUNCTION
-   ========================================================= */
-
-function getFieldValue(elementId) {
-
-  const element = document.getElementById(
-    elementId
-  );
-
-  if (!element) {
-    return "";
   }
 
-  return element.value.trim();
 
-}
+  /* ==========================================================
+     03. MOBILE NAVIGATION
+     ========================================================== */
+
+  function initNavigation() {
+
+    const navigation =
+      document.querySelector(SELECTORS.navigation);
+
+    const toggle =
+      document.querySelector(SELECTORS.menuToggle);
+
+    if (!navigation || !toggle) {
+      return;
+    }
+
+    if (!navigation.id) {
+      navigation.id = "ukaes-primary-navigation";
+    }
+
+    toggle.setAttribute("aria-controls", navigation.id);
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-label", "Open navigation");
+
+    function isMobile() {
+      return window.matchMedia(
+        `(max-width: ${UKAES.mobileBreakpoint}px)`
+      ).matches;
+    }
+
+    function openMenu() {
+
+      navigation.classList.add("is-open");
+
+      toggle.setAttribute("aria-expanded", "true");
+      toggle.setAttribute("aria-label", "Close navigation");
+
+    }
+
+    function closeMenu() {
+
+      navigation.classList.remove("is-open");
+
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Open navigation");
+
+    }
+
+    function toggleMenu() {
+
+      const isOpen =
+        navigation.classList.contains("is-open");
+
+      if (isOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+
+    }
+
+    toggle.addEventListener("click", toggleMenu);
+
+    // Close navigation after selecting a page.
+
+    navigation.querySelectorAll("a").forEach(function (link) {
+
+      link.addEventListener("click", function () {
+
+        if (isMobile()) {
+          closeMenu();
+        }
+
+      });
+
+    });
+
+    // Close navigation with Escape.
+
+    document.addEventListener("keydown", function (event) {
+
+      if (event.key === "Escape") {
+
+        if (navigation.classList.contains("is-open")) {
+
+          closeMenu();
+          toggle.focus();
+
+        }
+
+      }
+
+    });
+
+    // Close when clicking outside the navigation.
+
+    document.addEventListener("click", function (event) {
+
+      if (!isMobile()) {
+        return;
+      }
+
+      if (
+        navigation.classList.contains("is-open") &&
+        !navigation.contains(event.target) &&
+        !toggle.contains(event.target)
+      ) {
+        closeMenu();
+      }
+
+    });
+
+    // Reset mobile navigation when returning to desktop.
+
+    window.addEventListener("resize", function () {
+
+      if (!isMobile()) {
+        closeMenu();
+      }
+
+    });
+
+  }
 
 
-/* =========================================================
-   END OF UKAES GLOBAL JAVASCRIPT
-   ========================================================= */
+  /* ==========================================================
+     04. ACTIVE PAGE NAVIGATION
+     ========================================================== */
+
+  function initActiveNavigation() {
+
+    const links =
+      document.querySelectorAll(SELECTORS.navLinks);
+
+    if (!links.length) {
+      return;
+    }
+
+    function normalizePath(path) {
+
+      let result = path.replace(/\/+$/, "");
+
+      if (result === "" || result === "/") {
+        return "/index.html";
+      }
+
+      if (!result.endsWith(".html")) {
+        result += "/index.html";
+      }
+
+      return result;
+
+    }
+
+    const currentPath =
+      normalizePath(window.location.pathname);
+
+    links.forEach(function (link) {
+
+      let target;
+
+      try {
+
+        target = new URL(
+          link.getAttribute("href"),
+          window.location.origin
+        );
+
+      } catch (error) {
+
+        return;
+
+      }
+
+      if (target.origin !== window.location.origin) {
+        return;
+      }
+
+      const targetPath =
+        normalizePath(target.pathname);
+
+      const isCurrent =
+        targetPath === currentPath;
+
+      if (isCurrent) {
+
+        link.classList.add("is-active");
+
+        link.setAttribute(
+          "aria-current",
+          "page"
+        );
+
+      } else {
+
+        link.classList.remove("is-active");
+
+        link.removeAttribute(
+          "aria-current"
+        );
+
+      }
+
+    });
+
+  }
+
+
+  /* ==========================================================
+     05. HEADER SCROLL STATE
+     ========================================================== */
+
+  function initHeaderScroll() {
+
+    const header =
+      document.querySelector(SELECTORS.header);
+
+    if (!header) {
+      return;
+    }
+
+    let ticking = false;
+
+    function updateHeader() {
+
+      const scrolled =
+        window.scrollY > UKAES.scrollThreshold;
+
+      header.classList.toggle(
+        "is-scrolled",
+        scrolled
+      );
+
+      ticking = false;
+
+    }
+
+    window.addEventListener(
+      "scroll",
+      function () {
+
+        if (!ticking) {
+
+          window.requestAnimationFrame(
+            updateHeader
+          );
+
+          ticking = true;
+
+        }
+
+      },
+      { passive: true }
+    );
+
+    updateHeader();
+
+  }
+
+
+  /* ==========================================================
+     06. BACK TO TOP
+     ========================================================== */
+
+  function initBackToTop() {
+
+    const button =
+      document.querySelector(SELECTORS.backToTop);
+
+    if (!button) {
+      return;
+    }
+
+    button.hidden = true;
+
+    function updateButton() {
+
+      button.hidden =
+        window.scrollY < 350;
+
+    }
+
+    window.addEventListener(
+      "scroll",
+      updateButton,
+      { passive: true }
+    );
+
+    button.addEventListener("click", function () {
+
+      const reducedMotion =
+        window.matchMedia(
+          "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+      window.scrollTo({
+        top: 0,
+        behavior: reducedMotion ? "instant" : "smooth"
+      });
+
+    });
+
+    updateButton();
+
+  }
+
+
+  /* ==========================================================
+     07. CONTACT FORM
+     ========================================================== */
+
+  function initContactForm() {
+
+    const forms =
+      document.querySelectorAll(SELECTORS.contactForm);
+
+    if (!forms.length) {
+      return;
+    }
+
+    forms.forEach(function (form) {
+
+      const status =
+        form.querySelector("[data-form-status]");
+
+      function showStatus(message, success) {
+
+        if (!status) {
+          return;
+        }
+
+        status.textContent = message;
+
+        status.setAttribute("role", "status");
+
+        status.setAttribute(
+          "aria-live",
+          "polite"
+        );
+
+        status.dataset.state =
+          success ? "success" : "error";
+
+      }
+
+      form.addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        // Native HTML form validation.
+
+        if (!form.reportValidity()) {
+          return;
+        }
+
+        // An explicit recipient must be configured
+        // before the email function can operate.
+
+        const recipient =
+          form.dataset.recipient;
+
+        if (!recipient) {
+
+          showStatus(
+            "The contact form has not been configured yet. Please contact the Academy through its published email address.",
+            false
+          );
+
+          return;
+
+        }
+
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(recipient)) {
+
+          showStatus(
+            "The contact email address is not configured correctly.",
+            false
+          );
+
+          return;
+
+        }
+
+        const formData =
+          new FormData(form);
+
+        const subject =
+          form.dataset.subject ||
+          "Website Enquiry - UKAES";
+
+        const lines = [];
+
+        formData.forEach(function (value, key) {
+
+          if (key === "website") {
+            return;
+          }
+
+          lines.push(
+            key + ": " + String(value)
+          );
+
+        });
+
+        const body =
+          lines.join("\n");
+
+        const mailto =
+          "mailto:" + encodeURIComponent(recipient) +
+          "?subject=" + encodeURIComponent(subject) +
+          "&body=" + encodeURIComponent(body);
+
+        showStatus(
+          "Opening your email application. Please review and send your message there.",
+          true
+        );
+
+        window.location.href = mailto;
+
+      });
+
+    });
+
+  }
+
+
+  /* ==========================================================
+     08. AUTOMATIC COPYRIGHT YEAR
+     ========================================================== */
+
+  function initCopyrightYear() {
+
+    const elements =
+      document.querySelectorAll(
+        SELECTORS.copyrightYear
+      );
+
+    const currentYear =
+      new Date().getFullYear();
+
+    elements.forEach(function (element) {
+
+      element.textContent = currentYear;
+
+    });
+
+  }
+
+
+  /* ==========================================================
+     09. EXTERNAL LINKS
+     ========================================================== */
+
+  function initExternalLinks() {
+
+    const links =
+      document.querySelectorAll("a[target='_blank']");
+
+    links.forEach(function (link) {
+
+      const rel =
+        new Set(
+          (link.getAttribute("rel") || "")
+            .split(/\s+/)
+            .filter(Boolean)
+        );
+
+      rel.add("noopener");
+      rel.add("noreferrer");
+
+      link.setAttribute(
+        "rel",
+        Array.from(rel).join(" ")
+      );
+
+    });
+
+  }
+
+
+  /* ==========================================================
+     10. INITIALIZE WEBSITE
+     ========================================================== */
+
+  function init() {
+
+    initNavigation();
+
+    initActiveNavigation();
+
+    initHeaderScroll();
+
+    initBackToTop();
+
+    initContactForm();
+
+    initCopyrightYear();
+
+    initExternalLinks();
+
+  }
+
+
+  /* ==========================================================
+     11. START
+     ========================================================== */
+
+  ready(init);
+
+
+})();
