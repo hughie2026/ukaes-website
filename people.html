@@ -3,174 +3,137 @@
 <html lang="en">
 
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta name="description"
-    content="Meet the academic and professional community of the UK Academy of Epidemiology Sciences.">
+    content="Meet some of the management and research personnel of the UK Academy of Epidemiology Sciences.">
 
-  <meta name="theme-color" content="#B20D2E">
+  <meta name="theme-color" content="#85001D">
 
   <title>People | UK Academy of Epidemiology Sciences</title>
 
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/site.js" defer></script>
 
-
   <style>
 
-    /* =====================================
-       PEOPLE PAGE
-    ===================================== */
+    /* PEOPLE PAGE */
 
     .people-intro {
-      max-width: 760px;
-    }
-
-    .people-intro h2 {
-      margin: 13px 0 18px;
+      max-width: 790px;
     }
 
     .people-intro p {
-      font-size: 15px;
+      color: #666;
+      font-size: 14px;
       line-height: 1.9;
     }
 
-
-    /* TEAM GRID */
+    /* PERSON GRID */
 
     .people-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 22px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 26px 20px;
     }
 
     .person-card {
-      display: flex;
-      align-items: flex-start;
-      gap: 17px;
       min-width: 0;
-      padding: 19px;
       background: #FFFFFF;
       border: 1px solid #EAE8E4;
-      transition: border-color .2s ease,
-                  transform .2s ease;
     }
 
-    .person-card:hover {
-      border-color: #CDA4AD;
-      transform: translateY(-2px);
-    }
-
-
-    /* PORTRAIT
-       ALL PHOTOS ARE 3:4
-    */
+    /* 3:4 PORTRAIT */
 
     .person-photo {
-      flex: 0 0 94px;
-      width: 94px;
+      position: relative;
+      width: 100%;
       aspect-ratio: 3 / 4;
       overflow: hidden;
       background: #F0EFEC;
-      border-radius: 3px;
     }
 
     .person-photo img {
-      display: block;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center;
+      object-position: center top;
     }
 
     .person-photo-placeholder {
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       width: 100%;
       height: 100%;
-      color: #A6A19C;
-      font-size: 10px;
-      letter-spacing: .06em;
+      color: #A5A09A;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .12em;
       text-align: center;
-      background: linear-gradient(
-        145deg,
-        #F3F1EE,
-        #E8E5E0
-      );
     }
 
+    .person-photo-placeholder span {
+      padding: 8px 12px;
+      border: 1px solid #D6D2CB;
+    }
 
-    /* PERSON INFORMATION */
+    /* PERSON DETAILS */
 
     .person-info {
-      flex: 1;
-      min-width: 0;
+      padding: 17px 16px 19px;
     }
 
     .person-info h3 {
-      margin: 2px 0 7px;
-      font-size: 16px;
+      margin: 0 0 7px;
+      font-size: 17px;
       line-height: 1.4;
-      font-weight: 700;
-      color: #292929;
     }
 
     .person-role {
-      display: inline-block;
-      margin-bottom: 9px;
-      color: #A30D2A;
+      display: block;
+      margin-bottom: 12px;
+      color: #B20D2E;
       font-size: 11px;
       font-weight: 700;
-      line-height: 1.5;
+      line-height: 1.6;
     }
 
-    .person-detail {
-      margin: 0 0 7px;
-      color: #666666;
+    .person-category {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 4px 8px;
+      background: #F5ECEE;
+      color: #85001D;
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .person-info p {
+      margin: 0 0 10px;
+      color: #666;
       font-size: 12px;
       line-height: 1.7;
-      overflow-wrap: anywhere;
-    }
-
-    .person-detail strong {
-      color: #444444;
-      font-weight: 600;
     }
 
     .person-email {
-      color: #8E102A;
-      text-decoration: none;
+      display: inline-block;
+      max-width: 100%;
+      color: #85001D;
       font-size: 11px;
       overflow-wrap: anywhere;
+      text-decoration: none;
     }
 
     .person-email:hover {
       text-decoration: underline;
     }
 
-
-    /* EXTERNAL ADVISOR LABEL */
-
-    .person-affiliation {
-      display: inline-block;
-      padding: 4px 7px;
-      margin-bottom: 8px;
-      background: #F5F2EE;
-      color: #756B60;
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: .05em;
-      line-height: 1.5;
-    }
-
-
     /* SECTION */
 
     .people-section-heading {
-      margin-bottom: 27px;
+      margin-bottom: 30px;
     }
 
     .people-section-heading h2 {
@@ -178,78 +141,78 @@
     }
 
     .people-section-heading p {
-      max-width: 720px;
-      color: #666666;
-      font-size: 14px;
+      color: #666;
+      font-size: 13px;
       line-height: 1.8;
     }
 
+    /* PERSONNEL NOTE */
 
-    /* MEMBER DIRECTORY */
-
-    .member-directory {
-      padding: 42px;
-      background: #F7F5F1;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 35px;
+    .people-disclaimer {
+      padding: 21px 25px;
+      margin-top: 30px;
+      background: #F5F4F1;
+      border-left: 4px solid #B20D2E;
     }
 
-    .member-directory-content {
-      max-width: 650px;
-    }
-
-    .member-directory h2 {
-      margin: 12px 0;
-    }
-
-    .member-directory p {
-      color: #666666;
-      font-size: 14px;
+    .people-disclaimer p {
+      margin: 0;
+      color: #555;
+      font-size: 13px;
       line-height: 1.85;
     }
 
+    /* MEMBER ENQUIRY */
 
-    /* CLOSING */
-
-    .people-closing {
-      padding: 60px 0;
-      background: linear-gradient(
-        120deg,
-        #85001D,
-        #B20D2E
-      );
-    }
-
-    .people-closing-inner {
+    .member-enquiry {
+      padding: 38px;
+      background: #FFFFFF;
+      border: 1px solid #E8E6E2;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       gap: 30px;
     }
 
-    .people-closing h2 {
-      color: #FFFFFF;
-      margin: 12px 0;
+    .member-enquiry-content {
+      max-width: 650px;
     }
 
-    .people-closing p {
-      color: rgba(255,255,255,.85);
+    .member-enquiry h2 {
+      margin: 10px 0;
+      font-size: 27px;
+    }
+
+    .member-enquiry p {
       margin: 0;
+      color: #666;
+      font-size: 13px;
+      line-height: 1.85;
     }
 
-    .people-closing .ukaes-eyebrow {
-      color: #F4C7D0;
+    .member-enquiry-link {
+      display: inline-block;
+      flex-shrink: 0;
+      padding: 13px 23px;
+      background: #85001D;
+      color: #FFFFFF;
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background .25s ease;
     }
 
+    .member-enquiry-link:hover {
+      background: #650015;
+      color: #FFFFFF;
+    }
 
     /* RESPONSIVE */
 
-    @media (max-width: 1050px) {
+    @media (max-width: 1000px) {
 
       .people-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
 
     }
@@ -257,28 +220,30 @@
     @media (max-width: 700px) {
 
       .people-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px 13px;
+      }
+
+      .person-info {
+        padding: 14px 12px;
+      }
+
+      .person-info h3 {
+        font-size: 15px;
+      }
+
+      .member-enquiry {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 27px;
+      }
+
+    }
+
+    @media (max-width: 380px) {
+
+      .people-grid {
         grid-template-columns: 1fr;
-        gap: 14px;
-      }
-
-      .person-card {
-        padding: 16px;
-      }
-
-      .person-photo {
-        flex-basis: 88px;
-        width: 88px;
-      }
-
-      .member-directory {
-        padding: 28px;
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .people-closing-inner {
-        align-items: flex-start;
-        flex-direction: column;
       }
 
     }
@@ -291,9 +256,7 @@
 <body>
 
 
-  <!-- =====================================
-       HEADER
-  ====================================== -->
+  <!-- HEADER -->
 
   <header class="ukaes-header">
 
@@ -319,9 +282,7 @@
       </button>
 
 
-      <nav
-        class="ukaes-navigation"
-        aria-label="Main navigation">
+      <nav class="ukaes-navigation" aria-label="Main navigation">
 
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
@@ -342,36 +303,26 @@
   <main>
 
 
-    <!-- =====================================
-         HERO
-    ====================================== -->
+    <!-- HERO -->
 
-    <section class="ukaes-hero">
+    <section class="ukaes-page-intro">
 
-      <div class="ukaes-hero-content">
+      <div class="ukaes-container">
 
         <span class="ukaes-eyebrow">
-          Our Academic Community
+          Our People
         </span>
 
         <h1>
           People Behind<br>
-          the Science.
+          Academic Progress.
         </h1>
 
         <p>
-          Bringing together academic expertise,
-          scientific curiosity and professional
-          collaboration across disciplines.
+          Meet some of the management and research
+          personnel contributing to the academic
+          development of UKAES.
         </p>
-
-        <a
-          href="#academic-community"
-          class="ukaes-button ukaes-button-white">
-
-          Meet Our People
-
-        </a>
 
       </div>
 
@@ -379,38 +330,36 @@
 
 
 
-    <!-- =====================================
-         INTRODUCTION
-    ====================================== -->
+    <!-- INTRODUCTION -->
 
     <section class="ukaes-section">
 
-      <div class="ukaes-container">
+      <div class="ukaes-container people-intro">
 
-        <div class="people-intro">
+        <span class="ukaes-eyebrow">
+          Our Academic Community
+        </span>
 
-          <span class="ukaes-eyebrow">
-            The UKAES Community
-          </span>
+        <h2>
+          A Collaborative Academic Team.
+        </h2>
 
-          <h2>
-            Different Expertise.
-            A Shared Academic Vision.
-          </h2>
+        <p>
+          UKAES brings together individuals from
+          academic, scientific and professional
+          backgrounds, encouraging collaboration
+          across research, education and administration.
+        </p>
 
-          <p>
-            UKAES brings together individuals
-            from different academic and
-            professional backgrounds.
-            Our community values collaboration,
-            knowledge exchange and contributions
-            to scientific research and education.
-          </p>
+        <div class="people-disclaimer">
 
           <p>
-            We believe that academic progress
-            is strengthened through cooperation
-            and the sharing of diverse perspectives.
+            <strong>Personnel Information:</strong>
+            The individuals presented on this page
+            represent only part of the management
+            and research personnel of UKAES.
+            This is not an exhaustive list of all
+            individuals associated with the Academy.
           </p>
 
         </div>
@@ -421,14 +370,182 @@
 
 
 
-    <!-- =====================================
-         ACADEMIC COMMUNITY
-         ALL PEOPLE IN ONE UNIFIED GRID
-    ====================================== -->
+    <!-- MANAGEMENT AND LEADERSHIP -->
 
-    <section
-      class="ukaes-section ukaes-section-soft"
-      id="academic-community">
+    <section class="ukaes-section ukaes-section-soft">
+
+      <div class="ukaes-container">
+
+        <div class="people-section-heading">
+
+          <span class="ukaes-eyebrow">
+            Management & Leadership
+          </span>
+
+          <h2>
+            Our Management Team
+          </h2>
+
+        </div>
+
+
+        <div class="people-grid">
+
+
+          <!-- FOUNDER AND PRESIDENT -->
+
+          <article class="person-card">
+
+            <div class="person-photo">
+
+              <div class="person-photo-placeholder">
+                <span>3:4 PORTRAIT</span>
+              </div>
+
+            </div>
+
+            <div class="person-info">
+
+              <h3>Dr. [Founder Name]</h3>
+
+              <span class="person-role">
+                Founder & President
+              </span>
+
+              <p>
+                Research interests: Epidemiology,
+                academic development and institutional strategy.
+              </p>
+
+              <a class="person-email"
+                 href="mailto:founder@ukaes.org">
+                founder@ukaes.org
+              </a>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- EDUCATION -->
+
+          <article class="person-card">
+
+            <div class="person-photo">
+
+              <div class="person-photo-placeholder">
+                <span>3:4 PORTRAIT</span>
+              </div>
+
+            </div>
+
+            <div class="person-info">
+
+              <h3>Dr. [Name]</h3>
+
+              <span class="person-role">
+                Head of Education
+              </span>
+
+              <p>
+                Research interests: Academic education,
+                curriculum development and professional learning.
+              </p>
+
+              <a class="person-email"
+                 href="mailto:education@ukaes.org">
+                education@ukaes.org
+              </a>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- RESEARCH -->
+
+          <article class="person-card">
+
+            <div class="person-photo">
+
+              <div class="person-photo-placeholder">
+                <span>3:4 PORTRAIT</span>
+              </div>
+
+            </div>
+
+            <div class="person-info">
+
+              <h3>Dr. [Name]</h3>
+
+              <span class="person-role">
+                Head of Research
+              </span>
+
+              <p>
+                Research interests: Epidemiology,
+                scientific research and interdisciplinary collaboration.
+              </p>
+
+              <a class="person-email"
+                 href="mailto:research@ukaes.org">
+                research@ukaes.org
+              </a>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- ADMINISTRATION -->
+
+          <article class="person-card">
+
+            <div class="person-photo">
+
+              <div class="person-photo-placeholder">
+                <span>3:4 PORTRAIT</span>
+              </div>
+
+            </div>
+
+            <div class="person-info">
+
+              <h3>Dr. [Name]</h3>
+
+              <span class="person-role">
+                Head of Administration
+              </span>
+
+              <p>
+                Research interests: Academic administration,
+                organisational development and governance.
+              </p>
+
+              <a class="person-email"
+                 href="mailto:admin@ukaes.org">
+                admin@ukaes.org
+              </a>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- RESEARCH PROFESSORS -->
+
+    <section class="ukaes-section">
 
       <div class="ukaes-container">
 
@@ -436,213 +553,34 @@
         <div class="people-section-heading">
 
           <span class="ukaes-eyebrow">
-            Our People
+            Research & Academic Personnel
           </span>
 
           <h2>
-            Academic and Professional Community
+            Research Professors
           </h2>
 
           <p>
-            Meet the people contributing
-            to the Academy's academic,
-            research and organisational activities.
+            Academic researchers contributing to
+            the development of research and
+            interdisciplinary scholarship at UKAES.
           </p>
 
         </div>
 
 
-
         <div class="people-grid">
 
 
-          <!-- =================================
-               FOUNDER AND PRESIDENT
-          ================================== -->
+          <!-- PROFESSOR 01 -->
 
           <article class="person-card">
 
             <div class="person-photo">
-
-              <img
-                src="assets/people/founder-president.jpg"
-                alt="Founder and President portrait"
-                loading="lazy">
-
+              <div class="person-photo-placeholder">
+                <span>3:4 PORTRAIT</span>
+              </div>
             </div>
-
-
-            <div class="person-info">
-
-              <h3>Dr. [Name]</h3>
-
-              <span class="person-role">
-                Founder & President
-              </span>
-
-              <p class="person-detail">
-                <strong>Research:</strong>
-                Epidemiological Sciences and Academic Development
-              </p>
-
-              <p class="person-detail">
-                <strong>Email:</strong>
-                <a class="person-email"
-                   href="mailto:[EMAIL]">
-                  [Email address]
-                </a>
-              </p>
-
-            </div>
-
-          </article>
-
-
-
-          <!-- =================================
-               EDUCATION LEAD
-          ================================== -->
-
-          <article class="person-card">
-
-            <div class="person-photo">
-
-              <img
-                src="assets/people/education-director.jpg"
-                alt="Education Director portrait"
-                loading="lazy">
-
-            </div>
-
-
-            <div class="person-info">
-
-              <h3>Dr. [Name]</h3>
-
-              <span class="person-role">
-                Director of Education
-              </span>
-
-              <p class="person-detail">
-                <strong>Research:</strong>
-                Higher Education and Scientific Training
-              </p>
-
-              <p class="person-detail">
-                <strong>Email:</strong>
-                <a class="person-email"
-                   href="mailto:[EMAIL]">
-                  [Email address]
-                </a>
-              </p>
-
-            </div>
-
-          </article>
-
-
-
-          <!-- =================================
-               RESEARCH LEAD
-          ================================== -->
-
-          <article class="person-card">
-
-            <div class="person-photo">
-
-              <img
-                src="assets/people/research-director.jpg"
-                alt="Research Director portrait"
-                loading="lazy">
-
-            </div>
-
-
-            <div class="person-info">
-
-              <h3>Dr. [Name]</h3>
-
-              <span class="person-role">
-                Director of Research
-              </span>
-
-              <p class="person-detail">
-                <strong>Research:</strong>
-                Epidemiology and Biomedical Research
-              </p>
-
-              <p class="person-detail">
-                <strong>Email:</strong>
-                <a class="person-email"
-                   href="mailto:[EMAIL]">
-                  [Email address]
-                </a>
-              </p>
-
-            </div>
-
-          </article>
-
-
-
-          <!-- =================================
-               ADMINISTRATION LEAD
-          ================================== -->
-
-          <article class="person-card">
-
-            <div class="person-photo">
-
-              <img
-                src="assets/people/administration-director.jpg"
-                alt="Administration Director portrait"
-                loading="lazy">
-
-            </div>
-
-
-            <div class="person-info">
-
-              <h3>Dr. [Name]</h3>
-
-              <span class="person-role">
-                Director of Administration
-              </span>
-
-              <p class="person-detail">
-                <strong>Research:</strong>
-                Academic Governance and Institutional Management
-              </p>
-
-              <p class="person-detail">
-                <strong>Email:</strong>
-                <a class="person-email"
-                   href="mailto:[EMAIL]">
-                  [Email address]
-                </a>
-              </p>
-
-            </div>
-
-          </article>
-
-
-
-          <!-- =================================
-               RESEARCH PROFESSOR 01
-          ================================== -->
-
-          <article class="person-card">
-
-            <div class="person-photo">
-
-              <img
-                src="assets/people/research-professor-01.jpg"
-                alt="Research Professor portrait"
-                loading="lazy">
-
-            </div>
-
 
             <div class="person-info">
 
@@ -652,18 +590,15 @@
                 Research Professor
               </span>
 
-              <p class="person-detail">
-                <strong>Research:</strong>
-                Epidemiological Sciences
+              <p>
+                Research interests: Epidemiology
+                and population health.
               </p>
 
-              <p class="person-detail">
-                <strong>Email:</strong>
-                <a class="person-email"
-                   href="mailto:[EMAIL]">
-                  [Email address]
-                </a>
-              </p>
+              <a class="person-email"
+                 href="mailto:professor1@ukaes.org">
+                professor1@ukaes.org
+              </a>
 
             </div>
 
@@ -671,21 +606,15 @@
 
 
 
-          <!-- =================================
-               RESEARCH PROFESSOR 02
-          ================================== -->
+          <!-- PROFESSOR 02 -->
 
           <article class="person-card">
 
             <div class="person-photo">
-
-              <img
-                src="assets/people/research-professor-02.jpg"
-                alt="Research Professor portrait"
-                loading="lazy">
-
+              <div class="person-photo-placeholder">
+                <span>3:4 PORTRAIT</span>
+              </div>
             </div>
-
 
             <div class="person-info">
 
@@ -695,18 +624,15 @@
                 Research Professor
               </span>
 
-              <p class="person-detail">
-                <strong>Research:</strong>
-                Biostatistics and Health Data Science
+              <p>
+                Research interests: Biostatistics
+                and health data science.
               </p>
 
-              <p class="person-detail">
-                <strong>Email:</strong>
-                <a class="person-email"
-                   href="mailto:[EMAIL]">
-                  [Email address]
-                </a>
-              </p>
+              <a class="person-email"
+                 href="mailto:professor2@ukaes.org">
+                professor2@ukaes.org
+              </a>
 
             </div>
 
@@ -714,21 +640,15 @@
 
 
 
-          <!-- =================================
-               RESEARCH PROFESSOR 03
-          ================================== -->
+          <!-- PROFESSOR 03 -->
 
           <article class="person-card">
 
             <div class="person-photo">
-
-              <img
-                src="assets/people/research-professor-03.jpg"
-                alt="Research Professor portrait"
-                loading="lazy">
-
+              <div class="person-photo-placeholder">
+                <span>3:4 PORTRAIT</span>
+              </div>
             </div>
-
 
             <div class="person-info">
 
@@ -738,18 +658,15 @@
                 Research Professor
               </span>
 
-              <p class="person-detail">
-                <strong>Research:</strong>
-                Public Health Sciences
+              <p>
+                Research interests: Biomedical sciences
+                and molecular epidemiology.
               </p>
 
-              <p class="person-detail">
-                <strong>Email:</strong>
-                <a class="person-email"
-                   href="mailto:[EMAIL]">
-                  [Email address]
-                </a>
-              </p>
+              <a class="person-email"
+                 href="mailto:professor3@ukaes.org">
+                professor3@ukaes.org
+              </a>
 
             </div>
 
@@ -757,28 +674,17 @@
 
 
 
-          <!-- =================================
-               RESEARCH PROFESSOR 04
-               EXTERNAL ADVISOR
-          ================================== -->
+          <!-- PROFESSOR 04 -->
 
           <article class="person-card">
 
             <div class="person-photo">
-
-              <img
-                src="assets/people/research-professor-04.jpg"
-                alt="External Research Professor portrait"
-                loading="lazy">
-
+              <div class="person-photo-placeholder">
+                <span>3:4 PORTRAIT</span>
+              </div>
             </div>
 
-
             <div class="person-info">
-
-              <span class="person-affiliation">
-                EXTERNAL · PART-TIME
-              </span>
 
               <h3>Dr. [Name]</h3>
 
@@ -786,23 +692,121 @@
                 Research Professor
               </span>
 
-              <p class="person-detail">
-                <strong>Additional Title:</strong>
+              <p>
+                Research interests: Public health
+                and preventive medicine.
+              </p>
+
+              <a class="person-email"
+                 href="mailto:professor4@ukaes.org">
+                professor4@ukaes.org
+              </a>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- PROFESSOR 05 -->
+
+          <article class="person-card">
+
+            <div class="person-photo">
+              <div class="person-photo-placeholder">
+                <span>3:4 PORTRAIT</span>
+              </div>
+            </div>
+
+            <div class="person-info">
+
+              <h3>Dr. [Name]</h3>
+
+              <span class="person-role">
+                Research Professor
+              </span>
+
+              <p>
+                Research interests: Environmental
+                health sciences.
+              </p>
+
+              <a class="person-email"
+                 href="mailto:professor5@ukaes.org">
+                professor5@ukaes.org
+              </a>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- PROFESSOR 06 -->
+
+          <article class="person-card">
+
+            <div class="person-photo">
+              <div class="person-photo-placeholder">
+                <span>3:4 PORTRAIT</span>
+              </div>
+            </div>
+
+            <div class="person-info">
+
+              <h3>Dr. [Name]</h3>
+
+              <span class="person-role">
+                Research Professor
+              </span>
+
+              <p>
+                Research interests: Health policy
+                and health systems.
+              </p>
+
+              <a class="person-email"
+                 href="mailto:professor6@ukaes.org">
+                professor6@ukaes.org
+              </a>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- PROFESSOR 07: EXTERNAL -->
+
+          <article class="person-card">
+
+            <div class="person-photo">
+              <div class="person-photo-placeholder">
+                <span>3:4 PORTRAIT</span>
+              </div>
+            </div>
+
+            <div class="person-info">
+
+              <span class="person-category">
                 Chief Expert Advisor
+              </span>
+
+              <h3>Dr. [Name]</h3>
+
+              <span class="person-role">
+                Research Professor · Part-time External
+              </span>
+
+              <p>
+                Research interests: Clinical epidemiology
+                and translational health research.
               </p>
 
-              <p class="person-detail">
-                <strong>Research:</strong>
-                Biomedical Sciences
-              </p>
-
-              <p class="person-detail">
-                <strong>Email:</strong>
-                <a class="person-email"
-                   href="mailto:[EMAIL]">
-                  [Email address]
-                </a>
-              </p>
+              <a class="person-email"
+                 href="mailto:professor7@ukaes.org">
+                professor7@ukaes.org
+              </a>
 
             </div>
 
@@ -810,95 +814,37 @@
 
 
 
-          <!-- =================================
-               RESEARCH PROFESSOR 05
-          ================================== -->
+          <!-- PROFESSOR 08: EXTERNAL -->
 
           <article class="person-card">
 
             <div class="person-photo">
-
-              <img
-                src="assets/people/research-professor-05.jpg"
-                alt="Research Professor portrait"
-                loading="lazy">
-
+              <div class="person-photo-placeholder">
+                <span>3:4 PORTRAIT</span>
+              </div>
             </div>
-
 
             <div class="person-info">
 
-              <h3>Dr. [Name]</h3>
-
-              <span class="person-role">
-                Research Professor
-              </span>
-
-              <p class="person-detail">
-                <strong>Research:</strong>
-                Environmental Health Sciences
-              </p>
-
-              <p class="person-detail">
-                <strong>Email:</strong>
-                <a class="person-email"
-                   href="mailto:[EMAIL]">
-                  [Email address]
-                </a>
-              </p>
-
-            </div>
-
-          </article>
-
-
-
-          <!-- =================================
-               RESEARCH PROFESSOR 06
-               EXTERNAL ADVISOR
-          ================================== -->
-
-          <article class="person-card">
-
-            <div class="person-photo">
-
-              <img
-                src="assets/people/research-professor-06.jpg"
-                alt="External Research Professor portrait"
-                loading="lazy">
-
-            </div>
-
-
-            <div class="person-info">
-
-              <span class="person-affiliation">
-                EXTERNAL · PART-TIME
-              </span>
-
-              <h3>Dr. [Name]</h3>
-
-              <span class="person-role">
-                Research Professor
-              </span>
-
-              <p class="person-detail">
-                <strong>Additional Title:</strong>
+              <span class="person-category">
                 Chief Expert Advisor
+              </span>
+
+              <h3>Dr. [Name]</h3>
+
+              <span class="person-role">
+                Research Professor · Part-time External
+              </span>
+
+              <p>
+                Research interests: Health data science
+                and artificial intelligence.
               </p>
 
-              <p class="person-detail">
-                <strong>Research:</strong>
-                Health Policy and Health Systems
-              </p>
-
-              <p class="person-detail">
-                <strong>Email:</strong>
-                <a class="person-email"
-                   href="mailto:[EMAIL]">
-                  [Email address]
-                </a>
-              </p>
+              <a class="person-email"
+                 href="mailto:professor8@ukaes.org">
+                professor8@ukaes.org
+              </a>
 
             </div>
 
@@ -906,153 +852,57 @@
 
 
 
-          <!-- =================================
-               RESEARCH PROFESSOR 07
-          ================================== -->
+          <!-- PROFESSOR 09: EXTERNAL -->
 
           <article class="person-card">
 
             <div class="person-photo">
-
-              <img
-                src="assets/people/research-professor-07.jpg"
-                alt="Research Professor portrait"
-                loading="lazy">
-
+              <div class="person-photo-placeholder">
+                <span>3:4 PORTRAIT</span>
+              </div>
             </div>
-
 
             <div class="person-info">
 
-              <h3>Dr. [Name]</h3>
-
-              <span class="person-role">
-                Research Professor
-              </span>
-
-              <p class="person-detail">
-                <strong>Research:</strong>
-                Lifestyle Medicine and Preventive Health
-              </p>
-
-              <p class="person-detail">
-                <strong>Email:</strong>
-                <a class="person-email"
-                   href="mailto:[EMAIL]">
-                  [Email address]
-                </a>
-              </p>
-
-            </div>
-
-          </article>
-
-
-
-          <!-- =================================
-               RESEARCH PROFESSOR 08
-               EXTERNAL ADVISOR
-          ================================== -->
-
-          <article class="person-card">
-
-            <div class="person-photo">
-
-              <img
-                src="assets/people/research-professor-08.jpg"
-                alt="External Research Professor portrait"
-                loading="lazy">
-
-            </div>
-
-
-            <div class="person-info">
-
-              <span class="person-affiliation">
-                EXTERNAL · PART-TIME
-              </span>
-
-              <h3>Dr. [Name]</h3>
-
-              <span class="person-role">
-                Research Professor
-              </span>
-
-              <p class="person-detail">
-                <strong>Additional Title:</strong>
+              <span class="person-category">
                 Chief Expert Advisor
-              </p>
-
-              <p class="person-detail">
-                <strong>Research:</strong>
-                Bioinformatics and Artificial Intelligence
-              </p>
-
-              <p class="person-detail">
-                <strong>Email:</strong>
-                <a class="person-email"
-                   href="mailto:[EMAIL]">
-                  [Email address]
-                </a>
-              </p>
-
-            </div>
-
-          </article>
-
-
-
-          <!-- =================================
-               RESEARCH PROFESSOR 09
-               EXTERNAL ADVISOR
-          ================================== -->
-
-          <article class="person-card">
-
-            <div class="person-photo">
-
-              <img
-                src="assets/people/research-professor-09.jpg"
-                alt="External Research Professor portrait"
-                loading="lazy">
-
-            </div>
-
-
-            <div class="person-info">
-
-              <span class="person-affiliation">
-                EXTERNAL · PART-TIME
               </span>
 
               <h3>Dr. [Name]</h3>
 
               <span class="person-role">
-                Research Professor
+                Research Professor · Part-time External
               </span>
 
-              <p class="person-detail">
-                <strong>Additional Title:</strong>
-                Chief Expert Advisor
+              <p>
+                Research interests: Global health
+                and public health policy.
               </p>
 
-              <p class="person-detail">
-                <strong>Research:</strong>
-                Hospitality, Health and Wellbeing Management
-              </p>
-
-              <p class="person-detail">
-                <strong>Email:</strong>
-                <a class="person-email"
-                   href="mailto:[EMAIL]">
-                  [Email address]
-                </a>
-              </p>
+              <a class="person-email"
+                 href="mailto:professor9@ukaes.org">
+                professor9@ukaes.org
+              </a>
 
             </div>
 
           </article>
 
+
+        </div>
+
+
+        <div class="people-disclaimer">
+
+          <p>
+            <strong>Academic Appointments:</strong>
+            The Research Professor profiles shown here
+            are a selected representation of UKAES
+            research personnel. Four of the listed
+            Research Professors serve in external
+            part-time capacities and also hold the
+            designation of Chief Expert Advisor.
+          </p>
 
         </div>
 
@@ -1062,34 +912,28 @@
 
 
 
-    <!-- =====================================
-         MEMBER DIRECTORY
-    ====================================== -->
+    <!-- MEMBER ENQUIRY -->
 
-    <section class="ukaes-section">
+    <section class="ukaes-section ukaes-section-soft">
 
       <div class="ukaes-container">
 
-        <div class="member-directory">
+        <div class="member-enquiry">
 
-          <div class="member-directory-content">
+          <div class="member-enquiry-content">
 
             <span class="ukaes-eyebrow">
-              UKAES Membership
+              Membership Enquiries
             </span>
 
             <h2>
-              Member Directory and Enquiries.
+              UKAES Member Directory
             </h2>
 
             <p>
-              UKAES welcomes enquiries regarding
-              membership, fellowship and academic
-              community participation.
-              A dedicated membership enquiry
-              channel can assist with information
-              about membership categories
-              and application procedures.
+              For enquiries about UKAES membership,
+              member information and directory access,
+              please contact the Academy.
             </p>
 
           </div>
@@ -1097,9 +941,9 @@
 
           <a
             href="contact.html"
-            class="ukaes-button">
+            class="member-enquiry-link">
 
-            Membership Enquiries
+            Member Enquiries →
 
           </a>
 
@@ -1111,44 +955,37 @@
 
 
 
-    <!-- =====================================
-         CLOSING
-    ====================================== -->
+    <!-- CLOSING -->
 
-    <section class="people-closing">
+    <section class="ukaes-highlight">
 
-      <div class="ukaes-container">
+      <div class="ukaes-container ukaes-highlight-inner">
 
-        <div class="people-closing-inner">
+        <div>
 
-          <div>
+          <span class="ukaes-eyebrow">
+            UK Academy of Epidemiology Sciences
+          </span>
 
-            <span class="ukaes-eyebrow">
-              The UKAES Community
-            </span>
+          <h2>
+            Together in Research and Education.
+          </h2>
 
-            <h2>
-              Collaboration Beyond Boundaries.
-            </h2>
-
-            <p>
-              Together, we contribute to
-              scientific knowledge and
-              academic development.
-            </p>
-
-          </div>
-
-
-          <a
-            href="contact.html"
-            class="ukaes-button ukaes-button-white">
-
-            Contact UKAES
-
-          </a>
+          <p>
+            Building an open and collaborative
+            academic community.
+          </p>
 
         </div>
+
+
+        <a
+          href="contact.html"
+          class="ukaes-button ukaes-button-white">
+
+          Contact UKAES
+
+        </a>
 
       </div>
 
@@ -1159,9 +996,7 @@
 
 
 
-  <!-- =====================================
-       FOOTER
-  ====================================== -->
+  <!-- FOOTER -->
 
   <footer class="ukaes-footer">
 
@@ -1169,20 +1004,9 @@
 
       <div class="ukaes-footer-grid">
 
-
         <div>
 
-          <div class="ukaes-footer-brand">
-            UKAES
-          </div>
-
-          <p>
-            UK Academy of Epidemiology Sciences
-          </p>
-
-          <p>
-            Advancing Science. Shaping the Future.
-          </p>
+          <div class="ukaes-footer-brand"></div>
 
         </div>
 
@@ -1192,12 +1016,10 @@
           <h3>Explore</h3>
 
           <ul>
-
             <li><a href="about.html">About</a></li>
             <li><a href="research.html">Research</a></li>
             <li><a href="education.html">Education</a></li>
             <li><a href="appointments.html">Appointments</a></li>
-
           </ul>
 
         </div>
@@ -1208,14 +1030,11 @@
           <h3>Information</h3>
 
           <ul>
-
             <li><a href="people.html">People</a></li>
             <li><a href="contact.html">Contact</a></li>
-
           </ul>
 
         </div>
-
 
       </div>
 
