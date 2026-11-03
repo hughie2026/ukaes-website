@@ -3,22 +3,276 @@
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta name="description"
-    content="Explore the research interests and academic, industrial and interdisciplinary collaboration opportunities of the UK Academy of Epidemiology Sciences.">
+    content="Explore the research areas and academic-industry collaboration opportunities of the UK Academy of Epidemiology Sciences.">
 
-  <meta name="theme-color" content="#C41230">
+  <meta name="theme-color" content="#B20D2E">
 
   <title>Research | UK Academy of Epidemiology Sciences</title>
 
   <link rel="stylesheet" href="css/styles.css">
 
   <script src="js/site.js" defer></script>
+
+
+  <!-- RESEARCH PAGE STYLES -->
+
+  <style>
+
+    /* INTRODUCTION */
+
+    .research-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 65px;
+    }
+
+    .research-intro-content {
+      max-width: 570px;
+    }
+
+    .research-intro-content h2 {
+      margin: 13px 0 20px;
+    }
+
+    .research-intro-content p {
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .research-image {
+      overflow: hidden;
+      background: #F0EFEC;
+    }
+
+    .research-image img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 5 / 4;
+      object-fit: cover;
+    }
+
+
+    /* RESEARCH AREAS */
+
+    .research-area-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .research-area-card {
+      padding: 29px;
+      background: #FFFFFF;
+      border: 1px solid #E7E5E2;
+      border-top: 3px solid #B20D2E;
+      transition: transform .25s ease,
+                  box-shadow .25s ease;
+    }
+
+    .research-area-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0,0,0,.06);
+    }
+
+    .research-area-number {
+      color: #B20D2E;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .12em;
+    }
+
+    .research-area-card h3 {
+      margin: 14px 0 12px;
+      font-size: 19px;
+      line-height: 1.4;
+    }
+
+    .research-area-card p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+
+    /* COLLABORATION INTRO */
+
+    .research-collaboration {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 65px;
+    }
+
+    .research-collaboration-content h2 {
+      margin: 13px 0 20px;
+    }
+
+    .research-collaboration-content p {
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+
+    /* PARTNERSHIP TYPES */
+
+    .research-partner-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .research-partner-card {
+      padding: 30px;
+      background: #FFFFFF;
+      border: 1px solid #E7E5E2;
+    }
+
+    .research-partner-card h3 {
+      margin: 12px 0;
+      font-size: 19px;
+    }
+
+    .research-partner-card p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .research-partner-number {
+      color: #B20D2E;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .12em;
+    }
+
+
+    /* COLLABORATION APPROACH */
+
+    .research-approach {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 65px;
+    }
+
+    .research-approach-content h2 {
+      margin: 13px 0 20px;
+    }
+
+    .research-approach-content p {
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .research-approach-list {
+      padding: 0;
+      margin: 22px 0 0;
+      list-style: none;
+    }
+
+    .research-approach-list li {
+      padding: 13px 0;
+      border-bottom: 1px solid #E7E5E2;
+      color: #454545;
+      font-size: 14px;
+    }
+
+    .research-approach-list li::before {
+      content: "—";
+      margin-right: 12px;
+      color: #B20D2E;
+      font-weight: 800;
+    }
+
+
+    /* CLOSING */
+
+    .research-closing {
+      padding: 65px 0;
+      background: linear-gradient(
+        120deg,
+        #85001D,
+        #B20D2E
+      );
+    }
+
+    .research-closing-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .research-closing h2 {
+      margin: 12px 0;
+      color: #FFFFFF;
+    }
+
+    .research-closing p {
+      margin: 0;
+      color: rgba(255,255,255,.85);
+    }
+
+    .research-closing .ukaes-eyebrow {
+      color: #F4C7D0;
+    }
+
+
+    /* RESPONSIVE */
+
+    @media (max-width: 850px) {
+
+      .research-intro,
+      .research-collaboration,
+      .research-approach {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .research-area-grid,
+      .research-partner-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .research-closing-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+    }
+
+
+    @media (max-width: 600px) {
+
+      .research-area-grid,
+      .research-partner-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .research-area-card,
+      .research-partner-card {
+        padding: 24px;
+      }
+
+      .research-closing {
+        padding: 50px 0;
+      }
+
+    }
+
+  </style>
+
 </head>
 
+
 <body>
+
 
   <!-- =====================================
        HEADER
@@ -29,12 +283,13 @@
     <div class="ukaes-container ukaes-header-inner">
 
       <a href="index.html" class="ukaes-brand">
+
         <img
           src="assets/ukaes-logo.jpg"
-          alt="UK Academy of Epidemiology Sciences"
-          width="440"
-          height="90">
+          alt="UK Academy of Epidemiology Sciences">
+
       </a>
+
 
       <button
         class="ukaes-mobile-toggle"
@@ -46,13 +301,14 @@
 
       </button>
 
+
       <nav
         class="ukaes-navigation"
         aria-label="Main navigation">
 
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
-        <a href="research.html">Research</a>
+        <a href="research.html" class="active">Research</a>
         <a href="education.html">Education</a>
         <a href="appointments.html">Appointments</a>
         <a href="people.html">People</a>
@@ -65,41 +321,42 @@
   </header>
 
 
-  <!-- =====================================
-       MAIN CONTENT
-  ====================================== -->
 
   <main>
 
 
-    <!-- HERO -->
+    <!-- =====================================
+         HERO
+         SOLID BURGUNDY
+    ====================================== -->
 
     <section class="ukaes-hero">
 
-      <img
-        class="ukaes-hero-image"
-        src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=2200&q=85"
-        alt="Scientific research and laboratory investigation"
-        fetchpriority="high">
-
-      <div class="ukaes-hero-overlay"></div>
-
-      <div class="ukaes-container ukaes-hero-content">
+      <div class="ukaes-hero-content">
 
         <span class="ukaes-eyebrow">
+
           Research at UKAES
+
         </span>
 
+
         <h1>
+
           Exploring Science.<br>
           Advancing Knowledge.
+
         </h1>
 
+
         <p>
-          Our research interests span epidemiological
-          sciences, public health, biomedical research
-          and interdisciplinary scientific inquiry.
+
+          Exploring scientific questions through
+          epidemiological research, interdisciplinary
+          inquiry and academic collaboration.
+
         </p>
+
 
         <a
           href="#research-areas"
@@ -114,159 +371,281 @@
     </section>
 
 
-    <!-- RESEARCH AREAS -->
+
+    <!-- =====================================
+         RESEARCH INTRODUCTION
+         IMAGE 01
+         UNIQUE TO RESEARCH PAGE
+    ====================================== -->
+
+    <section class="ukaes-section">
+
+      <div class="ukaes-container">
+
+        <div class="research-intro">
+
+
+          <div class="research-intro-content">
+
+            <span class="ukaes-eyebrow">
+
+              Research Interests
+
+            </span>
+
+
+            <h2>
+
+              A Broad Perspective
+              on Scientific Research.
+
+            </h2>
+
+
+            <p>
+
+              UKAES explores a range of research
+              interests across epidemiological,
+              biomedical, environmental and
+              interdisciplinary natural sciences.
+
+            </p>
+
+
+            <p>
+
+              Our research interests are intended
+              to encourage scientific exploration,
+              knowledge exchange and collaboration
+              across academic disciplines.
+
+            </p>
+
+          </div>
+
+
+
+          <div class="research-image">
+
+            <img
+              src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1200&q=85"
+              alt="Scientific laboratory research"
+              loading="lazy">
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         SIX RESEARCH AREAS
+    ====================================== -->
 
     <section
-      class="ukaes-section"
+      class="ukaes-section ukaes-section-soft"
       id="research-areas">
 
       <div class="ukaes-container">
 
+
         <div class="ukaes-section-heading">
 
           <span class="ukaes-eyebrow">
-            Research Interests
+
+            Research Scope
+
           </span>
 
+
           <h2>
+
             Our Research Areas
+
           </h2>
 
+
           <p>
-            A broad and evolving scope of scientific
-            exploration across interconnected
-            disciplines.
+
+            Six broad areas of scientific
+            exploration and academic interest.
+
           </p>
 
         </div>
 
 
-        <div class="ukaes-research-grid">
+
+        <div class="research-area-grid">
 
 
-          <!-- 01 -->
+          <!-- AREA 01 -->
 
-          <article class="ukaes-research-item">
+          <article class="research-area-card">
 
-            <span class="ukaes-eyebrow">
+            <span class="research-area-number">
               01
             </span>
 
+
             <h3>
+
               Epidemiology
+
             </h3>
 
+
             <p>
+
               Population health, disease patterns,
-              risk factors, disease prevention
-              and epidemiological methodologies.
+              risk factors and epidemiological
+              research methods.
+
             </p>
 
           </article>
 
 
-          <!-- 02 -->
 
-          <article class="ukaes-research-item">
+          <!-- AREA 02 -->
 
-            <span class="ukaes-eyebrow">
+          <article class="research-area-card">
+
+            <span class="research-area-number">
               02
             </span>
 
+
             <h3>
+
               Public Health Sciences
+
             </h3>
 
+
             <p>
-              Health determinants, preventive
-              strategies, health promotion
-              and population-level health research.
+
+              Health determinants, disease
+              prevention strategies and
+              population-level health research.
+
             </p>
 
           </article>
 
 
-          <!-- 03 -->
 
-          <article class="ukaes-research-item">
+          <!-- AREA 03 -->
 
-            <span class="ukaes-eyebrow">
+          <article class="research-area-card">
+
+            <span class="research-area-number">
               03
             </span>
 
+
             <h3>
+
               Biomedical Sciences
+
             </h3>
 
+
             <p>
-              Biological processes, human health,
-              disease mechanisms and biomedical
-              scientific investigation.
+
+              Scientific approaches to biological
+              processes, biomedical investigation
+              and human health.
+
             </p>
 
           </article>
 
 
-          <!-- 04 -->
 
-          <article class="ukaes-research-item">
+          <!-- AREA 04 -->
 
-            <span class="ukaes-eyebrow">
+          <article class="research-area-card">
+
+            <span class="research-area-number">
               04
             </span>
 
+
             <h3>
+
               Environmental Health Sciences
+
             </h3>
 
+
             <p>
+
               Environmental exposures,
-              health-related risks and interactions
-              between human populations
-              and their environments.
+              health risks and interactions
+              between people and their environments.
+
             </p>
 
           </article>
 
 
-          <!-- 05 -->
 
-          <article class="ukaes-research-item">
+          <!-- AREA 05 -->
 
-            <span class="ukaes-eyebrow">
+          <article class="research-area-card">
+
+            <span class="research-area-number">
               05
             </span>
 
+
             <h3>
+
               Biostatistics and Data Science
+
             </h3>
 
+
             <p>
-              Statistical methodologies,
-              quantitative analysis and
-              data-driven approaches to
+
+              Statistical methods, quantitative
+              analysis and data-driven
               scientific research.
+
             </p>
 
           </article>
 
 
-          <!-- 06 -->
 
-          <article class="ukaes-research-item">
+          <!-- AREA 06 -->
 
-            <span class="ukaes-eyebrow">
+          <article class="research-area-card">
+
+            <span class="research-area-number">
               06
             </span>
 
+
             <h3>
+
               Interdisciplinary Natural Sciences
+
             </h3>
 
+
             <p>
+
               Cross-disciplinary scientific
-              exploration and emerging areas
+              inquiry and emerging areas
               of natural science.
+
             </p>
 
           </article>
@@ -279,189 +658,216 @@
     </section>
 
 
-    <!-- RESEARCH COLLABORATION -->
 
-    <section class="ukaes-section ukaes-section-soft">
-
-      <div class="ukaes-container ukaes-editorial">
-
-        <div class="ukaes-editorial-content">
-
-          <span class="ukaes-eyebrow">
-            Research Collaboration
-          </span>
-
-          <h2>
-            Working Together.
-            Creating Opportunities.
-          </h2>
-
-          <p>
-            UKAES welcomes opportunities to collaborate
-            with universities, research institutions,
-            healthcare organisations and industry partners.
-          </p>
-
-          <p>
-            We seek to encourage interdisciplinary
-            research, knowledge exchange and meaningful
-            connections between academic and
-            industrial communities.
-          </p>
-
-          <a
-            href="contact.html"
-            class="ukaes-button">
-
-            Discuss Collaboration
-
-          </a>
-
-        </div>
-
-
-        <div class="ukaes-editorial-image">
-
-          <img
-            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1100&q=85"
-            alt="Professional and academic research collaboration"
-            loading="lazy">
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- PARTNERSHIP OPPORTUNITIES -->
+    <!-- =====================================
+         RESEARCH COLLABORATION
+         IMAGE 02
+         UNIQUE TO RESEARCH PAGE
+    ====================================== -->
 
     <section class="ukaes-section">
 
       <div class="ukaes-container">
 
+        <div class="research-collaboration">
+
+
+          <div class="research-image">
+
+            <img
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=85"
+              alt="Scientific data analysis and research"
+              loading="lazy">
+
+          </div>
+
+
+
+          <div class="research-collaboration-content">
+
+            <span class="ukaes-eyebrow">
+
+              Research Collaboration
+
+            </span>
+
+
+            <h2>
+
+              Connecting Academia
+              and Industry.
+
+            </h2>
+
+
+            <p>
+
+              UKAES welcomes opportunities to
+              collaborate with universities,
+              research institutions, healthcare
+              organisations and industry partners.
+
+            </p>
+
+
+            <p>
+
+              We aim to encourage knowledge exchange,
+              interdisciplinary research and
+              cooperation between academic and
+              industrial communities.
+
+            </p>
+
+
+            <a
+              href="contact.html"
+              class="ukaes-button">
+
+              Discuss Collaboration
+
+            </a>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         PARTNERSHIP OPPORTUNITIES
+    ====================================== -->
+
+    <section class="ukaes-section ukaes-section-soft">
+
+      <div class="ukaes-container">
+
+
         <div class="ukaes-section-heading">
 
           <span class="ukaes-eyebrow">
+
             Partnership Opportunities
+
           </span>
 
+
           <h2>
-            Areas of Collaboration
+
+            Working Together.
+
           </h2>
 
+
           <p>
-            Building connections between scientific
-            research, academic knowledge and
-            industrial expertise.
+
+            Potential collaboration opportunities
+            across academic, scientific and
+            industrial communities.
+
           </p>
 
         </div>
 
 
-        <div class="ukaes-feature-grid">
+
+        <div class="research-partner-grid">
 
 
           <!-- ACADEMIC PARTNERSHIPS -->
 
-          <article class="ukaes-feature">
+          <article class="research-partner-card">
 
-            <div class="ukaes-feature-image">
+            <span class="research-partner-number">
 
-              <img
-                src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=900&q=85"
-                alt="University academic institution"
-                loading="lazy">
+              01
 
-            </div>
+            </span>
 
-            <div class="ukaes-feature-content">
 
-              <span class="ukaes-eyebrow">
-                01
-              </span>
+            <h3>
 
-              <h3>
-                Academic Partnerships
-              </h3>
+              Academic Partnerships
 
-              <p>
-                Collaboration with universities,
-                academic institutions and
-                independent researchers.
-              </p>
+            </h3>
 
-            </div>
+
+            <p>
+
+              Engagement with universities,
+              academic institutions and
+              independent researchers through
+              knowledge exchange and
+              collaborative academic activities.
+
+            </p>
 
           </article>
+
 
 
           <!-- INDUSTRY PARTNERSHIPS -->
 
-          <article class="ukaes-feature">
+          <article class="research-partner-card">
 
-            <div class="ukaes-feature-image">
+            <span class="research-partner-number">
 
-              <img
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=900&q=85"
-                alt="Industrial scientific and technological research"
-                loading="lazy">
+              02
 
-            </div>
+            </span>
 
-            <div class="ukaes-feature-content">
 
-              <span class="ukaes-eyebrow">
-                02
-              </span>
+            <h3>
 
-              <h3>
-                Industry Partnerships
-              </h3>
+              Industry Partnerships
 
-              <p>
-                Connecting scientific research
-                with industrial expertise,
-                technological development
-                and practical applications.
-              </p>
+            </h3>
 
-            </div>
+
+            <p>
+
+              Connecting scientific research
+              with industry expertise, technical
+              capabilities and practical
+              applications.
+
+            </p>
 
           </article>
 
 
-          <!-- JOINT RESEARCH -->
 
-          <article class="ukaes-feature">
+          <!-- JOINT INITIATIVES -->
 
-            <div class="ukaes-feature-image">
+          <article class="research-partner-card">
 
-              <img
-                src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&fit=crop&w=900&q=85"
-                alt="Scientific laboratory and research collaboration"
-                loading="lazy">
+            <span class="research-partner-number">
 
-            </div>
+              03
 
-            <div class="ukaes-feature-content">
+            </span>
 
-              <span class="ukaes-eyebrow">
-                03
-              </span>
 
-              <h3>
-                Joint Research Initiatives
-              </h3>
+            <h3>
 
-              <p>
-                Exploring opportunities for
-                collaborative research,
-                knowledge exchange and
-                interdisciplinary initiatives.
-              </p>
+              Joint Research Initiatives
 
-            </div>
+            </h3>
+
+
+            <p>
+
+              Exploring opportunities for
+              joint research proposals,
+              interdisciplinary projects and
+              scientific knowledge exchange.
+
+            </p>
 
           </article>
 
@@ -473,77 +879,138 @@
     </section>
 
 
-    <!-- COLLABORATION PRINCIPLES -->
 
-    <section class="ukaes-highlight">
-
-      <div class="ukaes-container ukaes-highlight-inner">
-
-        <div>
-
-          <span
-            class="ukaes-eyebrow"
-            style="color:#F4C7D0">
-
-            Our Collaborative Vision
-
-          </span>
-
-          <h2>
-            Connecting Ideas.
-            Advancing Science.
-          </h2>
-
-          <p>
-            Bringing academic and industrial
-            communities together through
-            scientific collaboration.
-          </p>
-
-        </div>
-
-        <a
-          href="contact.html"
-          class="ukaes-button ukaes-button-white">
-
-          Partner With Us
-
-        </a>
-
-      </div>
-
-    </section>
-
-
-    <!-- CLOSING -->
+    <!-- =====================================
+         COLLABORATION APPROACH
+         IMAGE 03
+         UNIQUE TO RESEARCH PAGE
+    ====================================== -->
 
     <section class="ukaes-section">
 
-      <div class="ukaes-container ukaes-text-center">
+      <div class="ukaes-container">
 
-        <span class="ukaes-eyebrow">
-          Research at UKAES
-        </span>
+        <div class="research-approach">
 
-        <h2>
-          Let's Explore New Possibilities.
-        </h2>
 
-        <p class="ukaes-lead" style="margin-inline:auto">
+          <div class="research-approach-content">
 
-          We welcome enquiries about research,
-          academic partnerships and
-          industry collaboration.
+            <span class="ukaes-eyebrow">
 
-        </p>
+              Our Approach
 
-        <a
-          href="contact.html"
-          class="ukaes-button">
+            </span>
 
-          Contact UKAES
 
-        </a>
+            <h2>
+
+              From Ideas
+              to Collaboration.
+
+            </h2>
+
+
+            <p>
+
+              UKAES aims to develop research
+              partnerships through an open,
+              collaborative and academically
+              focused approach.
+
+            </p>
+
+
+            <ul class="research-approach-list">
+
+              <li>
+                Identification of shared research interests
+              </li>
+
+              <li>
+                Academic and industry engagement
+              </li>
+
+              <li>
+                Exploration of joint research opportunities
+              </li>
+
+              <li>
+                Knowledge exchange and academic cooperation
+              </li>
+
+            </ul>
+
+
+          </div>
+
+
+
+          <div class="research-image">
+
+            <img
+              src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=85"
+              alt="Professional research collaboration meeting"
+              loading="lazy">
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         CLOSING BANNER
+    ====================================== -->
+
+    <section class="research-closing">
+
+      <div class="ukaes-container">
+
+        <div class="research-closing-inner">
+
+
+          <div>
+
+            <span class="ukaes-eyebrow">
+
+              Collaborate with UKAES
+
+            </span>
+
+
+            <h2>
+
+              Let's Explore New Possibilities.
+
+            </h2>
+
+
+            <p>
+
+              We welcome enquiries about research
+              and academic partnerships.
+
+            </p>
+
+          </div>
+
+
+
+          <a
+            href="contact.html"
+            class="ukaes-button ukaes-button-white">
+
+            Contact Us
+
+          </a>
+
+
+        </div>
 
       </div>
 
@@ -551,6 +1018,7 @@
 
 
   </main>
+
 
 
   <!-- =====================================
@@ -561,23 +1029,34 @@
 
     <div class="ukaes-container">
 
+
       <div class="ukaes-footer-grid">
+
 
         <div>
 
           <div class="ukaes-footer-brand">
+
             UKAES
+
           </div>
 
-          <p>
-            UK Academy of Epidemiology Sciences
-          </p>
 
           <p>
+
+            UK Academy of Epidemiology Sciences
+
+          </p>
+
+
+          <p>
+
             Advancing Science. Shaping the Future.
+
           </p>
 
         </div>
+
 
 
         <div>
@@ -607,6 +1086,7 @@
         </div>
 
 
+
         <div>
 
           <h3>Information</h3>
@@ -625,25 +1105,34 @@
 
         </div>
 
+
       </div>
+
 
 
       <div class="ukaes-footer-bottom">
 
         <span>
+
           © <span class="ukaes-current-year"></span>
           UK Academy of Epidemiology Sciences.
+
         </span>
 
+
         <span>
+
           All Rights Reserved.
+
         </span>
 
       </div>
 
+
     </div>
 
   </footer>
+
 
 
   <!-- BACK TO TOP -->
