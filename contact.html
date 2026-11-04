@@ -9,264 +9,263 @@
   <meta name="description"
     content="Contact the UK Academy of Epidemiology Sciences for general enquiries, research, education and academic appointments.">
 
+  <meta name="theme-color" content="#85001D">
+
   <title>Contact | UK Academy of Epidemiology Sciences</title>
 
-  <!-- UKAES EXISTING GLOBAL DESIGN -->
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/site.js" defer></script>
 
-  <!-- Contact-specific layout adjustments only -->
   <style>
 
-    /* =========================================
+    /* =====================================
        CONTACT PAGE
-       Uses the existing UKAES design system
-    ========================================= */
+       Following the original ABOUT design
+    ===================================== */
 
-    .contact-page {
-      background: var(--white);
-    }
-
-    .contact-page .contact-section {
-      padding-top: 75px;
-      padding-bottom: 85px;
-    }
-
-    .contact-page .contact-intro {
+    .contact-intro {
       max-width: 850px;
-      margin: 0 0 48px;
-      text-align: left;
+      margin-bottom: 45px;
     }
 
-    .contact-page .contact-intro h2 {
-      margin: 15px 0;
-      font-size: clamp(30px, 4vw, 43px);
+    .contact-intro h2 {
+      margin: 12px 0 20px;
+      font-size: clamp(28px, 3vw, 40px);
+      line-height: 1.25;
     }
 
-    .contact-page .contact-intro p {
-      max-width: 760px;
-      color: var(--muted);
-      font-size: 16px;
-      line-height: 1.9;
+    .contact-intro p {
+      color: #666;
+      font-size: 15px;
+      line-height: 1.95;
+      margin-bottom: 16px;
     }
 
-    /* General contact panel */
 
-    .contact-page .contact-panel {
+    /* GENERAL ENQUIRIES */
+
+    .contact-general {
+      position: relative;
+      background: #F5F4F1;
+      padding: 45px 45px 45px 50px;
       margin-bottom: 55px;
-      padding: 42px 46px;
+      border-left: 4px solid #85001D;
     }
 
-    .contact-page .general-contact-label {
+    .contact-general-inner {
+      max-width: 850px;
+    }
+
+    .contact-general h2 {
+      color: #242424;
+      font-size: clamp(24px, 3vw, 32px);
+      line-height: 1.35;
+      margin: 12px 0;
+    }
+
+    .contact-general p {
+      color: #666;
+      font-size: 14px;
+      line-height: 1.9;
+      margin-bottom: 20px;
+      max-width: 750px;
+    }
+
+    .contact-general-email-label {
       display: block;
-      margin-bottom: 12px;
-      color: var(--gold);
-      font-size: 11px;
+      color: #999;
+      font-size: 10px;
       font-weight: 800;
-      letter-spacing: .15em;
+      letter-spacing: .12em;
+      margin-bottom: 7px;
       text-transform: uppercase;
     }
 
-    .contact-page .contact-panel h3 {
-      margin: 0 0 12px;
-    }
-
-    .contact-page .contact-panel p {
-      max-width: 720px;
-      line-height: 1.85;
-    }
-
-    .contact-page .general-email {
+    .contact-general-email {
       display: inline-block;
-      margin-top: 12px;
-      color: var(--gold);
+      color: #85001D;
       font-size: 19px;
       font-weight: 800;
-      overflow-wrap: anywhere;
+      line-height: 1.6;
       text-decoration: none;
+      overflow-wrap: anywhere;
     }
 
-    .contact-page .general-email:hover {
-      color: white;
+    .contact-general-email:hover {
       text-decoration: underline;
     }
 
-    /* Department heading */
 
-    .contact-page .department-heading {
-      margin-bottom: 30px;
+    /* DEPARTMENT INTRODUCTION */
+
+    .contact-departments-intro {
+      max-width: 800px;
+      margin-bottom: 35px;
     }
 
-    .contact-page .department-heading h2 {
+    .contact-departments-intro h2 {
       margin: 12px 0;
-      font-size: clamp(29px, 3.5vw, 40px);
+      font-size: clamp(28px, 3vw, 38px);
     }
 
-    .contact-page .department-heading p {
-      max-width: 720px;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.85;
+    .contact-departments-intro p {
+      color: #666;
+      font-size: 14px;
+      line-height: 1.9;
     }
 
-    /* Department cards */
 
-    .contact-page .contact-grid {
+    /* DEPARTMENT GRID */
+
+    .contact-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 26px;
+      gap: 22px;
     }
 
-    .contact-page .contact-card {
+
+    /* DEPARTMENT CARD */
+
+    .contact-card {
       display: flex;
       flex-direction: column;
       min-width: 0;
       min-height: 245px;
-      padding: 32px;
 
-      background: white;
-      border: 1px solid var(--border);
-      border-top: 5px solid var(--red);
+      padding: 30px 30px 25px;
 
-      transition: var(--transition);
+      background: #FFFFFF;
+      border: 1px solid #E8E5E2;
+      border-top: 3px solid #85001D;
+
+      transition:
+        transform .25s ease,
+        box-shadow .25s ease;
     }
 
-    .contact-page .contact-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow);
+    .contact-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0,0,0,.06);
     }
 
-    .contact-page .contact-number {
+    .contact-card-number {
       display: block;
-      margin-bottom: 13px;
-      color: var(--red);
+      color: #B20D2E;
       font-size: 11px;
       font-weight: 800;
-      letter-spacing: .15em;
+      letter-spacing: .12em;
+      margin-bottom: 19px;
     }
 
-    .contact-page .contact-card h3 {
-      margin: 0 0 13px;
-      color: var(--navy);
-      font-size: 24px;
-      line-height: 1.35;
+    .contact-card h3 {
+      color: #242424;
+      font-size: 21px;
+      line-height: 1.4;
+      margin: 0 0 12px;
     }
 
-    .contact-page .contact-card p {
-      margin-bottom: 24px;
-      color: var(--muted);
-      font-size: 14px;
+    .contact-card p {
+      color: #666;
+      font-size: 13px;
       line-height: 1.9;
+      margin: 0 0 22px;
     }
 
-    /* Email separated from description */
 
-    .contact-page .contact-email-block {
+    /* EMAIL AREA */
+
+    .contact-card-email-area {
       margin-top: auto;
-      padding-top: 17px;
-      border-top: 1px solid var(--border);
+      padding-top: 16px;
+      border-top: 1px solid #E8E5E2;
       min-width: 0;
     }
 
-    .contact-page .contact-email-label {
+    .contact-card-email-label {
       display: block;
-      margin-bottom: 7px;
-      color: var(--muted);
+      color: #999;
       font-size: 10px;
       font-weight: 800;
-      letter-spacing: .13em;
+      letter-spacing: .12em;
+      margin-bottom: 6px;
       text-transform: uppercase;
     }
 
-    .contact-page .contact-card a {
+    .contact-card-email {
       display: inline-block;
       max-width: 100%;
-      margin-top: 0;
-      color: var(--red);
-      font-size: 15px;
-      font-weight: 800;
-      line-height: 1.7;
+      color: #85001D;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.8;
       text-decoration: none;
       overflow-wrap: anywhere;
-      word-break: normal;
     }
 
-    .contact-page .contact-card a:hover {
-      color: var(--red-dark);
+    .contact-card-email:hover {
       text-decoration: underline;
     }
 
-    /* Closing information */
 
-    .contact-page .contact-note {
-      margin-top: 38px;
-      padding: 24px 28px;
-      background: var(--cream);
-      border-left: 4px solid var(--red);
+    /* ADDITIONAL INFORMATION */
+
+    .contact-note {
+      margin-top: 40px;
+      padding: 25px 30px;
+      background: #F5F4F1;
+      border-left: 3px solid #85001D;
     }
 
-    .contact-page .contact-note p {
+    .contact-note h3 {
+      color: #242424;
+      font-size: 17px;
+      margin: 0 0 9px;
+    }
+
+    .contact-note p {
+      color: #666;
+      font-size: 13px;
+      line-height: 1.9;
       margin: 0;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.85;
     }
 
-    /* Responsive */
 
-    @media (max-width: 850px) {
+    /* RESPONSIVE */
 
-      .contact-page .contact-section {
-        padding-top: 60px;
-        padding-bottom: 65px;
-      }
+    @media (max-width: 800px) {
 
-      .contact-page .contact-panel {
-        padding: 34px;
-      }
-
-      .contact-page .contact-grid {
-        gap: 20px;
-      }
-
-      .contact-page .contact-card {
-        padding: 27px;
-      }
-
-    }
-
-    @media (max-width: 600px) {
-
-      .contact-page .contact-section {
-        padding-top: 48px;
-        padding-bottom: 55px;
-      }
-
-      .contact-page .contact-intro {
-        margin-bottom: 32px;
-      }
-
-      .contact-page .contact-panel {
-        padding: 28px 24px;
-        margin-bottom: 42px;
-      }
-
-      .contact-page .contact-grid {
+      .contact-grid {
         grid-template-columns: 1fr;
-        gap: 18px;
       }
 
-      .contact-page .contact-card {
-        min-height: 0;
-        padding: 27px 24px;
+      .contact-card {
+        min-height: auto;
       }
 
-      .contact-page .contact-card h3 {
-        font-size: 22px;
+      .contact-general {
+        padding: 35px 28px;
+        margin-bottom: 40px;
       }
 
-      .contact-page .contact-note {
-        padding: 21px;
+      .contact-note {
+        padding: 22px;
+      }
+
+    }
+
+
+    @media (max-width: 500px) {
+
+      .contact-card {
+        padding: 25px 22px;
+      }
+
+      .contact-general h2 {
+        font-size: 25px;
+      }
+
+      .contact-card h3 {
+        font-size: 19px;
       }
 
     }
@@ -278,15 +277,17 @@
 
 <body>
 
-  <!-- =========================================
-       HEADER - SAME AS OTHER UKAES PAGES
-  ========================================== -->
 
-  <header class="site-header">
+  <!-- =====================================
+       HEADER
+       Same as ABOUT page
+  ====================================== -->
 
-    <div class="container header-inner">
+  <header class="ukaes-header">
 
-      <a href="index.html" class="brand">
+    <div class="ukaes-container ukaes-header-inner">
+
+      <a href="index.html" class="ukaes-brand">
 
         <img
           src="assets/ukaes-logo.jpg"
@@ -294,35 +295,20 @@
 
       </a>
 
-      <span class="header-tagline">
-        Advancing Science.<br>
-        Shaping the Future.
-      </span>
-
-    </div>
-
-  </header>
-
-
-  <!-- =========================================
-       NAVIGATION - SAME AS OTHER PAGES
-  ========================================== -->
-
-  <nav class="nav-wrap">
-
-    <div class="container nav-inner">
 
       <button
-        class="menu-toggle"
+        class="ukaes-mobile-toggle"
         type="button"
-        aria-expanded="false"
-        aria-label="Toggle navigation">
+        aria-label="Open navigation"
+        aria-expanded="false">
 
         Menu
 
       </button>
 
-      <div class="nav-links">
+
+      <nav class="ukaes-navigation"
+           aria-label="Main navigation">
 
         <a href="index.html">Home</a>
 
@@ -340,42 +326,38 @@
            class="active"
            aria-current="page">Contact</a>
 
-      </div>
-
-      <a href="mailto:info@ukaes.org"
-         class="nav-contact">
-
-        Contact UKAES →
-
-      </a>
+      </nav>
 
     </div>
 
-  </nav>
+  </header>
 
 
-  <main class="contact-page">
 
-    <!-- =======================================
-         PAGE HERO - SAME GLOBAL HERO STYLE
-    ======================================== -->
+  <main>
 
-    <section class="page-hero">
 
-      <div class="container page-hero-content">
+    <!-- =====================================
+         HERO
+         Same as ABOUT page
+    ====================================== -->
 
-        <span class="eyebrow">
-          UK Academy of Epidemiology Sciences
+    <section class="ukaes-page-intro">
+
+      <div class="ukaes-container">
+
+        <span class="ukaes-eyebrow">
+          Contact the Academy
         </span>
 
         <h1>
-          Contact <span>UKAES.</span>
+          We Would Be Pleased<br>
+          to Hear from You.
         </h1>
 
         <p>
-          We would be pleased to hear from you.
-          Connect with our Academy for research,
-          education, academic appointments
+          Connect with the UK Academy of Epidemiology Sciences
+          for research, education, academic appointments
           and institutional collaboration.
         </p>
 
@@ -384,32 +366,35 @@
     </section>
 
 
-    <!-- =======================================
-         CONTACT CONTENT
-    ======================================== -->
 
-    <section class="section contact-section">
+    <!-- =====================================
+         CONTACT INTRODUCTION
+    ====================================== -->
 
-      <div class="container">
+    <section class="ukaes-section">
 
-
-        <!-- INTRODUCTION -->
+      <div class="ukaes-container">
 
         <div class="contact-intro">
 
-          <span class="eyebrow">
+          <span class="ukaes-eyebrow">
             Get In Touch
           </span>
 
           <h2>
-            We Would Be Pleased to Hear from You.
+            Contact UKAES
           </h2>
 
           <p>
-            For general enquiries and information about
-            the UK Academy of Epidemiology Sciences,
-            please contact us using the appropriate
-            email address below.
+            The UK Academy of Epidemiology Sciences welcomes
+            enquiries from researchers, academic professionals,
+            educational institutions and prospective members.
+          </p>
+
+          <p>
+            Please select the appropriate contact channel
+            below so that your enquiry can be directed
+            to the relevant area of the Academy.
           </p>
 
         </div>
@@ -417,54 +402,70 @@
 
         <!-- GENERAL ENQUIRIES -->
 
-        <div class="contact-panel">
+        <div class="contact-general">
 
-          <span class="general-contact-label">
-            General Enquiries
-          </span>
+          <div class="contact-general-inner">
 
-          <h3>
-            UK Academy of Epidemiology Sciences
-          </h3>
+            <span class="ukaes-eyebrow">
+              General Enquiries
+            </span>
 
-          <p>
-            For general information, institutional enquiries
-            and other matters concerning the Academy,
-            please contact our central enquiries address.
-          </p>
+            <h2>
+              UK Academy of Epidemiology Sciences
+            </h2>
 
-          <hr>
+            <p>
+              For general information, institutional enquiries
+              and other matters concerning the Academy,
+              please contact our central enquiries address.
+            </p>
 
-          <span class="contact-email-label">
-            General Contact
-          </span>
+            <span class="contact-general-email-label">
+              General Contact
+            </span>
 
-          <a
-            href="mailto:info@ukaes.org"
-            class="general-email">
+            <a
+              href="mailto:info@ukaes.org"
+              class="contact-general-email">
 
-            info@ukaes.org
+              info@ukaes.org
 
-          </a>
+            </a>
+
+          </div>
 
         </div>
 
 
-        <!-- DEPARTMENT CONTACTS -->
+      </div>
 
-        <div class="department-heading">
+    </section>
 
-          <span class="eyebrow">
+
+
+    <!-- =====================================
+         DEPARTMENT CONTACTS
+    ====================================== -->
+
+    <section class="ukaes-section about-focus">
+
+      <div class="ukaes-container">
+
+        <div class="contact-departments-intro">
+
+          <span class="ukaes-eyebrow">
             Department Contacts
           </span>
 
           <h2>
-            Contact the Right Department
+            How Can We Help You?
           </h2>
 
           <p>
             For specific enquiries, please contact
             the relevant academic or administrative area.
+            Each department can assist with its
+            respective activities and services.
           </p>
 
         </div>
@@ -477,9 +478,9 @@
 
           <article class="contact-card">
 
-            <span class="contact-number">
+            <div class="contact-card-number">
               01 / RESEARCH
-            </span>
+            </div>
 
             <h3>
               Research Enquiries
@@ -487,17 +488,22 @@
 
             <p>
               Research collaboration, academic partnerships,
-              scientific enquiries and research-related matters.
+              scientific enquiries and interdisciplinary
+              research-related matters.
             </p>
 
-            <div class="contact-email-block">
+            <div class="contact-card-email-area">
 
-              <span class="contact-email-label">
+              <span class="contact-card-email-label">
                 Email
               </span>
 
-              <a href="mailto:research@ukaes.org">
+              <a
+                href="mailto:research@ukaes.org"
+                class="contact-card-email">
+
                 research@ukaes.org
+
               </a>
 
             </div>
@@ -505,13 +511,14 @@
           </article>
 
 
+
           <!-- 02 EDUCATION -->
 
           <article class="contact-card">
 
-            <span class="contact-number">
+            <div class="contact-card-number">
               02 / EDUCATION
-            </span>
+            </div>
 
             <h3>
               Education Enquiries
@@ -519,17 +526,22 @@
 
             <p>
               Diploma programmes, academic learning,
-              professional development and educational collaboration.
+              professional development and educational
+              collaboration.
             </p>
 
-            <div class="contact-email-block">
+            <div class="contact-card-email-area">
 
-              <span class="contact-email-label">
+              <span class="contact-card-email-label">
                 Email
               </span>
 
-              <a href="mailto:education@ukaes.org">
+              <a
+                href="mailto:education@ukaes.org"
+                class="contact-card-email">
+
                 education@ukaes.org
+
               </a>
 
             </div>
@@ -537,13 +549,14 @@
           </article>
 
 
+
           <!-- 03 ACADEMIC APPOINTMENTS -->
 
           <article class="contact-card">
 
-            <span class="contact-number">
+            <div class="contact-card-number">
               03 / ACADEMIC APPOINTMENTS
-            </span>
+            </div>
 
             <h3>
               Membership & Fellowship
@@ -551,17 +564,22 @@
 
             <p>
               Membership applications, Fellowship enquiries,
-              academic appointments and professional recognition.
+              academic appointments and professional
+              recognition.
             </p>
 
-            <div class="contact-email-block">
+            <div class="contact-card-email-area">
 
-              <span class="contact-email-label">
+              <span class="contact-card-email-label">
                 Email
               </span>
 
-              <a href="mailto:appointments@ukaes.org">
+              <a
+                href="mailto:appointments@ukaes.org"
+                class="contact-card-email">
+
                 appointments@ukaes.org
+
               </a>
 
             </div>
@@ -569,13 +587,14 @@
           </article>
 
 
+
           <!-- 04 INSTITUTIONAL COLLABORATION -->
 
           <article class="contact-card">
 
-            <span class="contact-number">
+            <div class="contact-card-number">
               04 / INSTITUTIONAL COLLABORATION
-            </span>
+            </div>
 
             <h3>
               Partnership Enquiries
@@ -583,17 +602,22 @@
 
             <p>
               Academic partnerships, institutional cooperation,
-              external collaboration and international engagement.
+              external collaboration and international
+              engagement.
             </p>
 
-            <div class="contact-email-block">
+            <div class="contact-card-email-area">
 
-              <span class="contact-email-label">
+              <span class="contact-card-email-label">
                 Email
               </span>
 
-              <a href="mailto:info@ukaes.org">
+              <a
+                href="mailto:info@ukaes.org"
+                class="contact-card-email">
+
                 info@ukaes.org
+
               </a>
 
             </div>
@@ -607,6 +631,10 @@
         <!-- ADDITIONAL INFORMATION -->
 
         <div class="contact-note">
+
+          <h3>
+            General Information
+          </h3>
 
           <p>
             For enquiries concerning more than one department,
@@ -622,40 +650,69 @@
 
     </section>
 
-  </main>
 
 
-  <!-- =========================================
-       FOOTER - SAME AS OTHER UKAES PAGES
-  ========================================== -->
+    <!-- =====================================
+         CLOSING SECTION
+         Same as ABOUT page
+    ====================================== -->
 
-  <footer class="site-footer">
+    <section class="ukaes-highlight">
 
-    <div class="container">
-
-      <div class="footer-grid">
-
-
-        <!-- BRAND -->
+      <div class="ukaes-container ukaes-highlight-inner">
 
         <div>
 
-          <div class="footer-brand">
-            UKAES
-          </div>
-
-          <p>
+          <span class="ukaes-eyebrow">
             UK Academy of Epidemiology Sciences
-          </p>
+          </span>
+
+          <h2>
+            Explore the Future with UKAES.
+          </h2>
 
           <p>
-            Advancing Science. Shaping the Future.
+            Research. Education. Scientific Discovery.
           </p>
 
         </div>
 
 
-        <!-- EXPLORE -->
+        <a
+          href="mailto:info@ukaes.org"
+          class="ukaes-button ukaes-button-white">
+
+          Contact UKAES
+
+        </a>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =====================================
+       FOOTER
+       Same as ABOUT page
+  ====================================== -->
+
+  <footer class="ukaes-footer">
+
+    <div class="ukaes-container">
+
+      <div class="ukaes-footer-grid">
+
+
+        <div>
+
+          <div class="ukaes-footer-brand"></div>
+
+        </div>
+
 
         <div>
 
@@ -684,8 +741,6 @@
         </div>
 
 
-        <!-- INFORMATION -->
-
         <div>
 
           <h3>Information</h3>
@@ -708,7 +763,7 @@
       </div>
 
 
-      <div class="footer-bottom">
+      <div class="ukaes-footer-bottom">
 
         <span>
           © <span class="ukaes-current-year">2026</span>
@@ -726,9 +781,19 @@
   </footer>
 
 
-  <!-- =========================================
-       FOOTER YEAR
-  ========================================== -->
+
+  <!-- BACK TO TOP -->
+
+  <button
+    class="ukaes-back-to-top"
+    type="button"
+    aria-label="Back to top"
+    hidden>
+
+    ↑
+
+  </button>
+
 
   <script>
 
@@ -742,6 +807,6 @@
 
   </script>
 
-</body>
 
+</body>
 </html>
