@@ -19,74 +19,106 @@
   <style>
 
     /* =====================================
-       CONTACT PAGE
+       UKAES CONTACT PAGE
        Following the original ABOUT design
     ===================================== */
 
+    .contact-main {
+      background: #FFFFFF;
+    }
+
+    .contact-content {
+      padding: 65px 0 75px;
+    }
+
+    /* INTRODUCTION */
+
     .contact-intro {
+      width: 100%;
       max-width: 850px;
-      margin-bottom: 45px;
+      margin: 0 0 38px;
+      text-align: left !important;
     }
 
     .contact-intro h2 {
-      margin: 12px 0 20px;
+      margin: 12px 0 18px;
+      color: #242424;
       font-size: clamp(28px, 3vw, 40px);
-      line-height: 1.25;
+      line-height: 1.3;
+      text-align: left !important;
     }
 
     .contact-intro p {
-      color: #666;
+      margin: 0 0 13px;
+      color: #666666;
       font-size: 15px;
       line-height: 1.95;
-      margin-bottom: 16px;
+      text-align: left !important;
     }
 
-
-    /* GENERAL ENQUIRIES */
+    /* =====================================
+       GENERAL ENQUIRIES
+    ===================================== */
 
     .contact-general {
-      position: relative;
+      width: 100%;
+      margin: 0 0 48px;
+      padding: 35px 38px;
+
       background: #F5F4F1;
-      padding: 45px 45px 45px 50px;
-      margin-bottom: 55px;
       border-left: 4px solid #85001D;
+
+      text-align: left !important;
+      box-sizing: border-box;
     }
 
     .contact-general-inner {
-      max-width: 850px;
+      width: 100%;
+      max-width: none;
+      margin: 0;
+      text-align: left !important;
     }
 
     .contact-general h2 {
+      margin: 11px 0 12px;
       color: #242424;
-      font-size: clamp(24px, 3vw, 32px);
-      line-height: 1.35;
-      margin: 12px 0;
+      font-size: clamp(23px, 2.5vw, 30px);
+      line-height: 1.4;
+      text-align: left !important;
     }
 
     .contact-general p {
-      color: #666;
+      max-width: 850px;
+      margin: 0 0 20px;
+      color: #666666;
       font-size: 14px;
       line-height: 1.9;
-      margin-bottom: 20px;
-      max-width: 750px;
+      text-align: left !important;
     }
 
-    .contact-general-email-label {
+    .contact-general-email-area {
+      padding-top: 16px;
+      border-top: 1px solid #E4DFDB;
+      text-align: left !important;
+    }
+
+    .contact-email-label {
       display: block;
-      color: #999;
+      margin-bottom: 6px;
+
+      color: #999999;
       font-size: 10px;
       font-weight: 800;
       letter-spacing: .12em;
-      margin-bottom: 7px;
       text-transform: uppercase;
     }
 
     .contact-general-email {
       display: inline-block;
       color: #85001D;
-      font-size: 19px;
+      font-size: 17px;
       font-weight: 800;
-      line-height: 1.6;
+      line-height: 1.7;
       text-decoration: none;
       overflow-wrap: anywhere;
     }
@@ -95,48 +127,67 @@
       text-decoration: underline;
     }
 
-
-    /* DEPARTMENT INTRODUCTION */
+    /* =====================================
+       DEPARTMENT HEADING
+    ===================================== */
 
     .contact-departments-intro {
-      max-width: 800px;
-      margin-bottom: 35px;
+      width: 100%;
+      max-width: 850px;
+      margin: 0 0 27px;
+      text-align: left !important;
     }
 
     .contact-departments-intro h2 {
       margin: 12px 0;
+      color: #242424;
       font-size: clamp(28px, 3vw, 38px);
+      line-height: 1.3;
+      text-align: left !important;
     }
 
     .contact-departments-intro p {
-      color: #666;
+      margin: 0;
+      color: #666666;
       font-size: 14px;
       line-height: 1.9;
+      text-align: left !important;
     }
 
-
-    /* DEPARTMENT GRID */
+    /* =====================================
+       DEPARTMENT GRID
+    ===================================== */
 
     .contact-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 22px;
+
+      width: 100%;
+      margin: 0;
+      padding: 0;
+
+      align-items: stretch;
     }
 
-
-    /* DEPARTMENT CARD */
+    /* =====================================
+       DEPARTMENT CARDS
+    ===================================== */
 
     .contact-card {
       display: flex;
       flex-direction: column;
-      min-width: 0;
-      min-height: 245px;
 
-      padding: 30px 30px 25px;
+      min-width: 0;
+      min-height: 235px;
+      padding: 27px 28px 24px;
 
       background: #FFFFFF;
       border: 1px solid #E8E5E2;
       border-top: 3px solid #85001D;
+
+      box-sizing: border-box;
+      text-align: left !important;
 
       transition:
         transform .25s ease,
@@ -145,127 +196,160 @@
 
     .contact-card:hover {
       transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(0,0,0,.06);
+      box-shadow: 0 9px 24px rgba(0,0,0,.06);
     }
 
     .contact-card-number {
       display: block;
+      margin-bottom: 15px;
+
       color: #B20D2E;
       font-size: 11px;
       font-weight: 800;
       letter-spacing: .12em;
-      margin-bottom: 19px;
+      line-height: 1.6;
+      text-transform: uppercase;
     }
 
     .contact-card h3 {
+      margin: 0 0 11px;
       color: #242424;
       font-size: 21px;
       line-height: 1.4;
-      margin: 0 0 12px;
+      text-align: left !important;
     }
 
     .contact-card p {
-      color: #666;
+      margin: 0 0 20px;
+      color: #666666;
       font-size: 13px;
       line-height: 1.9;
-      margin: 0 0 22px;
+      text-align: left !important;
     }
 
-
-    /* EMAIL AREA */
+    /* EMAIL ALIGNMENT */
 
     .contact-card-email-area {
-      margin-top: auto;
-      padding-top: 16px;
-      border-top: 1px solid #E8E5E2;
+      width: 100%;
       min-width: 0;
-    }
+      margin-top: auto;
+      padding-top: 15px;
 
-    .contact-card-email-label {
-      display: block;
-      color: #999;
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: .12em;
-      margin-bottom: 6px;
-      text-transform: uppercase;
+      border-top: 1px solid #E8E5E2;
+      box-sizing: border-box;
+      text-align: left !important;
     }
 
     .contact-card-email {
       display: inline-block;
       max-width: 100%;
+      margin: 0;
+
       color: #85001D;
       font-size: 14px;
       font-weight: 700;
       line-height: 1.8;
       text-decoration: none;
+
       overflow-wrap: anywhere;
+      word-break: normal;
     }
 
     .contact-card-email:hover {
       text-decoration: underline;
     }
 
-
-    /* ADDITIONAL INFORMATION */
+    /* =====================================
+       CONTACT NOTE
+    ===================================== */
 
     .contact-note {
-      margin-top: 40px;
-      padding: 25px 30px;
+      margin-top: 30px;
+      padding: 22px 26px;
+
       background: #F5F4F1;
       border-left: 3px solid #85001D;
+
+      text-align: left !important;
     }
 
     .contact-note h3 {
+      margin: 0 0 8px;
       color: #242424;
       font-size: 17px;
-      margin: 0 0 9px;
+      text-align: left !important;
     }
 
     .contact-note p {
-      color: #666;
+      margin: 0;
+      color: #666666;
       font-size: 13px;
       line-height: 1.9;
-      margin: 0;
+      text-align: left !important;
     }
 
-
-    /* RESPONSIVE */
+    /* =====================================
+       RESPONSIVE
+    ===================================== */
 
     @media (max-width: 800px) {
 
+      .contact-content {
+        padding: 50px 0 60px;
+      }
+
+      .contact-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .contact-card {
+        padding: 23px 20px;
+        min-height: 245px;
+      }
+
+      .contact-general {
+        padding: 30px 26px;
+        margin-bottom: 40px;
+      }
+
+    }
+
+    @media (max-width: 600px) {
+
+      .contact-content {
+        padding: 42px 0 55px;
+      }
+
+      .contact-intro {
+        margin-bottom: 28px;
+      }
+
       .contact-grid {
         grid-template-columns: 1fr;
+        gap: 17px;
       }
 
       .contact-card {
         min-height: auto;
+        padding: 25px 23px;
       }
 
       .contact-general {
-        padding: 35px 28px;
-        margin-bottom: 40px;
-      }
-
-      .contact-note {
-        padding: 22px;
-      }
-
-    }
-
-
-    @media (max-width: 500px) {
-
-      .contact-card {
-        padding: 25px 22px;
+        padding: 26px 22px;
+        margin-bottom: 38px;
       }
 
       .contact-general h2 {
-        font-size: 25px;
+        font-size: 23px;
       }
 
-      .contact-card h3 {
-        font-size: 19px;
+      .contact-departments-intro {
+        margin-bottom: 23px;
+      }
+
+      .contact-note {
+        padding: 20px;
       }
 
     }
@@ -295,7 +379,6 @@
 
       </a>
 
-
       <button
         class="ukaes-mobile-toggle"
         type="button"
@@ -305,7 +388,6 @@
         Menu
 
       </button>
-
 
       <nav class="ukaes-navigation"
            aria-label="Main navigation">
@@ -368,12 +450,16 @@
 
 
     <!-- =====================================
-         CONTACT INTRODUCTION
+         CONTACT CONTENT
+         ONE CONTAINER FOR ALL SECTIONS
     ====================================== -->
 
-    <section class="ukaes-section">
+    <section class="ukaes-section contact-main">
 
-      <div class="ukaes-container">
+      <div class="ukaes-container contact-content">
+
+
+        <!-- INTRODUCTION -->
 
         <div class="contact-intro">
 
@@ -392,9 +478,9 @@
           </p>
 
           <p>
-            Please select the appropriate contact channel
-            below so that your enquiry can be directed
-            to the relevant area of the Academy.
+            Please select the appropriate contact channel below
+            so that your enquiry can be directed to the relevant
+            area of the Academy.
           </p>
 
         </div>
@@ -420,36 +506,28 @@
               please contact our central enquiries address.
             </p>
 
-            <span class="contact-general-email-label">
-              General Contact
-            </span>
+            <div class="contact-general-email-area">
 
-            <a
-              href="mailto:info@ukaes.org"
-              class="contact-general-email">
+              <span class="contact-email-label">
+                General Contact
+              </span>
 
-              info@ukaes.org
+              <a
+                href="mailto:info@ukaes.org"
+                class="contact-general-email">
 
-            </a>
+                info@ukaes.org
+
+              </a>
+
+            </div>
 
           </div>
 
         </div>
 
 
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================
-         DEPARTMENT CONTACTS
-    ====================================== -->
-
-    <section class="ukaes-section about-focus">
-
-      <div class="ukaes-container">
+        <!-- DEPARTMENT CONTACTS -->
 
         <div class="contact-departments-intro">
 
@@ -462,14 +540,14 @@
           </h2>
 
           <p>
-            For specific enquiries, please contact
-            the relevant academic or administrative area.
-            Each department can assist with its
-            respective activities and services.
+            For specific enquiries, please contact the relevant
+            academic or administrative area.
           </p>
 
         </div>
 
+
+        <!-- CONTACT GRID -->
 
         <div class="contact-grid">
 
@@ -478,9 +556,9 @@
 
           <article class="contact-card">
 
-            <div class="contact-card-number">
+            <span class="contact-card-number">
               01 / RESEARCH
-            </div>
+            </span>
 
             <h3>
               Research Enquiries
@@ -494,7 +572,7 @@
 
             <div class="contact-card-email-area">
 
-              <span class="contact-card-email-label">
+              <span class="contact-email-label">
                 Email
               </span>
 
@@ -516,9 +594,9 @@
 
           <article class="contact-card">
 
-            <div class="contact-card-number">
+            <span class="contact-card-number">
               02 / EDUCATION
-            </div>
+            </span>
 
             <h3>
               Education Enquiries
@@ -532,7 +610,7 @@
 
             <div class="contact-card-email-area">
 
-              <span class="contact-card-email-label">
+              <span class="contact-email-label">
                 Email
               </span>
 
@@ -554,9 +632,9 @@
 
           <article class="contact-card">
 
-            <div class="contact-card-number">
+            <span class="contact-card-number">
               03 / ACADEMIC APPOINTMENTS
-            </div>
+            </span>
 
             <h3>
               Membership & Fellowship
@@ -564,13 +642,12 @@
 
             <p>
               Membership applications, Fellowship enquiries,
-              academic appointments and professional
-              recognition.
+              academic appointments and professional recognition.
             </p>
 
             <div class="contact-card-email-area">
 
-              <span class="contact-card-email-label">
+              <span class="contact-email-label">
                 Email
               </span>
 
@@ -592,9 +669,9 @@
 
           <article class="contact-card">
 
-            <div class="contact-card-number">
+            <span class="contact-card-number">
               04 / INSTITUTIONAL COLLABORATION
-            </div>
+            </span>
 
             <h3>
               Partnership Enquiries
@@ -602,13 +679,12 @@
 
             <p>
               Academic partnerships, institutional cooperation,
-              external collaboration and international
-              engagement.
+              external collaboration and international engagement.
             </p>
 
             <div class="contact-card-email-area">
 
-              <span class="contact-card-email-label">
+              <span class="contact-email-label">
                 Email
               </span>
 
@@ -639,8 +715,8 @@
           <p>
             For enquiries concerning more than one department,
             please use our general enquiries address.
-            Please include a clear subject line to help
-            direct your message to the appropriate team.
+            Please include a clear subject line to help direct
+            your message to the appropriate team.
           </p>
 
         </div>
@@ -676,7 +752,6 @@
           </p>
 
         </div>
-
 
         <a
           href="mailto:info@ukaes.org"
@@ -720,21 +795,13 @@
 
           <ul>
 
-            <li>
-              <a href="about.html">About</a>
-            </li>
+            <li><a href="about.html">About</a></li>
 
-            <li>
-              <a href="research.html">Research</a>
-            </li>
+            <li><a href="research.html">Research</a></li>
 
-            <li>
-              <a href="education.html">Education</a>
-            </li>
+            <li><a href="education.html">Education</a></li>
 
-            <li>
-              <a href="appointments.html">Appointments</a>
-            </li>
+            <li><a href="appointments.html">Appointments</a></li>
 
           </ul>
 
@@ -747,13 +814,9 @@
 
           <ul>
 
-            <li>
-              <a href="people.html">People</a>
-            </li>
+            <li><a href="people.html">People</a></li>
 
-            <li>
-              <a href="contact.html">Contact</a>
-            </li>
+            <li><a href="contact.html">Contact</a></li>
 
           </ul>
 
@@ -766,7 +829,7 @@
       <div class="ukaes-footer-bottom">
 
         <span>
-          © <span class="ukaes-current-year">2026</span>
+          © <span class="ukaes-current-year"></span>
           UK Academy of Epidemiology Sciences.
         </span>
 
