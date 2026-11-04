@@ -358,6 +358,59 @@
 
     }
 
+    /* =========================================
+       FOOTER BRAND — FIX LOGO OVERLAP
+    ========================================= */
+
+    .ukaes-footer .ukaes-footer-grid > div:first-child {
+      min-width: 0;
+    }
+
+    .ukaes-footer .ukaes-footer-brand {
+      position: relative;
+      display: block;
+      width: 240px;
+      max-width: 100%;
+      height: auto;
+      margin: 0 0 18px;
+      overflow: visible;
+    }
+
+    .ukaes-footer .ukaes-footer-brand img {
+      position: static;
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      max-height: 100px;
+      margin: 0;
+      object-fit: contain;
+      object-position: left center;
+      transform: none;
+    }
+
+    .ukaes-footer .ukaes-footer-tagline {
+      position: static;
+      display: block;
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    /* FOOTER MOBILE */
+
+    @media (max-width: 650px) {
+
+      .ukaes-footer .ukaes-footer-brand {
+        width: 210px;
+        margin-bottom: 14px;
+      }
+
+      .ukaes-footer .ukaes-footer-brand img {
+        max-height: 88px;
+      }
+
+    }
+
   </style>
 
 </head>
@@ -566,6 +619,8 @@
 
       <div class="ukaes-footer-grid">
 
+        <!-- FOOTER BRAND -->
+
         <div>
 
           <div class="ukaes-footer-brand">
@@ -576,16 +631,14 @@
 
           </div>
 
-          <p>
-            UK Academy of Epidemiology Sciences
-          </p>
-
-          <p>
+          <p class="ukaes-footer-tagline">
             Advancing Science. Shaping the Future.
           </p>
 
         </div>
 
+
+        <!-- EXPLORE -->
 
         <div>
 
@@ -606,6 +659,8 @@
         </div>
 
 
+        <!-- INFORMATION -->
+
         <div>
 
           <h3>Information</h3>
@@ -622,6 +677,8 @@
 
       </div>
 
+
+      <!-- COPYRIGHT -->
 
       <div class="ukaes-footer-bottom">
 
